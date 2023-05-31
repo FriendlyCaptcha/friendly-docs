@@ -1,0 +1,16 @@
+{
+  "title": "Getting Started",
+  "description": "Protect your website with Friendly Captcha with our step-by-step guides",
+  "slug": "/category/getting-started",
+  "permalink": "/docs/category/getting-started",
+  "navigation": {
+    "previous": {
+      "title": "What is Friendly Captcha?",
+      "permalink": "/docs/what-is-friendly-captcha"
+    },
+    "next": {
+      "title": "Introduction",
+      "permalink": "/docs/getting-started/introduction"
+    }
+  }
+}

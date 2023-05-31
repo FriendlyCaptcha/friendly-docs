@@ -1,0 +1,27 @@
+{
+  "unversionedId": "sdk/advanced/localization",
+  "id": "sdk/advanced/localization",
+  "title": "Language Detection",
+  "description": "If your website is in German it makes sense to have the widget in German too.",
+  "source": "@site/docs/sdk/advanced/localization.md",
+  "sourceDirName": "sdk/advanced",
+  "slug": "/sdk/advanced/localization",
+  "permalink": "/docs/sdk/advanced/localization",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/sdk/advanced/localization.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "sidebar_position": 30
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Browser support",
+    "permalink": "/docs/sdk/advanced/browser-support"
+  },
+  "next": {
+    "title": "Content Security Policy (CSP)",
+    "permalink": "/docs/sdk/advanced/csp"
+  }
+}

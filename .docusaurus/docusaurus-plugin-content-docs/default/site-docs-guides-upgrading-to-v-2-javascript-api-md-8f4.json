@@ -1,0 +1,27 @@
+{
+  "unversionedId": "guides/upgrading-to-v2/javascript-api",
+  "id": "guides/upgrading-to-v2/javascript-api",
+  "title": "Client (Javascript API)",
+  "description": "1. Install the new SDK",
+  "source": "@site/docs/guides/upgrading-to-v2/javascript-api.md",
+  "sourceDirName": "guides/upgrading-to-v2",
+  "slug": "/guides/upgrading-to-v2/javascript-api",
+  "permalink": "/docs/guides/upgrading-to-v2/javascript-api",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/guides/upgrading-to-v2/javascript-api.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Why Upgrade?",
+    "permalink": "/docs/guides/upgrading-to-v2/why-upgrade"
+  },
+  "next": {
+    "title": "Client (CDN script)",
+    "permalink": "/docs/guides/upgrading-to-v2/script"
+  }
+}

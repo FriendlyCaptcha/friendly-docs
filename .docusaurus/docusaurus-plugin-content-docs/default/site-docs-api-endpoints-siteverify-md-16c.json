@@ -1,0 +1,27 @@
+{
+  "unversionedId": "api/endpoints/siteverify",
+  "id": "api/endpoints/siteverify",
+  "title": "/api/v2/siteverify",
+  "description": "The siteverify endpoint is used to verify captcha responses. A captcha response is the value that is embedded in your form by the captcha widget when the challenge has been completed.",
+  "source": "@site/docs/api/endpoints/siteverify.md",
+  "sourceDirName": "api/endpoints",
+  "slug": "/api/endpoints/siteverify",
+  "permalink": "/docs/api/endpoints/siteverify",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/api/endpoints/siteverify.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Authentication",
+    "permalink": "/docs/api/authentication"
+  },
+  "next": {
+    "title": "OpenAPI Specification",
+    "permalink": "/docs/api/openapi"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "api/authentication",
+              "path": "/docs/api/authentication",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/endpoints/siteverify",
+              "path": "/docs/api/endpoints/siteverify",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/openapi",
+              "path": "/docs/api/openapi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/overview",
+              "path": "/docs/api/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "changelog",
+              "path": "/docs/changelog",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/client",
+              "path": "/docs/getting-started/client",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/common-problems",
+              "path": "/docs/getting-started/common-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/installation",
+              "path": "/docs/getting-started/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/introduction",
+              "path": "/docs/getting-started/introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/siteverify",
+              "path": "/docs/getting-started/siteverify",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/index",
+              "path": "/docs/guides/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/migrating-from-hcaptcha",
+              "path": "/docs/guides/migrating-from-hcaptcha",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/migrating-from-recaptcha",
+              "path": "/docs/guides/migrating-from-recaptcha",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/upgrading-to-v2/backend-integration",
+              "path": "/docs/guides/upgrading-to-v2/backend-integration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/upgrading-to-v2/introduction",
+              "path": "/docs/guides/upgrading-to-v2/introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/upgrading-to-v2/javascript-api",
+              "path": "/docs/guides/upgrading-to-v2/javascript-api",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/upgrading-to-v2/script",
+              "path": "/docs/guides/upgrading-to-v2/script",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/upgrading-to-v2/why-upgrade",
+              "path": "/docs/guides/upgrading-to-v2/why-upgrade",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "integrations/index",
+              "path": "/docs/integrations/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/advanced/automated-testing",
+              "path": "/docs/sdk/advanced/automated-testing",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/advanced/browser-support",
+              "path": "/docs/sdk/advanced/browser-support",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/advanced/csp",
+              "path": "/docs/sdk/advanced/csp",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/advanced/localization",
+              "path": "/docs/sdk/advanced/localization",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/configuration",
+              "path": "/docs/sdk/configuration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/events",
+              "path": "/docs/sdk/events",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/index",
+              "path": "/docs/sdk/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sdk/lifecycle",
+              "path": "/docs/sdk/lifecycle",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "what-is-friendly-captcha",
+              "path": "/docs/what-is-friendly-captcha",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/getting-started",
+              "path": "/docs/category/getting-started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/widget-sdk",
+              "path": "/docs/category/widget-sdk",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

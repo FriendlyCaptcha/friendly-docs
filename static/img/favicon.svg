@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="42.516644"
+   height="49.81131"
+   viewBox="0 0 42.516644 49.81131"
+   xml:space="preserve"
+   style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+   version="1.1"
+   id="svg120"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs124" /><g
+     id="FriendlyCaptcha-Logo"
+     transform="translate(-0.53378034,-6.6057172)"><g
+       id="g88"
+       transform="matrix(0.09962262,0,0,0.09962262,0.53378034,6.6057172)"><path
+         d="M 426.777,73.223 C 379.893,26.339 316.304,0 250,0 112.021,0 0,112.021 0,250 c 0,137.979 112.021,250 250,250 66.304,0 129.893,-26.339 176.777,-73.223 L 373.744,373.744 C 340.925,406.563 296.413,425 250,425 153.415,425 75,346.585 75,250 75,153.415 153.415,75 250,75 c 46.413,0 90.925,18.437 123.744,51.256 z"
+         style="fill:#2962ff;fill-opacity:1"
+         id="path80" /><path
+         d="M 73.223,426.777 C 120.107,473.661 183.696,500 250,500 c 66.304,0 129.893,-26.339 176.777,-73.223 L 373.744,373.744 C 340.925,406.563 296.413,425 250,425 203.587,425 159.075,406.563 126.256,373.744 Z"
+         style="fill:#1e3dff;fill-opacity:1"
+         id="path82" /><circle
+         cx="175"
+         cy="250"
+         r="37.5"
+         style="fill:#2962ff;fill-opacity:1"
+         id="circle84" /><circle
+         cx="325"
+         cy="250"
+         r="37.5"
+         style="fill:#2962ff;fill-opacity:1"
+         id="circle86" /></g></g></svg>

@@ -1,0 +1,15 @@
+{
+  "title": "Verification API",
+  "slug": "/category/verification-api",
+  "permalink": "/docs/category/verification-api",
+  "navigation": {
+    "previous": {
+      "title": "Content Security Policy (CSP)",
+      "permalink": "/docs/sdk/advanced/csp"
+    },
+    "next": {
+      "title": "Overview",
+      "permalink": "/docs/api/overview"
+    }
+  }
+}

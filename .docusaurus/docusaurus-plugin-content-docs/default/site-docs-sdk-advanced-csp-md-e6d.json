@@ -1,0 +1,27 @@
+{
+  "unversionedId": "sdk/advanced/csp",
+  "id": "sdk/advanced/csp",
+  "title": "Content Security Policy (CSP)",
+  "description": "Content Security Policy is a way to secure your website from cross-site scripting (XSS).",
+  "source": "@site/docs/sdk/advanced/csp.md",
+  "sourceDirName": "sdk/advanced",
+  "slug": "/sdk/advanced/csp",
+  "permalink": "/docs/sdk/advanced/csp",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/sdk/advanced/csp.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 100,
+  "frontMatter": {
+    "sidebar_position": 100
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Language Detection",
+    "permalink": "/docs/sdk/advanced/localization"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/api/overview"
+  }
+}

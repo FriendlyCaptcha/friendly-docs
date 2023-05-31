@@ -1,0 +1,54 @@
+{
+  "blogPosts": [
+    {
+      "id": "announcing-the-v2-beta",
+      "metadata": {
+        "permalink": "/blog/announcing-the-v2-beta",
+        "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/blog/2023-06-01-announcing-the-v2-beta/index.md",
+        "source": "@site/blog/2023-06-01-announcing-the-v2-beta/index.md",
+        "title": "Announcing the v2 Beta",
+        "description": "Summary",
+        "date": "2023-06-01T00:00:00.000Z",
+        "formattedDate": "June 1, 2023",
+        "tags": [
+          {
+            "label": "captcha",
+            "permalink": "/blog/tags/captcha"
+          },
+          {
+            "label": "beta",
+            "permalink": "/blog/tags/beta"
+          },
+          {
+            "label": "announcement",
+            "permalink": "/blog/tags/announcement"
+          }
+        ],
+        "readingTime": 1.375,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "Guido Zuidhof",
+            "title": "Co-founder / CTO @ Friendly Captcha",
+            "url": "https://github.com/gzuidhof",
+            "imageURL": "https://github.com/gzuidhof.png",
+            "key": "gzuidhof"
+          }
+        ],
+        "frontMatter": {
+          "slug": "announcing-the-v2-beta",
+          "title": "Announcing the v2 Beta",
+          "authors": [
+            "gzuidhof"
+          ],
+          "tags": [
+            "captcha",
+            "beta",
+            "announcement"
+          ]
+        }
+      },
+      "content": "## Summary\n\n* Select accounts can now participate in the beta of the Friendly Captcha widget version two.\n* Version two improves on protection and user experience.\n* You will have to change some code to switch to the new version.\n* Version one is not going away any time soon, upgrading is voluntary.\n\n## Introducing v2\n\nSince launching Friendly Captcha in 2020 we've grown a lot. Friendly Captcha now protects the websites of thousands of organizations. Along the way we've continuously improved our offering.\n\nSome improvements however are hard to fit into the existing system. In 2022 we decided to start building version 2 of our captcha product, incorporating all the learnings over the past years.\n\n![Screenshot of v2 captcha widget](../../docs/guides/upgrading-to-v2/widget-v2-ready.png)\n\n## Rollout\nWe are deliberately slow and careful in rolling out v2 to all Friendly Captcha subscribers. \n\nV2 is not stable yet, there may be changes to the API. Inevitably there will also be edge cases and bugs that we want to weed out before recommending v2 for production use.\n\nAs of June 2023, we are slowly inviting users to try the beta version. We expect to open the beta to all users end of summer this year.\n\n## What happens to v1?\nVersion 1 is not going away. We commit to supporting and maintaining it for years to come.\n\nWe aim for all organizations to eventually upgrade to version 2, but we are also realistic in our expectations. We understand that switching takes time and effort, and for some organizations or projects the upgrade may never happen.\n\n## Further reading\n\n* [Migration guide from v1 to v2](../../docs/guides/upgrading-to-v2/introduction)\n* [Why upgrade to v2?](../../docs/guides/upgrading-to-v2/why-upgrade)"
+    }
+  ]
+}

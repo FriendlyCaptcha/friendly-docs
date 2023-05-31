@@ -1,0 +1,27 @@
+{
+  "unversionedId": "guides/upgrading-to-v2/script",
+  "id": "guides/upgrading-to-v2/script",
+  "title": "Client (CDN script)",
+  "description": "This guide runs you through the changes you will have to make when switching from version 1 to version 2 of the Friendly Captcha widget if you are using the script tags.",
+  "source": "@site/docs/guides/upgrading-to-v2/script.md",
+  "sourceDirName": "guides/upgrading-to-v2",
+  "slug": "/guides/upgrading-to-v2/script",
+  "permalink": "/docs/guides/upgrading-to-v2/script",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/guides/upgrading-to-v2/script.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Client (Javascript API)",
+    "permalink": "/docs/guides/upgrading-to-v2/javascript-api"
+  },
+  "next": {
+    "title": "Backend Integration",
+    "permalink": "/docs/guides/upgrading-to-v2/backend-integration"
+  }
+}

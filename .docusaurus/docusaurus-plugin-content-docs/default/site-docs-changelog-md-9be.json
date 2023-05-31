@@ -1,0 +1,23 @@
+{
+  "unversionedId": "changelog",
+  "id": "changelog",
+  "title": "Changelog",
+  "description": "0.1.0",
+  "source": "@site/docs/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/docs/changelog",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/changelog.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Integrations",
+    "permalink": "/docs/integrations/"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "guides/migrating-from-recaptcha",
+  "id": "guides/migrating-from-recaptcha",
+  "title": "Migrating from reCAPTCHA",
+  "description": "Switching from Google's reCAPTCHA (v2) to Friendly Captcha is straightforward.",
+  "source": "@site/docs/guides/migrating-from-recaptcha.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/migrating-from-recaptcha",
+  "permalink": "/docs/guides/migrating-from-recaptcha",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/guides/migrating-from-recaptcha.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Backend Integration",
+    "permalink": "/docs/guides/upgrading-to-v2/backend-integration"
+  },
+  "next": {
+    "title": "Migrating from hCaptcha",
+    "permalink": "/docs/guides/migrating-from-hcaptcha"
+  }
+}

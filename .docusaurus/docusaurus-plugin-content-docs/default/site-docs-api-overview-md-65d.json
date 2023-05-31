@@ -1,0 +1,27 @@
+{
+  "unversionedId": "api/overview",
+  "id": "api/overview",
+  "title": "Overview",
+  "description": "Authentication",
+  "source": "@site/docs/api/overview.md",
+  "sourceDirName": "api",
+  "slug": "/api/overview",
+  "permalink": "/docs/api/overview",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/api/overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Content Security Policy (CSP)",
+    "permalink": "/docs/sdk/advanced/csp"
+  },
+  "next": {
+    "title": "Authentication",
+    "permalink": "/docs/api/authentication"
+  }
+}

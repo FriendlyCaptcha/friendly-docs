@@ -1,0 +1,27 @@
+{
+  "unversionedId": "getting-started/common-problems",
+  "id": "getting-started/common-problems",
+  "title": "Common problems",
+  "description": "contact support if not listed here",
+  "source": "@site/docs/getting-started/common-problems.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/common-problems",
+  "permalink": "/docs/getting-started/common-problems",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/getting-started/common-problems.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Verify the response",
+    "permalink": "/docs/getting-started/siteverify"
+  },
+  "next": {
+    "title": "Widget SDK",
+    "permalink": "/docs/category/widget-sdk"
+  }
+}

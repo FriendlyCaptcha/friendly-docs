@@ -1,0 +1,27 @@
+{
+  "unversionedId": "guides/upgrading-to-v2/introduction",
+  "id": "guides/upgrading-to-v2/introduction",
+  "title": "Introduction",
+  "description": "This guide describes how to upgrade from v1 to v2 of our widget.",
+  "source": "@site/docs/guides/upgrading-to-v2/introduction.md",
+  "sourceDirName": "guides/upgrading-to-v2",
+  "slug": "/guides/upgrading-to-v2/introduction",
+  "permalink": "/docs/guides/upgrading-to-v2/introduction",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/guides/upgrading-to-v2/introduction.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Guides",
+    "permalink": "/docs/guides/"
+  },
+  "next": {
+    "title": "Why Upgrade?",
+    "permalink": "/docs/guides/upgrading-to-v2/why-upgrade"
+  }
+}

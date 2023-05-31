@@ -1,0 +1,15 @@
+{
+  "title": "API Reference",
+  "slug": "/category/api-reference",
+  "permalink": "/docs/category/api-reference",
+  "navigation": {
+    "previous": {
+      "title": "Content Security Policy (CSP)",
+      "permalink": "/docs/sdk/advanced/csp"
+    },
+    "next": {
+      "title": "Overview",
+      "permalink": "/docs/api/overview"
+    }
+  }
+}

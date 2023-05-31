@@ -1,0 +1,27 @@
+{
+  "unversionedId": "sdk/index",
+  "id": "sdk/index",
+  "title": "Overview",
+  "description": "The SDK is the code you add to your website to display captcha widgets on your website.",
+  "source": "@site/docs/sdk/index.md",
+  "sourceDirName": "sdk",
+  "slug": "/sdk/",
+  "permalink": "/docs/sdk/",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/sdk/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Widget SDK",
+    "permalink": "/docs/category/widget-sdk"
+  },
+  "next": {
+    "title": "Configuration",
+    "permalink": "/docs/sdk/configuration"
+  }
+}

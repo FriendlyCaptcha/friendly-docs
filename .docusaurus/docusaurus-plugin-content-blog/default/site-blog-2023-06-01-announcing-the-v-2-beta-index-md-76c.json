@@ -1,0 +1,46 @@
+{
+  "permalink": "/blog/announcing-the-v2-beta",
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/blog/2023-06-01-announcing-the-v2-beta/index.md",
+  "source": "@site/blog/2023-06-01-announcing-the-v2-beta/index.md",
+  "title": "Announcing the v2 Beta",
+  "description": "Summary",
+  "date": "2023-06-01T00:00:00.000Z",
+  "formattedDate": "June 1, 2023",
+  "tags": [
+    {
+      "label": "captcha",
+      "permalink": "/blog/tags/captcha"
+    },
+    {
+      "label": "beta",
+      "permalink": "/blog/tags/beta"
+    },
+    {
+      "label": "announcement",
+      "permalink": "/blog/tags/announcement"
+    }
+  ],
+  "readingTime": 1.375,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "Guido Zuidhof",
+      "title": "Co-founder / CTO @ Friendly Captcha",
+      "url": "https://github.com/gzuidhof",
+      "imageURL": "https://github.com/gzuidhof.png",
+      "key": "gzuidhof"
+    }
+  ],
+  "frontMatter": {
+    "slug": "announcing-the-v2-beta",
+    "title": "Announcing the v2 Beta",
+    "authors": [
+      "gzuidhof"
+    ],
+    "tags": [
+      "captcha",
+      "beta",
+      "announcement"
+    ]
+  }
+}

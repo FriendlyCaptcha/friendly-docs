@@ -1,0 +1,15 @@
+{
+  "title": "Widget SDK",
+  "slug": "/category/widget-sdk",
+  "permalink": "/docs/category/widget-sdk",
+  "navigation": {
+    "previous": {
+      "title": "Common problems",
+      "permalink": "/docs/getting-started/common-problems"
+    },
+    "next": {
+      "title": "Overview",
+      "permalink": "/docs/sdk/"
+    }
+  }
+}

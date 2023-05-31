@@ -1,0 +1,51 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2962ff;
+  --ifm-color-primary-dark: #1d56f2;
+  --ifm-color-primary-darker: #1548d3;
+  --ifm-color-primary-darkest: #1238a1;
+  --ifm-color-primary-light: #3a6efb;
+  --ifm-color-primary-lighter: #658eff;
+  --ifm-color-primary-lightest: #86a6ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4878fc;
+  --ifm-color-primary-dark: #3669f7;
+  --ifm-color-primary-darker: #275ae8;
+  --ifm-color-primary-darkest: #1c50dd;
+  --ifm-color-primary-light: #4373f9;
+  --ifm-color-primary-lighter: #779cff;
+  --ifm-color-primary-lightest: #a4bcfd;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='light'] footer.footer {
+  background-color: #242526
+}
+
+html[data-theme='dark'] footer.footer {
+  background-color: #242526
+}
+
+.text-white {
+  color: #fff;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+}
+
+/* Used for hiding sidebar elements entirely, which we want in the SDK reference */
+.sidebar-hidden {
+  display: none;
+}

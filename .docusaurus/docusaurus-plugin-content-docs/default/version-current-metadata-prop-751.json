@@ -1,0 +1,404 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "Quick Start",
+        "href": "/docs/",
+        "docId": "intro"
+      },
+      {
+        "type": "link",
+        "label": "What is Friendly Captcha?",
+        "href": "/docs/what-is-friendly-captcha",
+        "docId": "what-is-friendly-captcha"
+      },
+      {
+        "type": "category",
+        "label": "Getting Started",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Introduction",
+            "href": "/docs/getting-started/introduction",
+            "docId": "getting-started/introduction"
+          },
+          {
+            "type": "link",
+            "label": "Creating a sitekey",
+            "href": "/docs/getting-started/client",
+            "docId": "getting-started/client"
+          },
+          {
+            "type": "link",
+            "label": "Installing the widget",
+            "href": "/docs/getting-started/installation",
+            "docId": "getting-started/installation"
+          },
+          {
+            "type": "link",
+            "label": "Verify the response",
+            "href": "/docs/getting-started/siteverify",
+            "docId": "getting-started/siteverify"
+          },
+          {
+            "type": "link",
+            "label": "Common problems",
+            "href": "/docs/getting-started/common-problems",
+            "docId": "getting-started/common-problems"
+          }
+        ],
+        "href": "/docs/category/getting-started"
+      },
+      {
+        "type": "category",
+        "label": "Widget SDK",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Overview",
+            "href": "/docs/sdk/",
+            "docId": "sdk/index"
+          },
+          {
+            "type": "link",
+            "label": "Configuration",
+            "href": "/docs/sdk/configuration",
+            "docId": "sdk/configuration"
+          },
+          {
+            "type": "link",
+            "label": "Events",
+            "href": "/docs/sdk/events",
+            "docId": "sdk/events"
+          },
+          {
+            "type": "link",
+            "label": "Lifecycle",
+            "href": "/docs/sdk/lifecycle",
+            "docId": "sdk/lifecycle"
+          },
+          {
+            "type": "category",
+            "label": "Advanced",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Automated Testing",
+                "href": "/docs/sdk/advanced/automated-testing",
+                "docId": "sdk/advanced/automated-testing"
+              },
+              {
+                "type": "link",
+                "label": "Browser support",
+                "href": "/docs/sdk/advanced/browser-support",
+                "docId": "sdk/advanced/browser-support"
+              },
+              {
+                "type": "link",
+                "label": "Language Detection",
+                "href": "/docs/sdk/advanced/localization",
+                "docId": "sdk/advanced/localization"
+              },
+              {
+                "type": "link",
+                "label": "Content Security Policy (CSP)",
+                "href": "/docs/sdk/advanced/csp",
+                "docId": "sdk/advanced/csp"
+              }
+            ]
+          }
+        ],
+        "href": "/docs/category/widget-sdk"
+      },
+      {
+        "type": "category",
+        "label": "Server-side Validation",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Authentication",
+            "href": "/docs/api/authentication",
+            "docId": "api/authentication"
+          },
+          {
+            "type": "link",
+            "label": "HTTP Endpoints",
+            "href": "/docs/api/endpoints/siteverify",
+            "docId": "api/endpoints/siteverify"
+          },
+          {
+            "type": "link",
+            "label": "OpenAPI Specification",
+            "href": "/docs/api/openapi",
+            "docId": "api/openapi"
+          }
+        ],
+        "href": "/docs/api/overview"
+      },
+      {
+        "type": "category",
+        "label": "Guides",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "category",
+            "label": "Upgrading from v1",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/guides/upgrading-to-v2/introduction",
+                "docId": "guides/upgrading-to-v2/introduction"
+              },
+              {
+                "type": "link",
+                "label": "Why Upgrade?",
+                "href": "/docs/guides/upgrading-to-v2/why-upgrade",
+                "docId": "guides/upgrading-to-v2/why-upgrade"
+              },
+              {
+                "type": "link",
+                "label": "Client (Javascript API)",
+                "href": "/docs/guides/upgrading-to-v2/javascript-api",
+                "docId": "guides/upgrading-to-v2/javascript-api"
+              },
+              {
+                "type": "link",
+                "label": "Client (CDN script)",
+                "href": "/docs/guides/upgrading-to-v2/script",
+                "docId": "guides/upgrading-to-v2/script"
+              },
+              {
+                "type": "link",
+                "label": "Backend Integration",
+                "href": "/docs/guides/upgrading-to-v2/backend-integration",
+                "docId": "guides/upgrading-to-v2/backend-integration"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "label": "Migrating from reCAPTCHA",
+            "href": "/docs/guides/migrating-from-recaptcha",
+            "docId": "guides/migrating-from-recaptcha"
+          },
+          {
+            "type": "link",
+            "label": "Migrating from hCaptcha",
+            "href": "/docs/guides/migrating-from-hcaptcha",
+            "docId": "guides/migrating-from-hcaptcha"
+          }
+        ],
+        "href": "/docs/guides/"
+      },
+      {
+        "type": "link",
+        "label": "Integrations",
+        "href": "/docs/integrations/",
+        "docId": "integrations/index"
+      },
+      {
+        "type": "link",
+        "label": "Changelog",
+        "href": "/docs/changelog",
+        "docId": "changelog"
+      }
+    ]
+  },
+  "docs": {
+    "api/authentication": {
+      "id": "api/authentication",
+      "title": "Authentication",
+      "description": "To make requests to the Friendly Captcha API you need to prove who you are. You do this by passing an API key in a header.",
+      "sidebar": "tutorialSidebar"
+    },
+    "api/endpoints/siteverify": {
+      "id": "api/endpoints/siteverify",
+      "title": "/api/v2/siteverify",
+      "description": "The siteverify endpoint is used to verify captcha responses. A captcha response is the value that is embedded in your form by the captcha widget when the challenge has been completed.",
+      "sidebar": "tutorialSidebar"
+    },
+    "api/openapi": {
+      "id": "api/openapi",
+      "title": "OpenAPI Specification",
+      "description": "The OpenAPI Specification (OAS) of our endpoints can be downloaded here:",
+      "sidebar": "tutorialSidebar"
+    },
+    "api/overview": {
+      "id": "api/overview",
+      "title": "Overview",
+      "description": "Authentication",
+      "sidebar": "tutorialSidebar"
+    },
+    "changelog": {
+      "id": "changelog",
+      "title": "Changelog",
+      "description": "0.1.0",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting-started/client": {
+      "id": "getting-started/client",
+      "title": "Creating a sitekey",
+      "description": "Log in to the Dashboard and head to the Applications page.",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting-started/common-problems": {
+      "id": "getting-started/common-problems",
+      "title": "Common problems",
+      "description": "contact support if not listed here",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting-started/installation": {
+      "id": "getting-started/installation",
+      "title": "Installing the widget",
+      "description": "Option A: HTML Scripts",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting-started/introduction": {
+      "id": "getting-started/introduction",
+      "title": "Introduction",
+      "description": "Friendly Captcha is a service that protects your websites and applications from automated abuse.",
+      "sidebar": "tutorialSidebar"
+    },
+    "getting-started/siteverify": {
+      "id": "getting-started/siteverify",
+      "title": "Verify the response",
+      "description": "When the captcha challenge is completed by the user, the user's browser receives a piece of text that proves that they completed the challenge. This proof is called the response.",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/index": {
+      "id": "guides/index",
+      "title": "Guides",
+      "description": "Migration Guides",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/migrating-from-hcaptcha": {
+      "id": "guides/migrating-from-hcaptcha",
+      "title": "Migrating from hCaptcha",
+      "description": "Switching from hCaptcha to Friendly Captcha is straightforward.",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/migrating-from-recaptcha": {
+      "id": "guides/migrating-from-recaptcha",
+      "title": "Migrating from reCAPTCHA",
+      "description": "Switching from Google's reCAPTCHA (v2) to Friendly Captcha is straightforward.",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/upgrading-to-v2/backend-integration": {
+      "id": "guides/upgrading-to-v2/backend-integration",
+      "title": "Backend Integration",
+      "description": "1. Change the field name in your forms",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/upgrading-to-v2/introduction": {
+      "id": "guides/upgrading-to-v2/introduction",
+      "title": "Introduction",
+      "description": "This guide describes how to upgrade from v1 to v2 of our widget.",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/upgrading-to-v2/javascript-api": {
+      "id": "guides/upgrading-to-v2/javascript-api",
+      "title": "Client (Javascript API)",
+      "description": "1. Install the new SDK",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/upgrading-to-v2/script": {
+      "id": "guides/upgrading-to-v2/script",
+      "title": "Client (CDN script)",
+      "description": "This guide runs you through the changes you will have to make when switching from version 1 to version 2 of the Friendly Captcha widget if you are using the script tags.",
+      "sidebar": "tutorialSidebar"
+    },
+    "guides/upgrading-to-v2/why-upgrade": {
+      "id": "guides/upgrading-to-v2/why-upgrade",
+      "title": "Why Upgrade?",
+      "description": "With v2 we include learnings of (almost) 3 years of Friendly Captcha. This document outlines the reasons why you should switch to v2.",
+      "sidebar": "tutorialSidebar"
+    },
+    "integrations/index": {
+      "id": "integrations/index",
+      "title": "Integrations",
+      "description": "Plugins and libraries allow you to implement Friendly Captcha into your product easily.",
+      "sidebar": "tutorialSidebar"
+    },
+    "intro": {
+      "id": "intro",
+      "title": "Quick Start",
+      "description": "Friendly Captcha is a service that protects your websites and applications from automated abuse.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/advanced/automated-testing": {
+      "id": "sdk/advanced/automated-testing",
+      "title": "Automated Testing",
+      "description": "Testing can be at odds with a captcha you add to your website or app. Perhaps you use automated testing tools like Cypress, Selenium, or Puppeteer.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/advanced/browser-support": {
+      "id": "sdk/advanced/browser-support",
+      "title": "Browser support",
+      "description": "All modern browsers are supported, on both mobile and desktop, all releases up to at least 8 years old.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/advanced/csp": {
+      "id": "sdk/advanced/csp",
+      "title": "Content Security Policy (CSP)",
+      "description": "Content Security Policy is a way to secure your website from cross-site scripting (XSS).",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/advanced/localization": {
+      "id": "sdk/advanced/localization",
+      "title": "Language Detection",
+      "description": "If your website is in German it makes sense to have the widget in German too.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/configuration": {
+      "id": "sdk/configuration",
+      "title": "Configuration",
+      "description": "There are two ways you can configure the behavior of the widget.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/events": {
+      "id": "sdk/events",
+      "title": "Events",
+      "description": "The captcha widget emits DOM events which allow you to write code that reacts to changes in the widget.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/index": {
+      "id": "sdk/index",
+      "title": "Overview",
+      "description": "The SDK is the code you add to your website to display captcha widgets on your website.",
+      "sidebar": "tutorialSidebar"
+    },
+    "sdk/lifecycle": {
+      "id": "sdk/lifecycle",
+      "title": "Lifecycle",
+      "description": "The widget has a fixed set of states it can be in.",
+      "sidebar": "tutorialSidebar"
+    },
+    "what-is-friendly-captcha": {
+      "id": "what-is-friendly-captcha",
+      "title": "What is Friendly Captcha?",
+      "description": "Friendly Captcha is a system that protects websites from bots and abuse in a privacy-friendly and accessible way.",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "integrations/index",
+  "id": "integrations/index",
+  "title": "Integrations",
+  "description": "Plugins and libraries allow you to implement Friendly Captcha into your product easily.",
+  "source": "@site/docs/integrations/index.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/",
+  "permalink": "/docs/integrations/",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/integrations/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Migrating from hCaptcha",
+    "permalink": "/docs/guides/migrating-from-hcaptcha"
+  },
+  "next": {
+    "title": "Changelog",
+    "permalink": "/docs/changelog"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "api/authentication",
+  "id": "api/authentication",
+  "title": "Authentication",
+  "description": "To make requests to the Friendly Captcha API you need to prove who you are. You do this by passing an API key in a header.",
+  "source": "@site/docs/api/authentication.md",
+  "sourceDirName": "api",
+  "slug": "/api/authentication",
+  "permalink": "/docs/api/authentication",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/api/authentication.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/api/overview"
+  },
+  "next": {
+    "title": "/api/v2/siteverify",
+    "permalink": "/docs/api/endpoints/siteverify"
+  }
+}

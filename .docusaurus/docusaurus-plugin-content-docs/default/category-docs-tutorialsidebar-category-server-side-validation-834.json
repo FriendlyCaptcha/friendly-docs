@@ -1,0 +1,15 @@
+{
+  "title": "Server-side Validation",
+  "slug": "/category/server-side-validation",
+  "permalink": "/docs/category/server-side-validation",
+  "navigation": {
+    "previous": {
+      "title": "Content Security Policy (CSP)",
+      "permalink": "/docs/sdk/advanced/csp"
+    },
+    "next": {
+      "title": "Overview",
+      "permalink": "/docs/api/overview"
+    }
+  }
+}

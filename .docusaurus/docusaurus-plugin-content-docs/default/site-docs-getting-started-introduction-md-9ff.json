@@ -1,0 +1,27 @@
+{
+  "unversionedId": "getting-started/introduction",
+  "id": "getting-started/introduction",
+  "title": "Introduction",
+  "description": "Friendly Captcha is a service that protects your websites and applications from automated abuse.",
+  "source": "@site/docs/getting-started/introduction.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/introduction",
+  "permalink": "/docs/getting-started/introduction",
+  "draft": false,
+  "editUrl": "https://github.com/friendlycaptcha/friendly-docs/tree/main/docs/getting-started/introduction.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/docs/category/getting-started"
+  },
+  "next": {
+    "title": "Creating a sitekey",
+    "permalink": "/docs/getting-started/client"
+  }
+}
