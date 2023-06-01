@@ -39,11 +39,11 @@ The siteverify endpoint for v2 is `https://global.frcapi.com/api/v2/siteverify`.
 
 #### Script tag installation
 
-If you installed Friendly Captcha to your website by adding a `<script>` tag, follow [this guide](./script-tag).
+If you installed Friendly Captcha to your website by adding a `<script>` tag, follow [this guide](./script).
 
 #### Programmatic Javascript API
 
-If you are using the Javascript API to programmatically create widgets, please follow [this guide](./javascript-sdk)
+If you are using the Javascript API to programmatically create widgets, please follow [this guide](./javascript-api)
 
 ### Backend changes
 

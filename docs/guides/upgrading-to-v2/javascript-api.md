@@ -87,4 +87,4 @@ myWidget.addEventListener("frc:widget.expire", (event) => {
 })
 ```
 
-For details on the Javascript SDK API, see the [Documentation](../../sdk/index)
+For details on the Javascript SDK API, see the [Documentation](../../sdk)
