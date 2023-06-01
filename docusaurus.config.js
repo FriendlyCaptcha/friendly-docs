@@ -1,6 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const organizationName = "FriendlyCaptcha";
+const projectName = "friendly-docs";
+
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -19,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "friendlycaptcha", // Usually your GitHub org/user name.
-  projectName: "friendly-docs", // Usually your repo name.
+  organizationName, // Usually your GitHub org/user name.
+  projectName, // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -44,15 +47,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/friendlycaptcha/friendly-docs/tree/main/",
+          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/friendlycaptcha/friendly-docs/tree/main/",
+          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
           blogDescription: "Friendly Captcha Engineering Blog",
           blogTitle: "Friendly Captcha Engineering Blog",
         },
