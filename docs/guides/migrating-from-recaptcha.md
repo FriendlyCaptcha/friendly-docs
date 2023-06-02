@@ -66,7 +66,6 @@ Some fields and methods do behave differently, here is a list of the different b
 
 ### Container Configuration and render attributes ([docs](https://developers.google.com/recaptcha/docs/display#render_param))
 
-* `data-theme` has no effect.
 * `data-size` has no effect. The Friendly Captcha widget is fully responsive, you can make it any size you want. You can use plain CSS to resize it.
 * `data-close-callback` has no effect and is never called. In hCaptcha this is called when the user closes the "click-the-pictures" challenge, which is not relevant.
 

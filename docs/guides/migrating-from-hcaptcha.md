@@ -68,7 +68,6 @@ Some fields and methods do behave differently, here is a list of the different b
 
 ### Container Configuration and render attributes ([docs](https://docs.hcaptcha.com/configuration#hcaptcha-container-configuration))
 
-* `data-theme` has no effect.
 * `data-size` has no effect. The Friendly Captcha widget is fully responsive, you can make it any size you want. You can use plain CSS to resize it.
 * `data-chalexpired-callback` is never called, instead `data-expired-callback` is called when the response expired.
 * `data-open-callback` is called when the widget starts solving.
