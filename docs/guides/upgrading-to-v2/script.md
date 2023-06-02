@@ -64,19 +64,21 @@ If you are currently using these callbacks to enable and disable a submit button
 </form>
 ```
 ```javascript
-const myButton = document.getElementById("my-button");
+<script>
+  const myButton = document.getElementById("my-button");
 
-function myCallback(response) {
-  console.log("The response is ", response);
-  // use the response somehow.
-  myButton.disabled = false;
-}
-function myErrorCallback(error) {
-  console.error(error);
+  function myCallback(response) {
+    console.log("The response is ", response);
+    // use the response somehow.
+    myButton.disabled = false;
+  }
+  function myErrorCallback(error) {
+    console.error(error);
 
-  // It is best practice to enable your submit button when an error occurs.
-  myButton.disabled = false
-}
+    // It is best practice to enable your submit button when an error occurs.
+    myButton.disabled = false
+  }
+</script>
 ```
 
 You would replace it with the following
@@ -89,24 +91,26 @@ You would replace it with the following
 </form>
 ```
 ```javascript
-const myWidgetElement = document.querySelector("frc-captcha");
-const myButton = document.getElementById("my-button");
+<script>
+  const myWidgetElement = document.querySelector(".frc-captcha");
+  const myButton = document.getElementById("my-button");
 
-myWidgetElement.addEventListener("frc:widget.statechange", function (event) {
-  const detail = event.detail;
-  if (detail.state === "completed") { 
-    myButton.disabled = false;
-    console.log("The response is ", detail.response);
-  else if (detail.state === "error") {
-    console.error(detail.error);
+  myWidgetElement.addEventListener("frc:widget.statechange", function (event) {
+    const detail = event.detail;
+    if (detail.state === "completed") { 
+      myButton.disabled = false;
+      console.log("The response is ", detail.response);
+    else if (detail.state === "error") {
+      console.error(detail.error);
 
-    // It is best practice to enable your submit button when an error occurs.
-    myButton.disabled = false;
-  }
-  } else {
-    myButton.disabled = true;
-  }
-});
+      // It is best practice to enable your submit button when an error occurs.
+      myButton.disabled = false;
+    }
+    } else {
+      myButton.disabled = true;
+    }
+  });
+</script>
 ```
 
 For more information around the events and possible states, see [the Events documentation](../../sdk/events.md).
