@@ -57,7 +57,7 @@ You can match the style of the widget to your website. By default the theme of t
 
 - `"light"`: A light theme (default).
 - `"dark"`: A dark "night mode" theme.
-- `"auto"`: Match the user's operating system settings.
+- `"auto"`: Match the user's operating system or browser preference settings.
 
 Example:
 ```html
