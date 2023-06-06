@@ -52,6 +52,19 @@ Example:
 <div class="frc-captcha" data-sitekey="<my sitekey>" data-api-endpoint="eu"></div>
 ```
 
+### `data-theme`
+You can match the style of the widget to your website. By default the theme of the widget is light.
+
+- `"light"`: A light theme (default).
+- `"dark"`: A dark "night mode" theme.
+- `"auto"`: Match the user's operating system or browser preference settings.
+
+Example:
+```html
+<!-- Renders a dark widget -->
+<div class="frc-captcha" data-sitekey="<my sitekey>" data-theme="dark"></div>
+```
+
 ### `lang` attribute
 You can use this to force a specific language.
 
@@ -64,3 +77,4 @@ Example:
 ```
 
 ## Javascript SDK
+See the [**CreateWidgetOptions**](./reference/friendly-captcha-sdk.createwidgetoptions.md) for the settings you can pass when creating a widget using `sdk.createWidget()`.
