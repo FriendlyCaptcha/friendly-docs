@@ -80,7 +80,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       // Replace with your project's social card
-      image: "img/friendlycaptcha-social-card.jpg",
+      image: "img/friendlycaptcha-social-card.png",
       navbar: {
         title: "",
         logo: {
