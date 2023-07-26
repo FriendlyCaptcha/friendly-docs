@@ -39,11 +39,20 @@ To force a specific language you can set the `lang` attribute on the HTML elemen
 If you are creating widgets programmatically you can use the `language` field in the [configuration object](../reference/friendly-captcha-sdk.createwidgetoptions.md).
 
 ## Language Codes
-| Language       | Code  |
-|------------|----------------|
-| 🇺🇸 English | `"en"`         |
-| 🇳🇱 Dutch   | `"nl"`         |
 
+| Language | Code  | % Complete              |
+|----------|-------|-------------------------|
+| :flag-nl: **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`  | 100% |
+| :flag-us: **English** | `"en"`, `"en-US"`  | 100% |
+| :flag-gb: **English (UK)** |`"en-GB"`  | 100% |
+| :flag-fr: **French** \| *Français* | `"fr"`, `"fr-FR"`  | 100% |
+| :flag-de: **German** \| *Deutsch* | `"de"`, `"de-DE"`  | 100% |
 
+> This table was last updated 2023-07-26.
 
-Is your preferred language not in the list above? You can contribute translations [here](/).
+::::tip Language not supported?
+
+Is your preferred language not in the table above? Please help by [**contributing translations**](https://poeditor.com/join/project/lrdZQ5Uk6D).
+
+::::
+
