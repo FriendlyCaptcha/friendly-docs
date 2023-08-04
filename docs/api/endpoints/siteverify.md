@@ -2,13 +2,13 @@
 sidebar_position: 0
 ---
 
-# `/api/v2/siteverify`
+# `/api/v2/captcha/siteverify`
 
 The siteverify endpoint is used to verify captcha responses. A captcha response is the value that is embedded in your form by the captcha widget when the challenge has been completed.
 
 ## Request
 
-Make a **POST** request to `https://global.frcapi.com/api/v2/siteverify` with the following parameters:
+Make a **POST** request to `https://global.frcapi.com/api/v2/captcha/siteverify` with the following parameters:
 
 | POST Parameter | Type | Description |
 |----------------|------|-----------------------------------------------------|
@@ -33,8 +33,8 @@ The response body is a JSON object which has a `success` field that tells you wh
   "success": true,
   "data": { 
     "challenge": {
-        "timestamp": 1685098040, // Timestamp when the captcha challenge was completed.
-        "origin": "example.com" // Origin where the challenge happened. This can be empty if unknown.
+        "timestamp": "2023-08-04T13:01:25Z", // Timestamp when the captcha challenge was completed.
+        "origin": "https://example.com" // Origin where the challenge happened. This can be empty if unknown.
     }
   }
 }

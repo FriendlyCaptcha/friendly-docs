@@ -24,7 +24,7 @@ reset(opts?: WidgetResetOptions): void;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  opts | WidgetResetOptions | _(Optional)_ |
+|  opts | [WidgetResetOptions](./friendly-captcha-sdk.widgetresetoptions.md) | _(Optional)_ |
 
 **Returns:**
 

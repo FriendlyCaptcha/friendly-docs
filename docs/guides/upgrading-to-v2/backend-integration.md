@@ -19,10 +19,10 @@ https://api.friendlycaptcha.com/api/v1/siteverify
 to
 
 ```shell
-https://global.frcapi.com/api/v2/siteverify
+https://global.frcapi.com/api/v2/captcha/siteverify
 
 # or in case you prefer to talk to our EU endpoint from your backend
-https://eu.frcapi.com/api/v2/siteverify
+https://eu.frcapi.com/api/v2/captcha/siteverify
 ```
 
 ## 3. Replace the secret field.

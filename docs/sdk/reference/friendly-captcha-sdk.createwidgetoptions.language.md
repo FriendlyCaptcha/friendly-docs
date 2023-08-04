@@ -12,6 +12,8 @@ sidebar_class_name: sidebar-hidden
 
 Language code such as "en" for English or "de" for German. Defaults to automatic language detection.
 
+Usually you should not set this yourself and instead let the widget detect the language automatically.
+
 **Signature:**
 
 ```typescript

@@ -12,7 +12,7 @@ sidebar_class_name: sidebar-hidden
 
 The start mode of the widget.
 
-\* `"auto"`<!-- -->: the widget gets activated as soon as it is created. \* `"focus"`<!-- -->: the widget gets activated as soon as the form above it is focused. \* `"none"`<!-- -->: The widget does not start automatically at all, the user needs to press the widget.
+\* `"auto"`<!-- -->: the widget gets activated as soon as it is created. \* `"focus"`<!-- -->: the widget gets activated as soon as the form above it is focused. \* `"none"`<!-- -->: The widget does not get activated automatically at all, the user needs to press the widget (or `.start()` gets called using the Javascript API).
 
 **Signature:**
 

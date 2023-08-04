@@ -15,5 +15,5 @@ The state the widget is in. See the \[widget lifecycle\](../lifecycle) docs for 
 **Signature:**
 
 ```typescript
-export declare type WidgetState = "init" | "reset" | "ready" | "requesting" | "solving" | "verifying" | "completed" | "expired" | "error" | "destroyed";
+export declare type WidgetState = "init" | "reset" | "unactivated" | "activating" | "activated" | "requesting" | "solving" | "verifying" | "completed" | "expired" | "error" | "destroyed";
 ```

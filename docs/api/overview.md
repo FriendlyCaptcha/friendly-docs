@@ -10,5 +10,5 @@ sidebar_position: 1
 
 ## Endpoints
 
-### [`/api/v2/siteverify`](./endpoints/siteverify.md)  
+### [`/api/v2/captcha/siteverify`](./endpoints/siteverify.md)  
   The **Siteverify** endpoint is used to verify the captcha responses you receive from your users.
