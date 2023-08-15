@@ -44,7 +44,8 @@ Example:
 
 ### `data-api-endpoint`
 *Only relevant if you are using our [dedicated EU endpoint service](/)*.
-By default the widget fetches puzzles from `https://global.frcapi.com/api/v1/puzzle`, which serves puzzles globally. As a premium service we offer an alternative endpoint that serves requests from datacenters in Germany only.
+
+By default the widget fetches puzzles from `https://global.frcapi.com/api/v2/captcha`, which serves puzzles globally. As a premium service we offer an alternative endpoint that serves requests from datacenters in Germany only. You can either specify a URL, `"eu"` or `"global"`.
 
 Example:
 ```html
