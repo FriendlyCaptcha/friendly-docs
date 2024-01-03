@@ -78,4 +78,4 @@ Example:
 ```
 
 ## Javascript SDK
-See the [**CreateWidgetOptions**](./reference/friendly-captcha-sdk.createwidgetoptions.md) for the settings you can pass when creating a widget using `sdk.createWidget()`.
+See the [**CreateWidgetOptions**](./reference/sdk.createwidgetoptions.md) for the settings you can pass when creating a widget using `sdk.createWidget()`.
