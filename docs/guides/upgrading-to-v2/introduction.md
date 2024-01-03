@@ -31,7 +31,7 @@ The widget for **v2** looks like this:
 ![Screenshot of widget v2 that has not been started yet](./widget-v2-ready.png) ![Screenshot of widget v2 that has been finished](./widget-v2-completed.png)
 
 The NPM package for **v2** is [`@friendlycaptcha/sdk`](https://www.npmjs.com/package/@friendlycaptcha/sdk).  
-The siteverify endpoint for v2 is `https://global.frcapi.com/api/v2/siteverify`.
+The siteverify endpoint for v2 is `https://global.frcapi.com/api/v2/captcha/siteverify`.
 
 ## Switching from v1 to v2
 

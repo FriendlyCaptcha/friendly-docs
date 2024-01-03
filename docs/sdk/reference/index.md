@@ -13,4 +13,4 @@ hide_title: true
 
 |  Package | Description |
 |  --- | --- |
-|  [friendly-captcha-sdk](./friendly-captcha-sdk.md) | A library for integrating Friendly Captcha into your website. This SDK allows you to create captcha widgets, respond to their changes, and interact with them programmatically. |
+|  [@friendlycaptcha/sdk](./sdk.md) | A library for integrating Friendly Captcha into your website. This SDK allows you to create captcha widgets, respond to their changes, and interact with them programmatically. |

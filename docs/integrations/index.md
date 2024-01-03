@@ -18,5 +18,10 @@ You can implement Friendly Captcha into any framework or programming language by
 
 | Programming Language / Platform | Name | Supported widget versions | Source | Type
 |----------------|-|-|-|-|
+| **PHP** | [**friendlycaptcha/sdk**](https://packagist.org/packages/friendlycaptcha/sdk) | **v2** | [Github](https://github.com/friendlycaptcha/friendly-captcha-php) | Official |
+| **Python** | [**friendly-captcha-client**](https://packagist.org/packages/friendlycaptcha/sdk) | **v2** | [Github](https://github.com/friendlycaptcha/friendly-captcha-python) | Official |
+| **Go** | [**friendly-captcha-go**](https://github.com/friendlycaptcha/friendly-captcha-go) (WIP) | **v2** | [Github](https://github.com/friendlycaptcha/friendly-captcha-go) | Official |
+| **Javascript** (Node, Serviceworker, Deno) | [**@friendlycaptcha/server-sdk**](https://www.npmjs.com/package/@friendlycaptcha/server-sdk) (WIP) | **v2** | [Github](https://github.com/friendlycaptcha/friendly-captcha-javascript) | Official |
 | **JVM** (Java, Kotlin, Scala, ...) | [**dheid/friendlycaptcha**](https://github.com/dheid/friendlycaptcha) | **v1** | [Github](https://github.com/dheid/friendlycaptcha) | Third Party |
+| **Go** | [**friendly-captcha-go-sdk**](https://github.com/friendlycaptcha/friendly-captcha-go-sdk) | **v1** | [Github](https://github.com/friendlycaptcha/friendly-captcha-go-sdk) | Official |
 

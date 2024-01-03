@@ -23,7 +23,7 @@ You will need an API key to prove it's you, you can create one on the [**API Key
 
 ### Make the siteverify request
 
-To verify the CAPTCHA solution, make a **POST** request to `https://global.frcapi.com/api/v2/siteverify` with the following parameters:
+To verify the CAPTCHA solution, make a **POST** request to `https://global.frcapi.com/api/v2/captcha/siteverify` with the following parameters:
 
 | POST Parameter | Type | Description |
 |----------------|----------------|-------------------------------------------------------------------------------|

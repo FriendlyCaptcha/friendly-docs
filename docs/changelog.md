@@ -4,5 +4,4 @@ sidebar_position: 8
 
 # Changelog
 
-## 0.1.0
-Initial public beta release of v2.
+To view an overview of the changes to our SDK package, see the changelog [here](https://github.com/FriendlyCaptcha/friendly-captcha-sdk/blob/main/CHANGELOG.md).
