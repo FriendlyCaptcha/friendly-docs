@@ -110,4 +110,4 @@ See also the [**widget lifecycle documentation**](./lifecycle).
 ```
 
 ### WidgetError
-For the exact specification of the `error` fields in the event payload, see the [reference here](./reference/friendly-captcha-sdk.widgeterrordata).
+For the exact specification of the `error` fields in the event payload, see the [reference here](./reference/sdk.widgeterrordata).

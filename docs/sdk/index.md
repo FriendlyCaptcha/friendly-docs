@@ -20,7 +20,7 @@ Events your Javascript code can listen to to react to changes in the widget. Thi
 ### [Widget Lifecycle](./lifecycle.md)
 The widget has a fixed amount of states it can be in.
 
-### [SDK Reference](./reference/friendly-captcha-sdk)
+### [SDK Reference](./reference/sdk)
 The code documentation generated from the [SDK codebase](https://github.com/friendlycaptcha/friendly-captcha-sdk).
 
 ## Advanced Topics
