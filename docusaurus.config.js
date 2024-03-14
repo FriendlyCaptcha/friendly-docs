@@ -79,6 +79,13 @@ const config = {
         defaultMode: "light",
         respectPrefersColorScheme: true,
       },
+      announcementBar: {
+        id: "v2-docs-warning",
+        content:
+          "You're looking at the Friendly Capthca V2 Docs. If you're looking for the Friendly Captcha V1 Docs you can find  them <a href='https://docs.friendlycaptcha.com'>here</a>.",
+        backgroundColor: "#ffb731",
+        textColor: "#333",
+      },
       // Replace with your project's social card
       image: "img/friendlycaptcha-social-card.png",
       navbar: {
