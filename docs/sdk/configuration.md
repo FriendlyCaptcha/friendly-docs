@@ -34,12 +34,12 @@ Example:
 <div class="frc-captcha" data-sitekey="<my sitekey>" data-start="auto"></div>
 ```
 
-### `data-response-field-name`
+### `data-form-field-name`
 By default a hidden form field with name `frc-captcha-response` is created. You can change the name of this field by setting this attribute, which can be useful for integrations with certain frameworks and content management systems.
 
 Example:
 ```html
-<div class="frc-captcha" data-sitekey="<my sitekey>" data-solution-field-name="my-captcha-solution-field"></div>
+<div class="frc-captcha" data-sitekey="<my sitekey>" data-form-field-name="my-captcha-solution-field"></div>
 ```
 
 ### `data-api-endpoint`
