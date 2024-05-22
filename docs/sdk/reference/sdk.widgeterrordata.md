@@ -23,3 +23,4 @@ export interface WidgetErrorData
 |  --- | --- | --- | --- |
 |  [code](./sdk.widgeterrordata.code.md) |  | [WidgetErrorCode](./sdk.widgeterrorcode.md) | The error code. |
 |  [detail](./sdk.widgeterrordata.detail.md) |  | string | <p>More details about the error to help debugging. This value is not localized and will change between versions.</p><p>You can print this to the console, but make sure not to depend on it in your code.</p> |
+|  [title?](./sdk.widgeterrordata.title.md) |  | string | _(Optional)_ Localization key, such as <code>t_verification_failed</code>. |

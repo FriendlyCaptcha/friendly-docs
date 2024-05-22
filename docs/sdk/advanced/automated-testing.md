@@ -11,7 +11,7 @@ This page has some tips and approaches that will help work out a testing story f
 ## Testing tips
 
 ### Mocking out the API
-The easiest and most recommended approach is to mock out the API in the backend. Instead of calling our [siteverify API](../../api/endpoints/siteverify) and getting the JSON response, you instead always use `{success: true}` when running in test mode.
+The easiest and recommended approach is to mock out the API in the backend. Instead of calling our [siteverify API](../../api/endpoints/siteverify) and getting the JSON response, you instead always use `{success: true}` when running in test mode.
 
 With this approach you can keep all other code in your application the same.
 

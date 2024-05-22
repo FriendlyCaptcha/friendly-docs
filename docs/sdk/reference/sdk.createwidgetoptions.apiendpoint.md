@@ -15,5 +15,5 @@ A custom endpoint from which the agent and widgets are loaded.
 **Signature:**
 
 ```typescript
-apiEndpoint?: string;
+apiEndpoint?: string | "eu" | "global";
 ```

@@ -69,7 +69,7 @@ Some fields and methods do behave differently, here is a list of the different b
 ### Container Configuration and render attributes ([docs](https://docs.hcaptcha.com/configuration#hcaptcha-container-configuration))
 
 * `data-size` has no effect. The Friendly Captcha widget is fully responsive, you can make it any size you want. You can use plain CSS to resize it.
-* `data-chalexpired-callback` is never called, instead `data-expired-callback` is called when the response expired.
+* `data-chalexpired-callback` is never called, instead `data-expired-callback` is called when the captcha response expires.
 * `data-open-callback` is called when the widget starts solving.
 * `data-close-callback` has no effect and is never called. In hCaptcha this is called when the user closes the "click-the-pictures" challenge, which is not relevant.
 
