@@ -82,7 +82,7 @@ const config = {
       announcementBar: {
         id: "v2-docs-warning",
         content:
-          "You're looking at the Friendly Captcha V2 Docs which is in <strong>early preview</strong>. The V1 Docs are found <a href='https://docs.friendlycaptcha.com'>here</a>.",
+          "You're looking at the Friendly Captcha v2 Docs which is in <strong>early preview</strong>. The v1 Docs are found <a href='https://docs.friendlycaptcha.com'>here</a>.",
         backgroundColor: "#ffb731",
         textColor: "#333",
       },

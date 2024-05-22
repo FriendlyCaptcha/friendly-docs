@@ -27,4 +27,4 @@ You can create API keys in the [Friendly Captcha Dashboard](https://app.friendly
 ### Some notes
 * API keys can be used to verify captcha respones for all sitekeys in your account.
 * There is no cost to creating more API keys.
-* The API key can only be viewed when it is first created, make sure to copy it somewhere safe. If you lose your API key, you should create a new one.
+* An API key can only be viewed when it is first created, make sure to copy it somewhere safe. If you lose your API key, you should create a new one.
