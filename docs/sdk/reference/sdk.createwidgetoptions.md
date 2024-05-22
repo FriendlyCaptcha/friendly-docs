@@ -22,7 +22,7 @@ export interface CreateWidgetOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [apiEndpoint?](./sdk.createwidgetoptions.apiendpoint.md) |  | string | _(Optional)_ A custom endpoint from which the agent and widgets are loaded. |
+|  [apiEndpoint?](./sdk.createwidgetoptions.apiendpoint.md) |  | string &#124; "eu" &#124; "global" | _(Optional)_ A custom endpoint from which the agent and widgets are loaded. |
 |  [element](./sdk.createwidgetoptions.element.md) |  | HTMLElement | The HTML element to mount to, usually this is an element with class <code>.frc-captcha</code>. |
 |  [formFieldName?](./sdk.createwidgetoptions.formfieldname.md) |  | string &#124; null | _(Optional)_ The name of the field in the form that is set, defaults to <code>frc-captcha-response</code>. |
 |  [language?](./sdk.createwidgetoptions.language.md) |  | string | <p>_(Optional)_ Language code such as "en" for English or "de" for German. Defaults to automatic language detection.</p><p>Usually you should not set this yourself and instead let the widget detect the language automatically.</p> |
