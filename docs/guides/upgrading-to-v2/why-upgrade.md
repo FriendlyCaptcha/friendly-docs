@@ -28,7 +28,7 @@ With v2 we include learnings of (almost) 3 years of Friendly Captcha. This docum
 
 ## When can I upgrade?
 
-V2 is currently in a limited beta while we iron out the last bugs. V2 will be available to all users later this year (2023).
+V2 is currently in a limited beta while we iron out the last bugs. V2 will be available to all users later this year.
 
 ## What happens to V1?
 V1 will keep working and we will maintain it moving forward for multiple years.
