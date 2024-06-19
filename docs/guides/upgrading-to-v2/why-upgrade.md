@@ -36,4 +36,9 @@ V1 will keep working and we will maintain it moving forward for multiple years.
 At some point we will not allow newly created sitekeys to use V1.
 
 ## How do I upgrade?
+
+:::tip
+If you want to test Friendly Captcha V2 now, you can apply for the beta phase [**here**](https://tally.so/r/n0MGDA).
+:::
+
 Follow the guide [here](./introduction.md).
