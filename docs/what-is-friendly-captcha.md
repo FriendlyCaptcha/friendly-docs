@@ -31,3 +31,4 @@ This happens in the background, by the time the user is ready to submit a form o
 * [**The Friendly Captcha website**](https://friendlycaptcha.com) provides more details about our service. You can try Friendly Captcha for 30 days at no cost.
 * To integrate Friendly Captcha to your website, follow our [**Getting Started**](./getting-started/introduction) guide.
 * If you are switching from **Google reCAPTCHA** or **hCaptcha**, check out the [**Migration Guide**](./guides/)
+* If you are upgrading from Friendly Captcha v1, check out the [Upgrade Guide](./guides/upgrading-to-v2/introduction).
