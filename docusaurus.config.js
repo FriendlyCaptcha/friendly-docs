@@ -146,6 +146,10 @@ const config = {
                 label: "Guides",
                 to: "/docs/guides/",
               },
+              {
+                label: "Integrations",
+                to: "/docs/integrations/",
+              }
             ],
           },
           {
