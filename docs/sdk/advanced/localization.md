@@ -45,13 +45,13 @@ If you are creating widgets programmatically you can use the `language` field in
 | :flag-nl: **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`  | 100% |
 | :flag-us: **English** | `"en"`, `"en-US"`  | 100% |
 | :flag-gb: **English (UK)** |`"en-GB"`  | 100% |
-| :flag-fr: **French** \| *Français* | `"fr"`, `"fr-FR"`  | 98% |
+| :flag-fr: **French** \| *Français* | `"fr"`, `"fr-FR"`  | 100% |
 | :flag-de: **German** \| *Deutsch* | `"de"`, `"de-DE"`  | 100% |
 | :flag-hu: **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`  | 51% |
-| :flag-it: **Italian** \| *Italiano* | `"it"`, `"it-IT"`  | 94% |
-| :flag-es: **Spanish** \| *Español* | `"es"`, `"es-ES"`  | 98% |
+| :flag-it: **Italian** \| *Italiano* | `"it"`, `"it-IT"`  | 100% |
+| :flag-es: **Spanish** \| *Español* | `"es"`, `"es-ES"`  | 100% |
 
-> This table was last updated 2024-05-22.
+> This table was last updated 2024-06-25.
 
 ::::tip Language not supported?
 
