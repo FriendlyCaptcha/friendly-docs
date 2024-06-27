@@ -15,5 +15,5 @@ In most cases you will only need to add the `iframe-src: *.frcapi.com` directive
 Content-Security-Policy: default-src 'self'
 
 # new header
-Content-Security-Policy: default-src 'self'; frame-src *.frcapi.com
+Content-Security-Policy: default-src 'self'; iframe-src *.frcapi.com
 ```
