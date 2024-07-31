@@ -1,11 +1,17 @@
+bpadberg:
+  name: Benedict Padberg
+  title: Co-founder / CEO @ Friendly Captcha
+  url: https://github.com/dev-love
+  image_url: https://github.com/dev-love.png
+
 gzuidhof:
   name: Guido Zuidhof
   title: Co-founder / CTO @ Friendly Captcha
   url: https://github.com/gzuidhof
   image_url: https://github.com/gzuidhof.png
 
-bpadberg:
-  name: Benedict Padberg
-  title: Co-founder / CEO @ Friendly Captcha
-  url: https://github.com/dev-love
-  image_url: https://github.com/dev-love.png
+imiric:
+  name: Ivan Mirić
+  title: Senior Engineer @ Friendly Captcha
+  url: https://github.com/imiric
+  image_url: /img/ivan.jpg
