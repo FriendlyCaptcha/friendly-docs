@@ -8,7 +8,7 @@ sidebar_position: 2
 
 Website owner integrate Friendly Captcha by adding a widget to their website. This widget helps protect against bots and spam requests.
 
-![Widget screenshot](./widget-v2-ready.png)  
+![Widget screenshot](/img/widget-v2-ready.png)  
 *Screenshot of the Friendly Captcha Widget*.
 
 
