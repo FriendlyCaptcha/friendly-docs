@@ -20,7 +20,7 @@ We are working on bringing v2 support to all popular languages and frameworks.
 
 
 The widget for **v1** looks like this:  
-![Screenshot of widget v1 that has not been started yet](./widget-v1-ready.png) ![Screenshot of widget v1 that has been finished](./widget-v1-completed.png)
+![Screenshot of widget v1 that has not been started yet](/img/widget-v1-ready.png) ![Screenshot of widget v1 that has been finished](/img/widget-v1-completed.png)
 
 The NPM package for **v1** is [`friendly-challenge`](https://www.npmjs.com/package/friendly-challenge).  
 The siteverify endpoint for v1 is `https://api.friendlycaptcha.com/api/v1/siteverify`.
@@ -28,7 +28,7 @@ The siteverify endpoint for v1 is `https://api.friendlycaptcha.com/api/v1/siteve
 #### Friendly Captcha **v2**
 
 The widget for **v2** looks like this:  
-![Screenshot of widget v2 that has not been started yet](./widget-v2-ready.png) ![Screenshot of widget v2 that has been finished](./widget-v2-completed.png)
+![Screenshot of widget v2 that has not been started yet](/img/widget-v2-ready.png) ![Screenshot of widget v2 that has been finished](/img/widget-v2-completed.png)
 
 The NPM package for **v2** is [`@friendlycaptcha/sdk`](https://www.npmjs.com/package/@friendlycaptcha/sdk).  
 The siteverify endpoint for v2 is `https://global.frcapi.com/api/v2/captcha/siteverify`.

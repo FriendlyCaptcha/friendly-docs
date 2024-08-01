@@ -20,7 +20,7 @@ Since launching Friendly Captcha in 2020 we've grown a lot. Friendly Captcha now
 
 Some improvements however are hard to fit into the existing system. In 2022 we decided to start building version 2 of our captcha product, incorporating all the learnings over the past years.
 
-![Screenshot of v2 captcha widget](../../docs/guides/upgrading-to-v2/widget-v2-ready.png)
+![Screenshot of v2 captcha widget](/img/widget-v2-ready.png)
 
 ## Rollout
 We are deliberately slow and careful in rolling out v2 to all Friendly Captcha subscribers. 
