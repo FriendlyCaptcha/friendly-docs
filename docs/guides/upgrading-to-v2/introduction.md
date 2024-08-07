@@ -35,6 +35,12 @@ The siteverify endpoint for v2 is `https://global.frcapi.com/api/v2/captcha/site
 
 ## Switching from v1 to v2
 
+### Enable v2 support
+
+In your Friendly Captcha administration dashboard, select "v2" for the applications you wish to use v2 on.
+
+<!-- TODO: Add link and screenshot -->
+
 ### Clientside changes (= changes to your website)
 
 #### Script tag installation

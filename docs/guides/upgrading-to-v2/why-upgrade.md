@@ -29,7 +29,7 @@ With v2 we include learnings from over 3 years of Friendly Captcha. This documen
 
 ## When can I upgrade?
 
-V2 is currently available on an invite-only basis. V2 will be available to all users later this year.
+Since July 2024, V2 is available as an open beta for all users.
 
 ## What happens to V1?
 V1 will keep working and we will maintain it moving forward for multiple years.
@@ -38,8 +38,4 @@ At some point we will not allow newly created sitekeys to use V1.
 
 ## How do I upgrade?
 
-:::tip
-If you want to test Friendly Captcha v2 now, you can apply for the beta phase [**here**](https://tally.so/r/n0MGDA).
-:::
-
-After v2 is enabled for your account, follow the upgrade guide [here](./introduction.md).
+Follow the upgrade guide [here](./introduction.md).
