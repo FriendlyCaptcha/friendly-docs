@@ -53,6 +53,10 @@ const config = {
             current: {
               label: 'v2',
               path: 'v2',
+              banner: 'unreleased',
+            },
+            v1: {
+              banner: 'none',
             },
           },
         },
@@ -85,14 +89,6 @@ const config = {
       colorMode: {
         defaultMode: "light",
         respectPrefersColorScheme: true,
-      },
-      announcementBar: {
-        id: "v2-docs-warning",
-        content:
-          "You're looking at the Friendly Captcha v2 Docs which is in <strong>early preview</strong>. Apply <a href='https://developer.friendlycaptcha.com/docs/guides/upgrading-to-v2/why-upgrade#how-do-i-upgrade'>here</a> to gain access to the closed <strong>BETA</strong>.",
-        backgroundColor: "#ffb731",
-        textColor: "#333",
-        isCloseable: false,
       },
       // Replace with your project's social card
       image: "img/friendlycaptcha-social-card.png",
