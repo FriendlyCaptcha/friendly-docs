@@ -58,7 +58,7 @@ Example:
 You can completely omit this hidden form field by setting this value to `"-"`.
 
 ### data-puzzle-endpoint
-*Only relevant if you are using our [dedicated EU endpoint service](/#/eu_endpoint)*.
+*Only relevant if you are using our [dedicated EU endpoint service](./eu-endpoint)*.
 By default the widget fetches puzzles from `https://api.friendlycaptcha.com/api/v1/puzzle`, which serves puzzles globally from over 200 data centers. As a premium service we offer an alternative endpoint that serves requests from datacenters in Germany only.
 
 Example:

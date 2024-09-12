@@ -5,7 +5,7 @@ Plugins and libraries allow you to implement Friendly Captcha into your product 
 We aim to support all popular CMS frameworks and programming languages.
 
 ### Don't see your framework or programming language below?
-You can implement Friendly Captcha into any framework or programming language by following the [Getting Started](../getting-started/introduction) guide.
+You can implement Friendly Captcha into any framework or programming language by following the [Getting Started](/docs/v2/getting-started/introduction) guide.
 
 ## CMS and E-Commerce integrations
 

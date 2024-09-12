@@ -12,4 +12,4 @@ This is the technical documentation which will help you integrate the Friendly C
 ## Next Steps
 - Visit the [**Friendly Captcha website**](https://friendlycaptcha.com), or read the [**one page overview**](./what-is-friendly-captcha).
 - Follow the [**Getting Started**](./getting-started/introduction) tutorial to add Friendly Captcha to your website in 3 steps.
-- Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](/docs/guides).
+- Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](./guides).

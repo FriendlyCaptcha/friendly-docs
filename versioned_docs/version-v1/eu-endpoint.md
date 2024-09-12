@@ -53,7 +53,7 @@ You can do this by specifying both endpoints separated with a comma (`,`) in ord
 ## EU Verification endpoint 
 Your servers can also use our EU endpoint for the verification of submitted puzzles.
 
-Instead of the [usual verification endpoint](./verification_api) your server makes the POST request to `https://eu-api.friendlycaptcha.eu/api/v1/siteverify`.
+Instead of the [usual verification endpoint](./verification-api) your server makes the POST request to `https://eu-api.friendlycaptcha.eu/api/v1/siteverify`.
 
 ## Reference
 For reference, these are the puzzle and siteverify endpoints.

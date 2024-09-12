@@ -162,7 +162,7 @@ class CaptchaState extends State<FriendlyCaptcha> {
 
 The widget takes two required arguments: a `callback` that is called when the widget is completed, and your `sitekey`.
 
-Optionally you can also pass `lang`, `puzzleEndpoint`, `start` (defaults to `"auto"`), `theme` (`"dark"` is the only theme built-in). See the [`data-attributes` documentation](#/widget_api?id=data-start-attribute).
+Optionally you can also pass `lang`, `puzzleEndpoint`, `start` (defaults to `"auto"`), `theme` (`"dark"` is the only theme built-in). See the [`data-attributes` documentation](./widget-api#data-start-attribute).
 
 ```dart
 // Creates a German widget
@@ -177,7 +177,7 @@ FriendlyCaptcha(
 
 - Usually you would store the `solution` that gets passed to the callback in your app's state.
 - When the user performs the action you want to require the captcha for (e.g. user signup), you would send along this solution to your server.
-- In your backend server you then talk to our [verification API](#/verification_api) to check whether the captcha was valid.
+- In your backend server you then talk to our [verification API](./verification-api) to check whether the captcha was valid.
 
 **Possible improvements (contributions welcome!):**
 
