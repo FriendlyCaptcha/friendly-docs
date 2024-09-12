@@ -48,6 +48,13 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v2',
+              path: 'v2',
+            },
+          },
         },
         blog: {
           showReadingTime: true,
@@ -98,20 +105,18 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
+            type: "docsVersion",
             position: "left",
             label: "Docs",
           },
           {
-            to: "/docs/integrations/",
+            to: "/docs/v2/integrations/",
             label: "Integrations",
             position: "left",
           },
           { to: "/blog", label: "Tech Blog", position: "left" },
           {
-            href: "https://docs.friendlycaptcha.com",
-            label: "V1 Docs",
+            type: 'docsVersionDropdown',
             position: "right",
           },
           {
@@ -140,15 +145,15 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/getting-started/introduction",
+                to: "/docs/v2/getting-started/introduction",
               },
               {
                 label: "Guides",
-                to: "/docs/guides/",
+                to: "/docs/v2/guides/",
               },
               {
                 label: "Integrations",
-                to: "/docs/integrations/",
+                to: "/docs/v2/integrations/",
               }
             ],
           },
@@ -157,11 +162,11 @@ const config = {
             items: [
               {
                 label: "API Reference",
-                to: "/docs/api/overview",
+                to: "/docs/v2/api/overview",
               },
               {
                 label: "SDK Reference",
-                to: "/docs/sdk/reference/",
+                to: "/docs/v2/sdk/reference/",
               },
             ],
           },
@@ -175,10 +180,6 @@ const config = {
               {
                 label: "Status",
                 href: "https://status.friendlycaptcha.com",
-              },
-              {
-                label: "V1 Documentation",
-                href: "https://docs.friendlycaptcha.com",
               },
             ],
           },

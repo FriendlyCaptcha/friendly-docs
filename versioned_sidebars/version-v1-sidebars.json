@@ -1,0 +1,50 @@
+{
+  "docs": [
+    "introduction",
+    "installation",
+    "widget-api",
+    "verification-api",
+    {
+      "type": "category",
+      "label": "Advanced",
+      "collapsed": false,
+      "items": [
+        "browser-support",
+        "theme",
+        "flutter",
+        "eu-endpoint",
+        "csp",
+        "openapi-spec",
+        "automated-testing",
+        "changelog"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Links",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "link",
+          "label": "📘 Friendly Captcha website",
+          "href": "https://friendlycaptcha.com"
+        },
+        {
+          "type": "link",
+          "label": "🗂️ Github repository",
+          "href": "https://github.com/friendlycaptcha/friendly-challenge"
+        },
+        {
+          "type": "link",
+          "label": "📦 NPM package",
+          "href": "https://www.npmjs.com/package/friendly-challenge"
+        },
+        {
+          "type": "link",
+          "label": "⚡️ V2 Documentation",
+          "href": "/docs/v2"
+        }
+      ]
+    }
+  ]
+}
