@@ -110,7 +110,7 @@ const config = {
             label: "Docs",
           },
           {
-            to: "/docs/v2/integrations/",
+            to: "integrations",
             label: "Integrations",
             position: "left",
           },
@@ -153,7 +153,7 @@ const config = {
               },
               {
                 label: "Integrations",
-                to: "/docs/v2/integrations/",
+                to: "integrations",
               }
             ],
           },

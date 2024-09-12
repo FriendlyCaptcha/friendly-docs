@@ -9,7 +9,7 @@ This guide describes how to upgrade from v1 to v2 of our widget.
 To learn more about the ways v2 improves upon v1, and why upgrading is worth the effort, [**click here**](./why-upgrade).
 
 :::tip
-If you are using a [plugin or library](../../integrations/index.md) that adds Friendly Captcha to your framework or CMS, usually you only have to update your plugin.
+If you are using a [plugin or library](/integrations) that adds Friendly Captcha to your framework or CMS, usually you only have to update your plugin.
 
 We are working on bringing v2 support to all popular languages and frameworks.
 :::

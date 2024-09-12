@@ -17,7 +17,7 @@ With v2 we include learnings from over 3 years of Friendly Captcha. This documen
   * It offers a reCAPTCHA and hCaptcha compatibility build, making switching easier.
   * It has simplified strict content security policy (CSP) requirements.
   * It supports ancient operating systems that do not support Let's Encrypt SSL certificates (such as Windows XP Service Pack 2).
-  * There are [official SDKs and plugins](../../integrations/index.md) for common programming languages and frameworks.
+  * There are [official SDKs and plugins](/integrations) for common programming languages and frameworks.
 
 ## What has not changed?
 
