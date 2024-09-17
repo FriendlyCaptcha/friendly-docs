@@ -29,20 +29,20 @@ The **friendly-challenge** library contains the code for CAPTCHA widget. You hav
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.17/widget.module.min.js"
+  src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.module.min.js"
   async
   defer
 ></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.17/widget.min.js" async defer></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.18/widget.min.js" async defer></script>
 ```
 
-> Make sure to always import a specific version (e.g. `friendly-challenge@0.9.17`), then you can be sure that the script you import and integrate with your website doesn't change unexpectedly.
+> Make sure to always import a specific version (e.g. `friendly-challenge@0.9.18`), then you can be sure that the script you import and integrate with your website doesn't change unexpectedly.
 
 It is recommended that you include the `async` and `defer` attributes like in the examples above, they make sure that the browser does not wait to load these scripts to show your website. The size of the scripts is 18KB (8.5KB compressed) for modern browsers, and 24KB (10KB compressed) for old browsers.
 
 > If you want to support old browsers, you can instead use a polyfill build, see the [**browser support**](./browser-support#polyfills) page.
 
-##### Download and self-host the widget library (releases)
+##### Download and self-host the widget library (releases, recommended by GDPR)
 
 Instead of using a CDN (e.g. for GDPR reasons) you can of course also download the library .js files and host them on your server.
 Simply download the latest release from one of the CDN's mentioned above, like: https://cdn.jsdelivr.net/npm/friendly-challenge/
@@ -50,7 +50,7 @@ Simply download the latest release from one of the CDN's mentioned above, like: 
 - The module widget.module.min.js: https://cdn.jsdelivr.net/npm/friendly-challenge/widget.module.min.js
 - The nomodule widget.min.js: https://cdn.jsdelivr.net/npm/friendly-challenge/widget.min.js
 
-Please remember to update to the latest release from time to time.
+**Please remember to update to the latest release from time to time.**
 
 #### Option B: Import the library into your Javascript code
 
