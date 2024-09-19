@@ -58,7 +58,7 @@ Instead you would replace the hCaptcha plugin and install a plugin that supports
 
 ## Update your server's integration
 
-Follow the guide [here](../getting-started/siteverify) to set up your server's integration.
+Follow the guide [here](../getting-started/verify) to set up your server's integration.
 
 ## Compatibility notes (only relevant for advanced usage)
 

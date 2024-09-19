@@ -38,6 +38,6 @@ For critical production use-cases, we currently recommend using **v1**. The docs
 
 ## Next Steps
 
-- Follow the [**Getting Started**](./getting-started/introduction) tutorial to add Friendly Captcha to your website in 3 steps.
+- Follow the [**Getting Started**](./getting-started) tutorial to add Friendly Captcha to your website in 3 steps.
 - Visit the [**Friendly Captcha website**](https://friendlycaptcha.com).
 - Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](./guides).

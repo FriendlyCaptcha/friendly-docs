@@ -47,7 +47,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main`,
           lastVersion: 'current',
           versions: {
             current: {
@@ -141,11 +141,11 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/v2/getting-started/introduction",
+                to: "/docs/v2/getting-started",
               },
               {
                 label: "Guides",
-                to: "/docs/v2/guides/",
+                to: "/docs/v2/guides",
               },
               {
                 label: "Integrations",
@@ -162,7 +162,7 @@ const config = {
               },
               {
                 label: "SDK Reference",
-                to: "/docs/v2/sdk/reference/",
+                to: "/docs/v2/sdk/reference",
               },
             ],
           },
@@ -192,7 +192,7 @@ const config = {
               },
               {
                 label: "Wordpress Plugin",
-                href: "https://wordpress.org/plugins/friendly-captcha/",
+                href: "https://wordpress.org/plugins/friendly-captcha",
               },
             ],
           },

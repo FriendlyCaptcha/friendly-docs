@@ -56,7 +56,7 @@ Instead you would replace the reCAPTCHA plugin and install a plugin that support
 
 ## Update your server's integration
 
-Follow the guide [here](../getting-started/siteverify) to set up your server's integration.
+Follow the guide [here](../getting-started/verify) to set up your server's integration.
 
 ## Compatibility notes (only relevant for advanced usage)
 

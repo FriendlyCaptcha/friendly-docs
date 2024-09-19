@@ -1,7 +1,21 @@
 {
   "docs": [
     "introduction",
-    "installation",
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "collapsed": true,
+      "collapsible": true,
+      "link": {
+        "type": "doc",
+        "id": "getting-started/index"
+      },
+      "items": [
+        "getting-started/setup",
+        "getting-started/install",
+        "getting-started/verify"
+      ]
+    },
     "widget-api",
     "verification-api",
     {

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Installing the widget
+# Install the widget
 
 ## Option A: HTML Scripts
 
@@ -43,7 +43,7 @@ You can customize the widget's behavior by using [HTML attributes](../sdk/config
 ::::
 ### Next steps
 
-The next step is to [**verify the captcha response**](./siteverify.md) in your backend server code.
+The next step is to [**verify the captcha response**](./verify.md) in your backend server code.
 
 
 ## Option B: Programmatically (Javascript SDK)
@@ -88,5 +88,4 @@ You can customize the widget's behavior and integrate with it using the SDK. See
 
 ### Next steps
 
-The next step is to [**verify the captcha response**](./siteverify.md) embedded in the request to your backend server.
-
+The next step is to [**verify the captcha response**](./verify.md) embedded in the request to your backend server.
