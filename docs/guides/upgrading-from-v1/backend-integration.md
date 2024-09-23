@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Backend Integration
 
 ## 1. Change the field name in your forms
@@ -55,6 +51,4 @@ The most notable change is that in v2 the `errors` array is removed, and replace
   }
 }
 ```
-For possible values of `error_code`, see the [documentation page](../../api/endpoints/siteverify). The status codes are unchanged.
-
-
+For possible values of `error_code`, see the [documentation page](../../api/siteverify). The status codes are unchanged.

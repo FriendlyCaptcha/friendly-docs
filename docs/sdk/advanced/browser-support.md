@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Browser support
 
 All modern browsers are supported, on both mobile and desktop, all releases up to at least 8 years old.

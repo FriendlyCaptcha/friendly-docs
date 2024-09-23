@@ -1,7 +1,3 @@
----
-sidebar_position: 0
----
-
 # `/api/v2/captcha/siteverify`
 
 The siteverify endpoint is used to verify captcha responses. A captcha response is the value that is embedded in your form by the captcha widget when the challenge has been completed.
@@ -16,7 +12,7 @@ Make a **POST** request to `https://global.frcapi.com/api/v2/captcha/siteverify`
 | `sitekey`        | `string` | **Optional:** the sitekey that you want to make sure the puzzle was generated from. |
 
 :::tip
-Remember to authenticate the request [using the `X-API-Key` header](../authentication).
+Remember to authenticate the request [using the `X-API-Key` header](./authentication).
 :::
 
 You can pass these parameters in a JSON body, or as formdata.
@@ -92,4 +88,4 @@ It is better to temporarily accept bots or spam than to reject all requests. *Do
 If you are seeing an error that includes `method_not_allowed`, you are likely making a HTTP **GET** request. You can fix this by making a HTTP **POST** request instead.
 
 ### How do I use automated testing with Friendly Captcha?
-You can mock out the siteverify response. Instead of talking to our API, your code could always return `{success: true}`. [This documentation page](../../sdk/advanced/automated-testing) has more details and alternative techniques.
+You can mock out the siteverify response. Instead of talking to our API, your code could always return `{success: true}`. [This documentation page](../sdk/advanced/automated-testing) has more details and alternative techniques.

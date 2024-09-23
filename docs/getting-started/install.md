@@ -1,6 +1,3 @@
----
-sidebar_position: 2
----
 # Install the widget
 
 ## Option A: HTML Scripts

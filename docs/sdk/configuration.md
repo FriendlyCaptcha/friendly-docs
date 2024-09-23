@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Configuration
 
 There are two ways you can configure the behavior of the widget.

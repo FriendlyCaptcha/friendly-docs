@@ -1,7 +1,3 @@
----
-sidebar_position: 7
----
-
 # Migrating from hCaptcha
 
 Switching from [hCaptcha](https://www.hcaptcha.com/) to Friendly Captcha is straightforward.

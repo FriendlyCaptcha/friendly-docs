@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Why Upgrade?
 
 With v2 we include learnings from over 3 years of Friendly Captcha. This document outlines the reasons why you should switch to v2.
@@ -42,4 +38,4 @@ At some point we will not allow newly created sitekeys to use V1.
 If you want to test Friendly Captcha v2 now, you can apply for the beta phase [**here**](https://tally.so/r/n0MGDA).
 :::
 
-After v2 is enabled for your account, follow the upgrade guide [here](./introduction.md).
+After v2 is enabled for your account, follow the upgrade guide [here](./index.md).

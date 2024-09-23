@@ -1,7 +1,3 @@
----
-sidebar_position: 30
----
-
 # Language Detection
 
 If your website is in German it makes sense to have the widget in German too.

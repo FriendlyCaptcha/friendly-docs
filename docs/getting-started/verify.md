@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Verify the response
 
 When the captcha challenge is completed by the user, the user's browser receives a piece of text that proves that they completed the challenge. This proof is called the **response**.

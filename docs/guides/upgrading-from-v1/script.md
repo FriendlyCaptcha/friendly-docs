@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Client (CDN script)
 
 This guide runs you through the changes you will have to make when switching from version 1 to version 2 of the Friendly Captcha widget if you are using the script tags. 

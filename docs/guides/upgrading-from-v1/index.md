@@ -1,8 +1,4 @@
----
-sidebar_position: 0
----
-
-# Introduction
+# Upgrading from v1
 
 This guide describes how to upgrade from v1 to v2 of our widget.
 

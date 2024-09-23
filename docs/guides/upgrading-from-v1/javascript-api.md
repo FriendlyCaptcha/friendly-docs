@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Client (Javascript API)
 
 ## 1. Install the new SDK 
@@ -26,7 +22,7 @@ becomes
 import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
 ```
 
-### 2. Change how you create widgets
+## 2. Change how you create widgets
 
 In version one you would create widgets by creating a `WidgetInstance`:
 

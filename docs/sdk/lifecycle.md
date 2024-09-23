@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Lifecycle
 
 The widget has a fixed set of states it can be in.

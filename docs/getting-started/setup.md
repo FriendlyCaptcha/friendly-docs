@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Create a sitekey
 
 Log in to your Friendly Captcha account and head to the [Applications](https://app.friendlycaptcha.eu/dashboard/accounts/-/apps) page.

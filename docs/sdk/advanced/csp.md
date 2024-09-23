@@ -1,7 +1,3 @@
----
-sidebar_position: 100
----
-
 # Content Security Policy (CSP)
 
 Content Security Policy is a way to secure your website from cross-site scripting (XSS).

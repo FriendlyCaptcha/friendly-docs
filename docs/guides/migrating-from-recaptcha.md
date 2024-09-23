@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Migrating from reCAPTCHA
 
 Switching from [Google's reCAPTCHA (v2)](https://www.google.com/recaptcha/about/) to Friendly Captcha is straightforward.

@@ -1,8 +1,4 @@
----
-sidebar_position: 0
----
-
-# Overview
+# Widget SDK
 
 The SDK is the code you add to your website to display captcha widgets on your website.
 
