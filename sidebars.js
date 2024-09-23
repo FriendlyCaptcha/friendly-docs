@@ -14,7 +14,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    "introduction",
+    "index",
     {
       "type": "category",
       "label": "Getting Started",
@@ -58,7 +58,7 @@ const sidebars = {
       "label": "Server-side Validation",
       "link": {
         "type": "doc",
-        "id": "api/overview"
+        "id": "api/index"
       },
       "items": [
         "api/authentication",

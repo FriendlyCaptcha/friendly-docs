@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-slug: /
----
-
 # Introduction
 
 Friendly Captcha is a service that protects websites from bots and abuse in a privacy-friendly and accessible way. To learn more about the company or service, you can visit the [Friendly Captcha website](https://friendlycaptcha.com).

@@ -102,4 +102,4 @@ It is better to temporarily accept bots or spam than to reject all requests. *Do
 :::
 
 ## API Reference
-For more thorough docs, please see the [API Reference](../api/overview.md).
+For more thorough docs, please see the [API Reference](../api/index.md).

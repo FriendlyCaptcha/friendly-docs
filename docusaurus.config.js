@@ -158,7 +158,7 @@ const config = {
             items: [
               {
                 label: "API Reference",
-                to: "/docs/v2/api/overview",
+                to: "/docs/v2/api",
               },
               {
                 label: "SDK Reference",
