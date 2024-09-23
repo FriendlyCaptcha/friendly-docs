@@ -32,7 +32,7 @@ To force a specific language you can set the `lang` attribute on the HTML elemen
 <div class="frc-captcha" lang="de" data-sitekey="<my sitekey>"></div>
 ```
 
-If you are creating widgets programmatically you can use the `language` field in the [configuration object](../reference/sdk.createwidgetoptions.md).
+If you are creating widgets programmatically you can use the `language` field in the [configuration object](../sdk/reference/sdk.createwidgetoptions.md).
 
 ## Language Codes
 

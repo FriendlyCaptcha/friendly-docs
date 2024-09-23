@@ -41,16 +41,6 @@ const sidebars = {
         "sdk/lifecycle",
         {
           "type": "category",
-          "label": "Advanced",
-          "items": [
-            "sdk/advanced/automated-testing",
-            "sdk/advanced/browser-support",
-            "sdk/advanced/localization",
-            "sdk/advanced/csp"
-          ]
-        },
-        {
-          "type": "category",
           "label": "SDK Reference",
           "link": {
             "type": "doc",
@@ -87,6 +77,10 @@ const sidebars = {
         "id": "guides/index"
       },
       "items": [
+        "guides/automated-testing",
+        "guides/browser-support",
+        "guides/localization",
+        "guides/csp",
         {
           "type": "category",
           "label": "Upgrading from v1",

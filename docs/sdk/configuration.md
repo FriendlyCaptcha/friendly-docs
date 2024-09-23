@@ -65,7 +65,7 @@ Example:
 ### `lang` attribute
 You can use this to force a specific language.
 
-We recommend you **only use this if you have to**. The widget [automatically detects and matches the language](./advanced/localization.md) of your website.
+We recommend you **only use this if you have to**. The widget [automatically detects and matches the language](../guides/localization.md) of your website.
 
 Example:
 ```html

@@ -1,5 +1,12 @@
 # Guides
 
+## Advanced
+
+* [Widget Language](./localization.md)
+* [Browser Support](./browser-support)
+* [Automated testing](./automated-testing)
+* [Content-Security Policy](./csp)
+
 ## Migration Guides
 
 * [Switch from Google reCAPTCHA](./migrating-from-recaptcha.md) to Friendly Captcha.
