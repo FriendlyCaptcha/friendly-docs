@@ -27,8 +27,16 @@
         "guides/browser-support",
         "guides/eu-endpoint",
         "guides/csp",
-        "guides/theme",
-        "guides/flutter",
+        {
+          "type": "doc",
+          "id": "guides/theme",
+          "label": "Themes & Dark Mode"
+        },
+        {
+          "type": "doc",
+          "id": "guides/flutter",
+          "label": "Use in Flutter"
+        },
         "guides/openapi-spec"
       ]
     },
