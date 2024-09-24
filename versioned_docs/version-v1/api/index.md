@@ -1,4 +1,4 @@
-# Verification API
+# Server-side Validation
 
 You will need an API key to prove it's you, you can create one on the [**API Keys page**](https://app.friendlycaptcha.eu/dashboard) in the dashboard.
 
@@ -12,7 +12,7 @@ To verify the CAPTCHA solution, make a POST request to `https://api.friendlycapt
 
 You can pass these parameters in a JSON body, or as formdata.
 
-> If your account is on the **Advanced** or **Enterprise** plan your server can also make a request [to our EU endpoint](./eu-endpoint).
+> If your account is on the **Advanced** or **Enterprise** plan your server can also make a request [to our EU endpoint](../guides/eu-endpoint).
 
 ### The verification response
 

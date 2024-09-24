@@ -1,7 +1,3 @@
----
-title: Themes & Dark mode
----
-
 # Customizing the look
 
 The styling of Friendly Captcha is done in plain CSS, and you can change it however you want. A stylesheet gets injected into the `head` of your HTML document when the first widget is loaded.

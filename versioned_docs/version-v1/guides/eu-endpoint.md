@@ -1,8 +1,4 @@
----
-title: 🇪🇺 EU-only Endpoint
----
-
-# 🇪🇺 Dedicated EU Endpoint
+# Dedicated EU Endpoint
 
 By default the FriendlyCaptcha widget talks to our global service served from all over the world to retrieve CAPTCHA puzzles. Depending on your user's geography this request may be served from outside the EU.
 
@@ -53,7 +49,7 @@ You can do this by specifying both endpoints separated with a comma (`,`) in ord
 ## EU Verification endpoint 
 Your servers can also use our EU endpoint for the verification of submitted puzzles.
 
-Instead of the [usual verification endpoint](./verification-api) your server makes the POST request to `https://eu-api.friendlycaptcha.eu/api/v1/siteverify`.
+Instead of the [usual verification endpoint](../api) your server makes the POST request to `https://eu-api.friendlycaptcha.eu/api/v1/siteverify`.
 
 ## Reference
 For reference, these are the puzzle and siteverify endpoints.

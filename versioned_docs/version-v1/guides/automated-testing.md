@@ -1,7 +1,3 @@
----
-title: 🤖 Automated Testing
----
-
 # Automated Testing
 
 Testing can be at odds with a captcha you add to your website or app. Perhaps you use automated testing tools like [Cypress](https://www.cypress.io/), [Selenium](https://www.selenium.dev/), or [Puppeteer](https://github.com/puppeteer/puppeteer). On this page you will find some tips and approaches that will help work out a testing story for pages that include a captcha widget.

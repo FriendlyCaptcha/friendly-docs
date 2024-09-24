@@ -20,7 +20,7 @@ The **friendly-challenge** library contains the code for CAPTCHA widget. You hav
 
 It is recommended that you include the `async` and `defer` attributes like in the examples above, they make sure that the browser does not wait to load these scripts to show your website. The size of the scripts is 18KB (8.5KB compressed) for modern browsers, and 24KB (10KB compressed) for old browsers.
 
-> If you want to support old browsers, you can instead use a polyfill build, see the [**browser support**](../browser-support#polyfills) page.
+> If you want to support old browsers, you can instead use a polyfill build, see the [**browser support**](../guides/browser-support#polyfills) page.
 
 #### Download and self-host the widget library (releases, recommended by GDPR)
 
@@ -46,7 +46,7 @@ You can then import it into your app:
 import "friendly-challenge/widget";
 ```
 
-> It is also possible to create and interact with the widget using the Javascript API. In this tutorial we will consider the simple case in which you want to secure a simple HTML form. If you are making a single page application (using e.g. React) you will probably want to use the API instead. See the [API documentation page](../widget-api).
+> It is also possible to create and interact with the widget using the JavaScript API. In this tutorial we will consider the simple case in which you want to secure a simple HTML form. If you are making a single page application (using e.g. React) you will probably want to use the SDK instead. See the [SDK documentation page](../sdk).
 
 ## Add the widget itself
 

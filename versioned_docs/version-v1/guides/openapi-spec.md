@@ -1,7 +1,3 @@
----
-title: ⚙️ OpenAPI
----
-
 # OpenAPI Specification
 
 For advanced usage of our public API, please refer to our OpenAPI spec:

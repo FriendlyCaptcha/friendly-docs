@@ -1,4 +1,4 @@
-# Widget API
+# Widget SDK
 
 You can listen to events from the widget, or even create your own widgets programatically. Below is some documentation on how to do either.
 
@@ -65,7 +65,7 @@ You can completely omit this hidden form field by setting this value to `"-"`.
 
 ### data-puzzle-endpoint
 
-_Only relevant if you are using our [dedicated EU endpoint service](./eu-endpoint)_.
+_Only relevant if you are using our [dedicated EU endpoint service](../guides/eu-endpoint)_.
 By default the widget fetches puzzles from `https://api.friendlycaptcha.com/api/v1/puzzle`, which serves puzzles globally from over 200 data centers. As a premium service we offer an alternative endpoint that serves requests from datacenters in Germany only.
 
 Example:
