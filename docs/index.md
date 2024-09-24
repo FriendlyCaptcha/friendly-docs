@@ -29,7 +29,11 @@ There are two versions of the Friendly Captcha service, called **v1** and **v2**
 
 At the moment, **v2** is being offered in a closed beta, as we roll it out to all customers. Those interested in gaining access to the beta can [**apply here**](./guides/upgrading-from-v1/why-upgrade#how-do-i-upgrade).
 
+:::info
+
 For critical production use-cases, we currently recommend using **v1**. The docs for **v1** are available [**here**](/docs/v1).
+
+:::
 
 ## Next Steps
 
