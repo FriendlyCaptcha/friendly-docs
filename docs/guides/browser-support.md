@@ -1,4 +1,4 @@
-# Browser support
+# Browser Support
 
 All modern browsers are supported, on both mobile and desktop, all releases up to at least 8 years old.
 
