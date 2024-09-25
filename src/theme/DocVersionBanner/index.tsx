@@ -104,7 +104,7 @@ function LatestVersionSuggestionLabel({
         ),
         here: (
           <b>
-            <Link to='/docs/v2/guides/upgrading-from-v1/why-upgrade#how-do-i-upgrade'>
+            <Link to='/docs/v2/versions#how-do-i-upgrade'>
               here
             </Link>
           </b>

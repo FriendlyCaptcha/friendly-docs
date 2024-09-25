@@ -45,7 +45,7 @@ If you want to test Friendly Captcha v2 now, you can apply for the beta phase [*
 
 ## How do I upgrade?
 
-After v2 is enabled for your account, you can [follow the upgrade guide](./guides/upgrading-from-v1).
+After v2 is enabled for your account, you can [follow the upgrade guide](/docs/v2/guides/upgrading-from-v1).
 
 ## How can I tell if I'm using v1 or v2?
 
