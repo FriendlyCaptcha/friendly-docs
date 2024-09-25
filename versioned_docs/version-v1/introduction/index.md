@@ -1,3 +1,7 @@
+---
+slug: /
+---
+
 # Introduction
 
 Friendly Captcha is a service that protects websites from bots and abuse in a privacy-friendly and accessible way. To learn more about the company or service, you can visit the [Friendly Captcha website](https://friendlycaptcha.com).
@@ -5,8 +9,9 @@ Friendly Captcha is a service that protects websites from bots and abuse in a pr
 This site contains the technical documentation that will help you integrate the Friendly Captcha's anti-abuse service into your website. Integration entails adding a widget to the websites you want to protect. The Friendly Captcha widget looks like this:
 
 <figure style={{ textAlign: 'center' }}>
-    <img src="/img/widget-v2-ready.png" alt="Screenshot of the Friendly Captcha widget" />
-    <figcaption><i>Screenshot of the Friendly Captcha Widget</i></figcaption>
+    <img src="https://i.imgur.com/BNRdsxS.png" alt="Friendly Captcha widget solving screenshot" />
+    <img src="https://i.imgur.com/HlMY7QM.png" alt="Friendly Captcha widget finished screenshot" />
+    <figcaption><i>Screenshots of the Friendly Captcha widget</i></figcaption>
 </figure>
 
 ## What's different about Friendly Captcha?
@@ -23,20 +28,8 @@ The Friendly Captcha widget serves a cryptographic puzzle which is solved by the
 
 This happens in the background, so that by the time a user is ready to submit a form on your website, the puzzle is often already solved.
 
-## v1 and v2
-
-There are two versions of the Friendly Captcha service, called **v1** and **v2**. The second version contains technical and non-technical enhancements that come from state-of-the-art improvements and learnings from **v1**. These enhancements range from improved protection, to easier integration, to better user experience, and beyond. You can learn more about the differences between **v1** and **v2** [**here**](./guides/upgrading-from-v1/why-upgrade).
-
-At the moment, **v2** is being offered in a closed beta, as we roll it out to all customers. Those interested in gaining access to the beta can [**apply here**](./guides/upgrading-from-v1/why-upgrade#how-do-i-upgrade).
-
-:::info
-
-For critical production use-cases, we currently recommend using **v1**. The docs for **v1** are available [**here**](/docs/v1).
-
-:::
-
 ## Next Steps
 
 - Follow the [**Getting Started**](./getting-started) tutorial to add Friendly Captcha to your website in 3 steps.
 - Visit the [**Friendly Captcha website**](https://friendlycaptcha.com).
-- Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](./guides).
+- Upgrading to **v2**? Follow our [**guide**](/docs/v2/guides/upgrading-from-v1).

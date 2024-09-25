@@ -14,7 +14,18 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    "index",
+    {
+      "type": "category",
+      "label": "Introduction",
+      "collapsible": false,
+      "link": {
+        "type": "doc",
+        "id": "introduction/index"
+      },
+      "items": [
+        "introduction/v1-and-v2"
+      ]
+    },
     {
       "type": "category",
       "label": "Getting Started",
@@ -89,7 +100,6 @@ const sidebars = {
             "id": "guides/upgrading-from-v1/index"
           },
           "items": [
-            "guides/upgrading-from-v1/why-upgrade",
             "guides/upgrading-from-v1/javascript-api",
             "guides/upgrading-from-v1/script",
             "guides/upgrading-from-v1/backend-integration"

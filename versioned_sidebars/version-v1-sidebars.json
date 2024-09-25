@@ -1,6 +1,17 @@
 {
   "docs": [
-    "index",
+    {
+      "type": "category",
+      "label": "Introduction",
+      "collapsible": false,
+      "link": {
+        "type": "doc",
+        "id": "introduction/index"
+      },
+      "items": [
+        "introduction/v1-and-v2"
+      ]
+    },
     {
       "type": "category",
       "label": "Getting Started",
