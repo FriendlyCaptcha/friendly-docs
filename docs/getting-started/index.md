@@ -4,7 +4,7 @@ Friendly Captcha is a service that protects your websites and applications from 
 
 This guide shows you how to add our widget to your website to fight spam with little impact to your user's experience.
 
-**Integration has 3 steps and usually takes around than 10 minutes to complete.**
+**Integration has 3 steps and usually takes around 10 minutes to complete.**
 
 ## Create an account
 
