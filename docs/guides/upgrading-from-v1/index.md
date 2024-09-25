@@ -2,7 +2,7 @@
 
 This guide describes how to upgrade from v1 to v2 of Friendly Captcha.
 
-To learn more about the ways v2 improves upon v1, and why upgrading is worth the effort, [**click here**](../../v1-and-v2#whats-new-in-v2).
+To learn more about the ways v2 improves upon v1, and why upgrading is worth the effort, [**click here**](/docs/v2/versions#whats-new-in-v2).
 
 ## Changes to your website (front-end changes)
 
@@ -12,7 +12,7 @@ If you installed Friendly Captcha to your website by adding a `<script>` tag, fo
 
 ### Programmatic JavaScript API
 
-If you are using the Javascript API to programmatically create widgets, please follow [this guide](./javascript-api)
+If you are using the Javascript API to programmatically create widgets, please follow [this guide](./javascript-api).
 
 :::tip
 

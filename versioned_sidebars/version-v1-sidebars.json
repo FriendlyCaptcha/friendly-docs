@@ -48,7 +48,12 @@
           "id": "guides/flutter",
           "label": "Use in Flutter"
         },
-        "guides/openapi-spec"
+        "guides/openapi-spec",
+        {
+          "type": "link",
+          "label": "Upgrading to v2",
+          "href": "/docs/v2/guides/upgrading-from-v1"
+        }
       ]
     },
     {

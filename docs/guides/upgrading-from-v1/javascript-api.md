@@ -1,4 +1,4 @@
-# Client (Javascript API)
+# Client (JavaScript API)
 
 ## 1. Install the new SDK 
 1. Install the `@friendlycaptcha/sdk` NPM package
@@ -46,7 +46,7 @@ const myWidget = new WidgetInstance(element, {
 With version two there are some changes. Here are the most important ones
 * You first create an instance of the SDK (`FriendlyCaptchaSDK`)
 * You use that SDK to create widgets (`sdk.createWidget(options)`).
-* You use [DOM events](../../sdk/events.md) instead of callbacks `addEventListener`.
+* You use [DOM events](../../sdk/events.md) instead of callbacks (`addEventListener`).
 * If you are using a custom endpoint, the URL has changed.
 
 ```javascript
@@ -83,4 +83,4 @@ myWidget.addEventListener("frc:widget.expire", (event) => {
 })
 ```
 
-For details on the Javascript SDK API, see the [Documentation](../../sdk)
+For details on the Javascript SDK API, see the [documentation](../../sdk).
