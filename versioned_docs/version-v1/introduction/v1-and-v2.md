@@ -35,13 +35,9 @@ At some point down the road we will not allow newly created apps to use v1, but 
 
 ## When can I upgrade?
 
-v2 is currently available on an invite-only basis. v2 will be available to all users later this year.
+You may already be eligible&mdash;accounts created after May 1, 2024 automatically have access to v2. You can find out if you do by navigating to the [Create New App](https://app.friendlycaptcha.eu/dashboard/accounts/-/apps/create) page. In the **Friendly Captcha Version** step, if you can select v2, you're all set.
 
-:::tip
-
-If you want to test Friendly Captcha v2 now, you can apply for the beta phase [**here**](https://tally.so/r/n0MGDA).
-
-:::
+Over the next 6 months, we will be rolling out v2 access to the rest of our customers. If you're ready to upgrade now, feel free to reach out using [**this form**](https://tally.so/r/n0MGDA) and a member of our team will help you get access.
 
 ## How do I upgrade?
 
