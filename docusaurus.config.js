@@ -56,7 +56,7 @@ const config = {
               banner: 'unreleased',
             },
             v1: {
-              banner: 'none',
+              banner: 'unmaintained',
             },
           },
         },

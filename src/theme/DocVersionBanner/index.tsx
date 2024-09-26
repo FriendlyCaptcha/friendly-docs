@@ -5,13 +5,14 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import {
   useActivePlugin,
-  useDocVersionSuggestions,
   type GlobalVersion,
 } from '@docusaurus/plugin-content-docs/client';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import {
   useDocsPreferredVersion,
   useDocsVersion,
+  useActiveDocContext,
+  useVersions,
 } from '@docusaurus/plugin-content-docs/client';
 import type {Props} from '@theme/DocVersionBanner';
 import type {
@@ -35,10 +36,9 @@ function UnreleasedVersionLabel({
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
-        earlyPreview: <b>early preview</b>,
       }}>
       {
-        "You're looking at the Friendly Captcha v2 Docs which is in {earlyPreview}."
+        'This is documentation for Friendly Captcha {versionLabel}.'
       }
     </Translate>
   );
@@ -57,7 +57,7 @@ function UnmaintainedVersionLabel({
         versionLabel: <b>{versionMetadata.label}</b>,
       }}>
       {
-        'This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.'
+        'This is documentation for Friendly Captcha {versionLabel}.'
       }
     </Translate>
   );
@@ -77,42 +77,49 @@ function BannerLabel(props: BannerLabelComponentProps) {
 }
 
 function LatestVersionSuggestionLabel({
-  versionLabel,
+  currentLabel,
+  alternateLabel,
   to,
   onClick,
 }: {
   to: string;
   onClick: () => void;
-  versionLabel: string;
+  currentLabel: string;
+  alternateLabel: string;
 }) {
   return (
     <Translate
       id="theme.docs.versions.latestVersionSuggestionLabel"
       description="The label used to tell the user to check the latest version"
       values={{
-        versionLabel,
-        latestVersionLink: (
+        learn: (
           <b>
-            <Link to={to} onClick={onClick}>
+            <Link to={`/docs/${currentLabel}/versions`}>
               <Translate
                 id="theme.docs.versions.latestVersionLinkLabel"
                 description="The label used for the latest version suggestion link label">
-                latest version
+                learn more
               </Translate>
             </Link>
           </b>
         ),
-        here: (
+        alternate: (
           <b>
-            <Link to='/docs/v2/versions#how-do-i-upgrade'>
-              here
+            <Link to={to} onClick={onClick}>
+              <Translate
+                id="theme.docs.versions.latestVersionLinkLabel"
+                description="The label used for the latest version suggestion link label"
+                values={{ alternateLabel }}>
+                {
+                  '{alternateLabel} docs'
+                }
+              </Translate>
             </Link>
           </b>
         ),
-        beta: <b>BETA</b>,
       }}>
       {
-        'Apply {here} to gain access to the closed {beta}.'
+        'You can {learn} about v1 and v2, or you can switch to the {alternate}.'
       }
     </Translate>
   );
@@ -133,21 +140,24 @@ function DocVersionBannerEnabled({
     version.docs.find((doc) => doc.id === version.mainDocId)!;
 
   const {savePreferredVersionName} = useDocsPreferredVersion(pluginId);
+  const [ v2, v1 ] = useVersions(pluginId);
 
-  const {latestDocSuggestion, latestVersionSuggestion} =
-    useDocVersionSuggestions(pluginId);
+  const isV2 = versionMetadata.label === 'v2';
 
-  // Try to link to same doc in latest version (not always possible), falling
-  // back to main doc of latest version
-  const latestVersionSuggestedDoc =
-    latestDocSuggestion ?? getVersionMainDoc(latestVersionSuggestion);
+  const alternateVersion = isV2 ? v1 : v2;
+  const alternateLabel = isV2 ? 'v1' : 'v2';
+  const alternateVersionName = isV2 ? 'v1' : 'current';
+  const activeDocContext = useActiveDocContext(pluginId);
+  const alternateDoc =
+    activeDocContext.alternateDocVersions[alternateVersionName] ?? getVersionMainDoc(alternateVersion);
 
   return (
     <div
       className={clsx(
         className,
         ThemeClassNames.docs.docVersionBanner,
-        'alert alert--warning margin-bottom--md',
+        'alert margin-bottom--md',
+        versionMetadata.label === 'v2' ? 'alert--info' : 'alert--warning',
       )}
       role="alert">
       <div>
@@ -155,9 +165,10 @@ function DocVersionBannerEnabled({
       </div>
       <div className="margin-top--md">
         <LatestVersionSuggestionLabel
-          versionLabel={latestVersionSuggestion.label}
-          to={latestVersionSuggestedDoc.path}
-          onClick={() => savePreferredVersionName(latestVersionSuggestion.name)}
+          currentLabel={versionMetadata.label}
+          alternateLabel={alternateLabel}
+          to={alternateDoc.path}
+          onClick={() => savePreferredVersionName(alternateVersionName)}
         />
       </div>
     </div>
