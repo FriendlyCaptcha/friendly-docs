@@ -17,7 +17,7 @@ This site contains the technical documentation that will help you integrate the 
 
 Other captcha systems like [Google reCAPTCHA](https://en.wikipedia.org/wiki/ReCAPTCHA) or [hCaptcha](https://hcaptcha.com) invent tasks for website users that are meant to be easy for humans but impossible for bots. An example is clicking on images that contain cars.
 
-These tasks are annoying for many users, but they can even create barriers to legitimate access. Users with difficulty seeing or hearing, or with advanced age, or who just lack technical savvy, might struggle to complete them.
+These tasks are annoying for many of us, but they can even become a **barrier** for some users. Those with difficulty seeing or hearing, or with advanced age, or who just lack technical savvy, might struggle to complete them.
 
 Another reason many organizations adopt Friendly Captcha is for its commitment to data protection and user privacy. Friendly Captcha does not rely on user tracking or cookies for its protection service, and offers a true EU-only offering.
 
