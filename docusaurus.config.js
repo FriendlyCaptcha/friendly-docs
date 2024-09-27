@@ -191,7 +191,7 @@ const config = {
                 href: "https://github.com/friendlycaptcha",
               },
               {
-                label: "Wordpress Plugin",
+                label: "WordPress Plugin",
                 href: "https://wordpress.org/plugins/friendly-captcha",
               },
             ],
