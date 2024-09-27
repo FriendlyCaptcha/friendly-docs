@@ -5,7 +5,7 @@
 * [Widget Language](./localization.md)
 * [Browser Support](./browser-support)
 * [Automated testing](./automated-testing)
-* [Content-Security Policy](./csp)
+* [Content Security Policy](./csp)
 
 ## Migration Guides
 
