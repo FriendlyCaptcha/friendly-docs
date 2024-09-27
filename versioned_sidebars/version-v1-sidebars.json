@@ -1,0 +1,65 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "Introduction",
+      "collapsible": false,
+      "link": {
+        "type": "doc",
+        "id": "introduction/index"
+      },
+      "items": [
+        "introduction/v1-and-v2"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "link": {
+        "type": "doc",
+        "id": "getting-started/index"
+      },
+      "items": [
+        "getting-started/setup",
+        "getting-started/install",
+        "getting-started/verify"
+      ]
+    },
+    "sdk/index",
+    "api/index",
+    {
+      "type": "category",
+      "label": "Guides",
+      "link": {
+        "type": "generated-index"
+      },
+      "items": [
+        "guides/automated-testing",
+        "guides/browser-support",
+        "guides/eu-endpoint",
+        "guides/csp",
+        {
+          "type": "doc",
+          "id": "guides/theme",
+          "label": "Themes & Dark Mode"
+        },
+        {
+          "type": "doc",
+          "id": "guides/flutter",
+          "label": "Use in Flutter"
+        },
+        "guides/openapi-spec",
+        {
+          "type": "link",
+          "label": "Upgrading to v2",
+          "href": "/docs/v2/guides/upgrading-from-v1"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "Changelog",
+      "href": "https://github.com/FriendlyCaptcha/friendly-challenge/blob/master/docs/changelog.md"
+    }
+  ]
+}

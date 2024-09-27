@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 #  Authentication
 
 To make requests to the Friendly Captcha API you need to prove who you are. You do this by passing an API key in a header.

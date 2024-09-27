@@ -36,10 +36,5 @@ We aim for all organizations to eventually upgrade to version 2, but we are also
 
 ## Further reading
 
-* [Migration guide from v1 to v2](/docs/guides/upgrading-to-v2/introduction)
-* [Why upgrade to v2?](/docs/guides/upgrading-to-v2/why-upgrade)
-
-
-
-
-
+* [Migration guide from v1 to v2](/docs/v2/guides/upgrading-from-v1)
+* [Why upgrade to v2?](/docs/v2/versions#whats-new-in-v2)

@@ -1,8 +1,4 @@
----
-sidebar_position: 0
----
-
-# Overview
+# Widget SDK
 
 The SDK is the code you add to your website to display captcha widgets on your website.
 
@@ -22,10 +18,3 @@ The widget has a fixed amount of states it can be in.
 
 ### [SDK Reference](./reference/sdk)
 The code documentation generated from the [SDK codebase](https://github.com/friendlycaptcha/friendly-captcha-sdk).
-
-## Advanced Topics
-
-* [Widget Language](./advanced/localization.md)
-* [Browser Support](./advanced/browser-support)
-* [Automated testing](./advanced/automated-testing)
-* [Content-Security Policy](./advanced/csp)

@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Migrating from reCAPTCHA
 
 Switching from [Google's reCAPTCHA (v2)](https://www.google.com/recaptcha/about/) to Friendly Captcha is straightforward.
@@ -22,7 +18,7 @@ Log in to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.eu/dashbo
 2. [Create a new API key](https://app.friendlycaptcha.eu/dashboard/accounts/-/apikeys) and copy it somewhere safe.
 
 :::tip
-If you are using a CMS like Wordpress, you probably don't have to do the below steps.
+If you are using a CMS like WordPress, you probably don't have to do the below steps.
 
 Instead you would replace the reCAPTCHA plugin and install a plugin that supports Friendly Captcha.
 :::
@@ -56,7 +52,7 @@ Instead you would replace the reCAPTCHA plugin and install a plugin that support
 
 ## Update your server's integration
 
-Follow the guide [here](../getting-started/siteverify) to set up your server's integration.
+Follow the guide [here](../getting-started/verify) to set up your server's integration.
 
 ## Compatibility notes (only relevant for advanced usage)
 

@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Events
 
 The captcha widget emits DOM events which allow you to write code that reacts to changes in the widget.
