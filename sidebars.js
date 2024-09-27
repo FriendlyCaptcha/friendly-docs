@@ -90,6 +90,7 @@ const sidebars = {
       "items": [
         "guides/automated-testing",
         "guides/browser-support",
+        "guides/eu-endpoint",
         "guides/localization",
         "guides/csp",
         {
