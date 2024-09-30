@@ -2,7 +2,7 @@
 
 By default the FriendlyCaptcha widget talks to our global service served from all over the world to retrieve CAPTCHA challenges. Depending on your user's geography, this request may be served from outside the EU.
 
-As a premium feature we offer a dedicated forwarding endpoint hosted in Germany as an additional guarantee that the personal information (i.e. visitor IP addresses) never leave the EU.
+As a premium feature we offer a dedicated endpoint hosted in Germany as an additional guarantee that the personal information (i.e. visitor IP addresses) never leave the EU.
 
 :::info
 
@@ -49,16 +49,6 @@ const widget = sdk.createWidget({
 
 With this change, the widget will only ever make requests to our EU endpoint. No changes are required for the verification of submitted solutions.
 
-## Fallback to global service
-
-Although we work hard to make sure it never happens, disaster may one day strike (e.g. a meteor strike to our German data center). In case our EU endpoint service goes down you can instruct your widget to use the global service as a fallback.
-
-You can do this by specifying both endpoints separated with a comma (`,`) in order of preference:
-
-```html
-<div class="frc-captcha" data-sitekey="<my sitekey>" data-api-endpoint="eu,global"></div>
-```
-
 ## EU Verification Endpoint
 
 Your servers can also use our EU endpoint for the verification of submitted challenge solutions.
@@ -81,10 +71,8 @@ https://global.frcapi.com/api/v2/captcha/siteverify
 https://eu.frcapi.com/api/v2/captcha/siteverify
 ```
 
-When configuring the widget in your front-end, can you can just specify `eu` or `global`.
+When configuring the widget in your front-end, you can use the `eu` or `global` shorthand.
 
 ## Troubleshooting
 
 If your widget or the browser console shows **Endpoint not allowed** or **403 Forbidden**, double-check that the you enabled the configured endpoint for the given sitekey.
-
-If you run into any other issues you can of course always reach out.

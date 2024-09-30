@@ -2,7 +2,7 @@
 
 By default the FriendlyCaptcha widget talks to our global service served from all over the world to retrieve CAPTCHA puzzles. Depending on your user's geography, this request may be served from outside the EU.
 
-As a premium feature we offer a dedicated forwarding endpoint hosted in Germany as an additional guarantee that the personal information (i.e. visitor IP addresses) never leave the EU.
+As a premium feature we offer a dedicated endpoint hosted in Germany as an additional guarantee that the personal information (i.e. visitor IP addresses) never leave the EU.
 
 :::info
 
@@ -85,5 +85,3 @@ For reference, these are the puzzle and siteverify endpoints.
 ## Troubleshooting
 
 If your widget or the browser console shows **Endpoint not allowed** or **403 Forbidden**, double-check that the you enabled the configured endpoint for the given sitekey.
-
-If you run into any other issues you can of course always reach out.
