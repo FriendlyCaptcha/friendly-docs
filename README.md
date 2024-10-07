@@ -1,8 +1,5 @@
 # Friendly Docs
 
-**Note: This is the documentation website for Friendly Captcha v2, which is currently in beta.  
-The documentation for v1 can be found [here](https://docs.friendlycaptcha.com) (or its source code [here](https://github.com/FriendlyCaptcha/friendly-challenge/tree/master/docs)).**
-
 This is the source code of [Friendly Captcha](https://friendlycaptcha.com)'s [Developer Hub](https://developer.friendlycaptcha.com).
 
 This website uses [Docusaurus 2](https://docusaurus.io/).
