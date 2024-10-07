@@ -29,7 +29,7 @@ Some highlights:
 
 - **Privacy friendly.** In order to  distinguish real users from bots, we can't get around collecting and processing some data from the web browser. Data is a burden and not an asset. We treat it accordingly, and do not collect or store what we don't need.
 
-None of the data we collect is shared with third parties or used for purposes other than protecting websites from abuse. We comply with regulations like the GDPR to safeguard the privacy of all our users, and the code that runs on your website is [open source](https://github.com/FriendlyCaptcha/friendly-captcha-sdk) so you can verify what data is collected. You can read more about this in our [privacy policy](https://friendlycaptcha.com/legal/privacy-end-users/).
+We do not use HTTP cookies and do not store any data in the browser’s persistent storage, and none of the data we collect is shared with third parties or used for purposes other than protecting websites from abuse. We comply with regulations like the GDPR to safeguard the privacy of all our users, and the code that runs on your website is [open source](https://github.com/FriendlyCaptcha/friendly-captcha-sdk) so you can verify what data is collected. You can read more about this in our [privacy policy](https://friendlycaptcha.com/legal/privacy-end-users/).
 - **More powerful bot-or-not engine.** With v2 we collect a more diverse set of data points we call *signals*. We look at a wide range of signals like HTTP request information, the browser environment to detect browser automation, as well as the interaction of the users with the page (e.g. mouse movements). 
 
 The better we can tell apart bots from genuine users, the better the user experience, as well as the protection, will be.
