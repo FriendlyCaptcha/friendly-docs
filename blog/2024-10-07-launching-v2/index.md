@@ -29,15 +29,15 @@ Some highlights:
 
 - **Privacy friendly.** In order to  distinguish real users from bots, we can't get around collecting and processing some data from the web browser. Data is a burden and not an asset. We treat it accordingly, and do not collect or store what we don't need.
 
-We do not use HTTP cookies and do not store any data in the browser’s persistent storage, and none of the data we collect is shared with third parties or used for purposes other than protecting websites from abuse. We comply with regulations like the GDPR to safeguard the privacy of all our users, and the code that runs on your website is [open source](https://github.com/FriendlyCaptcha/friendly-captcha-sdk) so you can verify what data is collected. You can read more about this in our [privacy policy](https://friendlycaptcha.com/legal/privacy-end-users/).
+  We do not use HTTP cookies and do not store any data in the browser’s persistent storage, and none of the data we collect is shared with third parties or used for purposes other than protecting websites from abuse. We comply with regulations like the GDPR to safeguard the privacy of all our users, and the code that runs on your website is [open source](https://github.com/FriendlyCaptcha/friendly-captcha-sdk) so you can verify what data is collected. You can read more about this in our [privacy policy](https://friendlycaptcha.com/legal/privacy-end-users/).
 - **More powerful bot-or-not engine.** With v2 we collect a more diverse set of data points we call *signals*. We look at a wide range of signals like HTTP request information, the browser environment to detect browser automation, as well as the interaction of the users with the page (e.g. mouse movements). 
 
-The better we can tell apart bots from genuine users, the better the user experience, as well as the protection, will be.
+  The better we can tell apart bots from genuine users, the better the user experience, as well as the protection, will be.
 - **Inclusive and friction-free.** Just like v1, Friendly Captcha v2 does not rely on the user tasks like clicking on pictures of cars or solving puzzles. This means that nobody is excluded or annoyed. Our goal is to make [CAPTCHA truly accessible](https://friendlycaptcha.com/insights/captcha-accessibility/). The widget, which is the visible element that is added to websites that are protected, has been redesigned with speed in mind — in v2, it’s more likely that the captcha challenge will be completed before the user even finishes filling out the form!
 - **Easier to integrate than ever**. There are [official SDKs and plugins](https://developer.friendlycaptcha.com/docs/integrations/) for popular programming languages and frameworks (such as PHP, Python, Node/Javascript, Go, Wordpress), with more on the way. Integration into your webpage is more straightforward with easier CSP (content security policy) requirements and automatic language detection. The same old browsers and operating systems are supported as before (including Internet Explorer 11).
 - **Reliability:** Reliability is incredibly important: [our system should always be available](https://status.friendlycaptcha.com). Thanks to infrastructure changes our services are more resilient to failure, whether issues happen internally or outside of our control.
 
-The best part is that these reliability improvements carry over to Friendly Captcha v1 as well, so they’re not exclusive to v2. 😊
+  The best part is that these reliability improvements carry over to Friendly Captcha v1 as well, so they’re not exclusive to v2. 😊
 
 ## Getting started with Friendly Captcha v2
 
