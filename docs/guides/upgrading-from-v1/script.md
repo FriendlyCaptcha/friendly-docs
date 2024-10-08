@@ -71,7 +71,7 @@ If you are currently using these callbacks to enable and disable a submit button
   function myErrorCallback(error) {
     console.error(error);
 
-    // It is best practice to enable your submit button when an error occurs.
+    // It is best practice to disable your submit button when an error occurs.
     myButton.disabled = false
   }
 </script>
