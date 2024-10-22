@@ -38,6 +38,16 @@ const config = {
 
   plugins: ["docusaurus-plugin-sass"],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        hashed: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       "classic",
@@ -48,15 +58,15 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main`,
-          lastVersion: 'current',
+          lastVersion: "current",
           versions: {
             current: {
-              label: 'v2',
-              path: 'v2',
-              banner: 'unreleased',
+              label: "v2",
+              path: "v2",
+              banner: "unreleased",
             },
             v1: {
-              banner: 'unmaintained',
+              banner: "unmaintained",
             },
           },
         },
@@ -112,7 +122,7 @@ const config = {
           },
           { to: "/blog", label: "Tech Blog", position: "left" },
           {
-            type: 'docsVersionDropdown',
+            type: "docsVersionDropdown",
             position: "right",
           },
           {
@@ -150,7 +160,7 @@ const config = {
               {
                 label: "Integrations",
                 to: "integrations",
-              }
+              },
             ],
           },
           {
