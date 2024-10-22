@@ -44,6 +44,7 @@ const config = {
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       {
         hashed: true,
+        indexPages: true,
       },
     ],
   ],
