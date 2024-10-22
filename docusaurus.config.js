@@ -36,7 +36,20 @@ const config = {
     locales: ["en"],
   },
 
-  plugins: ["docusaurus-plugin-sass"],
+  plugins: [
+    "docusaurus-plugin-sass",
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/docs",
+            to: "/docs/v2",
+          },
+        ],
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -48,15 +61,15 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main`,
-          lastVersion: 'current',
+          lastVersion: "current",
           versions: {
             current: {
-              label: 'v2',
-              path: 'v2',
-              banner: 'unreleased',
+              label: "v2",
+              path: "v2",
+              banner: "unreleased",
             },
             v1: {
-              banner: 'unmaintained',
+              banner: "unmaintained",
             },
           },
         },
@@ -112,7 +125,7 @@ const config = {
           },
           { to: "/blog", label: "Tech Blog", position: "left" },
           {
-            type: 'docsVersionDropdown',
+            type: "docsVersionDropdown",
             position: "right",
           },
           {
@@ -150,7 +163,7 @@ const config = {
               {
                 label: "Integrations",
                 to: "integrations",
-              }
+              },
             ],
           },
           {
