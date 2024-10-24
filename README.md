@@ -10,10 +10,10 @@ This repository is the documentation source for **v2** of the Friendly Captcha w
 Below are screenshots to help you recognize the one you are using.
 
 ### V1 Widget Screenshot ([docs](https://docs.friendlycaptcha.com))
-![Widget v1 screenshot](./static/img/screenshot/v1-widget-ready.png)
+![Widget v1 screenshot](./static/img/widget-v2-ready.png)
 
 ### V2 Widget Screenshot 
-![Widget v2 screenshot](./static/img/screenshot/v2-widget-ready.png)
+![Widget v2 screenshot](./static/img/widget-v2-ready.png)
 
 ## Contribute to our localizations
 
