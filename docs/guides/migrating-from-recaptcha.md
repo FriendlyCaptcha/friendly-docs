@@ -32,9 +32,9 @@ Instead you would replace the reCAPTCHA plugin and install a plugin that support
     ```
     with the reCAPTCHA-compatible Friendly Captcha scripts.
     ```html
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.8/contrib/recaptcha-site.min.js"
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.9/contrib/recaptcha-site.min.js"
             async defer></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.8/contrib/recaptcha-site.compat.min.js"
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.9/contrib/recaptcha-site.compat.min.js"
           async defer></script>
     ```
 
