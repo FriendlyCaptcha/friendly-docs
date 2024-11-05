@@ -91,7 +91,7 @@ Called when the completed response has expired. This will only happen if the use
 Called when the widget switches to a different state.  
 See also the [**widget lifecycle documentation**](./lifecycle).
 
-#### **`event.details`**
+#### **`event.detail`**
 ```typescript
 {
   name: "frc:widget.statechange",
