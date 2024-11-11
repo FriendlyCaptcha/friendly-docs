@@ -5,11 +5,10 @@ This is the source code of [Friendly Captcha](https://friendlycaptcha.com)'s [De
 This website uses [Docusaurus 2](https://docusaurus.io/).
 
 ## Am I using V1 or V2
-This repository is the documentation source for **v2** of the Friendly Captcha widget and API.
 
 Below are screenshots to help you recognize the one you are using.
 
-### V1 Widget Screenshot ([docs](https://docs.friendlycaptcha.com))
+### V1 Widget Screenshot
 ![Widget v1 screenshot](./static/img/widget-v2-ready.png)
 
 ### V2 Widget Screenshot 
