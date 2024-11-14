@@ -30,6 +30,14 @@ Example:
 <div class="frc-captcha" data-sitekey="<my sitekey>" data-start="auto"></div>
 ```
 
+:::info[A note on clicking]
+
+One possible source of confusion lies in the distinction between a widget solving and completing. The `data-start` attribute (or `startMode` option for the [JavaScript SDK](reference/sdk.createwidgetoptions#properties)) controls when the widget can start **solving** puzzles.
+
+However, a widget will not reach its **completed** state until the web user clicks the checkbox. In other words, the CAPTCHA response will not yet be available and the form not ready to submit. For legitimate users in the best case scenario, solving will often be finished by the time they fill out the form. But in order for the widget to complete, they will have to check the box. This behavior provides the strongest level of security against bots and spammers.
+
+:::
+
 ### `data-form-field-name`
 By default a hidden form field with name `frc-captcha-response` is created. You can change the name of this field by setting this attribute, which can be useful for integrations with certain frameworks and content management systems.
 
