@@ -34,7 +34,7 @@ Example:
 
 One possible source of confusion lies in the distinction between a widget solving and completing. The `data-start` attribute (or `startMode` option for the [JavaScript SDK](reference/sdk.createwidgetoptions#properties)) controls when the widget can start **solving** puzzles.
 
-However, a widget will not reach its **completed** state until the web user clicks the checkbox. In other words, the CAPTCHA response will not yet be available and the form not ready to submit. For legitimate users in the best case scenario, solving will often be finished by the time they fill out the form. But in order for the widget to complete, they will have to check the box. This behavior provides the strongest level of security against bots and spammers.
+However, a widget will not reach its **completed** state until the user clicks it. At that point, the CAPTCHA response will be available. With a start mode of `auto` or `focus`, the challenges start solving in the background. By the time the user clicks, the CAPTCHA often completes instantly. There will never be tasks like clicking images of traffic lights. A single click is the only required interaction.
 
 :::
 
