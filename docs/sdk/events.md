@@ -95,7 +95,7 @@ See also the [**widget lifecycle documentation**](./lifecycle).
 ```typescript
 {
   name: "frc:widget.statechange",
-  state: "<name of new state>", // One of "init", "reset", "ready", "requesting", "solving", "verifying", "completed", "expired", "error", "destroyed"
+  state: "<name of new state>", // One of "init", "reset", "unactivated", "activating", "activated", "requesting", "solving", "verifying", "completed", "expired", "error", "destroyed"
   response: "<different value depending on the state>",
   error: {
     code: "network_error", // See `WidgetErrorCode` for possible values
