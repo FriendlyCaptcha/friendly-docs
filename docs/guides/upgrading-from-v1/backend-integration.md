@@ -21,13 +21,15 @@ https://global.frcapi.com/api/v2/captcha/siteverify
 https://eu.frcapi.com/api/v2/captcha/siteverify
 ```
 
-## 3. Replace the secret field.
+## 3. Replace the `secret` and `solution` field.
 
 The `secret` field is no longer used, instead you send your API key in the following header:
 
 | Header Name | Header Value |
 |----------------|-----------------------------------------------------|
 | `X-API-Key`       | Your API Key (`A1...`) |
+
+The `solution` field has been renamed to `response` in the request body.
 
 ## 4. Handle the new response layout
 
