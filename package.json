@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.5.2",
-    "@friendlycaptcha/sdk": "^0.1.9",
+    "@friendlycaptcha/sdk": "^0.1.10",
     "@tsconfig/docusaurus": "^1.0.5",
     "search-insights": "^2.17.2",
     "typescript": "^4.7.4"
