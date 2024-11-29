@@ -16,14 +16,14 @@ To create widgets from Javascript code, [see **Option B** below](#option-b-progr
 
 Add the following to your website's HTML:
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.10/site.min.js" async defer></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.10/site.compat.min.js" async defer></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.11/site.min.js" async defer></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.11/site.compat.min.js" async defer></script>
 ```
 
 ::::tip
 #### Using the scripts without a CDN
 
-You can [download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.10/) and serve them from your own server.
+You can [download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.11/) and serve them from your own server.
 Remember to update these scripts regularly.
 ::::
 
