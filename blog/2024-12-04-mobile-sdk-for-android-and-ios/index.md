@@ -7,7 +7,7 @@ tags: [captcha, announcement, sdk, mobile, app]
 
 Friendly Captcha has been used to protect mobile apps since we started in 2020, but it required a custom integration each time.
 
-We are happy to announce an official mobile SDK for Android and iOS. Using a SDK should reduce your integration time from days to under an hour.
+We are happy to announce an official mobile SDK for Android and iOS. Using an SDK should reduce your integration time from days to under an hour.
 
 ![Screenshot of the Android example app.](android.png)
 
