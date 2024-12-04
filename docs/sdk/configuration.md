@@ -84,20 +84,20 @@ See the [**CreateWidgetOptions**](./reference/sdk.createwidgetoptions.md) for th
 
 ## Widget Mode
 
-The point at which a widget can *begin* solving challenges depends on its [start mode](#data-start-attribute). Whether or not the widget can automatically *complete* depends on a different configuration option: the Widget Mode.
+The point at which a widget can *begin* solving challenges depends on its [**start mode**](#data-start-attribute). Whether or not the widget will automatically *complete* depends on a different configuration option: the **Widget Mode**.
 
 A widget can be configured with one of 3 different Widget Modes:
 
 - **One-click:** a user must click once on the widget in order for it to complete.
-- **Zero-click:** the widget can complete automatically, with no user interaction.
+- **Zero-click:** the widget will complete automatically, with no user interaction.
 - **Smart (default):** the widget intelligently decides, based on signals from the current browsing session, whether or not a click is needed to complete.
 
-There is a trade-off between requiring a click or not. A widget that completes with zero user interaction presents the least friction. But requiring just a single click greatly enriches the signals that can be used to identify bots. For that reason, we recommend sticking with the default, which is to allow the widget to decide when to require a click.
+There is a trade-off between requiring a click or not. A widget that completes without user interaction presents the least friction, but requiring just a single click allows us to identify bots with much greater accuracy. For that reason, we recommend sticking with the default, which is to allow the widget to decide when to require a click.
 
 :::tip[no traffic lights here]
 
-There will never be tedious tasks like clicking images of traffic lights. One single click is the only required interaction.
+There are never any tedious tasks like clicking images of traffic lights. One single click is the only required interaction.
 
 :::
 
-The Widget Mode is configured per *application*, rather than per widget. If it were configurable in the widget (the way start mode is configured), bad actors could simply toggle it to their advantage. You can set the Widget Mode when creating or managing an application from within the dashboard.
+The Widget Mode is configured per *application* in the [Friendly Captcha dashboard](https://app.friendlycaptcha.eu). If it were configured on your website (the way start mode is configured), an attacker could change the setting to their advantage.
