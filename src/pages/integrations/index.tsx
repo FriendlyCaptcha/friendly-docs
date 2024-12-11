@@ -45,7 +45,7 @@ export default function Integrations() {
           ))}
         </div>
       ) : (
-        <div className="container margin-top--lg">
+        <div className="container margin-vert--md">
           <div className="alert alert--primary">
             <h2>Don't see your framework or programming language?</h2>
             <p className="margin-bottom--none">
