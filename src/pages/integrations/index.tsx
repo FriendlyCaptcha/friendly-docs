@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
+import { useColorMode } from "@docusaurus/theme-common";
 import { Tag, TAGS, Integration, INTEGRATIONS } from "@site/src/integrations";
 
 import styles from "./index.module.css";
@@ -101,43 +102,53 @@ const IntegrationCard = ({
   name,
   fcVersion,
   image,
+  imageDark,
   official,
   github,
   link,
-}: Integration) => (
-  <div className={clsx("card", styles.grid__item)}>
-    <div className={clsx("card__header", styles.grid__item__header)}>
-      <h3>{name}</h3>
-      {official && (
-        <span className={clsx("badge", styles.badge__official)}>Official</span>
-      )}
-      {fcVersion === "v1" && (
-        <span className="badge badge--secondary margin-left--xs">
-          {fcVersion}
-        </span>
-      )}
+}: Integration) => {
+  const { colorMode } = useColorMode();
+  if (colorMode === "dark" && imageDark) {
+    image = imageDark;
+  }
+
+  return (
+    <div className={clsx("card", styles.grid__item)}>
+      <div className={clsx("card__header", styles.grid__item__header)}>
+        <h3>{name}</h3>
+        {official && (
+          <span className={clsx("badge", styles.badge__official)}>
+            Official
+          </span>
+        )}
+        {fcVersion === "v1" && (
+          <span className="badge badge--secondary margin-left--xs">
+            {fcVersion}
+          </span>
+        )}
+      </div>
+      <div className={clsx("card__body", styles.grid__item__body)}>
+        <img src={`/img/integrations/${image}`} alt={`${name} logo`} />
+      </div>
+      <div className="card__footer">
+        <a href={link} className="button button--secondary button--block">
+          Integration ➔
+        </a>
+        <a
+          href={`https://github.com/${github}`}
+          className="button button--secondary button--block button--outline margin-top--sm"
+        >
+          <img
+            className={styles.github}
+            src="/img/github-logo.svg"
+            alt="GitHub logo"
+          />
+          Source
+        </a>
+      </div>
     </div>
-    <div className={clsx("card__body", styles.grid__item__body)}>
-      <img src={`/img/integrations/${image}`} alt={`${name} logo`} />
-    </div>
-    <div className="card__footer">
-      <a href={link} className="button button--secondary button--block">
-        Integration ➔
-      </a>
-      <a
-        href={`https://github.com/${github}`}
-        className="button button--secondary button--block button--outline margin-top--sm"
-      >
-        <img
-          className={styles.github}
-          src="/img/github-logo.svg"
-          alt="GitHub logo"
-        />
-        Source
-      </a>
-    </div>
-  </div>
-);
+  );
+};
 
 interface FilterBarProps {
   selectedTags: Tag[];
