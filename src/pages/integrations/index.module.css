@@ -1,0 +1,38 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid;
+}
+
+.filter > ul {
+    display: none;
+}
+
+.filter__dropdown {
+    align-self: flex-start;
+}
+
+.filter__dropdown > button svg {
+    transform: translateY(0.15rem);
+    margin-right: 0.5rem;
+}
+
+.filter__search {
+    flex-grow: 1;
+}
+
+.filter__search input {
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+}
+
+@media (min-width: 700px) {
+    .filter > ul {
+        display: flex;
+    }
+
+    .filter__dropdown {
+        display: none;
+    }
+}
