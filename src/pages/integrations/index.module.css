@@ -13,7 +13,7 @@
 }
 
 .filter__dropdown > button svg {
-    transform: translateY(0.15rem);
+    transform: translateY(0.2rem);
     margin-right: 0.5rem;
 }
 
@@ -48,6 +48,11 @@
     flex-grow: 1;
 }
 
+.badge__official {
+    background-color: #ec4899;
+    border: 1px solid #ec4899;
+}
+
 .grid__item__body {
     display: flex;
     flex-grow: 1;
@@ -58,6 +63,14 @@
 .grid__item__body img {
     max-width: 5rem;
     max-height: 5rem;
+}
+
+.github {
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(0.15rem);
 }
 
 @media (min-width: 750px) {

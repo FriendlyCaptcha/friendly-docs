@@ -6,6 +6,9 @@ export interface Integration {
   tags: Tag[];
   fcVersion: "v1" | "v2";
   image: string;
+  link: string;
+  github: string;
+  official?: boolean;
 }
 
 export const INTEGRATIONS: Integration[] = [
@@ -15,6 +18,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["CMS"],
     fcVersion: "v2",
     image: "wordpress.png",
+    link: "https://wordpress.org/plugins/friendly-captcha/",
+    github: "friendlycaptcha/friendly-captcha-wordpress",
+    official: true,
   },
   {
     name: "WordPress",
@@ -22,6 +28,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["CMS"],
     fcVersion: "v1",
     image: "wordpress.png",
+    link: "https://wordpress.org/plugins/friendly-captcha/",
+    github: "friendlycaptcha/friendly-captcha-wordpress",
+    official: true,
   },
   {
     name: "Magento 2",
@@ -29,6 +38,8 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["E-commerce"],
     fcVersion: "v1",
     image: "magento-2.svg",
+    link: "https://github.com/iMi-digital/magento2-friendly-captcha",
+    github: "iMi-digital/magento2-friendly-captcha",
   },
   {
     name: "PHP",
@@ -36,6 +47,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v2",
     image: "php.svg",
+    link: "https://packagist.org/packages/friendlycaptcha/sdk",
+    github: "friendlycaptcha/friendly-captcha-php",
+    official: true,
   },
   {
     name: "Python",
@@ -43,6 +57,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v2",
     image: "python.svg",
+    link: "https://pypi.org/project/friendly-captcha-client/",
+    github: "friendlycaptcha/friendly-captcha-python",
+    official: true,
   },
   {
     name: "Go",
@@ -50,6 +67,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v2",
     image: "golang.svg",
+    link: "https://github.com/friendlycaptcha/friendly-captcha-go",
+    github: "friendlycaptcha/friendly-captcha-go",
+    official: true,
   },
   {
     name: "Go",
@@ -57,6 +77,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v1",
     image: "golang.svg",
+    link: "https://github.com/friendlycaptcha/friendly-captcha-go-sdk",
+    github: "friendlycaptcha/friendly-captcha-go-sdk",
+    official: true,
   },
   {
     name: "JavaScript",
@@ -64,6 +87,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v2",
     image: "js.svg",
+    link: "https://www.npmjs.com/package/@friendlycaptcha/server-sdk",
+    github: "friendlycaptcha/friendly-captcha-javascript",
+    official: true,
   },
   {
     name: "JVM",
@@ -71,6 +97,8 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Library"],
     fcVersion: "v1",
     image: "java.svg",
+    link: "https://github.com/dheid/friendlycaptcha",
+    github: "dheid/friendlycaptcha",
   },
   {
     name: "Android",
@@ -78,6 +106,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Mobile"],
     fcVersion: "v2",
     image: "android.svg",
+    link: "https://central.sonatype.com/artifact/com.friendlycaptcha.android/friendly-captcha-android",
+    github: "friendlycaptcha/friendly-captcha-android",
+    official: true,
   },
   {
     name: "iOS",
@@ -85,6 +116,9 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["Mobile"],
     fcVersion: "v2",
     image: "ios.svg",
+    link: "https://cocoapods.org/pods/FriendlyCaptcha",
+    github: "friendlycaptcha/friendly-captcha-ios",
+    official: true,
   },
 ];
 

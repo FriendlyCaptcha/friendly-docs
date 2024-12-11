@@ -38,11 +38,24 @@ export default function Integrations() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <div className={clsx(styles.grid, "container margin-vert--md")}>
-        {integrations.map((integration) => (
-          <IntegrationCard key={integration.slug} {...integration} />
-        ))}
-      </div>
+      {integrations.length > 0 ? (
+        <div className={clsx(styles.grid, "container margin-vert--md")}>
+          {integrations.map((integration) => (
+            <IntegrationCard key={integration.slug} {...integration} />
+          ))}
+        </div>
+      ) : (
+        <div className="container margin-top--lg">
+          <div className="alert alert--primary">
+            <h2>Don't see your framework or programming language?</h2>
+            <p className="margin-bottom--none">
+              You can integrate Friendly Captcha into any framework or
+              programming language by following the{" "}
+              <a href="/docs/v2/getting-started">Getting Started</a> guide.
+            </p>
+          </div>
+        </div>
+      )}
       <LicensingFooter android={androidVisible} php={phpVisible} />
     </Layout>
   );
@@ -61,45 +74,67 @@ const LicensingFooter = ({
   return (
     <div className="container margin-bottom--md">
       {php ? (
-        <p className="text--italic margin--none"><small>
-          The PHP logo created by Colin Viebrock is licensed under{" "}
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-            CC BY-SA 4.0
-          </a>
-          .
-          </small></p>
+        <p className="text--italic margin--none">
+          <small>
+            The PHP logo created by Colin Viebrock is licensed under{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+              CC BY-SA 4.0
+            </a>
+            .
+          </small>
+        </p>
       ) : null}
       {android ? (
-        <p className="text--italic margin--none"><small>
-          The Android robot is reproduced or modified from work created and
-          shared by Google and used according to terms described in the Creative
-          Commons 3.0 Attribution License.
-        </small></p>
+        <p className="text--italic margin--none">
+          <small>
+            The Android robot is reproduced or modified from work created and
+            shared by Google and used according to terms described in the
+            Creative Commons 3.0 Attribution License.
+          </small>
+        </p>
       ) : null}
     </div>
   );
 };
 
-const IntegrationCard = ({ name, fcVersion, image }: Integration) => (
+const IntegrationCard = ({
+  name,
+  fcVersion,
+  image,
+  official,
+  github,
+  link,
+}: Integration) => (
   <div className={clsx("card", styles.grid__item)}>
     <div className={clsx("card__header", styles.grid__item__header)}>
       <h3>{name}</h3>
-      <span
-        className={clsx("badge", {
-          "badge--primary": fcVersion === "v2",
-          "badge--secondary": fcVersion === "v1",
-        })}
-      >
-        {fcVersion}
-      </span>
+      {official && (
+        <span className={clsx("badge", styles.badge__official)}>Official</span>
+      )}
+      {fcVersion === "v1" && (
+        <span className="badge badge--secondary margin-left--xs">
+          {fcVersion}
+        </span>
+      )}
     </div>
     <div className={clsx("card__body", styles.grid__item__body)}>
       <img src={`/img/integrations/${image}`} alt={`${name} logo`} />
     </div>
     <div className="card__footer">
-      <button className="button button--secondary button--block">
-        Integrate
-      </button>
+      <a href={link} className="button button--secondary button--block">
+        Integration ➔
+      </a>
+      <a
+        href={`https://github.com/${github}`}
+        className="button button--secondary button--block button--outline margin-top--sm"
+      >
+        <img
+          className={styles.github}
+          src="/img/github-logo.svg"
+          alt="GitHub logo"
+        />
+        Source
+      </a>
     </div>
   </div>
 );
