@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
-import { Tag, TAGS, Integration, INTEGRATIONS } from "./all";
+import { Tag, TAGS, Integration, INTEGRATIONS } from "@site/src/integrations";
 
 import styles from "./index.module.css";
 
