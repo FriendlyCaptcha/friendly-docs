@@ -27,7 +27,27 @@
     height: 100%;
 }
 
-@media (min-width: 700px) {
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+}
+
+.grid__item {
+    box-shadow: inset 0 0 0 1px;
+}
+
+.grid__item__header {
+    display: flex;
+    align-items: center;
+}
+
+.grid__item__header h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+@media (min-width: 750px) {
     .filter > ul {
         display: flex;
     }

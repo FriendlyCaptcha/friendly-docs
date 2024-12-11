@@ -1,12 +1,22 @@
 import React from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
-import { Tag, TAGS } from "./all";
+import { Tag, TAGS, Integration, INTEGRATIONS } from "./all";
 
 import styles from "./index.module.css";
 
 export default function Integrations() {
-  const [selectedTags, setSelectedTags] = React.useState(new Set<Tag>());
+  const [selectedTags, setSelectedTags] = React.useState([]);
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const integrations = INTEGRATIONS.filter((integration) => {
+    const tags = selectedTags.includes("v1")
+      ? selectedTags.concat(searchQuery)
+      : selectedTags.concat("v2", searchQuery);
+
+    const stringified = JSON.stringify(integration).toLowerCase();
+    return tags.every(tag => stringified.includes(tag.toLowerCase()))
+  });
 
   return (
     <Layout title="Integrations">
@@ -20,19 +30,49 @@ export default function Integrations() {
           <FilterBar
             selectedTags={selectedTags}
             setSelectedTags={setSelectedTags}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
           />
+          <div className={clsx(styles.grid, "margin-top--md")}>
+            {integrations.map((integration) => (
+              <IntegrationCard key={integration.slug} {...integration} />
+            ))}
+          </div>
         </div>
       </div>
     </Layout>
   );
 }
 
+const IntegrationCard = ({ name, fcVersion }: Integration) => (
+  <div className={clsx("card", styles.grid__item)}>
+    <div className={clsx("card__header", styles.grid__item__header)}>
+      <h3>{name}</h3>
+      <span
+        className={clsx("badge", {
+          "badge--primary": fcVersion === "v2",
+          "badge--secondary": fcVersion === "v1",
+        })}
+      >
+        {fcVersion}
+      </span>
+    </div>
+    <div className="card__footer">
+      <button className="button button--secondary button--block">
+        Integrate
+      </button>
+    </div>
+  </div>
+);
+
 interface FilterBarProps {
-  selectedTags: Set<Tag>;
-  setSelectedTags: (tags: Set<Tag>) => void;
+  selectedTags: Tag[];
+  setSelectedTags: (tags: Tag[]) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
-function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
+function FilterBar({ selectedTags, setSelectedTags, searchQuery, setSearchQuery }: FilterBarProps) {
   return (
     <div
       className={clsx("container padding--none padding-top--md", styles.filter)}
@@ -46,6 +86,7 @@ function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
         <input
           className="navbar__search-input"
           placeholder="Search integrations"
+          onInput={(e) => { setSearchQuery((e.target as HTMLInputElement).value) }}
         />
       </div>
       <div
@@ -56,14 +97,11 @@ function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
       >
         <button className="button button--primary padding-horiz--sm">
           <IconFilter />
-          {selectedTags.size ? Array.from(selectedTags)[0] : "All"}
+          {selectedTags.length ? selectedTags[0] : "All"}
         </button>
         <ul className="dropdown__menu">
           <li>
-            <a
-              className="dropdown__link"
-              onClick={() => setSelectedTags(new Set<Tag>())}
-            >
+            <a className="dropdown__link" onClick={() => setSelectedTags([])}>
               All
             </a>
           </li>
@@ -72,7 +110,7 @@ function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
               <a
                 className="dropdown__link"
                 onClick={() => {
-                  setSelectedTags(new Set<Tag>([tag]));
+                  setSelectedTags([tag]);
                 }}
               >
                 {tag}
@@ -85,9 +123,10 @@ function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
         <li
           className={clsx(
             "pills__item",
-            selectedTags.size || "pills__item--active"
+            selectedTags.length || "pills__item--active"
           )}
-          onClick={() => setSelectedTags(new Set<Tag>())}
+          value={searchQuery}
+          onClick={() => setSelectedTags([])}
         >
           All
         </li>
@@ -95,17 +134,15 @@ function FilterBar({ selectedTags, setSelectedTags }: FilterBarProps) {
           <li
             key={tag}
             onClick={() => {
-              const newTags = new Set<Tag>(selectedTags);
-              if (selectedTags.has(tag)) {
-                newTags.delete(tag);
+              if (selectedTags.includes(tag)) {
+                setSelectedTags(selectedTags.filter((t) => t !== tag));
               } else {
-                newTags.add(tag);
+                setSelectedTags(selectedTags.concat(tag));
               }
-              setSelectedTags(newTags);
             }}
             className={clsx(
               "pills__item",
-              selectedTags.has(tag) && "pills__item--active"
+              selectedTags.includes(tag) && "pills__item--active"
             )}
           >
             {tag}

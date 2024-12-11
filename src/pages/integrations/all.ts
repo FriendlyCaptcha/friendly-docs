@@ -1,4 +1,4 @@
-export type Tag = "CMS" | "E-commerce" | "Library" | "Mobile";
+export type Tag = "CMS" | "E-commerce" | "Library" | "Mobile" | "v1";
 
 export interface Integration {
   name: string;
@@ -7,7 +7,7 @@ export interface Integration {
   fcVersion: "v1" | "v2";
 }
 
-export const INTEGRATIONS = [
+export const INTEGRATIONS: Integration[] = [
   {
     name: "WordPress",
     slug: "wordpress",
@@ -74,6 +74,8 @@ export const INTEGRATIONS = [
     tags: ["Mobile"],
     fcVersion: "v2",
   },
-]
+];
 
-export const TAGS = new Set(INTEGRATIONS.flatMap((i) => i.tags));
+export const TAGS = new Set(
+  INTEGRATIONS.flatMap((i) => i.tags).concat("v1")
+);
