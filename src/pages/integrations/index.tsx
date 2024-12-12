@@ -30,7 +30,7 @@ export default function Integrations() {
 
   return (
     <Layout title="Integrations">
-      <div className="hero padding-bottom--none">
+      <div className="hero padding-bottom--lg">
         <div className="container">
           <h1 className="hero__title">Integrations</h1>
           <p className="hero__subtitle">
@@ -45,7 +45,7 @@ export default function Integrations() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <div className={clsx(styles.grid, "container margin-vert--md")}>
+      <div className={clsx(styles.grid, "container margin-vert--lg")}>
         {integrations.map((integration) => (
           <IntegrationCard key={integration.slug} {...integration} />
         ))}
@@ -76,7 +76,7 @@ const LicensingFooter = ({
     return null;
   }
   return (
-    <div className="container margin-bottom--md">
+    <div className="container margin-bottom--lg">
       {php ? (
         <p className="text--italic margin--none">
           <small>
@@ -167,7 +167,7 @@ function FilterBar({
   setSearchQuery,
 }: FilterBarProps) {
   return (
-    <div className="container">
+    <div className="container margin-vert--md">
       <div className={clsx("padding-top--md", styles.filter)}>
         <div
           className={clsx(
