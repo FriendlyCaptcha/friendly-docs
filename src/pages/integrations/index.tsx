@@ -124,7 +124,7 @@ const IntegrationCard = ({
     </div>
     <div className="card__footer">
       <a href={link} className="button button--secondary button--block">
-        Integration ➔
+        Get Started
       </a>
       <a
         href={`https://github.com/${github}`}
