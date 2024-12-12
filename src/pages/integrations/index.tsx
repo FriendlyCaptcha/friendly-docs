@@ -7,16 +7,22 @@ import { Tag, TAGS, Integration, INTEGRATIONS } from "@site/src/integrations";
 import styles from "./index.module.css";
 
 export default function Integrations() {
-  const [selectedTags, setSelectedTags] = React.useState([]);
+  const [categoryFilter, setCategoryFilter] = React.useState("");
   const [searchQuery, setSearchQuery] = React.useState("");
 
-  const integrations = INTEGRATIONS.filter((integration) => {
-    const tags = selectedTags.includes("v1")
-      ? selectedTags.concat(searchQuery)
-      : selectedTags.concat("v2", searchQuery);
+  let integrations = INTEGRATIONS.filter((i) => {
+    if (categoryFilter === "v1") {
+      return i.fcVersion === "v1";
+    }
+    return i.fcVersion === "v2";
+  });
 
-    const stringified = JSON.stringify(integration).toLowerCase();
-    return tags.every((tag) => stringified.includes(tag.toLowerCase()));
+  integrations = integrations.filter((i) => {
+    const s = JSON.stringify(i).toLowerCase();
+    return (
+      s.includes(searchQuery.toLowerCase()) &&
+      s.includes(categoryFilter.toLowerCase())
+    );
   });
 
   const phpVisible = !!integrations.find((i) => i.slug === "php");
@@ -34,8 +40,8 @@ export default function Integrations() {
         </div>
       </div>
       <FilterBar
-        selectedTags={selectedTags}
-        setSelectedTags={setSelectedTags}
+        categoryFilter={categoryFilter}
+        setCategoryFilter={setCategoryFilter}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
@@ -123,7 +129,7 @@ const IntegrationCard = ({
         )}
         {fcVersion === "v1" && (
           <span className="badge badge--secondary margin-left--xs">
-            {fcVersion}
+            v1
           </span>
         )}
       </div>
@@ -151,15 +157,15 @@ const IntegrationCard = ({
 };
 
 interface FilterBarProps {
-  selectedTags: Tag[];
-  setSelectedTags: (tags: Tag[]) => void;
+  categoryFilter: string;
+  setCategoryFilter: (f: string) => void;
   searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  setSearchQuery: (q: string) => void;
 }
 
 function FilterBar({
-  selectedTags,
-  setSelectedTags,
+  categoryFilter,
+  setCategoryFilter,
   searchQuery,
   setSearchQuery,
 }: FilterBarProps) {
@@ -188,11 +194,14 @@ function FilterBar({
         >
           <button className="button button--primary padding-horiz--sm">
             <IconFilter />
-            {selectedTags.length ? selectedTags[0] : "All"}
+            {categoryFilter || "All"}
           </button>
           <ul className="dropdown__menu">
             <li>
-              <a className="dropdown__link" onClick={() => setSelectedTags([])}>
+              <a
+                className="dropdown__link"
+                onClick={() => setCategoryFilter("")}
+              >
                 All
               </a>
             </li>
@@ -201,23 +210,31 @@ function FilterBar({
                 <a
                   className="dropdown__link"
                   onClick={() => {
-                    setSelectedTags([tag]);
+                    setCategoryFilter(tag);
                   }}
                 >
                   {tag}
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                className="dropdown__link"
+                onClick={() => setCategoryFilter("v1")}
+              >
+                v1
+              </a>
+            </li>
           </ul>
         </div>
         <ul className="pills margin--none">
           <li
             className={clsx(
               "pills__item",
-              selectedTags.length || "pills__item--active"
+              categoryFilter || "pills__item--active"
             )}
             value={searchQuery}
-            onClick={() => setSelectedTags([])}
+            onClick={() => setCategoryFilter("")}
           >
             All
           </li>
@@ -225,20 +242,25 @@ function FilterBar({
             <li
               key={tag}
               onClick={() => {
-                if (selectedTags.includes(tag)) {
-                  setSelectedTags(selectedTags.filter((t) => t !== tag));
-                } else {
-                  setSelectedTags(selectedTags.concat(tag));
-                }
+                setCategoryFilter(tag);
               }}
-              className={clsx(
-                "pills__item",
-                selectedTags.includes(tag) && "pills__item--active"
-              )}
+              className={clsx("pills__item", {
+                "pills__item--active": categoryFilter === tag,
+              })}
             >
               {tag}
             </li>
           ))}
+          <li
+            className={clsx(
+              "pills__item",
+              { "pills__item--active": categoryFilter === "v1" },
+            )}
+            value={searchQuery}
+            onClick={() => setCategoryFilter("v1")}
+          >
+            v1
+          </li>
         </ul>
       </div>
     </div>
