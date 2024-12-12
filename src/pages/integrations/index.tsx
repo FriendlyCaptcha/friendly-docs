@@ -45,24 +45,21 @@ export default function Integrations() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      {integrations.length > 0 ? (
-        <div className={clsx(styles.grid, "container margin-vert--md")}>
-          {integrations.map((integration) => (
-            <IntegrationCard key={integration.slug} {...integration} />
-          ))}
-        </div>
-      ) : (
-        <div className="container margin-vert--md">
-          <div className="alert alert--primary">
-            <h2>Don't see your framework or programming language?</h2>
-            <p className="margin-bottom--none">
-              You can integrate Friendly Captcha into any framework or
-              programming language by following the{" "}
-              <a href="/docs/v2/getting-started">Getting Started</a> guide.
-            </p>
+      <div className={clsx(styles.grid, "container margin-vert--md")}>
+        {integrations.map((integration) => (
+          <IntegrationCard key={integration.slug} {...integration} />
+        ))}
+        <div className={clsx("card", styles.grid__item)}>
+          <div className="card__header">
+            <h4>Don't see your framework or programming language?</h4>
+          </div>
+          <div className="card__body">
+            You can integrate Friendly Captcha into any framework or
+            programming language by following the{" "}
+            <a href="/docs/v2/getting-started">Getting Started</a> guide.
           </div>
         </div>
-      )}
+      </div>
       <LicensingFooter android={androidVisible} php={phpVisible} />
     </Layout>
   );
