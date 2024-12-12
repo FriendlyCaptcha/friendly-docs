@@ -6,7 +6,6 @@ export interface Integration {
   tags: Tag[];
   fcVersion: "v1" | "v2";
   image: string;
-  imageDark?: string;
   link: string;
   github: string;
   official?: boolean;
@@ -18,8 +17,7 @@ export const INTEGRATIONS: Integration[] = [
     slug: "wordpress",
     tags: ["CMS"],
     fcVersion: "v2",
-    image: "wordpress.png",
-    imageDark: "wordpress.white.png",
+    image: "wordpress.svg",
     link: "https://wordpress.org/plugins/friendly-captcha/",
     github: "friendlycaptcha/friendly-captcha-wordpress",
     official: true,
@@ -30,7 +28,6 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["CMS"],
     fcVersion: "v1",
     image: "wordpress.png",
-    imageDark: "wordpress.white.png",
     link: "https://wordpress.org/plugins/friendly-captcha/",
     github: "friendlycaptcha/friendly-captcha-wordpress",
     official: true,
