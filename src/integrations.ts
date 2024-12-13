@@ -27,7 +27,7 @@ export const INTEGRATIONS: Integration[] = [
     slug: "v1/wordpress",
     tags: ["CMS"],
     fcVersion: "v1",
-    image: "wordpress.png",
+    image: "wordpress.svg",
     link: "https://wordpress.org/plugins/friendly-captcha/",
     github: "friendlycaptcha/friendly-captcha-wordpress",
     official: true,
