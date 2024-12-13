@@ -25,7 +25,6 @@ export default function Integrations() {
     );
   });
 
-  const phpVisible = !!integrations.find((i) => i.slug === "php");
   const androidVisible = !!integrations.find((i) => i.slug === "android");
 
   return (
@@ -45,7 +44,7 @@ export default function Integrations() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <div className={clsx(styles.grid, "container margin-vert--lg")}>
+      <div className={clsx(styles.grid, "container margin-top--lg margin-bottom--xl")}>
         {integrations.map((integration) => (
           <IntegrationCard key={integration.slug} {...integration} />
         ))}
@@ -60,34 +59,17 @@ export default function Integrations() {
           </div>
         </div>
       </div>
-      <LicensingFooter android={androidVisible} php={phpVisible} />
+      <LicensingFooter android={androidVisible} />
     </Layout>
   );
 }
 
-const LicensingFooter = ({
-  android,
-  php,
-}: {
-  android?: boolean;
-  php?: boolean;
-}) => {
-  if (!php && !android) {
+const LicensingFooter = ({ android }: { android?: boolean }) => {
+  if (!android) {
     return null;
   }
   return (
     <div className="container margin-bottom--lg">
-      {php ? (
-        <p className="text--italic margin--none">
-          <small>
-            The PHP logo created by Colin Viebrock is licensed under{" "}
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-              CC BY-SA 4.0
-            </a>
-            .
-          </small>
-        </p>
-      ) : null}
       {android ? (
         <p className="text--italic margin--none">
           <small>
@@ -110,17 +92,20 @@ const IntegrationCard = ({
   link,
 }: Integration) => (
   <div className={clsx("card", styles.grid__item)}>
-    <div className={clsx("card__header", styles.grid__item__header)}>
-      <h3>{name}</h3>
-      {official && (
-        <span className={clsx("badge", styles.badge__official)}>Official</span>
+    <div
+      className={clsx(
+        "card__header padding--none margin-top--md margin-left--md",
+        styles.grid__item__header
       )}
+    >
+      <img src={`/img/integrations/${image}`} alt={`${name} logo`} />
+    </div>
+    <div className={clsx("card__body", styles.grid__item__body)}>
+      <h3>{name}</h3>
+      {official && <span className="badge badge--secondary">Official</span>}
       {fcVersion === "v1" && (
         <span className="badge badge--secondary margin-left--xs">v1</span>
       )}
-    </div>
-    <div className={clsx("card__body", styles.grid__item__body)}>
-      <img src={`/img/integrations/${image}`} alt={`${name} logo`} />
     </div>
     <div className="card__footer">
       <a href={link} className="button button--secondary button--block">
