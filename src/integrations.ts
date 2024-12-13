@@ -122,4 +122,6 @@ export const INTEGRATIONS: Integration[] = [
   },
 ];
 
-export const TAGS = new Set(INTEGRATIONS.flatMap((i) => i.tags));
+export const TAGS = new Set(
+  INTEGRATIONS.filter((i) => i.fcVersion === "v2").flatMap((i) => i.tags)
+);
