@@ -44,7 +44,12 @@ export default function Integrations() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <div className={clsx(styles.grid, "container margin-top--lg margin-bottom--xl")}>
+      <div
+        className={clsx(
+          styles.grid,
+          "container margin-top--lg margin-bottom--xl"
+        )}
+      >
         {integrations.map((integration) => (
           <IntegrationCard key={integration.slug} {...integration} />
         ))}
@@ -89,6 +94,7 @@ const IntegrationCard = ({
   image,
   official,
   github,
+  source,
   link,
 }: Integration) => (
   <div className={clsx("card", styles.grid__item)}>
@@ -107,24 +113,42 @@ const IntegrationCard = ({
         <span className="badge badge--secondary margin-left--xs">v1</span>
       )}
     </div>
-    <div className="card__footer">
+    <div
+      className={clsx("card__footer", {
+        "margin-top--none": !github && !source,
+      })}
+    >
       <a href={link} className="button button--secondary button--block">
         Get Started
       </a>
-      <a
-        href={`https://github.com/${github}`}
-        className="button button--secondary button--block button--outline margin-top--sm"
-      >
+      <SourceLink github={github} source={source} />
+    </div>
+  </div>
+);
+
+const SourceLink = ({ github, source }: { github: string; source: string }) => {
+  if (!github && !source) {
+    return null;
+  }
+
+  const href = github ? `https://github.com/${github}` : source;
+
+  return (
+    <a
+      href={href}
+      className="button button--secondary button--block button--outline margin-top--sm"
+    >
+      {github && (
         <img
           className={styles.github}
           src="/img/github-logo.svg"
           alt="GitHub logo"
         />
-        Source
-      </a>
-    </div>
-  </div>
-);
+      )}
+      Source
+    </a>
+  );
+};
 
 interface FilterBarProps {
   categoryFilter: string;
