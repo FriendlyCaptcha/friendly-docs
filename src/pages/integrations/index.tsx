@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
-import { useColorMode } from "@docusaurus/theme-common";
 import { Tag, TAGS, Integration, INTEGRATIONS } from "@site/src/integrations";
 
 import styles from "./index.module.css";
@@ -33,6 +32,16 @@ export default function Integrations() {
     [searchQuery, categoryFilter]
   );
 
+  const wordpress = [];
+  const nonWordpress = [];
+  integrations.forEach((integration) => {
+    if (integration.link.includes("wordpress.org")) {
+      wordpress.push(integration);
+    } else {
+      nonWordpress.push(integration);
+    }
+  });
+
   const androidVisible = !!integrations.find((i) => i.slug === "android");
 
   return (
@@ -54,10 +63,10 @@ export default function Integrations() {
       <div
         className={clsx(
           styles.grid,
-          "container margin-top--lg margin-bottom--xl"
+          "container margin-bottom--xl"
         )}
       >
-        {integrations.map((integration) => (
+        {!!nonWordpress.length && nonWordpress.map((integration) => (
           <IntegrationCard key={integration.slug} {...integration} />
         ))}
         <div className={clsx("card", styles.grid__item)}>
@@ -71,6 +80,23 @@ export default function Integrations() {
           </div>
         </div>
       </div>
+      {!!wordpress.length && (
+        <>
+        <div className="container margin-bottom--lg">
+          <h2 className="margin--none">WordPress &amp; Plugins</h2>
+        </div>
+      <div
+        className={clsx(
+          styles.grid,
+          "container margin-bottom--xl"
+        )}
+      >
+        {!!wordpress.length && wordpress.map((integration) => (
+          <IntegrationCard key={integration.slug} {...integration} />
+        ))}
+      </div>
+      </>
+      )}
       <LicensingFooter android={androidVisible} />
     </Layout>
   );
@@ -169,7 +195,7 @@ function FilterBar({
   setSearchQuery,
 }: FilterBarProps) {
   return (
-    <div className="container margin-vert--md">
+    <div className="container margin-top--md margin-bottom--lg padding-bottom--lg">
       <div className={clsx("padding-top--md", styles.filter)}>
         <div
           className={clsx(
