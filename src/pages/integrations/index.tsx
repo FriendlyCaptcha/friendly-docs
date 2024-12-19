@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -10,20 +10,28 @@ export default function Integrations() {
   const [categoryFilter, setCategoryFilter] = React.useState("");
   const [searchQuery, setSearchQuery] = React.useState("");
 
-  let integrations = INTEGRATIONS.filter((i) => {
-    if (categoryFilter === "v1") {
-      return i.fcVersion === "v1";
-    }
-    return i.fcVersion === "v2";
-  });
+  let integrations = useMemo(
+    () =>
+      INTEGRATIONS.filter((i) => {
+        if (categoryFilter === "v1") {
+          return i.fcVersion === "v1";
+        }
+        return i.fcVersion === "v2";
+      }),
+    [categoryFilter]
+  );
 
-  integrations = integrations.filter((i) => {
-    const s = JSON.stringify(i).toLowerCase();
-    return (
-      s.includes(searchQuery.toLowerCase()) &&
-      s.includes(categoryFilter.toLowerCase())
-    );
-  });
+  integrations = useMemo(
+    () =>
+      integrations.filter((i) => {
+        const s = JSON.stringify(i).toLowerCase();
+        return (
+          s.includes(searchQuery.toLowerCase()) &&
+          s.includes(categoryFilter.toLowerCase())
+        );
+      }),
+    [searchQuery, categoryFilter]
+  );
 
   const androidVisible = !!integrations.find((i) => i.slug === "android");
 
