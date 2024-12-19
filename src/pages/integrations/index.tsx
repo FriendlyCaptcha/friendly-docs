@@ -49,7 +49,6 @@ export default function Integrations() {
       <FilterBar
         categoryFilter={categoryFilter}
         setCategoryFilter={setCategoryFilter}
-        searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
       <div
@@ -161,14 +160,12 @@ const SourceLink = ({ github, source }: { github: string; source: string }) => {
 interface FilterBarProps {
   categoryFilter: string;
   setCategoryFilter: (f: string) => void;
-  searchQuery: string;
   setSearchQuery: (q: string) => void;
 }
 
 function FilterBar({
   categoryFilter,
   setCategoryFilter,
-  searchQuery,
   setSearchQuery,
 }: FilterBarProps) {
   return (
@@ -235,7 +232,6 @@ function FilterBar({
               "pills__item",
               categoryFilter || "pills__item--active"
             )}
-            value={searchQuery}
             onClick={() => setCategoryFilter("")}
           >
             All
@@ -257,7 +253,6 @@ function FilterBar({
             className={clsx("pills__item", {
               "pills__item--active": categoryFilter === "v1",
             })}
-            value={searchQuery}
             onClick={() => setCategoryFilter("v1")}
           >
             v1
