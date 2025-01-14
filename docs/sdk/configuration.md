@@ -79,6 +79,17 @@ Example:
 <div class="frc-captcha" data-sitekey="<my sitekey>" lang="de"></div>
 ```
 
+### `frc-disable-eval-patching` meta tag
+You can use this to disable the patching of `window.eval` in the widget.
+
+Useful when the patching breaks your site, which in particular may affect some hot reloading functionality for Webpack (in `dev` mode). Only use this if your website doesn't work otherwise.
+
+Example:
+```html
+<!-- Put this in the <head> of your page -->
+<meta name="frc-disable-eval-patching" content="true">
+```
+
 ## Javascript SDK
 See the [**CreateWidgetOptions**](./reference/sdk.createwidgetoptions.md) for the settings you can pass when creating a widget using `sdk.createWidget()`.
 
