@@ -13,7 +13,6 @@ export interface Integration {
 }
 
 export const INTEGRATIONS: Integration[] = [
-
   // E-commerce plugins
   {
     name: "Magento 2",
@@ -160,6 +159,16 @@ export const INTEGRATIONS: Integration[] = [
     github: "aacn/use-friendly-captcha",
   },
   {
+    name: "React",
+    slug: "react",
+    tags: ["Library"],
+    fcVersion: "v2",
+    image: "react.svg",
+    link: "/integrations/react",
+    github: "FriendlyCaptcha/friendly-captcha-javascript",
+    official: true,
+  },
+  {
     name: "Vue.js",
     slug: "vue-js",
     tags: ["Library"],
@@ -167,6 +176,16 @@ export const INTEGRATIONS: Integration[] = [
     image: "vue-js.svg",
     link: "https://www.npmjs.com/package/@somushq/vue3-friendly-captcha",
     github: "renderaidev/vue-friendly-captcha",
+  },
+  {
+    name: "Vue.js",
+    slug: "vue-js",
+    tags: ["Library"],
+    fcVersion: "v2",
+    image: "vue-js.svg",
+    link: "/integrations/vue",
+    github: "FriendlyCaptcha/friendly-captcha-javascript",
+    official: true,
   },
   {
     name: "JVM",
@@ -244,75 +263,75 @@ export const INTEGRATIONS: Integration[] = [
 // then programmatically add both versions to the main list of integrations.
 [
   {
-    "name": "WordPress",
-    "slug": "wordpress",
-    "image": "wordpress.svg",
+    name: "WordPress",
+    slug: "wordpress",
+    image: "wordpress.svg",
   },
   {
-    "name": "CoBlocks",
-    "slug": "coblocks",
-    "image": "coblocks.svg",
+    name: "CoBlocks",
+    slug: "coblocks",
+    image: "coblocks.svg",
   },
   {
-    "name": "Contact Form 7",
-    "slug": "contact-form-7",
-    "image": "contact-form-7.svg",
+    name: "Contact Form 7",
+    slug: "contact-form-7",
+    image: "contact-form-7.svg",
   },
   {
-    "name": "Divi Contact Form",
-    "slug": "divi",
-    "image": "divi.svg",
+    name: "Divi Contact Form",
+    slug: "divi",
+    image: "divi.svg",
   },
   {
-    "name": "Elementor Pro Forms",
-    "slug": "elementor",
-    "image": "elementor.svg",
+    name: "Elementor Pro Forms",
+    slug: "elementor",
+    image: "elementor.svg",
   },
   {
-    "name": "Fluent Forms",
-    "slug": "fluent-forms",
-    "image": "fluent-forms.png",
+    name: "Fluent Forms",
+    slug: "fluent-forms",
+    image: "fluent-forms.png",
   },
   {
-    "name": "Gravity Forms",
-    "slug": "gravity-forms",
-    "image": "gravity-forms.svg",
+    name: "Gravity Forms",
+    slug: "gravity-forms",
+    image: "gravity-forms.svg",
   },
   {
-    "name": "Ultimate Member",
-    "slug": "ultimate-member",
-    "image": "ultimate-member.png",
+    name: "Ultimate Member",
+    slug: "ultimate-member",
+    image: "ultimate-member.png",
   },
   {
-    "name": "WooCommerce",
-    "slug": "woocommerce",
-    "image": "woocommerce.svg",
-    "tags": ["CMS", "E-commerce"] as Tag[],
+    name: "WooCommerce",
+    slug: "woocommerce",
+    image: "woocommerce.svg",
+    tags: ["CMS", "E-commerce"] as Tag[],
   },
   {
-    "name": "WPForms",
-    "slug": "wpforms",
-    "image": "wpforms.png",
+    name: "WPForms",
+    slug: "wpforms",
+    image: "wpforms.png",
   },
   {
-    "name": "Profile Builder",
-    "slug": "profile-builder",
-    "image": "profile-builder.png",
+    name: "Profile Builder",
+    slug: "profile-builder",
+    image: "profile-builder.png",
   },
   {
-    "name": "Forminator Forms",
-    "slug": "forminator",
-    "image": "forminator.png",
+    name: "Forminator Forms",
+    slug: "forminator",
+    image: "forminator.png",
   },
   {
-    "name": "Formidable Forms",
-    "slug": "formidable",
-    "image": "formidable.svg",
+    name: "Formidable Forms",
+    slug: "formidable",
+    image: "formidable.svg",
   },
   {
-    "name": "Avada Form Builder",
-    "slug": "avada",
-    "image": "avada.png",
+    name: "Avada Form Builder",
+    slug: "avada",
+    image: "avada.png",
   },
 ].forEach((plugin) => {
   INTEGRATIONS.push({
