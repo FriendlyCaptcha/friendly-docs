@@ -72,7 +72,7 @@ const FriendlyCaptcha = forwardRef<Ref, Props>((props, ref) => {
 
       return () => captcha?.destroy();
     }
-  }, [props]);
+  }, Object.values(props));
 
   // Expose the reset method to the parent component
   useImperativeHandle(ref, () => ({
