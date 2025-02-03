@@ -47,6 +47,7 @@ A library for integrating Friendly Captcha into your website. This SDK allows yo
 
 |  Type Alias | Description |
 |  --- | --- |
+|  [APIEndpoint](./sdk.apiendpoint.md) | Which API endpoint to use for the SDK. Typically "eu" or "global", but a URL can be used to specify a custom endpoint. Defaults to "global". |
 |  [FRCEventData](./sdk.frceventdata.md) | Payloads of any of the events that can be dispatched by a widget. |
 |  [FRCEventName](./sdk.frceventname.md) | Names of any of the events that can be dispatched by a widget. |
 |  [FRCWidgetCompleteEvent](./sdk.frcwidgetcompleteevent.md) | Event that gets dispatched when the widget is completed. This happens when the user's browser has succesfully passed the captcha challenge. |

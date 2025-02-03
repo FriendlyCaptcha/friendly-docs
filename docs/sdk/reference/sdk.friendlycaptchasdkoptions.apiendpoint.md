@@ -10,12 +10,12 @@ sidebar_class_name: sidebar-hidden
 
 ## FriendlyCaptchaSDKOptions.apiEndpoint property
 
-The API endpoint to use, defaults to `https://global.frcapi.com/api/v2/captcha`<!-- -->.
+The API endpoint to use, defaults to `https://global.frcapi.com`<!-- -->.
 
-Supports the following shortcuts: - `eu` - `https://eu.frcapi.com/api/v2/captcha` - `global` - `https://global.frcapi.com/api/v2/captcha`
+Supports the following shortcuts: - `eu` - `https://eu.frcapi.com` - `global` - `https://global.frcapi.com`
 
 **Signature:**
 
 ```typescript
-apiEndpoint?: string | "eu" | "global";
+apiEndpoint?: APIEndpoint;
 ```
