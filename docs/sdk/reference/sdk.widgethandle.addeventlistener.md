@@ -25,7 +25,7 @@ addEventListener<K extends keyof FRCEventMap>(type: K, listener: (this: HTMLElem
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  type | K |  |
-|  listener | (this: HTMLElement, ev: [FRCEventMap](./sdk.frceventmap.md)<!-- -->\[K\]) =&gt; any &#124; { handleEvent: (ev: [FRCEventMap](./sdk.frceventmap.md)<!-- -->\[K\]) =&gt; any; } |  |
+|  listener |  |  |
 |  options | AddEventListenerOptions | _(Optional)_ |
 
 **Returns:**

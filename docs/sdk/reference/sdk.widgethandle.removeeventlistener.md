@@ -25,7 +25,7 @@ removeEventListener<K extends keyof FRCEventMap>(type: K, listener: (this: HTMLE
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  type | K |  |
-|  listener | (this: HTMLElement, ev: [FRCEventMap](./sdk.frceventmap.md)<!-- -->\[K\]) =&gt; any &#124; { handleEvent: (ev: [FRCEventMap](./sdk.frceventmap.md)<!-- -->\[K\]) =&gt; any; } |  |
+|  listener |  |  |
 |  options | EventListenerOptions | _(Optional)_ |
 
 **Returns:**
