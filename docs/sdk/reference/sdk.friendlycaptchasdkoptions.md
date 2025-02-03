@@ -22,6 +22,6 @@ export interface FriendlyCaptchaSDKOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [apiEndpoint?](./sdk.friendlycaptchasdkoptions.apiendpoint.md) |  | string &#124; "eu" &#124; "global" | <p>_(Optional)_ The API endpoint to use, defaults to <code>https://global.frcapi.com/api/v2/captcha</code>.</p><p>Supports the following shortcuts: - <code>eu</code> - <code>https://eu.frcapi.com/api/v2/captcha</code> - <code>global</code> - <code>https://global.frcapi.com/api/v2/captcha</code></p> |
+|  [apiEndpoint?](./sdk.friendlycaptchasdkoptions.apiendpoint.md) |  | [APIEndpoint](./sdk.apiendpoint.md) | <p>_(Optional)_ The API endpoint to use, defaults to <code>https://global.frcapi.com</code>.</p><p>Supports the following shortcuts: - <code>eu</code> - <code>https://eu.frcapi.com</code> - <code>global</code> - <code>https://global.frcapi.com</code></p> |
 |  [disableEvalPatching?](./sdk.friendlycaptchasdkoptions.disableevalpatching.md) |  | boolean | _(Optional)_ Whether to disable the patching of <code>window.eval</code>. Useful when the patching breaks your site, which in particular may affect some hot reloading functionality for Webpack (in <code>dev</code> mode). |
 |  [startAgent?](./sdk.friendlycaptchasdkoptions.startagent.md) |  | boolean | _(Optional)_ Start the background agent (and solver) immediately, defaults to <code>true</code>. |
