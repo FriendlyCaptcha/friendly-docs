@@ -6,10 +6,10 @@ hide_table_of_contents: true
 
 # Vue Integration
 
-To integrate Friendly Captcha into your Vue application, you can use the `friendlycaptcha/sdk` NPM package.
+To integrate Friendly Captcha into your Vue application, you can use the `@friendlycaptcha/sdk` NPM package.
 
 ```bash
-npm install friendlycaptcha/sdk
+npm install @friendlycaptcha/sdk
 ```
 
 ## Friendly Captcha Component

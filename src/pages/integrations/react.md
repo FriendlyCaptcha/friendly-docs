@@ -6,10 +6,10 @@ hide_table_of_contents: true
 
 # React Integration
 
-To integrate Friendly Captcha into your React application, you can use the `friendlycaptcha/sdk` NPM package.
+To integrate Friendly Captcha into your React application, you can use the `@friendlycaptcha/sdk` NPM package.
 
 ```bash
-npm install friendlycaptcha/sdk
+npm install @friendlycaptcha/sdk
 ```
 
 ## Friendly Captcha Component
