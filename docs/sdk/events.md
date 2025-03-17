@@ -31,7 +31,7 @@ You can listen to events using `HTMLElement.addEventListener` or `widget.addEven
       myButton.disabled = true;
   });
 
-  myWidget.addEventListener("frc:widget.expired", function(event) {
+  myWidget.addEventListener("frc:widget.expire", function(event) {
       console.warn("The widget expired because the user waited too long");
       myButton.disabled = true;
   });
