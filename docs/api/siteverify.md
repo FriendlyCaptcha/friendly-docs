@@ -29,7 +29,7 @@ The response body is a JSON object which has a `success` field that tells you wh
   "success": true,
   "data": { 
     "challenge": {
-        "timestamp": "2023-08-04T13:01:25Z", // Timestamp when the captcha challenge was completed.
+        "timestamp": "2025-03-18T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
         "origin": "https://example.com" // Origin where the challenge happened. This can be empty if unknown.
     }
   }
