@@ -11,7 +11,7 @@ Removing barriers to accessing the web is a primary value of Friendly Captcha, s
 
 ![Screenshot of the Friendly Captcha accessibility checker](./a11y-checker.png)
 
-I entered the URL of the Friendly Captcha demo. Sure enough, the report contained an issue: the `<iframe>` element that houses the Friendly Captcha widget was missing an accessible name. According to WCAG 2.0, all `<frame>` and `<iframe>` elements must have an accessible name, provided by the `title` attribute. The Friendly Captcha widget didn't have that attribute.
+I entered the URL of the Friendly Captcha demo. Sure enough, the report contained an issue: the `<iframe>` element that houses the Friendly Captcha widget was missing an accessible name. According to WCAG 2.0, [all `<frame>` and `<iframe>` elements must have an accessible name](https://www.w3.org/TR/WCAG20-TECHS/H64.html), provided by the `title` attribute. The Friendly Captcha widget didn't have that attribute.
 
 [One pull request later](https://github.com/FriendlyCaptcha/friendly-captcha-sdk/pull/40), the Friendly Captcha widget had a (properly localized) `title` attribute with a descriptive name. After redeploying the demo, I checked it again using the accessibility checker.
 
