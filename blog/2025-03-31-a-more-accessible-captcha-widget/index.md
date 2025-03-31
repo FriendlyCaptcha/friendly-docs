@@ -5,9 +5,9 @@ authors: [agreenberg]
 tags: [captcha, accessibility, announcement]
 ---
 
-A couple of weeks ago, while browsing open support tickets, I noticed a customer report that the Friendly Captcha widget was not WCAG-compliant. In other words, something about the widget fell outside the set of recommendations provided by the Web Content Accessibility Guidelines.
+A couple of weeks ago, while browsing open support tickets, I noticed a customer report that the Friendly Captcha widget was not WCAG-compliant. In other words, something about the widget fell outside the set of recommendations provided by the Web Content Accessibility Guidelines (WCAG). Removing barriers to accessing the web is a primary value of Friendly Captcha, so we try hard to make our products as accessible as possible.
 
-Removing barriers to accessing the web is a primary value of Friendly Captcha, so it wouldn't do to have a product that was not as accessible as possible. As luck would have it, right around the time of this customer report, we launched an in-house [website accessibility checker](https://accessibilitycheck.friendlycaptcha.com/). It allows anyone to input a website URL and receive a report with an accessibility score and list of remediations to achieve compliancy with common accessibility standards.
+As luck would have it, right around the time of this customer report, we launched an in-house [website accessibility checker](https://accessibilitycheck.friendlycaptcha.com/). It allows anyone to input a website URL and receive a report with an accessibility score and a list of remediations to achieve compliancy with **WCAG 2** and **EN 301 549**, two important accessibility standards. 
 
 ![Screenshot of the Friendly Captcha accessibility checker](./a11y-checker.png)
 
@@ -17,4 +17,4 @@ I entered the URL of the Friendly Captcha demo. Sure enough, the report containe
 
 ![Screenshot of the accessibility report for the Friendly Captcha demo](./fc-demo-report.png)
 
-The positive feedback from a big green checkmark never fails. If you're looking for a user-friendly and accessible captcha solution, consider trying [Friendly Captcha](https://friendlycaptcha.com/). Or, if you'd like to see how your websites stacks up in terms of accessibility, try entering its URL in the [accessibility checker](https://accessibilitycheck.friendlycaptcha.com/)!
+This time, it earned a score of 100 and a big green checkmark. Now, the Friendly Captcha widget is even more accessible to those who use browser assistive technologies. If you're looking for a user-friendly and accessible captcha solution, consider trying [Friendly Captcha](https://friendlycaptcha.com/). Or, if you'd like to see how your websites stacks up in terms of accessibility, try entering its URL in the [accessibility checker](https://accessibilitycheck.friendlycaptcha.com/)!
