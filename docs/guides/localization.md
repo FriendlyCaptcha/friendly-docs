@@ -53,7 +53,7 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 98% |
 | 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 98% |
 | 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 98% |
-| 🇷🇺 **Russian** \| *Английский* | `"ru"`, `"ru-RU"`| 100% |
+| 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 100% |
 | 🇪🇸 **Spanish** \| *Español* | `"es"`, `"es-ES"`| 98% |
 | 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 98% |
 | 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 98% |
