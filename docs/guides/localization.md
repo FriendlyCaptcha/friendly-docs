@@ -39,23 +39,26 @@ If you are creating widgets programmatically you can use the `language` field in
 
 ## Language Codes
 
-| Language                         | Code                         | % Complete |
-| -------------------------------- | ---------------------------- | ---------- |
-| 🇨🇿 **Czech** \| _Čeština_        | `"cs"`, `"cs-CZ"`            | 100%       |
-| 🇩🇰 **Danish** \| _Dansk_         | `"da"`, `"da-DK"`            | 100%       |
-| 🇳🇱 **Dutch** \| _Nederlands_     | `"nl"`, `"nl-NL"`            | 100%       |
-| 🇺🇸 **English**                   | `"en"`, `"en-US"`            | 100%       |
-| 🇬🇧 **English (UK)**              | `"en-GB"`                    | 100%       |
-| 🇫🇷 **French** \| _Français_      | `"fr"`, `"fr-FR"`            | 100%       |
-| 🇩🇪 **German** \| _Deutsch_       | `"de"`, `"de-DE"`            | 100%       |
-| 🇭🇺 **Hungarian** \| _Magyar_     | `"hu"`, `"hu-HU"`            | 52%        |
-| 🇮🇹 **Italian** \| _Italiano_     | `"it"`, `"it-IT"`            | 100%       |
-| 🇵🇹 **Portuguese** \| _Português_ | `"pt"`, `"pt-PT"`, `"pt-BR"` | 100%       |
-| 🇪🇸 **Spanish** \| _Español_      | `"es"`, `"es-ES"`            | 100%       |
-| 🇸🇪 **Swedish** \| _Svenska_      | `"sv"`, `"sv-SE"`            | 100%       |
-| 🇹🇷 **Turkish** \| _Türkçe_       | `"tr"`, `"tr-TR"`            | 100%       |
+| Language | Code  | % Complete              |
+|----------|-------|-------------------------|
+| 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 98% |
+| 🇩🇰 **Danish** \| *Dansk* | `"da"`, `"da-DK"`| 98% |
+| 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 98% |
+| 🇺🇸 **English** | `"en"`, `"en-US"`| 100% |
+| 🇬🇧 **English (UK)** |`"en-GB"`| 100% |
+| 🇫🇮 **Finnish** \| *Suomi* | `"fi"`, `"fi-FI"`| 98% |
+| 🇫🇷 **French** \| *Français* | `"fr"`, `"fr-FR"`| 98% |
+| 🇩🇪 **German** \| *Deutsch* | `"de"`, `"de-DE"`| 98% |
+| 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 51% |
+| 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 98% |
+| 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 98% |
+| 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 98% |
+| 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 100% |
+| 🇪🇸 **Spanish** \| *Español* | `"es"`, `"es-ES"`| 98% |
+| 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 98% |
+| 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 98% |
 
-> This table was last updated 2025-02-27.
+> This table was last updated 2025-05-07.
 
 ::::tip Language not supported?
 
