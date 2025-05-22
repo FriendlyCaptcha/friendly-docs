@@ -41,6 +41,7 @@ If you are creating widgets programmatically you can use the `language` field in
 
 | Language | Code  | % Complete              |
 |----------|-------|-------------------------|
+| 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 100% |
 | 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 98% |
 | 🇩🇰 **Danish** \| *Dansk* | `"da"`, `"da-DK"`| 98% |
 | 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 98% |
@@ -58,7 +59,7 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 98% |
 | 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 98% |
 
-> This table was last updated 2025-05-07.
+> This table was last updated 2025-05-22.
 
 ::::tip Language not supported?
 
