@@ -114,6 +114,34 @@ const sidebars = {
       "type": "link",
       "href": "https://github.com/FriendlyCaptcha/friendly-captcha-sdk/blob/main/CHANGELOG.md",
       "label": "Changelog"
+    },
+    {
+      "type": "category",
+      "label": "Enterprise",
+      "link": {
+        "type": "doc",
+        "id": "enterprise/index"
+      },
+      "items": [
+        {
+          "type": "category",
+          "label": "Compliance+ Add-On",
+          "link": {
+            "type": "doc",
+            "id": "enterprise/compliance+-add-on/index"
+          },
+          "items": [
+            "enterprise/compliance+-add-on/single-sign-on",
+            "enterprise/compliance+-add-on/enhanced-access-control",
+            "enterprise/compliance+-add-on/audit-logs"
+          ]
+        },
+      ]
+    },
+    {
+      "type": "link",
+      "href": "https://github.com/FriendlyCaptcha/friendly-captcha-sdk/blob/main/CHANGELOG.md",
+      "label": "Changelog"
     }
   ],
 };
