@@ -86,7 +86,7 @@ To configure the Default Role, go to the [Friendly Captcha Dashboard](https://ap
 
 :::tip
 
-Once the user has logged in for the first time, they will appear in the *Members* section of the Settings page. If needed, you and other administrators can change user roles from here. It is usually a good idea to make the Default Role more limited (e.g. *Member*) so that you can grant more extensive permissions manually on a case-by-case basis (e.g. *Admin*).
+Once the user has logged in for the first time, they will appear in the Members section of the Settings page. If needed, you and other administrators can change user roles from here. It is usually a good idea to make the Default Role more limited (e.g. *Member*) so that you can grant more extensive permissions manually on a case-by-case basis (e.g. *Admin*).
 
 If desired, it is possible to create a [**Custom Role**](./enhanced-access-control) with fewer permissions than a *Member*, or even with zero permissions (i.e. unable to view any resources on the dashboard), and then set this Custom Role as the Default Role.
 
@@ -132,6 +132,6 @@ To disable SSO for your Friendly Captcha organization, log in to the [Friendly C
 
 :::danger
 
-If you disable SSO for your Friendly Captcha organization, all SSO users will also be permanently deleted. To see which users this will affect, review the *Members* section of the Settings page and look for users labelled with *"Logs in with SSO"*.
+If you disable SSO for your Friendly Captcha organization, all SSO users will also be permanently deleted. To see which users this will affect, review the Members section of the Settings page and look for users labelled with *"Logs in with SSO"*.
 
 :::
