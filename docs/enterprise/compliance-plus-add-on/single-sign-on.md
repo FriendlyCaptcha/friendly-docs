@@ -88,7 +88,7 @@ To configure the Default Role, go to the [Friendly Captcha Dashboard](https://ap
 
 Once the user has logged in for the first time, they will appear in the *Members* section of the Settings page. If needed, you and other administrators can change user roles from here. It is usually a good idea to make the Default Role more limited (e.g. *Member*) so that you can grant more extensive permissions manually on a case-by-case basis (e.g. *Admin*).
 
-If desired, it is possible to create a [**Custom Role**](./enhanced-access-control) with less permissions than a *Member*, or even with zero permissions (i.e. unable to view any resources on the dashboard), and then set this Custom Role as the Default Role.
+If desired, it is possible to create a [**Custom Role**](./enhanced-access-control) with fewer permissions than a *Member*, or even with zero permissions (i.e. unable to view any resources on the dashboard), and then set this Custom Role as the Default Role.
 
 :::
 
