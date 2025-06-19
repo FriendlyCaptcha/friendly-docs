@@ -2,7 +2,7 @@
 
 :::info
 
-The Enhanced Access Control feature is part of the [**Compliance+ Add-On**](../compliance+-add-on/).
+The Enhanced Access Control feature is part of the [**Compliance+ Add-On**](../compliance-plus-add-on/).
 
 :::
 
@@ -30,7 +30,7 @@ If you have many team members that have access to your organization's Friendly C
 
 ## Enabling Enhanced Access Control
 
-Enhanced Access Control is enabled by default for all customers with the [**Compliance+ Add-On**](../compliance+-add-on/).
+Enhanced Access Control is enabled by default for all customers with the [**Compliance+ Add-On**](../compliance-plus-add-on/).
 
 ## Managing Enhanced Access Control
 

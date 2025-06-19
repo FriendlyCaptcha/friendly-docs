@@ -3,7 +3,7 @@
 
 :::info
 
-The Single Sign-On feature is part of the [**Compliance+ Add-On**](../compliance+-add-on/).
+The Single Sign-On feature is part of the [**Compliance+ Add-On**](../compliance-plus-add-on/).
 
 :::
 

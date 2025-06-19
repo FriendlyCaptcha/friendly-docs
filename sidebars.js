@@ -128,12 +128,12 @@ const sidebars = {
           "label": "Compliance+ Add-On",
           "link": {
             "type": "doc",
-            "id": "enterprise/compliance+-add-on/index"
+            "id": "enterprise/compliance-plus-add-on/index"
           },
           "items": [
-            "enterprise/compliance+-add-on/single-sign-on",
-            "enterprise/compliance+-add-on/enhanced-access-control",
-            "enterprise/compliance+-add-on/audit-logs"
+            "enterprise/compliance-plus-add-on/single-sign-on",
+            "enterprise/compliance-plus-add-on/enhanced-access-control",
+            "enterprise/compliance-plus-add-on/audit-logs"
           ]
         },
       ]

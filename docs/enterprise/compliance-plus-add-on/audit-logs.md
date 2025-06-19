@@ -2,7 +2,7 @@
 
 :::info
 
-The Audit Logs feature is part of the [**Compliance+ Add-On**](../compliance+-add-on/).
+The Audit Logs feature is part of the [**Compliance+ Add-On**](../compliance-plus-add-on/).
 
 :::
 
@@ -14,7 +14,7 @@ This page shows you how you and your team members can use Audit Logs in the Frie
 
 ## Enabling Audit Logs
 
-Audit Logs are enabled by default for all customers with the [**Compliance+ Add-On**](../compliance+-add-on/).
+Audit Logs are enabled by default for all customers with the [**Compliance+ Add-On**](../compliance-plus-add-on/).
 
 ## Using Audit Logs
 

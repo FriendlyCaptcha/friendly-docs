@@ -22,4 +22,4 @@ Friendly Captcha is compliant with GDPR, CCPA, and cookie law. Our dedicated dat
 
 ## Compliance+ Add-On
 
-The Friendly Captcha [Compliance+ Add-On](./compliance+-add-on/) is an optional extra on the Enterprise plan. It is tailor-made to help you **reduce compliance effort and risk**.
+The Friendly Captcha [Compliance+ Add-On](./compliance-plus-add-on/) is an optional extra on the Enterprise plan. It is tailor-made to help you **reduce compliance effort and risk**.
