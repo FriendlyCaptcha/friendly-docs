@@ -97,14 +97,14 @@ You will be taken to a page where you can configure your new Custom Role:
 
 The form has these fields:
 
-- *Role Name*: The name for your new Custom Role.
-- *Account Permissions*: These are broad permissions that you can grant to this Custom Role. You might for example give the `Manage Billing` permission to a Custom Role designed for your finance team, but give them no other permissions.
-- *All Apps Permissions*: The permission level you set here will be granted to this Custom Role across all Applications. These are the available choices:
+- **Role Name**: The name for your new Custom Role.
+- **Account Permissions**: These are broad permissions that you can grant to this Custom Role. You might for example give the `Manage Billing` permission to a Custom Role designed for your finance team, but give them no other permissions.
+- **All Apps Permissions**: The permission level you set here will be granted to this Custom Role across all Applications. These are the available choices:
     - *Manage*: View, create, update, or delete Applications.
     - *Edit*: View or update Applications.
     - *View*: View all Applications.
     - *None*: Cannot view any Applications.
-- *App Group Permissions*: Here you can grant permissions to one or more specific App Groups. The permission levels (i.e. *Manage*, *Edit*, *View*) behave the same as for *All Apps Permissions* described above.
+- **App Group Permissions**: Here you can grant permissions to one or more specific App Groups. The permission levels (i.e. *Manage*, *Edit*, *View*) behave the same as for *All Apps Permissions* described above.
 
 In the example below, we will create a Custom Role that can *Manage Widget Themes*, *Manage API Keys*, has the *View* permission level for all Applications, and the *Manage* permission level for Applications in one specific App Group:
 
@@ -112,6 +112,14 @@ In the example below, we will create a Custom Role that can *Manage Widget Theme
     <img src="/img/custom-roles-form-completed.png" alt="Screenshot of the completed Custom Role form" />
     <figcaption><i>Screenshot of the completed Custom Role form</i></figcaption>
 </figure>
+
+:::tip
+
+**All Apps Permissions** takes precedence over **App Group Permissions**. It behaves like the default permission level across all *App Groups*. You can then use **App Group Permissions** to grant increased permissions to a specific *App Group*.
+
+You cannot use **App Group Permissions** to restrict permissions below the level of permissions granted by **All Apps Permissions**. If you try to do this, the dashboard will display an error message.
+
+:::
 
 Click the *Save Changes* button when you are done. You will be taken back to the main *Settings* page, where you can see your new Custom Role:
 
