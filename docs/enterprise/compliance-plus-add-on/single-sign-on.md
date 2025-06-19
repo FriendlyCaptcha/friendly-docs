@@ -77,7 +77,7 @@ The **Members** section of the Settings page shows you the list of users for you
 
 When a user logs in with SSO to the Friendly Captcha dashboard for the first time, the dashboard automatically creates a user account for them and assigns this new user to the Default Role (e.g. *Admin*, *Member*, etc).
 
-To configure the Default Role, go to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. Use the **Default Role** drop-down menu to select your desired option. See [Enhanced Access Control](./enhanced-access-control) for more information about creating more tailored roles to use here.
+To configure the Default Role, go to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. Use the **Default Role** drop-down menu to select your desired option. See [Enhanced Access Control](./enhanced-access-control) for information about creating more tailored roles to use here.
 
 <figure style={{ textAlign: 'center' }}>
     <img width="600" src="/img/single-sign-on-default-role.png" alt="Screenshot of single sign-on default role selection" />
