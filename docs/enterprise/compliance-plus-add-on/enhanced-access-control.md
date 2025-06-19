@@ -100,7 +100,7 @@ The form has these fields:
 - *Role Name*: The name for your new Custom Role.
 - *Account Permissions*: These are broad permissions that you can grant to this Custom Role. You might for example give the `Manage Billing` permission to a Custom Role designed for your finance team, but give them no other permissions.
 - *All Apps Permissions*: The permission level you set here will be granted to this Custom Role across all Applications. These are the available choices:
-    - *Manage*: View, update, or delete Applications.
+    - *Manage*: View, create, update, or delete Applications.
     - *Edit*: View or update Applications.
     - *View*: View all Applications.
     - *None*: Cannot view any Applications.

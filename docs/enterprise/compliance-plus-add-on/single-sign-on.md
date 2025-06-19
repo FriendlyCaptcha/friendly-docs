@@ -17,7 +17,7 @@ This page shows you how to configure SSO authentication in the Friendly Captcha 
 
 ### Identity Provider
 
-Before configuring Friendly Captcha SSO, login to your Identity Provider's dashboard and create an app integration for Friendly Captcha. The terminology may vary depending on the provider, but look for where you can create a *"New Application"*, *"New Integration"*, *"New OIDC App"*, or similar. You may need to consult your Identity Provider's OIDC documentation.
+Before configuring Friendly Captcha SSO, log in to your Identity Provider's dashboard and create an app integration for Friendly Captcha. The terminology may vary depending on the provider, but look for where you can create a *"New Application"*, *"New Integration"*, *"New OIDC App"*, or similar. You may need to consult your Identity Provider's OIDC documentation.
 
 When setting up a new app integration, your Identity Provider will usually ask for one or more *Redirect URIs* (sometimes called *"Sign-in redirect URIs"*, *"Log-in callback URIs"*, or similar). This is the URL you should provide:
 
@@ -94,15 +94,15 @@ If desired, it is possible to create a [**Custom Role**](./enhanced-access-contr
 
 ## Logging in with SSO
 
-Assuming that SSO is configured for your Friendly Captcha organization using the steps above, team members can now login to the Friendly Captcha dashboard with SSO using a special login link.
+Assuming that SSO is configured for your Friendly Captcha organization using the steps above, team members can now log in to the Friendly Captcha dashboard with SSO using a special login link.
 
 :::info
 
-If you aren't the administrator for your Friendly Captcha organization and don't already have a login to the Friendly Captcha dashboard, ask a team member with access to share this SSO login link with you.
+If you aren't the administrator for your Friendly Captcha organization and don't already have a login to the Friendly Captcha dashboard, ask a team member with access to share this SSO Login Link with you.
 
 :::
 
-To retrieve this link, login to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. You will see a *Copy Login Link* button:
+To retrieve this link, log in to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. You will see a *Copy Login Link* button:
 
 <figure style={{ textAlign: 'center' }}>
     <img src="/img/single-sign-on-copy-link.png" alt="Screenshot of single sign-on button to copy the login link" />
@@ -113,13 +113,13 @@ Click this button to copy the SSO Login Link to your clipboard and share it with
 
 :::info
 
-When a user open this link in their web browser, they will be redirected to your identity provider. For example, if your identity provider is Microsoft, the user will need to authenticate to their Microsoft account (unless they are already authenticated). Once authenticated, they will be redirected to the Friendly Captcha dashboard for your organization.
+When a user opens this link in their web browser, they will be redirected to your identity provider. For example, if your identity provider is Microsoft, the user will need to authenticate to their Microsoft account (unless they are already authenticated). Once authenticated, they will be redirected to the Friendly Captcha dashboard for your organization.
 
 :::
 
 ### Link caching
 
-For convenience, this SSO login link will be cached in the user's browser after a successful login. If the user logs out and later navigates back to the Friendly Captcha Dashboard instead of using the SSO login link, they will be shown a *Log in with SSO* button. Clicking this button will behave the same as using the SSO login link.
+For convenience, this SSO Login Link will be cached in the user's browser after a successful login. If the user logs out and later navigates back to the Friendly Captcha Dashboard instead of using the SSO Login Link, they will be shown a *Log in with SSO* button. Clicking this button will behave the same as using the SSO Login Link.
 
 <figure style={{ textAlign: 'center' }}>
     <img width="500" src="/img/single-sign-on-cached-link.png" alt="Screenshot of cached Log in with SSO button" />
@@ -128,7 +128,7 @@ For convenience, this SSO login link will be cached in the user's browser after 
 
 ## Disabling SSO
 
-To disable SSO for your Friendly Captcha organization, login to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. You will see a *Delete SSO Configuration* button. Clicking this button will ask you to confirm deletion.
+To disable SSO for your Friendly Captcha organization, log in to the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), navigate to the **Settings** page and find the **Single Sign-On (SSO)** area. You will see a *Delete SSO Configuration* button. Clicking this button will ask you to confirm deletion.
 
 :::danger
 
