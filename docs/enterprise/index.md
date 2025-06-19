@@ -4,12 +4,8 @@ Friendly Captcha is a service that protects websites from bots and abuse in a pr
 
 The Friendly Captcha Enterprise plan offers specialized support for businesses and organizations with the most demanding requirements for security, scalability, and compliance.
 
-As your business grows, your protection requirements may exceed the limits in our *Starter*, *Growth*, and *Advanced* [pricing plans](https://friendlycaptcha.com/#pricing). Fortunately, the **Enterprise** plan allows you to customize your service with Friendly Captcha to any number of domains and requests per month and ensure that you have maximum protection that scales with your business.
+As your business grows, your protection requirements may exceed the limits in our *Starter*, *Growth*, and *Advanced* [pricing plans](https://friendlycaptcha.com/#pricing). Our **Enterprise** plan allows you to customize your service with Friendly Captcha to have maximum protection that scales with your business. The Enterprise plan includes these features:
 
-The Enterprise plan includes these features:
-
-- Unlimited protected domains
-- Unlimited requests / month
 - Automatic risk detection and smart difficulty scaling
 - Dedicated data centers (e.g. EU only)
 - 99.9% guaranteed uptime
