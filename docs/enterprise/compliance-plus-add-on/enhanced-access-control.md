@@ -43,6 +43,12 @@ In the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), 
 
 ### App Groups
 
+:::info
+
+There is a built-in App Group called **Default**. If you haven't created any additional App Groups yet, all of your *Applications* belong to the **Default** App Group.
+
+:::
+
 To add a new App Group, type a suitable name into the input box and click the *Add App Group* button:
 
 <figure style={{ textAlign: 'center' }}>
@@ -134,6 +140,12 @@ You can now assign specific users to your new Custom Role. In the *Settings* pag
     <img src="/img/custom-roles-assign.png" alt="Screenshot of assigning a Custom Role to a user" />
     <figcaption><i>Screenshot of assigning a Custom Role to a user</i></figcaption>
 </figure>
+
+:::tip
+
+When inviting a new user, you have to select a role for them when sending the invite. The choice of roles includes any Custom Roles you have created.
+
+:::
 
 :::info
 
