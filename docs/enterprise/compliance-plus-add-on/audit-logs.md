@@ -63,4 +63,4 @@ If you want to view activity for a particular time period, click the date select
 
 ## Controlling who can view Audit Logs
 
-Due to the sensitive nature of Audit Logs, by default only the user with the *Owner* role can view Audit Logs.
+Due to the sensitive nature of Audit Logs, only the user with the *Owner* role can view Audit Logs.
