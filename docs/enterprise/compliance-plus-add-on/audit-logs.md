@@ -27,7 +27,7 @@ In the [Friendly Captcha Dashboard](https://app.friendlycaptcha.com/dashboard), 
     <figcaption><i>Screenshot of Audit Logs</i></figcaption>
 </figure>
 
-Once Audit Logs are enabled, dashboard activity from that point forwards will be recorded here. There are three columns:
+There are three columns:
 
 - *Description*: A summary of what changed.
 - *Actor*: The display name of the user that made this change.
@@ -63,4 +63,4 @@ If you want to view activity for a particular time period, click the date select
 
 ## Controlling who can view Audit Logs
 
-Due to the sensitive nature of Audit Logs, by default only the user with the *Owner* role can view Audit Logs. If you need more granular control over which users can view Audit Logs, see [Enhanced Access Control](./enhanced-access-control).
+Due to the sensitive nature of Audit Logs, by default only the user with the *Owner* role can view Audit Logs.
