@@ -33,9 +33,9 @@ Instead you would replace the hCaptcha plugin and install a plugin that supports
     ```
     with the hCAPTCHA-compatible Friendly Captcha scripts.
     ```html
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.20/contrib/hcaptcha-site.min.js"
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.23/contrib/hcaptcha-site.min.js"
             async defer></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.20/contrib/hcaptcha-site.compat.min.js"
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.23/contrib/hcaptcha-site.compat.min.js"
           async defer></script>
     ```
 
