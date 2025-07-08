@@ -41,7 +41,10 @@ If you are creating widgets programmatically you can use the `language` field in
 
 | Language | Code  | % Complete              |
 |----------|-------|-------------------------|
+| 🇪🇬 **Arabic** \| *العربية* | `"ar"`, `"ar-EG"`| 100% |
 | 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 100% |
+| 🇨🇳 **Chinese (simplified)** \| *汉语* | `"zh"`, `"zh-CN"`, `"zh-Hans"`| 100% |
+| 🇹🇼 **Chinese (traditional)** \| *漢語* |`"zh-TW"`, `"zh-Hant"`| 100% |
 | 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 98% |
 | 🇩🇰 **Danish** \| *Dansk* | `"da"`, `"da-DK"`| 98% |
 | 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 98% |
@@ -50,16 +53,21 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇫🇮 **Finnish** \| *Suomi* | `"fi"`, `"fi-FI"`| 98% |
 | 🇫🇷 **French** \| *Français* | `"fr"`, `"fr-FR"`| 98% |
 | 🇩🇪 **German** \| *Deutsch* | `"de"`, `"de-DE"`| 98% |
+| 🇮🇳 **Hindi** \| *हिंदी* | `"hi"`, `"hi-IN"`| 100% |
 | 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 51% |
+| 🇮🇩 **Indonesian** \| *Indonesia* | `"id"`, `"id-ID"`| 100% |
 | 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 98% |
 | 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 98% |
 | 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 98% |
 | 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 100% |
+| 🇸🇰 **Slovak** \| *Slovenčina* | `"sk"`, `"sk-SK"`| 100% |
 | 🇪🇸 **Spanish** \| *Español* | `"es"`, `"es-ES"`| 98% |
-| 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 98% |
+| 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 100% |
+| 🇹🇭 **Thai** \| *ไทย* | `"th"`, `"th-TH"`| 100% |
 | 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 98% |
+| 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 100% |
 
-> This table was last updated 2025-05-22.
+> This table was last updated 2025-07-08.
 
 ::::tip Language not supported?
 
