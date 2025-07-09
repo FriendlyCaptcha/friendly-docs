@@ -14,8 +14,8 @@ With this approach you can keep all other code in your application the same.
 ### IP or password-based gating
 If you perform automated end-to-end tests in production you may want to conditionally disable the captcha check for your test-runner.
 
-* If you know the IPs of the machines that run these tests you could skip the captcha check by adding the IPs to an allowlist in your code or infrastructure.
-* If you do not know the IP beforehand, you could have your test-runner put a secret in the form submission that you check for. In other words, you can specify a password that your backend will accept for bypassing the captcha.
+* If you know the IPs of the machines that run these tests you could skip [CAPTCHA verification](../getting-started/verify) by adding the IPs to an allowlist in your code or infrastructure.
+* If you do not know the IP beforehand, you could have your test-runner put a secret in the form submission that you check for. In other words, you can specify a password that your backend will accept for bypassing [CAPTCHA verification](../getting-started/verify).
 
 ### Dynamic button enabling
 Many websites that have a form protected using Friendly Captcha will only enable the submit button after the captcha widget is finished to prevent users from submitting without a valid captcha solution. When you are using a browser automation tool you may want to enable the button despite the captcha not being completed, we advice you achieve this by executing a snippet of Javascript (which is something you can do in all browser testing automation tools).
