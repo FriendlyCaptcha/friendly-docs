@@ -111,11 +111,6 @@ const sidebars = {
       ]
     },
     {
-      "type": "link",
-      "href": "https://github.com/FriendlyCaptcha/friendly-captcha-sdk/blob/main/CHANGELOG.md",
-      "label": "Changelog"
-    },
-    {
       "type": "category",
       "label": "Enterprise",
       "link": {
