@@ -97,6 +97,15 @@ export const INTEGRATIONS: Integration[] = [
     link: "https://github.com/studiomitte/friendlycaptcha-typo3",
     github: "studiomitte/friendlycaptcha-typo3",
   },
+  {
+    name: "Salesforce",
+    slug: "salesforce",
+    tags: ["CMS"],
+    fcVersion: "v2",
+    image: "salesforce.svg",
+    link: "/integrations/salesforce",
+    github: "#",
+  },
 
   // Libraries and SDKs
   {
