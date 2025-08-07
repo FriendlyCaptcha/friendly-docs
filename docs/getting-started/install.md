@@ -54,7 +54,7 @@ You can install our NPM package to create widgets programmatically.
 npm install @friendlycaptcha/sdk
 
 # using yarn
-yan add @friendlycaptcha/sdk
+yarn add @friendlycaptcha/sdk
 ```
 
 
