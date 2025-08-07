@@ -7,7 +7,7 @@ description: Integrate Friendly Captcha into your Salesforce environment
 
 # Friendly Captcha for Salesforce
 
-To integrate Friendly Captcha into your Salesforce environment, you can use [Friendly Captcha for Salesforce][appexchange], a package available on Salesforce AppExchange.
+<!-- To integrate Friendly Captcha into your Salesforce environment, you can use [Friendly Captcha for Salesforce][appexchange], a package available on Salesforce AppExchange. -->
 
 Integrating Friendly Captcha involves a front-end component and a back-end component. We recommend familiarizing yourself with the [Friendly Captcha documentation][fcdocs] to develop a baseline understanding of how an integration works.
 
@@ -83,7 +83,7 @@ friendlycaptcha.VerifyResult result = friendlycaptcha.Client.verifyCaptchaRespon
 
 ### Lightning Web Component
 
-You can pass front-end configuration parameters to the `<friendlycaptcha-widget>` LWC as follows.
+You can pass front-end configuration parameters to the `<friendlycaptcha-widget>` LWC like this:
 
 ```
 <friendlycaptcha-widget
@@ -97,17 +97,11 @@ You can pass front-end configuration parameters to the `<friendlycaptcha-widget>
 
 ## Flow Example
 
-This example shows how to use Friendly Captcha for Salesforce in a Flow. We'll create
-a simple login screen that displays a Friendly Captcha Widget and includes server-side
-captcha verification.
+This example shows how to use Friendly Captcha for Salesforce in a Flow. We'll create a simple login screen that displays a Friendly Captcha Widget and includes server-side captcha verification. The pattern outlined here should be translatable anywhere you can use LWCs and Apex classes.
 
 ### Create a new Screen Flow in Setup
 
-This will open the Flow Builder app with Start and End elements. Add a Screen Flow with
-an Email component and a Password component, and then scroll down to the list of custom
-components to add a Friendly Captcha Widget component. If you haven't configured your
-integration by following the steps listed above, make sure to at least add a value for
-the Sitekey field at this step.
+This will open the Flow Builder app with Start and End elements. Add a Screen Flow with an Email component and a Password component, and then scroll down to the list of custom components to add a Friendly Captcha Widget component. If you haven't configured your integration by following [the steps listed above](#configuration), make sure to at least add a value for the Sitekey field at this step (under **Properties**).
 
 <figure style={{ textAlign: 'center', margin: '3em 0' }}>
     <img src="/img/salesforce-screen-flow.png" alt="Configuring a Screen Flow" />
@@ -156,19 +150,15 @@ public class LoginAction {
 }
 ```
 
-This Apex Action performs a Friendly Captcha API call to verify the captcha response from the previous element in the
-Flow. If Friendly Captcha is able to verify the captcha response, the `success` flag is set to true. Any errors
-returned by the API are also included in the output of this Flow element.
+This Apex Action calls the Friendly Captcha API to verify the captcha response generated in the previous Flow element. If Friendly Captcha is able to verify the captcha response, the `success` flag is set to true. Any errors returned by the API are also included in the output of this Flow element.
 
 The `friendlycaptcha.Client.verifyCaptchaResponse()` method requires an API key for authentication. Make sure you've configured an API key as outlined in the documentation on [configuration](#configuration).
 
-You could perform other kinds of validation (for example on the email and password) in this action as well.
-Save the Apex class and return to your Screen Flow.
+You could perform other kinds of validation (for example on the email and password) in this action as well. Save the Apex class and return to your Screen Flow.
 
 ### Add the "Verify Captcha" Apex Action to your Screen Flow
 
-It should come after the Login Screen element. Make sure to connect the "Captcha Response" (and optionally "Sitekey")
-variables from the Screen element as inputs to the Apex Action element.
+It should come after the Login Screen element. Make sure to connect the "Captcha Response" (and optionally "Sitekey") variables from the Screen element as inputs to the Apex Action element.
 
 <figure style={{ textAlign: 'center', margin: '3em 0' }}>
     <img src="/img/salesforce-apex-action.png" alt="Configuring an Apex Action" />
@@ -177,21 +167,62 @@ variables from the Screen element as inputs to the Apex Action element.
 
 ### Add a Decision element based on the output of the Apex Action
 
-You can use the `success` and `error` output variables of the Apex Action to render success or failure screens.
-Add a Decision element that leads to "Success" or "Failure" based on whether the `success` variable is true or
-false. In this example, depending on whether the verification is successful, a different screen is presented.
+You can use the `success` and `error` output variables of the Apex Action to render success or failure screens. Add a Decision element that leads to "Success" or "Failure" based on whether the `success` variable is true or false. In this example, depending on whether the verification is successful, a different screen is presented.
 
 <figure style={{ textAlign: 'center', margin: '3em 0' }}>
     <img src="/img/salesforce-flow-decision.png" alt="Configuration of a Decision Flow element" />
     <figcaption><i>Configuration of a Decision Flow element</i></figcaption>
 </figure>
 
-You can also conditionally render the error message if it's present:
+In this implementation, we chose to render Screen elements that showed a simple confirmation text on success, and a failure message otherwise. In the failure message, you can conditionally render the error message if it's present:
 
 <figure style={{ textAlign: 'center', margin: '3em 0' }}>
     <img src="/img/salesforce-flow-error.png" alt="Conditionally display an error message" />
     <figcaption><i>Conditionally display an error message</i></figcaption>
 </figure>
+
+Here's the final Flow:
+
+<figure style={{ textAlign: 'center', margin: '3em 0' }}>
+    <img src="/img/salesforce-flow-final.png" alt="Complete Salesforce Flow example" />
+    <figcaption><i>Complete Salesforce Flow example</i></figcaption>
+</figure>
+
+## API Reference
+
+### Apex Class
+
+[Click here for the Apex reference documentation.](reference/)
+
+### Lightning Web Component
+
+Using the LWC from code (e.g., from within another LWC) looks like this:
+
+```
+<friendlycaptcha-widget
+  sitekey={sitekey}
+  api-endpoint={endpoint}
+  theme={theme}
+  start-mode={startMode}
+  language={language}
+></friendlycaptcha-widget>
+```
+
+Note that all properties (except `sitekey`) are optional and have sensible defaults. The LWC will attempt to read these properties from the "Settings" record of the `Config__mdt` CMDT; properties passed directly to the LWC take precedence.
+
+The LWC also exposes all events exposed by [the widget itself][widget-events]:
+
+```
+<friendlycaptcha-widget
+  sitekey={sitekey}
+  oncomplete={handleComplete}
+  onerror={handleError}
+  onexpire={handleExpire}
+  onstatechange={handleStateChange}
+></friendlycaptcha-widget>
+```
+
+Each event handler receives an `event` argument with a `detail` property matching the shapes documented on the [Widget SDK Events page][widget-events].
 
 [appexchange]: #
 [fc]: https://friendlycaptcha.com
@@ -199,4 +230,4 @@ You can also conditionally render the error message if it's present:
 [html]: https://developer.friendlycaptcha.com/docs/v2/getting-started/install#option-a-html-scripts
 [sitekey-instructions]: /docs/v2/getting-started/setup
 [apikey-instructions]: /docs/v2/api/authentication#creating-api-keys
-
+[widget-events]: /docs/v2/sdk/events

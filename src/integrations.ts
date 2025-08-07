@@ -103,8 +103,8 @@ export const INTEGRATIONS: Integration[] = [
     tags: ["CMS"],
     fcVersion: "v2",
     image: "salesforce.svg",
-    link: "/integrations/salesforce",
-    github: "#",
+    link: "/integrations/salesforce/",
+    github: "FriendlyCaptcha/friendly-captcha-salesforce",
   },
 
   // Libraries and SDKs
