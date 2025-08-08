@@ -28,7 +28,7 @@ You can listen to events using `HTMLElement.addEventListener` or `widget.addEven
 
   myWidget.addEventListener("frc:widget.error", function(event) {
       console.error("Widget ran into an error:", event.detail.error);
-      myButton.disabled = true;
+      myButton.disabled = false;
   });
 
   myWidget.addEventListener("frc:widget.expire", function(event) {
