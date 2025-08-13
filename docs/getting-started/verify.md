@@ -59,7 +59,7 @@ The response body is a JSON object which has a `success` field that tells you wh
   "success": false,
   "error": {
     "error_code": "bad_request", // Error code, see the table below for possible values
-    "detail": "..." // Extra details, though this is mainly intended for Friendly Captcha staff
+    "detail": "..." // Extra details (this is mainly intended for Friendly Captcha staff)
   },
 }
 
