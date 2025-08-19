@@ -21,10 +21,12 @@ Add the following to your website's HTML:
 ```
 
 ::::tip
-#### Using the scripts without a CDN
+#### Using the scripts without a CDN (i.e. self-hosting)
 
-You can [download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/) and serve them from your own server.
+Using `cdn.jsdelivr.net` is optional. If preferred, you can self-host the scripts. [Download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/) and serve them from your own server.
 Remember to update these scripts regularly.
+
+`cdn.jsdelivr.net` is blocked in some jurisdictions, like some parts of China. If your website needs to be reachable from these jurisdictions, we recommend that you self-host the scripts.
 ::::
 
 
