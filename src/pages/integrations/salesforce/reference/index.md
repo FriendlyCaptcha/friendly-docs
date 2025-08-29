@@ -35,12 +35,13 @@ For more information, see [the API response documentation](/docs/v2/api/siteveri
 ### [VerifyResult](classes/VerifyResult)
 
 VerifyResult is a wrapper around the response of an 
-/api/v2/captcha/siteverify request. 
+ `/api/v2/captcha/siteverify` request. 
  
 The main methods are `shouldAccept` and `wasAbleToVerify` . 
 The first one you should use to determine if the user&#x27;s request should be accepted; 
 the second one to determine if the request was able to be verified. 
-If that returns false, you should alert yourself.
+If that returns false, it means that there was an issue in the communication with the 
+Friendly Captcha API, and you should log an error or notify your monitoring system.
 
 ## Custom Objects
 

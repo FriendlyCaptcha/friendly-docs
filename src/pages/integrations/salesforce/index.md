@@ -12,8 +12,8 @@ description: Integrate Friendly Captcha into your Salesforce environment
 Integrating Friendly Captcha involves a front-end component and a back-end component. We recommend familiarizing yourself with the [Friendly Captcha documentation][fcdocs] to develop a baseline understanding of how an integration works.
 
 For the front-end component of the integration, this package provides a Lightning Web
-Component (LWC). If you're using Visualforce, you should also be able to simply insert
-[the standard markup][html] for the front-end integration.
+Component (LWC). If you're using Visualforce, you should be able to insert
+[the standard markup][html] for the front-end integration, instead of using the LWC.
 
 For the back-end component of the integration, this package provides an Apex class that
 performs an HTTP request to the Friendly Captcha site verification API.
@@ -53,10 +53,10 @@ Click the **Manage Records** link, and then edit the **Settings** record. You'll
 
 | Setting | Location | Description |
 | -- | -- | -- |
-| Sitekey | Shared | A Friendly Captcha sitekey associated with an application. Copied from the application configuration in the Friendly Captcha dashboard. |
+| Sitekey | Shared | A Friendly Captcha sitekey associated with an application. You can find this value in the application configuration in the Friendly Captcha dashboard. |
 | APIEndpoint | Shared | The endpoint URL used for communicating with the Friendly Captcha API. Shorthands &apos;eu&apos; or &apos;global&apos; are accepted. Default is &apos;global&apos;. Using the &apos;eu&apos; endpoint requires access that must be enabled in the Friendly Captcha dashboard. |
-| APIKey | Apex | An API key used for communicating with the Friendly Captcha API. Created in the Friendly Captcha dashboard. |
-| Strict | Apex | Determines the failure mode behavior of the captcha response verification (siteverify) result. This mode only applies when the API was not able to verify the response, which might occur for network connectivity reasons or a misconfiguration of the client. When &apos;strict&apos; is enabled, unverified responses will be set to &apos;reject&apos;, in a fail-closed behavior. When disabled (the default), unverified responses will be set to &apos;accept&apos;, in a fail-open behavior. |
+| APIKey | Apex | An API key used for communicating with the Friendly Captcha API. You can create an API key in the Friendly Captcha dashboard. |
+| Strict | Apex | Determines the failure mode behavior of the captcha response verification (siteverify) result. This mode only applies when the API was not able to verify the response, which might occur for network connectivity reasons or a misconfiguration of the client. When &apos;strict&apos; is enabled, unverified responses will be set to &apos;reject&apos; (i.e. fail-closed behavior). When disabled (the default), unverified responses will be set to &apos;accept&apos; (i.e. fail-open behavior). |
 | Timeout | Apex | How long (in milliseconds) to wait for a captcha response verification request to complete. |
 | StartMode | LWC | The start mode determines the behavior around automatic activation of the widget. Activation here means the challenge gets requested and gets solved. |
 | Theme | LWC | The theme for the widget. |
@@ -196,7 +196,7 @@ Here's the final Flow:
 
 ### Lightning Web Component
 
-Using the LWC from code (e.g., from within another LWC) looks like this:
+Using the LWC from code (e.g. from within another LWC) looks like this:
 
 ```
 <friendlycaptcha-widget
