@@ -28,11 +28,9 @@ At some point down the road we will not allow newly created apps to use v1, but 
 
 ## How do I upgrade?
 
-v2 is available to all customers and we highly recommend it!
+v2 is available to all customers and we highly recommend it. Please [follow the upgrade guide](./guides/upgrading-from-v1).
 
-For older accounts, v2 might not be enabled yet. Please [contact us](https://friendlycaptcha.com/support/) and we'll happily enable v2 for your account.
-
-After we enable v2 for your account, please [follow the upgrade guide](./guides/upgrading-from-v1).
+If you're an **Enterprise** customer, please [contact support](https://friendlycaptcha.com/support/) so that we can help you upgrade to v2!
 
 ## How can I tell if I'm using v1 or v2?
 
