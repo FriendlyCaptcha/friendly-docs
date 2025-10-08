@@ -100,6 +100,11 @@ export default function Playground() {
   const destroyWidgetInstance = () => {
     if (widgetInstanceRef.current) {
       try {
+        // Clean up event listeners for v2
+        if (widgetInstanceRef.current._cleanup) {
+          widgetInstanceRef.current._cleanup();
+        }
+
         widgetInstanceRef.current.destroy();
       } catch (error) {
         console.warn("Error destroying widget:", error);
@@ -181,12 +186,50 @@ export default function Playground() {
                 : settings.endpoint === "custom"
                 ? settings.customEndpoint
                 : undefined,
-            onStateChange: (state: string, response?: string, error?: any) => {
-              addEvent("frc:widget.statechange", { state, response, error });
-            },
           };
 
           widgetInstanceRef.current = friendlyCaptchaSDK.createWidget(options);
+
+          // Add event listeners for v2
+          if (widgetRef.current) {
+            const widget = widgetRef.current;
+
+            const handleStateChange = (event: any) => {
+              addEvent("frc:widget.statechange", event.detail);
+            };
+
+            const handleComplete = (event: any) => {
+              addEvent("frc:widget.complete", event.detail);
+            };
+
+            const handleError = (event: any) => {
+              addEvent("frc:widget.error", event.detail);
+            };
+
+            const handleExpire = (event: any) => {
+              addEvent("frc:widget.expire", event.detail);
+            };
+
+            // Add event listeners
+            widget.addEventListener(
+              "frc:widget.statechange",
+              handleStateChange
+            );
+            widget.addEventListener("frc:widget.complete", handleComplete);
+            widget.addEventListener("frc:widget.error", handleError);
+            widget.addEventListener("frc:widget.expire", handleExpire);
+
+            // Store cleanup function
+            widgetInstanceRef.current._cleanup = () => {
+              widget.removeEventListener(
+                "frc:widget.statechange",
+                handleStateChange
+              );
+              widget.removeEventListener("frc:widget.complete", handleComplete);
+              widget.removeEventListener("frc:widget.error", handleError);
+              widget.removeEventListener("frc:widget.expire", handleExpire);
+            };
+          }
         }
       } catch (error) {
         console.error("Failed to create widget:", error);
