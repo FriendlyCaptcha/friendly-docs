@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.5.2",
-    "@friendlycaptcha/sdk": "^0.1.11",
+    "@friendlycaptcha/sdk": "^0.1.32",
     "@tailwindcss/postcss": "^4.1.14",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/react": "^18.3.18",

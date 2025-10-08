@@ -50,14 +50,14 @@ export default function Playground() {
   const getSitekey = () => {
     if (settings.version === "v1") {
       // v1 doesn't have widget modes, use a default sitekey
-      return "FCM1234567890ABCDEF";
+      return "FCMTROQPGU36Q253";
     }
 
     // v2 has widget modes
     const v2Sitekeys = {
-      "one-click": "FCM4567890123DEFGHI",
-      "zero-click": "FCM5678901234EFGHIJ",
-      smart: "FCM6789012345FGHIJK",
+      "one-click": "FCMTROQPGSDQVODI",
+      "zero-click": "FCMTROQPGUDDHU39",
+      smart: "FCMTROQPGU36Q253",
     };
     return v2Sitekeys[settings.widgetMode];
   };
@@ -148,7 +148,7 @@ export default function Playground() {
                 ? "https://eu-api.friendlycaptcha.eu/api/v1/puzzle"
                 : settings.endpoint === "custom"
                 ? settings.customEndpoint
-                : undefined,
+                : "https://api.friendlycaptcha.com/api/v1/puzzle",
             doneCallback: (solution: string) => {
               addEvent("frc:widget.complete", {
                 state: "completed",
@@ -242,6 +242,40 @@ export default function Playground() {
 
   const recreateWidget = () => {
     createWidgetInstance();
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      data[key] = value as string;
+    });
+
+    // Check if widget is completed
+    const captchaInput = widgetRef.current?.querySelector(
+      'input[name*="captcha"]'
+    ) as HTMLInputElement;
+    const widgetResponse = captchaInput?.value;
+
+    if (widgetResponse) {
+      addEvent("form:submit", {
+        state: "form_submitted",
+        formData: data,
+        captchaResponse: widgetResponse,
+      });
+      alert(
+        "Form submitted successfully! Check the event log to see the captcha response."
+      );
+    } else {
+      addEvent("form:submit", {
+        state: "form_submit_failed",
+        error: "Captcha not completed",
+      });
+      alert("Please complete the captcha before submitting the form.");
+    }
   };
 
   // Create widget when component mounts
@@ -684,12 +718,45 @@ export default function Playground() {
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   Widget Preview
                 </h2>
-                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 min-h-[200px] flex items-center justify-center">
-                  <div
-                    key={`widget-${settings.version}`}
-                    ref={widgetRef}
-                    className="frc-captcha"
-                  />
+                <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md">
+                  <p className="text-sm text-blue-800 dark:text-blue-200">
+                    <strong>Tip:</strong> Click on the input field below to
+                    trigger the captcha widget. The widget will activate based
+                    on your "Start Mode" setting ({settings.startMode}).
+                  </p>
+                </div>
+                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 min-h-[200px]">
+                  <form className="space-y-4" onSubmit={handleFormSubmit}>
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Message
+                      </label>
+                      <input
+                        type="text"
+                        id="message"
+                        name="message"
+                        placeholder="Click here to trigger the captcha widget"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                      />
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <div
+                        key={`widget-${settings.version}`}
+                        ref={widgetRef}
+                        className="frc-captcha"
+                      />
+                      <button
+                        type="submit"
+                        className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                      >
+                        Submit Form
+                      </button>
+                    </div>
+                  </form>
                 </div>
                 <div className="mt-4 flex justify-between items-center">
                   <div className="text-sm text-gray-600 dark:text-gray-400">
