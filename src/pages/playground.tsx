@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
+import { WidgetInstance } from "friendly-challenge";
+
+// Create SDK instance at module level
+const friendlyCaptchaSDK = new FriendlyCaptchaSDK();
 
 interface PlaygroundSettings {
   version: "v1" | "v2";
-  sitekey: string;
+  widgetMode: "one-click" | "zero-click" | "smart";
   startMode: "auto" | "focus" | "none";
   theme: "light" | "dark" | "auto";
   endpoint: "global" | "eu" | "custom";
@@ -24,7 +29,7 @@ interface WidgetEvent {
 export default function Playground() {
   const [settings, setSettings] = useState<PlaygroundSettings>({
     version: "v2",
-    sitekey: "FCM1234567890ABCDEF",
+    widgetMode: "smart",
     startMode: "focus",
     theme: "auto",
     endpoint: "global",
@@ -37,8 +42,25 @@ export default function Playground() {
 
   const [events, setEvents] = useState<WidgetEvent[]>([]);
   const [widgetState, setWidgetState] = useState<string>("init");
+  const [isCreating, setIsCreating] = useState<boolean>(false);
   const widgetRef = useRef<HTMLDivElement>(null);
-  const widgetInstanceRef = useRef<any>(null);
+  const widgetInstanceRef = useRef<WidgetInstance | any>(null);
+
+  // Get sitekey based on widget mode and version
+  const getSitekey = () => {
+    if (settings.version === "v1") {
+      // v1 doesn't have widget modes, use a default sitekey
+      return "FCM1234567890ABCDEF";
+    }
+
+    // v2 has widget modes
+    const v2Sitekeys = {
+      "one-click": "FCM4567890123DEFGHI",
+      "zero-click": "FCM5678901234EFGHIJ",
+      smart: "FCM6789012345FGHIJK",
+    };
+    return v2Sitekeys[settings.widgetMode];
+  };
 
   // Update form field name when version changes
   useEffect(() => {
@@ -75,89 +97,142 @@ export default function Playground() {
     }
   };
 
-  // Load the appropriate SDK based on version
-  useEffect(() => {
-    const loadSDK = () => {
-      // Remove existing scripts
-      const existingScripts = document.querySelectorAll(
-        'script[src*="friendly-challenge"], script[src*="@friendlycaptcha/sdk"]'
-      );
-      existingScripts.forEach((script) => script.remove());
-
-      // Load new scripts based on version
-      if (settings.version === "v1") {
-        const moduleScript = document.createElement("script");
-        moduleScript.type = "module";
-        moduleScript.src =
-          "https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.12/widget.module.min.js";
-        moduleScript.async = true;
-        moduleScript.defer = true;
-        document.head.appendChild(moduleScript);
-
-        const compatScript = document.createElement("script");
-        compatScript.setAttribute("nomodule", "");
-        compatScript.src =
-          "https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.12/widget.min.js";
-        compatScript.async = true;
-        compatScript.defer = true;
-        document.head.appendChild(compatScript);
-      } else {
-        const moduleScript = document.createElement("script");
-        moduleScript.type = "module";
-        moduleScript.src =
-          "https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js";
-        moduleScript.async = true;
-        moduleScript.defer = true;
-        document.head.appendChild(moduleScript);
-
-        const compatScript = document.createElement("script");
-        compatScript.setAttribute("nomodule", "");
-        compatScript.src =
-          "https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js";
-        compatScript.async = true;
-        compatScript.defer = true;
-        document.head.appendChild(compatScript);
+  const destroyWidgetInstance = () => {
+    if (widgetInstanceRef.current) {
+      try {
+        widgetInstanceRef.current.destroy();
+      } catch (error) {
+        console.warn("Error destroying widget:", error);
       }
-    };
+      widgetInstanceRef.current = null;
+    }
+  };
 
-    loadSDK();
-  }, [settings.version]);
+  const createWidgetInstance = () => {
+    if (!widgetRef.current || isCreating) return;
 
-  // Set up event listeners when widget is ready
+    setIsCreating(true);
+
+    // Destroy existing widget instance
+    destroyWidgetInstance();
+
+    // Clear the widget container
+    widgetRef.current.innerHTML = "";
+    setWidgetState("init");
+
+    // Add a small delay to ensure cleanup is complete
+    setTimeout(() => {
+      if (!widgetRef.current) {
+        setIsCreating(false);
+        return;
+      }
+
+      try {
+        if (settings.version === "v1") {
+          // Create v1 widget using friendly-challenge
+          const options = {
+            sitekey: getSitekey(),
+            startMode: settings.startMode,
+            language:
+              settings.language !== "auto"
+                ? (settings.language as any)
+                : undefined,
+            solutionFieldName: settings.formFieldName,
+            puzzleEndpoint:
+              settings.endpoint === "eu"
+                ? "https://eu-api.friendlycaptcha.eu/api/v1/puzzle"
+                : settings.endpoint === "custom"
+                ? settings.customEndpoint
+                : undefined,
+            doneCallback: (solution: string) => {
+              addEvent("frc:widget.complete", {
+                state: "completed",
+                response: solution,
+              });
+            },
+            errorCallback: (error: any) => {
+              addEvent("frc:widget.error", { state: "error", error });
+            },
+            readyCallback: () => {
+              addEvent("frc:widget.statechange", { state: "ready" });
+            },
+            startedCallback: () => {
+              addEvent("frc:widget.statechange", { state: "started" });
+            },
+          };
+
+          widgetInstanceRef.current = new WidgetInstance(
+            widgetRef.current,
+            options
+          );
+        } else {
+          // Create v2 widget using @friendlycaptcha/sdk
+          const options = {
+            element: widgetRef.current,
+            sitekey: getSitekey(),
+            startMode: settings.startMode,
+            theme: settings.theme,
+            language:
+              settings.language !== "auto" ? settings.language : undefined,
+            formFieldName: settings.formFieldName,
+            apiEndpoint:
+              settings.endpoint === "eu"
+                ? "eu"
+                : settings.endpoint === "custom"
+                ? settings.customEndpoint
+                : undefined,
+            onStateChange: (state: string, response?: string, error?: any) => {
+              addEvent("frc:widget.statechange", { state, response, error });
+            },
+          };
+
+          widgetInstanceRef.current = friendlyCaptchaSDK.createWidget(options);
+        }
+      } catch (error) {
+        console.error("Failed to create widget:", error);
+        addEvent("frc:widget.error", { state: "error", error });
+      } finally {
+        setIsCreating(false);
+      }
+    }, 100);
+  };
+
+  const recreateWidget = () => {
+    createWidgetInstance();
+  };
+
+  // Create widget when component mounts
   useEffect(() => {
-    if (!widgetRef.current) return;
-
-    const widget = widgetRef.current;
-
-    const handleStateChange = (event: any) => {
-      addEvent("frc:widget.statechange", event.detail);
-    };
-
-    const handleComplete = (event: any) => {
-      addEvent("frc:widget.complete", event.detail);
-    };
-
-    const handleError = (event: any) => {
-      addEvent("frc:widget.error", event.detail);
-    };
-
-    const handleExpire = (event: any) => {
-      addEvent("frc:widget.expire", event.detail);
-    };
-
-    // Add event listeners
-    widget.addEventListener("frc:widget.statechange", handleStateChange);
-    widget.addEventListener("frc:widget.complete", handleComplete);
-    widget.addEventListener("frc:widget.error", handleError);
-    widget.addEventListener("frc:widget.expire", handleExpire);
+    const timer = setTimeout(() => {
+      createWidgetInstance();
+    }, 100);
 
     return () => {
-      widget.removeEventListener("frc:widget.statechange", handleStateChange);
-      widget.removeEventListener("frc:widget.complete", handleComplete);
-      widget.removeEventListener("frc:widget.error", handleError);
-      widget.removeEventListener("frc:widget.expire", handleExpire);
+      clearTimeout(timer);
+      destroyWidgetInstance();
     };
-  }, [settings]);
+  }, []);
+
+  // Recreate widget when settings change
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      createWidgetInstance();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      destroyWidgetInstance();
+    };
+  }, [
+    settings.version,
+    settings.widgetMode,
+    settings.startMode,
+    settings.theme,
+    settings.endpoint,
+    settings.customEndpoint,
+    settings.formFieldName,
+    settings.language,
+  ]);
 
   return (
     <div id="tw-scope">
@@ -276,6 +351,16 @@ export default function Playground() {
                       handling.
                     </p>
                   )}
+                  {settings.version === "v2" && (
+                    <div className="mt-2 p-2 bg-blue-100 dark:bg-blue-800 rounded text-xs">
+                      <strong>Widget Mode:</strong>{" "}
+                      {settings.widgetMode === "one-click"
+                        ? "One-click - User must click once to complete"
+                        : settings.widgetMode === "zero-click"
+                        ? "Zero-click - Completes automatically"
+                        : "Smart - Intelligently decides when click is needed"}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -327,24 +412,34 @@ export default function Playground() {
                   </p>
                 </div>
 
-                {/* Sitekey */}
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Sitekey
-                  </label>
-                  <input
-                    type="text"
-                    value={settings.sitekey}
-                    onChange={(e) =>
-                      setSettings((prev) => ({
-                        ...prev,
-                        sitekey: e.target.value,
-                      }))
-                    }
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your sitekey"
-                  />
-                </div>
+                {/* Widget Mode - Only for v2 */}
+                {settings.version === "v2" && (
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Widget Mode
+                    </label>
+                    <select
+                      value={settings.widgetMode}
+                      onChange={(e) =>
+                        setSettings((prev) => ({
+                          ...prev,
+                          widgetMode: e.target.value as any,
+                        }))
+                      }
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="one-click">
+                        One-click - User must click once
+                      </option>
+                      <option value="zero-click">
+                        Zero-click - Automatic completion
+                      </option>
+                      <option value="smart">
+                        Smart - Intelligent decision (default)
+                      </option>
+                    </select>
+                  </div>
+                )}
 
                 {/* Start Mode */}
                 <div className="mb-6">
@@ -548,38 +643,9 @@ export default function Playground() {
                 </h2>
                 <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 min-h-[200px] flex items-center justify-center">
                   <div
+                    key={`widget-${settings.version}`}
                     ref={widgetRef}
                     className="frc-captcha"
-                    data-sitekey={settings.sitekey}
-                    data-start={settings.startMode}
-                    data-theme={settings.theme}
-                    {...(settings.version === "v1"
-                      ? {
-                          "data-puzzle-endpoint":
-                            settings.endpoint === "eu"
-                              ? "https://eu-api.friendlycaptcha.eu/api/v1/puzzle"
-                              : settings.endpoint === "custom"
-                              ? settings.customEndpoint
-                              : undefined,
-                          "data-solution-field-name": settings.formFieldName,
-                          "data-lang":
-                            settings.language !== "auto"
-                              ? settings.language
-                              : undefined,
-                        }
-                      : {
-                          "data-api-endpoint":
-                            settings.endpoint === "eu"
-                              ? "eu"
-                              : settings.endpoint === "custom"
-                              ? settings.customEndpoint
-                              : undefined,
-                          "data-form-field-name": settings.formFieldName,
-                          lang:
-                            settings.language !== "auto"
-                              ? settings.language
-                              : undefined,
-                        })}
                   />
                 </div>
                 <div className="mt-4 flex justify-between items-center">
@@ -588,19 +654,7 @@ export default function Playground() {
                     <span className="font-mono">{widgetState}</span>
                   </div>
                   <button
-                    onClick={() => {
-                      if (widgetRef.current) {
-                        // Reset the widget by removing and re-adding it
-                        const widget = widgetRef.current;
-                        const parent = widget.parentNode;
-                        const newWidget = widget.cloneNode(
-                          true
-                        ) as HTMLDivElement;
-                        parent?.replaceChild(newWidget, widget);
-                        widgetRef.current = newWidget;
-                        setWidgetState("init");
-                      }
-                    }}
+                    onClick={recreateWidget}
                     className="px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                   >
                     Reset Widget
