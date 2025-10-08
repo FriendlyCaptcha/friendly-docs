@@ -38,6 +38,7 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
+    "./src/plugins/tailwind-config.js",
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -93,7 +94,7 @@ const config = {
           blogTitle: "Friendly Captcha Engineering Blog",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.scss"),
+          customCss: [require.resolve("./src/css/custom.scss")],
         },
       }),
     ],
