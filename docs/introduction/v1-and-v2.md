@@ -28,7 +28,7 @@ At some point down the road we will not allow newly created apps to use v1, but 
 
 ## How do I upgrade?
 
-v2 is available to all customers and we highly recommend it. Please [follow the upgrade guide](./guides/upgrading-from-v1).
+v2 is available to all customers and we highly recommend it. Please [follow the upgrade guide](/docs/v2/guides/upgrading-from-v1).
 
 If you're an **Enterprise** customer, please [contact support](https://friendlycaptcha.com/support/) so that we can help you upgrade to v2!
 
