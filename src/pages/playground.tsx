@@ -16,6 +16,7 @@ interface PlaygroundSettings {
   language: string;
   showEvents: boolean;
   expertMode: boolean;
+  useCase: "contact" | "signup" | "download";
 }
 
 interface WidgetEvent {
@@ -38,6 +39,7 @@ export default function Playground() {
     language: "auto",
     showEvents: true,
     expertMode: false,
+    useCase: "contact",
   });
 
   const [events, setEvents] = useState<WidgetEvent[]>([]);
@@ -266,15 +268,201 @@ export default function Playground() {
         formData: data,
         captchaResponse: widgetResponse,
       });
-      alert(
-        "Form submitted successfully! Check the event log to see the captcha response."
-      );
+
+      // Show different success messages based on use case
+      const successMessages = {
+        contact: "Message sent successfully! We'll get back to you soon.",
+        signup: "Account created successfully! Welcome aboard!",
+        download: "Download started! Check your downloads folder.",
+      };
+      alert(successMessages[settings.useCase]);
     } else {
       addEvent("form:submit", {
         state: "form_submit_failed",
         error: "Captcha not completed",
       });
       alert("Please complete the captcha before submitting the form.");
+    }
+  };
+
+  const renderUseCaseForm = () => {
+    const commonInputClass =
+      "w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white";
+    const commonLabelClass =
+      "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1";
+
+    switch (settings.useCase) {
+      case "contact":
+        return (
+          <>
+            <div>
+              <label htmlFor="name" className={commonLabelClass}>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className={commonLabelClass}>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="subject" className={commonLabelClass}>
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What's this about?"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className={commonLabelClass}>
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="Tell us how we can help you..."
+                className={commonInputClass}
+                required
+              />
+            </div>
+          </>
+        );
+
+      case "signup":
+        return (
+          <>
+            <div>
+              <label htmlFor="username" className={commonLabelClass}>
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Choose a username"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className={commonLabelClass}>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className={commonLabelClass}>
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a strong password"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="confirmPassword" className={commonLabelClass}>
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                className={commonInputClass}
+                required
+              />
+            </div>
+          </>
+        );
+
+      case "download":
+        return (
+          <>
+            <div>
+              <label htmlFor="name" className={commonLabelClass}>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className={commonLabelClass}>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+                className={commonInputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="company" className={commonLabelClass}>
+                Company (Optional)
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company name"
+                className={commonInputClass}
+              />
+            </div>
+            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md">
+              <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">
+                📄 Download: Product Brochure
+              </h4>
+              <p className="text-sm text-blue-700 dark:text-blue-300">
+                Get our comprehensive product brochure with pricing, features,
+                and case studies.
+              </p>
+            </div>
+          </>
+        );
+
+      default:
+        return null;
     }
   };
 
@@ -444,8 +632,36 @@ export default function Playground() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Settings Panel */}
-            <div className="lg:col-span-1">
+            {/* Left Column - Use Case Selector and Configuration */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Use Case Selector */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  Use Case
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Choose a real-world scenario to test the captcha widget
+                </p>
+                <select
+                  value={settings.useCase}
+                  onChange={(e) =>
+                    setSettings((prev) => ({
+                      ...prev,
+                      useCase: e.target.value as
+                        | "contact"
+                        | "signup"
+                        | "download",
+                    }))
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                >
+                  <option value="contact">📧 Contact Form</option>
+                  <option value="signup">👤 User Signup</option>
+                  <option value="download">📥 File Download</option>
+                </select>
+              </div>
+
+              {/* Configuration Panel */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                   Configuration
@@ -713,6 +929,7 @@ export default function Playground() {
                   </div>
                 </div>
               )}
+
               {/* Widget Preview */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -720,28 +937,20 @@ export default function Playground() {
                 </h2>
                 <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md">
                   <p className="text-sm text-blue-800 dark:text-blue-200">
-                    <strong>Tip:</strong> Click on the input field below to
-                    trigger the captcha widget. The widget will activate based
-                    on your "Start Mode" setting ({settings.startMode}).
+                    <strong>Tip:</strong> Fill out the form fields below to test
+                    the captcha widget. The widget will activate based on your
+                    "Start Mode" setting ({settings.startMode}).
+                    {settings.useCase === "contact" &&
+                      " Try focusing on any field to trigger the captcha."}
+                    {settings.useCase === "signup" &&
+                      " The captcha will activate when you start filling the form."}
+                    {settings.useCase === "download" &&
+                      " Complete the form to download the file."}
                   </p>
                 </div>
                 <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 min-h-[200px]">
                   <form className="space-y-4" onSubmit={handleFormSubmit}>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                      >
-                        Message
-                      </label>
-                      <input
-                        type="text"
-                        id="message"
-                        name="message"
-                        placeholder="Click here to trigger the captcha widget"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                      />
-                    </div>
+                    {renderUseCaseForm()}
 
                     <div className="flex justify-between items-center">
                       <div
@@ -753,7 +962,9 @@ export default function Playground() {
                         type="submit"
                         className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
                       >
-                        Submit Form
+                        {settings.useCase === "contact" && "Send Message"}
+                        {settings.useCase === "signup" && "Create Account"}
+                        {settings.useCase === "download" && "Download File"}
                       </button>
                     </div>
                   </form>
