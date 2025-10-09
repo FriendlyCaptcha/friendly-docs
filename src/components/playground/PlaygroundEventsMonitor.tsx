@@ -54,6 +54,11 @@ export default function PlaygroundEventsMonitor({
                     Error: {JSON.stringify(event.error)}
                   </div>
                 )}
+                {event.data && (
+                  <div className="ml-4 text-gray-600 dark:text-gray-400 font-mono text-xs">
+                    Data: {JSON.stringify(event.data)}
+                  </div>
+                )}
               </div>
             ))}
           </div>

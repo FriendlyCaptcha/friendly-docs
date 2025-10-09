@@ -19,6 +19,7 @@ export interface WidgetEvent {
   state?: string;
   response?: string;
   error?: any;
+  data?: any;
 }
 
 const defaultSettings: PlaygroundSettings = {
@@ -77,4 +78,15 @@ export function getSettingsFromQueryString(): PlaygroundSettings {
     console.warn("Failed to parse settings from query string:", error);
     return defaultSettings;
   }
+}
+
+export function verifyCaptchaResponse(
+  settings: PlaygroundSettings,
+  response: string
+) {
+  // TODO: Either call real API or mock the response
+  // Real API would require some kind of backend to proxy the request to the siteverify endpoint
+  return {
+    success: true,
+  };
 }

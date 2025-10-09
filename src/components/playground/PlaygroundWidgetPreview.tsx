@@ -1,4 +1,8 @@
-import { PlaygroundSettings } from "@site/src/lib/playground";
+import {
+  PlaygroundSettings,
+  verifyCaptchaResponse,
+  WidgetEvent,
+} from "@site/src/lib/playground";
 import { WidgetInstance } from "friendly-challenge";
 import React, { useEffect, useRef, useState } from "react";
 import PlaygroundForm from "./PlaygroundForm";
@@ -13,7 +17,7 @@ export default function PlaygroundWidgetPreview({
   addEvent,
 }: {
   settings: PlaygroundSettings;
-  addEvent: (eventName: string, detail: any) => void;
+  addEvent: (eventName: string, detail: Partial<WidgetEvent>) => void;
 }) {
   const widgetRef = useRef<HTMLDivElement>(null);
   const widgetInstanceRef = useRef<WidgetInstance | any>(null);
@@ -204,11 +208,12 @@ export default function PlaygroundWidgetPreview({
     ) as HTMLInputElement;
     const widgetResponse = captchaInput?.value;
 
-    if (widgetResponse) {
+    const verifyResult = verifyCaptchaResponse(settings, widgetResponse);
+
+    if (verifyResult.success) {
       addEvent("form:submit", {
         state: "form_submitted",
-        formData: data,
-        captchaResponse: widgetResponse,
+        data: verifyResult,
       });
 
       // Show different success messages based on use case
@@ -222,6 +227,7 @@ export default function PlaygroundWidgetPreview({
       addEvent("form:submit", {
         state: "form_submit_failed",
         error: "Captcha not completed",
+        data: verifyResult,
       });
       alert("Please complete the captcha before submitting the form.");
     }

@@ -24,13 +24,14 @@ export default function Playground() {
     saveSettingsToQueryString(settings);
   }, [settings]);
 
-  const addEvent = (eventName: string, detail: any) => {
+  const addEvent = (eventName: string, detail: Partial<WidgetEvent>) => {
     const newEvent: WidgetEvent = {
       timestamp: new Date().toLocaleTimeString(),
       event: eventName,
       state: detail.state,
       response: detail.response,
       error: detail.error,
+      data: detail.data,
     };
     setEvents((prev) => [newEvent, ...prev.slice(0, 19)]); // Keep last 20 events
   };
