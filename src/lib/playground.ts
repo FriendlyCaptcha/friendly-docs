@@ -21,25 +21,40 @@ export interface WidgetEvent {
   error?: any;
 }
 
-// Query string utilities for playground settings
-export function getExpertModeFromQueryString(): boolean {
-  if (typeof window === "undefined") return false;
+const defaultSettings: PlaygroundSettings = {
+  version: "v2",
+  widgetMode: "smart",
+  startMode: "focus",
+  theme: "auto",
+  endpoint: "global",
+  customEndpoint: "",
+  language: "auto",
+  showEvents: true,
+  expertMode: false,
+  useCase: "contact",
+};
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const expertMode = urlParams.get("expert");
-  return expertMode === "true";
-}
-
-export function setExpertModeInQueryString(expertMode: boolean): void {
+export function saveSettingsToQueryString(settings: PlaygroundSettings): void {
   if (typeof window === "undefined") return;
 
+  const rawSettings = btoa(JSON.stringify(settings));
+
   const url = new URL(window.location.href);
-  if (expertMode) {
-    url.searchParams.set("expert", "true");
-  } else {
-    url.searchParams.delete("expert");
+  url.searchParams.set("settings", rawSettings);
+  window.history.replaceState({}, "", url.toString());
+}
+
+export function getSettingsFromQueryString(): PlaygroundSettings {
+  if (typeof window === "undefined") {
+    return defaultSettings;
   }
 
-  // Update the URL without causing a page reload
-  window.history.replaceState({}, "", url.toString());
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawSettings = urlParams.get("settings");
+  if (!rawSettings) {
+    return defaultSettings;
+  }
+
+  const settings = JSON.parse(atob(rawSettings));
+  return { ...defaultSettings, ...settings };
 }

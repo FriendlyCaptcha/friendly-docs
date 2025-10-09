@@ -1,7 +1,8 @@
 import {
+  getSettingsFromQueryString,
   PlaygroundSettings,
+  saveSettingsToQueryString,
   WidgetEvent,
-  getExpertModeFromQueryString,
 } from "@site/src/lib/playground";
 import React, { useEffect, useState } from "react";
 import PlaygroundWidgetPreview from "./PlaygroundWidgetPreview";
@@ -13,29 +14,15 @@ import PlaygroundBeginnerBanner from "./PlaygroundBeginnerBanner";
 import PlaygroundModeSwitch from "./PlaygroundModeSwitch";
 
 export default function Playground() {
-  const [settings, setSettings] = useState<PlaygroundSettings>({
-    version: "v2",
-    widgetMode: "smart",
-    startMode: "focus",
-    theme: "auto",
-    endpoint: "global",
-    customEndpoint: "",
-    language: "auto",
-    showEvents: true,
-    expertMode: getExpertModeFromQueryString(),
-    useCase: "contact",
-  });
+  const [settings, setSettings] = useState<PlaygroundSettings>(
+    getSettingsFromQueryString()
+  );
 
   const [events, setEvents] = useState<WidgetEvent[]>([]);
 
-  // Update form field name when version changes
   useEffect(() => {
-    setSettings((prev) => ({
-      ...prev,
-      formFieldName:
-        prev.version === "v1" ? "frc-captcha-solution" : "frc-captcha-response",
-    }));
-  }, [settings.version]);
+    saveSettingsToQueryString(settings);
+  }, [settings]);
 
   const addEvent = (eventName: string, detail: any) => {
     const newEvent: WidgetEvent = {
