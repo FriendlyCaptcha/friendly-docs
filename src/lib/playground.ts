@@ -37,10 +37,24 @@ const defaultSettings: PlaygroundSettings = {
 export function saveSettingsToQueryString(settings: PlaygroundSettings): void {
   if (typeof window === "undefined") return;
 
-  const rawSettings = btoa(JSON.stringify(settings));
+  // Only save the differences from default settings
+  const diff: Partial<PlaygroundSettings> = {};
+  for (const key in settings) {
+    if (settings[key] !== defaultSettings[key]) {
+      (diff as any)[key] = settings[key];
+    }
+  }
 
   const url = new URL(window.location.href);
-  url.searchParams.set("settings", rawSettings);
+
+  // If there are no differences, remove the settings parameter
+  if (Object.keys(diff).length === 0) {
+    url.searchParams.delete("settings");
+  } else {
+    const rawSettings = btoa(JSON.stringify(diff));
+    url.searchParams.set("settings", rawSettings);
+  }
+
   window.history.replaceState({}, "", url.toString());
 }
 
@@ -55,6 +69,12 @@ export function getSettingsFromQueryString(): PlaygroundSettings {
     return defaultSettings;
   }
 
-  const settings = JSON.parse(atob(rawSettings));
-  return { ...defaultSettings, ...settings };
+  try {
+    const diff = JSON.parse(atob(rawSettings));
+    return { ...defaultSettings, ...diff };
+  } catch (error) {
+    // If parsing fails, return default settings
+    console.warn("Failed to parse settings from query string:", error);
+    return defaultSettings;
+  }
 }

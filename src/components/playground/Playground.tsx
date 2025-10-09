@@ -45,7 +45,7 @@ export default function Playground() {
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="mb-8">
-            <div className="flex justify-between items-start">
+            <div className="flex flex-col md:flex-row justify-between gap-5 items-start">
               <div>
                 <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                   Friendly Captcha Playground

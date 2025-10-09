@@ -281,7 +281,7 @@ export default function PlaygroundWidgetPreview({
         <form className="space-y-4" onSubmit={handleFormSubmit}>
           <PlaygroundForm settings={settings} />
 
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col md:flex-row justify-between gap-5 items-start">
             <div
               key={`widget-${settings.version}`}
               ref={widgetRef}
