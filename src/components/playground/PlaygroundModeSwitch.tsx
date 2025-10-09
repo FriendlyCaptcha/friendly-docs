@@ -1,4 +1,7 @@
-import { PlaygroundSettings } from "@site/src/lib/playground";
+import {
+  PlaygroundSettings,
+  setExpertModeInQueryString,
+} from "@site/src/lib/playground";
 import React from "react";
 
 export default function PlaygroundModeSwitch({
@@ -20,12 +23,14 @@ export default function PlaygroundModeSwitch({
         Beginner
       </span>
       <button
-        onClick={() =>
+        onClick={() => {
+          const newExpertMode = !settings.expertMode;
           setSettings({
             ...settings,
-            expertMode: !settings.expertMode,
-          })
-        }
+            expertMode: newExpertMode,
+          });
+          setExpertModeInQueryString(newExpertMode);
+        }}
         className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
           settings.expertMode ? "bg-blue-600" : "bg-gray-200 dark:bg-gray-700"
         }`}

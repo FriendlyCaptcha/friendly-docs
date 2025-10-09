@@ -281,7 +281,7 @@ export default function PlaygroundWidgetPreview({
         <form className="space-y-4" onSubmit={handleFormSubmit}>
           <PlaygroundForm settings={settings} />
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-start">
             <div
               key={`widget-${settings.version}`}
               ref={widgetRef}

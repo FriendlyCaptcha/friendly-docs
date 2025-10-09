@@ -1,4 +1,8 @@
-import { PlaygroundSettings, WidgetEvent } from "@site/src/lib/playground";
+import {
+  PlaygroundSettings,
+  WidgetEvent,
+  getExpertModeFromQueryString,
+} from "@site/src/lib/playground";
 import React, { useEffect, useState } from "react";
 import PlaygroundWidgetPreview from "./PlaygroundWidgetPreview";
 import PlaygroundEventsMonitor from "./PlaygroundEventsMonitor";
@@ -18,7 +22,7 @@ export default function Playground() {
     customEndpoint: "",
     language: "auto",
     showEvents: true,
-    expertMode: false,
+    expertMode: getExpertModeFromQueryString(),
     useCase: "contact",
   });
 

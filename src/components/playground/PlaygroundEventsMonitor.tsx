@@ -46,7 +46,7 @@ export default function PlaygroundEventsMonitor({
                 </div>
                 {event.response && (
                   <div className="ml-4 text-gray-600 dark:text-gray-400 font-mono text-xs">
-                    Response: {event.response.substring(0, 50)}...
+                    Response: {event.response}
                   </div>
                 )}
                 {event.error && (
