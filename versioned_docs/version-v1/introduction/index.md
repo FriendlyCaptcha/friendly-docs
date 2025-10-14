@@ -9,8 +9,8 @@ Friendly Captcha is a service that protects websites from bots and abuse in a pr
 This site contains the technical documentation that will help you integrate the Friendly Captcha's anti-abuse service into your website. Integration entails adding a widget to the websites you want to protect. The Friendly Captcha widget looks like this:
 
 <figure style={{ textAlign: 'center' }}>
-    <img src="https://i.imgur.com/BNRdsxS.png" alt="Friendly Captcha widget solving screenshot" />
-    <img src="https://i.imgur.com/HlMY7QM.png" alt="Friendly Captcha widget finished screenshot" />
+    <img src="/img/widget-v1-solving.png" alt="Friendly Captcha widget solving screenshot" />
+    <img src="/img/widget-v1-completed.png" alt="Friendly Captcha widget finished screenshot" />
     <figcaption><i>Screenshots of the Friendly Captcha widget</i></figcaption>
 </figure>
 
