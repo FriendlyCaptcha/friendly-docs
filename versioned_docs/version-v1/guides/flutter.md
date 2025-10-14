@@ -190,4 +190,4 @@ We created an example app which you can view [here](https://github.com/FriendlyC
 
 #### Example App screenshot
 
-![Example App Screenshot](https://i.imgur.com/GJxlpZ6.png)
+![Example App Screenshot](/img/widget-v1-flutter.png)
