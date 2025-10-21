@@ -12,6 +12,21 @@ const friendlyCaptchaSDK = new FriendlyCaptchaSDK({
   disableEvalPatching: true,
 });
 
+const v1Sitekey = "FCMTROQPGU36Q253";
+const v1FalsePositiveSitekey = "FCMTROQPGT28H8QL";
+
+const v2Sitekeys = {
+  "one-click": "FCMTROQPGSDQVODI",
+  "zero-click": "FCMTROQPGUDDHU39",
+  smart: "FCMTROQPGU36Q253",
+};
+
+const v2FalsePositiveSitekeys = {
+  "one-click": "FCMTROQPGT28H8QL",
+  "zero-click": "FCMTROQPGS45PT4K",
+  smart: "FCMTROQPGU6GNGN0",
+};
+
 export default function PlaygroundWidgetPreview({
   settings,
   addEvent,
@@ -27,17 +42,16 @@ export default function PlaygroundWidgetPreview({
 
   const getSitekey = () => {
     if (settings.version === "v1") {
-      // v1 doesn't have widget modes, use a default sitekey
-      return "FCMTROQPGU36Q253";
+      // v1 doesn't have widget modes, use any sitekey
+      return settings.simulateFalsePositive
+        ? v1FalsePositiveSitekey
+        : v1Sitekey;
     }
 
     // v2 has widget modes
-    const v2Sitekeys = {
-      "one-click": "FCMTROQPGSDQVODI",
-      "zero-click": "FCMTROQPGUDDHU39",
-      smart: "FCMTROQPGU36Q253",
-    };
-    return v2Sitekeys[settings.widgetMode];
+    return settings.simulateFalsePositive
+      ? v2FalsePositiveSitekeys[settings.widgetMode]
+      : v2Sitekeys[settings.widgetMode];
   };
 
   const destroyWidgetInstance = () => {
@@ -263,6 +277,7 @@ export default function PlaygroundWidgetPreview({
     settings.endpoint,
     settings.customEndpoint,
     settings.language,
+    settings.simulateFalsePositive,
   ]);
 
   return (

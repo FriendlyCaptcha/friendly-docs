@@ -206,6 +206,26 @@ export default function PlaygroundConfigEditor({
           </label>
         </div>
       )}
+
+      {/* Simulate False Positive Toggle */}
+      <div className="mb-6">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={settings.simulateFalsePositive}
+            onChange={(e) =>
+              setSettings({
+                ...settings,
+                simulateFalsePositive: e.target.checked,
+              })
+            }
+            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            Simulate False Positive
+          </span>
+        </label>
+      </div>
     </div>
   );
 }

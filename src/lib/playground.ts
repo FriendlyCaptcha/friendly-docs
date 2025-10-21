@@ -11,6 +11,8 @@ export interface PlaygroundSettings {
   showEvents: boolean;
   expertMode: boolean;
   useCase: PlaygroundUseCase;
+
+  simulateFalsePositive: boolean;
 }
 
 export interface WidgetEvent {
@@ -33,6 +35,8 @@ const defaultSettings: PlaygroundSettings = {
   showEvents: true,
   expertMode: false,
   useCase: "contact",
+
+  simulateFalsePositive: false,
 };
 
 export function saveSettingsToQueryString(settings: PlaygroundSettings): void {
