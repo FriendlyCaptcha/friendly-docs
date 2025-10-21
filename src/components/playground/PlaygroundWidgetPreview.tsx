@@ -6,7 +6,7 @@ import {
 import { WidgetInstance } from "friendly-challenge";
 import React, { useEffect, useRef, useState } from "react";
 import PlaygroundForm from "./PlaygroundForm";
-import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
+import { FriendlyCaptchaSDK, WidgetHandle } from "@friendlycaptcha/sdk";
 
 const friendlyCaptchaSDK = new FriendlyCaptchaSDK({
   disableEvalPatching: true,
@@ -35,7 +35,8 @@ export default function PlaygroundWidgetPreview({
   addEvent: (eventName: string, detail: Partial<WidgetEvent>) => void;
 }) {
   const widgetRef = useRef<HTMLDivElement>(null);
-  const widgetInstanceRef = useRef<WidgetInstance | any>(null);
+  const widgetInstanceRef = useRef<WidgetInstance | WidgetHandle>(null);
+  const clenaupFunc = useRef<() => void>(null);
 
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [widgetState, setWidgetState] = useState<string>("none");
@@ -55,13 +56,14 @@ export default function PlaygroundWidgetPreview({
   };
 
   const destroyWidgetInstance = () => {
+    if (clenaupFunc.current) {
+      clenaupFunc.current();
+      clenaupFunc.current = null;
+    }
+
     if (widgetInstanceRef.current) {
       try {
-        // Clean up event listeners for v2
-        if (widgetInstanceRef.current._cleanup) {
-          widgetInstanceRef.current._cleanup();
-        }
-
+        console.log("Destroying widget instance");
         widgetInstanceRef.current.destroy();
       } catch (error) {
         console.warn("Error destroying widget:", error);
@@ -72,6 +74,9 @@ export default function PlaygroundWidgetPreview({
 
   const createWidgetInstance = () => {
     if (!widgetRef.current || isCreating) return;
+
+    // v1 removes the elment when the widget is destroyed, we have to workaround this
+    widgetRef.current.remove = () => {};
 
     setIsCreating(true);
 
@@ -84,6 +89,7 @@ export default function PlaygroundWidgetPreview({
 
     // Add a small delay to ensure cleanup is complete
     setTimeout(() => {
+      console.log("Creating widget instance", widgetRef.current);
       if (!widgetRef.current) {
         setIsCreating(false);
         return;
@@ -182,7 +188,7 @@ export default function PlaygroundWidgetPreview({
             widget.addEventListener("frc:widget.expire", handleExpire);
 
             // Store cleanup function
-            widgetInstanceRef.current._cleanup = () => {
+            clenaupFunc.current = () => {
               widget.removeEventListener(
                 "frc:widget.statechange",
                 handleStateChange
@@ -246,18 +252,6 @@ export default function PlaygroundWidgetPreview({
       alert("Please complete the captcha before submitting the form.");
     }
   };
-
-  // Create widget when component mounts
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      createWidgetInstance();
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      destroyWidgetInstance();
-    };
-  }, []);
 
   // Recreate widget when settings change
   useEffect(() => {
