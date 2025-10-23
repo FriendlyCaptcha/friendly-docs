@@ -48,13 +48,13 @@ export default function Playground() {
           <div className="mb-8">
             <div className="flex flex-col md:flex-row justify-between gap-5 items-start">
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
                   Friendly Captcha Playground
                 </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
+                <div className="text-lg text-gray-600 dark:text-gray-300">
                   Explore different settings and options for Friendly Captcha v1
                   and v2
-                </p>
+                </div>
               </div>
 
               <PlaygroundModeSwitch

@@ -9,7 +9,7 @@ export default function PlaygroundVersionInfoBanner({
   return (
     <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
       <div className="flex items-start space-x-3">
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mt-1">
           <svg
             className="h-5 w-5 text-blue-400"
             fill="currentColor"
@@ -23,20 +23,22 @@ export default function PlaygroundVersionInfoBanner({
           </svg>
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200">
+          <div className="text-xl font-bold text-blue-800 dark:text-blue-100 mb-3">
             {settings.version === "v1"
               ? "Friendly Captcha v1"
               : "Friendly Captcha v2"}
-          </h3>
+          </div>
           <div className="mt-1 text-sm text-blue-700 dark:text-blue-300 prose">
             {settings.version === "v1" ? (
-              <p>
+              <div className="mb-5">
                 Legacy version with basic features. Switch to v2 for improved
                 protection and UX.
-              </p>
+              </div>
             ) : (
               <>
-                <p>Latest version with improved protection and UX.</p>
+                <div className="mb-5">
+                  Latest version with improved protection and UX.
+                </div>
 
                 <ul className="list-disc list-outside space-y-2">
                   <li>
