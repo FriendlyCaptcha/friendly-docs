@@ -24,7 +24,7 @@ export interface WidgetEvent {
   data?: any;
 }
 
-const defaultSettings: PlaygroundSettings = {
+export const defaultSettings: PlaygroundSettings = {
   version: "v2",
   widgetMode: "smart",
   startMode: "focus",

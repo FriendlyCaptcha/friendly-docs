@@ -4,7 +4,7 @@ export default function PlaygroundBeginnerBanner() {
   return (
     <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
       <div className="flex items-start space-x-3">
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mt-1">
           <svg
             className="h-5 w-5 text-green-400"
             fill="currentColor"
@@ -18,9 +18,9 @@ export default function PlaygroundBeginnerBanner() {
           </svg>
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium text-green-800 dark:text-green-200">
+          <div className="text-lg font-bold text-green-800 dark:text-green-100 mb-2">
             Beginner Mode
-          </h3>
+          </div>
           <div className="mt-1 text-sm text-green-700 dark:text-green-300">
             <p>
               You're in beginner mode! This simplified view focuses on the

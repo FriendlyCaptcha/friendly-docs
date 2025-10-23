@@ -1,5 +1,6 @@
-import React from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import { ColorModeProvider } from "@docusaurus/theme-common/internal";
+import React from "react";
 
 export default function PlaygroundPage() {
   return (
@@ -7,7 +8,11 @@ export default function PlaygroundPage() {
       {() => {
         const Playground =
           require("../components/playground/Playground").default;
-        return <Playground />;
+        return (
+          <ColorModeProvider>
+            <Playground />
+          </ColorModeProvider>
+        );
       }}
     </BrowserOnly>
   );
