@@ -291,7 +291,9 @@ export default function PlaygroundWidgetPreview({
             <div
               key={`widget-${settings.version}`}
               ref={widgetRef}
-              className="frc-captcha"
+              className={
+                "frc-captcha" + (settings.theme === "dark" ? " dark" : "")
+              }
             />
             <button
               type="submit"
