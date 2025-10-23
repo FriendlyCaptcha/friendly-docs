@@ -56,8 +56,13 @@ html[data-theme='dark'] footer.footer {
 
 @layer base {
   #tw-scope {
-    @import "tailwindcss/preflight.css" layer(base);
-    @import "tailwindcss/utilities.css" layer(utilities);
+    @import "tailwindcss/preflight.css";
+  }
+}
+
+@layer utilities {
+  #tw-scope {
+    @import "tailwindcss/utilities.css";
   }
 }
 
