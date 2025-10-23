@@ -1,6 +1,14 @@
 import React from "react";
-import Playground from "../components/playground/Playground";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export default function PlaygroundPage() {
-  return <Playground />;
+  return (
+    <BrowserOnly fallback={<div>Playground Loading...</div>}>
+      {() => {
+        const Playground =
+          require("../components/playground/Playground").default;
+        return <Playground />;
+      }}
+    </BrowserOnly>
+  );
 }
