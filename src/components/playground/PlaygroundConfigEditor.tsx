@@ -1,4 +1,4 @@
-import { PlaygroundSettings } from "@site/src/lib/playground";
+import { defaultSettings, PlaygroundSettings } from "@site/src/lib/playground";
 import React, { useEffect, useState } from "react";
 
 export default function PlaygroundConfigEditor({
@@ -14,11 +14,24 @@ export default function PlaygroundConfigEditor({
     setCustomEndpoint(settings.customEndpoint);
   }, [settings.customEndpoint]);
 
+  const handleReset = () => {
+    setSettings(defaultSettings);
+  };
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-        Configuration
-      </h2>
+      <div className="flex justify-between items-start mb-6">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+          Configuration
+        </h2>
+        <button
+          onClick={handleReset}
+          className="px-2 py-1 text-sm font-medium text-gray-500 dark:text-gray-600 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
+          title="Reset all settings to default"
+        >
+          Reset
+        </button>
+      </div>
 
       {/* Version Selector */}
       <div className="mb-6">
@@ -28,7 +41,7 @@ export default function PlaygroundConfigEditor({
         <div className="flex space-x-2">
           <button
             onClick={() => setSettings({ ...settings, version: "v1" })}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               settings.version === "v1"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
@@ -38,7 +51,7 @@ export default function PlaygroundConfigEditor({
           </button>
           <button
             onClick={() => setSettings({ ...settings, version: "v2" })}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               settings.version === "v2"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
