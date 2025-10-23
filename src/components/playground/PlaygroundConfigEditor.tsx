@@ -1,5 +1,5 @@
 import { PlaygroundSettings } from "@site/src/lib/playground";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function PlaygroundConfigEditor({
   settings,
@@ -8,6 +8,12 @@ export default function PlaygroundConfigEditor({
   settings: PlaygroundSettings;
   setSettings: (settings: PlaygroundSettings) => void;
 }) {
+  const [customEndpoint, setCustomEndpoint] = useState<string>("");
+
+  useEffect(() => {
+    setCustomEndpoint(settings.customEndpoint);
+  }, [settings.customEndpoint]);
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
       <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
@@ -165,11 +171,12 @@ export default function PlaygroundConfigEditor({
         {settings.endpoint === "custom" && (
           <input
             type="text"
-            value={settings.customEndpoint}
-            onChange={(e) =>
+            value={customEndpoint}
+            onChange={(e) => setCustomEndpoint(e.target.value)}
+            onBlur={(e) =>
               setSettings({
                 ...settings,
-                customEndpoint: e.target.value,
+                customEndpoint: customEndpoint,
               })
             }
             className="w-full mt-2 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
