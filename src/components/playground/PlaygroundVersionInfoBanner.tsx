@@ -28,50 +28,35 @@ export default function PlaygroundVersionInfoBanner({
               ? "Friendly Captcha v1"
               : "Friendly Captcha v2"}
           </h3>
-          <div className="mt-1 text-sm text-blue-700 dark:text-blue-300">
+          <div className="mt-1 text-sm text-blue-700 dark:text-blue-300 prose">
             {settings.version === "v1" ? (
               <p>
-                Legacy version with basic features. Uses{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  data-lang
-                </code>
-                ,{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  data-solution-field-name
-                </code>
-                , and{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  data-puzzle-endpoint
-                </code>{" "}
-                attributes.
+                Legacy version with basic features. Switch to v2 for improved
+                protection and UX.
               </p>
             ) : (
-              <p>
-                Latest version with improved protection and UX. Uses{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  lang
-                </code>
-                ,{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  data-form-field-name
-                </code>
-                , and{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  data-api-endpoint
-                </code>{" "}
-                attributes. Auto-detects language and has enhanced event
-                handling.
-              </p>
-            )}
-            {settings.version === "v2" && (
-              <div className="mt-2 p-2 bg-blue-100 dark:bg-blue-800 rounded text-xs">
-                <strong>Widget Mode:</strong>{" "}
-                {settings.widgetMode === "one-click"
-                  ? "One-click - User must click once to complete"
-                  : settings.widgetMode === "zero-click"
-                  ? "Zero-click - Completes automatically"
-                  : "Smart - Intelligently decides when click is needed"}
-              </div>
+              <>
+                <p>Latest version with improved protection and UX.</p>
+
+                <ul className="list-disc list-outside space-y-2">
+                  <li>
+                    v2 has <strong>improved protection</strong>. It provides us
+                    with more powerful signals to detect abuse, automated
+                    browsers, and browsers that have otherwise been tampered
+                    with.
+                  </li>
+                  <li>
+                    v2 improves on <strong>user experience</strong>. Real users
+                    are less likely to need to wait for the captcha to finish.
+                  </li>
+                  <li>
+                    v2 is <strong>easier to integrate</strong>. It has SDKs for
+                    many popular programming languages, automatically matches
+                    the language of your website, and has simplified Content
+                    Security Policy (CSP) requirements.
+                  </li>
+                </ul>
+              </>
             )}
           </div>
         </div>

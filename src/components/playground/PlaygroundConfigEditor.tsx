@@ -41,11 +41,11 @@ export default function PlaygroundConfigEditor({
             v2
           </button>
         </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
           {settings.version === "v1"
             ? "Legacy version with basic features"
             : "Latest version with improved protection and UX"}
-        </p>
+        </div>
       </div>
 
       {/* Widget Mode - Only for v2 */}
@@ -68,10 +68,15 @@ export default function PlaygroundConfigEditor({
             <option value="zero-click">
               Zero-click - Automatic completion
             </option>
-            <option value="smart">
-              Smart - Intelligent decision (default)
-            </option>
+            <option value="smart">Smart - Intelligent decision</option>
           </select>
+          <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+            {settings.widgetMode === "one-click"
+              ? "User must click to complete the Captcha"
+              : settings.widgetMode === "zero-click"
+              ? "Captcha completes automatically"
+              : "Friendly Captcha decides intelligently if a click is needed to complete the Captcha"}
+          </div>
         </div>
       )}
 
@@ -90,10 +95,17 @@ export default function PlaygroundConfigEditor({
           }
           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
-          <option value="auto">Auto - Start immediately</option>
-          <option value="focus">Focus - Start on form focus</option>
-          <option value="none">None - Manual start only</option>
+          <option value="auto">Auto - Activate immediately</option>
+          <option value="focus">Focus - Activate on form focus</option>
+          <option value="none">None - Manual activation only</option>
         </select>
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+          {settings.startMode === "auto"
+            ? "Widget activates automatically"
+            : settings.startMode === "focus"
+            ? "Widget activates when the form is focused"
+            : "Widget activates when the user clicks on the widget"}
+        </div>
       </div>
 
       {/* Theme */}
@@ -115,6 +127,13 @@ export default function PlaygroundConfigEditor({
           <option value="light">Light</option>
           <option value="dark">Dark</option>
         </select>
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+          {settings.theme === "auto"
+            ? "Automatically switch between light and dark theme based on system preference"
+            : settings.theme === "light"
+            ? "Always use light theme"
+            : "Always use dark theme"}
+        </div>
       </div>
 
       {/* Endpoint */}
@@ -136,6 +155,13 @@ export default function PlaygroundConfigEditor({
           <option value="eu">EU Only</option>
           <option value="custom">Custom</option>
         </select>
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+          {settings.endpoint === "global"
+            ? "Use the global endpoint"
+            : settings.endpoint === "eu"
+            ? "Use the dedicated EU endpoint"
+            : "Use a custom endpoint"}
+        </div>
         {settings.endpoint === "custom" && (
           <input
             type="text"
@@ -178,11 +204,36 @@ export default function PlaygroundConfigEditor({
           <option value="ja">Japanese</option>
           <option value="zh">Chinese</option>
         </select>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
           {settings.version === "v2"
-            ? "Auto-detection recommended"
-            : "Manual language selection"}
-        </p>
+            ? "Automatically detect the language of the website"
+            : "Select a language manually"}
+        </div>
+      </div>
+
+      {/* Simulate False Positive Toggle */}
+      <div className="mb-6">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={settings.simulateFalsePositive}
+            onChange={(e) =>
+              setSettings({
+                ...settings,
+                simulateFalsePositive: e.target.checked,
+              })
+            }
+            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            Simulate False Positive
+          </span>
+        </label>
+        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+          {settings.simulateFalsePositive
+            ? "The widget will simulate that the user is suspicious and might be a bot"
+            : "The widget will behave normally"}
+        </div>
       </div>
 
       {/* Show Events Toggle - Only in Expert Mode */}
@@ -206,26 +257,6 @@ export default function PlaygroundConfigEditor({
           </label>
         </div>
       )}
-
-      {/* Simulate False Positive Toggle */}
-      <div className="mb-6">
-        <label className="flex items-center">
-          <input
-            type="checkbox"
-            checked={settings.simulateFalsePositive}
-            onChange={(e) =>
-              setSettings({
-                ...settings,
-                simulateFalsePositive: e.target.checked,
-              })
-            }
-            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-          />
-          <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-            Simulate False Positive
-          </span>
-        </label>
-      </div>
     </div>
   );
 }

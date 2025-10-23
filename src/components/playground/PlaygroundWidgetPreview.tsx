@@ -7,6 +7,7 @@ import { WidgetInstance } from "friendly-challenge";
 import React, { useEffect, useRef, useState } from "react";
 import PlaygroundForm from "./PlaygroundForm";
 import { FriendlyCaptchaSDK, WidgetHandle } from "@friendlycaptcha/sdk";
+import PlaygroundFormHeader from "./PlaygroundFormHeader";
 
 const friendlyCaptchaSDK = new FriendlyCaptchaSDK({
   disableEvalPatching: true,
@@ -279,19 +280,7 @@ export default function PlaygroundWidgetPreview({
       <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
         Widget Preview
       </h2>
-      <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md">
-        <p className="text-sm text-blue-800 dark:text-blue-200">
-          <strong>Tip:</strong> Fill out the form fields below to test the
-          captcha widget. The widget will activate based on your "Start Mode"
-          setting ({settings.startMode}).
-          {settings.useCase === "contact" &&
-            " Try focusing on any field to trigger the captcha."}
-          {settings.useCase === "signup" &&
-            " The captcha will activate when you start filling the form."}
-          {settings.useCase === "download" &&
-            " Complete the form to download the file."}
-        </p>
-      </div>
+      <PlaygroundFormHeader settings={settings} />
       <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 min-h-[200px]">
         <form className="space-y-4" onSubmit={handleFormSubmit}>
           <PlaygroundForm settings={settings} />
