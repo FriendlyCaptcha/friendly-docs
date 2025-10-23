@@ -241,6 +241,8 @@ export default function PlaygroundWidgetPreview({
       const successMessages = {
         contact: "Message sent successfully! We'll get back to you soon.",
         signup: "Account created successfully! Welcome aboard!",
+        checkout:
+          "Checkout completed successfully! Thank you for your purchase.",
         download: "Download started! Check your downloads folder.",
       };
       alert(successMessages[settings.useCase]);
@@ -297,6 +299,7 @@ export default function PlaygroundWidgetPreview({
             >
               {settings.useCase === "contact" && "Send Message"}
               {settings.useCase === "signup" && "Create Account"}
+              {settings.useCase === "checkout" && "Complete Checkout"}
               {settings.useCase === "download" && "Download File"}
             </button>
           </div>

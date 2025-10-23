@@ -1,4 +1,4 @@
-export type PlaygroundUseCase = "contact" | "signup" | "download";
+export type PlaygroundUseCase = "contact" | "signup" | "checkout" | "download";
 
 export interface PlaygroundSettings {
   version: "v1" | "v2";
