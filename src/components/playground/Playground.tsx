@@ -12,6 +12,7 @@ import PlaygroundUseCaseSelect from "./PlaygroundUseCaseSelect";
 import PlaygroundVersionInfoBanner from "./PlaygroundVersionInfoBanner";
 import PlaygroundBeginnerBanner from "./PlaygroundBeginnerBanner";
 import PlaygroundModeSwitch from "./PlaygroundModeSwitch";
+import PlaygroundThemeSwitch from "./PlaygroundThemeSwitch";
 
 export default function Playground() {
   const [settings, setSettings] = useState<PlaygroundSettings>(
@@ -42,6 +43,8 @@ export default function Playground() {
 
   return (
     <div id="tw-scope">
+      <PlaygroundThemeSwitch />
+
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20">
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
