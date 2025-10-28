@@ -1,8 +1,20 @@
-import React from "react";
+import { Icon } from "@iconify/react";
+import React, { useState } from "react";
 
 export default function PlaygroundBeginnerBanner() {
+  const [closed, setClosed] = useState(false);
+
+  if (closed) return null;
+
   return (
-    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 relative">
+      <button
+        onClick={() => setClosed(true)}
+        className="absolute top-2 right-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+      >
+        <Icon icon="iconamoon:close-fill" height={25} />
+      </button>
+
       <div className="flex items-start space-x-3">
         <div className="flex-shrink-0 mt-1">
           <svg

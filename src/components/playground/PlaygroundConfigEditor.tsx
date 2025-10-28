@@ -246,12 +246,12 @@ export default function PlaygroundConfigEditor({
             className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
           <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-            Simulate False Positive
+            Simulate high solving time
           </span>
         </label>
         <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
           {settings.simulateFalsePositive
-            ? "The widget will simulate that the user is suspicious and might be a bot"
+            ? "The widget will simulate that the user is suspicious which results in a high solving time"
             : "The widget will behave normally"}
         </div>
       </div>
