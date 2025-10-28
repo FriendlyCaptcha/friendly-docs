@@ -4,10 +4,11 @@ import {
   WidgetEvent,
 } from "@site/src/lib/playground";
 import { WidgetInstance } from "friendly-challenge";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import PlaygroundForm from "./PlaygroundForm";
 import { FriendlyCaptchaSDK, WidgetHandle } from "@friendlycaptcha/sdk";
 import PlaygroundFormHeader from "./PlaygroundFormHeader";
+import { useColorMode } from "@docusaurus/theme-common";
 
 const friendlyCaptchaSDK = new FriendlyCaptchaSDK({
   disableEvalPatching: true,
@@ -39,8 +40,15 @@ export default function PlaygroundWidgetPreview({
   const widgetInstanceRef = useRef<WidgetInstance | WidgetHandle>(null);
   const clenaupFunc = useRef<() => void>(null);
 
+  const { colorMode } = useColorMode();
+
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [widgetState, setWidgetState] = useState<string>("none");
+
+  const resolvedTheme = useMemo(
+    () => (settings.theme === "auto" ? colorMode : settings.theme),
+    [colorMode, settings.theme]
+  );
 
   const getSitekey = () => {
     if (settings.version === "v1") {
@@ -142,7 +150,7 @@ export default function PlaygroundWidgetPreview({
             element: widgetRef.current,
             sitekey: getSitekey(),
             startMode: settings.startMode,
-            theme: settings.theme,
+            theme: resolvedTheme,
             language:
               settings.language !== "auto" ? settings.language : undefined,
             apiEndpoint:
@@ -270,11 +278,11 @@ export default function PlaygroundWidgetPreview({
     settings.version,
     settings.widgetMode,
     settings.startMode,
-    settings.theme,
     settings.endpoint,
     settings.customEndpoint,
     settings.language,
     settings.simulateFalsePositive,
+    resolvedTheme,
   ]);
 
   return (
@@ -292,7 +300,7 @@ export default function PlaygroundWidgetPreview({
               key={`widget-${settings.version}`}
               ref={widgetRef}
               className={
-                "frc-captcha" + (settings.theme === "dark" ? " dark" : "")
+                "frc-captcha" + (resolvedTheme === "dark" ? " dark" : "")
               }
             />
             <button

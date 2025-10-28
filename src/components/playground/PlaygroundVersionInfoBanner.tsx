@@ -1,13 +1,25 @@
+import { Icon } from "@iconify/react";
 import { PlaygroundSettings } from "@site/src/lib/playground";
-import React from "react";
+import React, { useState } from "react";
 
 export default function PlaygroundVersionInfoBanner({
   settings,
 }: {
   settings: PlaygroundSettings;
 }) {
+  const [closed, setClosed] = useState(false);
+
+  if (closed) return null;
+
   return (
-    <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+    <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg relative">
+      <button
+        onClick={() => setClosed(true)}
+        className="absolute top-2 right-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+      >
+        <Icon icon="iconamoon:close-fill" height={25} />
+      </button>
+
       <div className="flex items-start space-x-3">
         <div className="flex-shrink-0 mt-1">
           <svg
