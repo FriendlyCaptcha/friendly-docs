@@ -44,13 +44,13 @@ For these requests, your server should forward the request in its entirety, incl
 Forward the requests to this endpoint (i.e., the upstream server):
 
 ```
-global.proxy.frcapi.com
+https://global.proxy.frcapi.com
 ```
 
-If you have access to [the EU Endpoint](./eu-endpoint.md), you may alternatively specify
+If you have access to [the EU Endpoint](./eu-endpoint.md), you may alternatively forward the requests to this endpoint:
 
 ```
-eu.proxy.frcapi.com
+https://eu.proxy.frcapi.com
 ```
 
 [See below](#example-routing-configurations) for examples of how to configure a server to correctly proxy the widget requests.
