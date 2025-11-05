@@ -138,6 +138,6 @@ location ~ ^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$ {
     proxy_set_header X-Frc-Proxy-Key <% PROXY KEY %>;
     proxy_set_header X-Frc-Proxy-Client-IP $remote_addr;
 
-    proxy_pass https://global.proxy.frcapi.com
+    proxy_pass https://global.proxy.frcapi.com;
 }
 ```
