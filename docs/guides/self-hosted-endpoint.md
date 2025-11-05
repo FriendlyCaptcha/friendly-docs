@@ -41,7 +41,7 @@ For these requests, your server should forward the request in its entirety, incl
 1. `X-Frc-Proxy-Key`: The proxy key you generated in the Friendly Captcha dashboard.
 2. `X-Frc-Proxy-Client-IP`: The original (source) IP address of the end user.
 
-As the upstream server for the proxied requests, you should specify
+Forward the requests to this endpoint (i.e., the upstream server):
 
 ```
 global.proxy.frcapi.com
