@@ -63,10 +63,10 @@ If you don't forward the entire request and its headers, the widget may still be
 
 ### 3. Configure your site or app's widget
 
-The final step is to configure your server's URL as the API endpoint for your widget. This will ensure that the widget sends its requests to your server (which will then forward them to the upstream Friendly Captcha API). If your server's URL is `https://organization.org` and you configure the widget using HTML `data-` attributes, your markup will look something like this:
+The final step is to configure your server's URL as the API endpoint for your widget. This will ensure that the widget sends its request to your server (which will then forward them to the upstream Friendly Captcha API). If your server's URL is `https://example.com` and you configure the widget using HTML `data-` attributes, your markup will look something like this:
 
 ```html
-<div class="frc-captcha" data-sitekey="<my sitekey>" data-api-endpoint="https://organization.org"></div>
+<div class="frc-captcha" data-sitekey="<my sitekey>" data-api-endpoint="https://example.com"></div>
 ```
 
 If you configure the widget using the JavaScript SDK, your code will look something like this:
@@ -79,7 +79,7 @@ const mount = document.querySelector(".my-widget");
 const widget = sdk.createWidget({
     element: mount,
     sitekey: "<my sitekey>",
-    apiEndpoint: "https://organization.org",
+    apiEndpoint: "https://example.com",
 });
 ```
 
