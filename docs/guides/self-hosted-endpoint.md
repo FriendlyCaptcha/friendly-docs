@@ -20,7 +20,7 @@ There are 3 steps to setting up a Self-Hosted Endpoint.
 
 ### 1. Generate a proxy key
 
-To verify that proxied widget requests come from your infrastructure, you must set a header that contains a proxy key. You can generate a key in the [Friendly Captcha dashboard](https://app.friendlycaptcha.eu/dashboard/accounts/-/keys). Make sure to generate a **Proxy Key**; API keys are not accepted. Store the generated key somewhere safe and retrievable&mdash;Friendly Captcha does keep a copy of the key, so if it gets lost, you will need to regenerate it.
+To verify that proxied widget requests come from your infrastructure, you must set a header that contains a proxy key. You can generate a key in the [Friendly Captcha dashboard](https://app.friendlycaptcha.eu/dashboard/accounts/-/keys). Make sure to generate a **Proxy Key**; API keys are not accepted. Store the generated key somewhere safe and retrievable&mdash;Friendly Captcha doesn't keep a copy of the key, so you will need to regenerate it if you lose it.
 
 All proxied requests need to send your proxy key as the value of the `X-Frc-Proxy-Key` header.
 
