@@ -98,7 +98,7 @@ LoadModule headers_module modules/mod_headers.so
 
 <LocationMatch "^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$">
     RequestHeader set X-Frc-Proxy-Key "<% PROXY KEY %>"
-    RequestHeader set X-Frc-Proxy-Client-IP "%{REMOTE_ADDR}e"
+    RequestHeader set X-Frc-Proxy-Client-IP expr=%{REMOTE_ADDR}
     
     ProxyPass https://global.proxy.frcapi.com
     ProxyPassReverse https://global.proxy.frcapi.com
