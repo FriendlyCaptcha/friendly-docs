@@ -99,7 +99,7 @@ LoadModule headers_module modules/mod_headers.so
 <LocationMatch "^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$">
     RequestHeader set X-Frc-Proxy-Key "<% PROXY KEY %>"
     RequestHeader set X-Frc-Proxy-Client-IP expr=%{REMOTE_ADDR}
-    
+
     ProxyPass https://global.proxy.frcapi.com
     ProxyPassReverse https://global.proxy.frcapi.com
 </LocationMatch>
@@ -120,13 +120,17 @@ reverse_proxy  @captcha_paths https://global.proxy.frcapi.com {
 
 ```
 frontend http-in
-    acl is_captcha_api path_reg ^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$
-    use_backend frc_captcha if is_captcha_api
+    # other frontend configuration...
 
-backend frc_captcha
+    acl is_captcha_path path_reg ^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$
+    use_backend captcha_paths if is_captcha_path
+
+backend captcha_paths
+    mode http
+
     http-request set-header X-Frc-Proxy-Key "<% PROXY KEY %>"
     http-request set-header X-Frc-Proxy-Client-IP %[src]
-    
+
     server frc_api global.proxy.frcapi.com:443 ssl verify required ca-file /etc/ssl/certs/ca-certificates.crt
 ```
 
