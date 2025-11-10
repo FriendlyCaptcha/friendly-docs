@@ -108,12 +108,11 @@ LoadModule headers_module modules/mod_headers.so
 ### Caddy
 
 ```
-@captcha_paths path /api/v2/captcha/agent* /api/v2/captcha/widget* /api/v2/captcha/ping* /api/v2/captcha/activate* /api/v2/captcha/quote* /api/v2/captcha/redeem*
+@captcha_paths path_regexp ^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$
 
-handle @captcha_paths {
+reverse_proxy  @captcha_paths https://global.proxy.frcapi.com {
     header_up X-Frc-Proxy-Key "<% PROXY KEY %>"
     header_up X-Frc-Proxy-Client-IP {remote_host}
-    reverse_proxy https://global.proxy.frcapi.com
 }
 ```
 
