@@ -29,6 +29,7 @@ You need to configure your web server to forward the following requests to the F
 ```
 GET  /api/v2/captcha/agent
 GET  /api/v2/captcha/widget
+GET  /api/v2/captcha/ping
 POST /api/v2/captcha/activate
 POST /api/v2/captcha/quote
 POST /api/v2/captcha/redeem
