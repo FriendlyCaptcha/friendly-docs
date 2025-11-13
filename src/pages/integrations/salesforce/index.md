@@ -25,6 +25,66 @@ performs an HTTP request to the Friendly Captcha site verification API.
 
 The LWC or HTML scripts render a Friendly Captcha widget on your website. After the challenge is solved, the solution is passed to your back-end, where the Apex class is used to verify the solution in a request to the Friendly Captcha API. Both the LWC and the Apex class can read configuration settings from a Custom Metadata Type Record.
 
+## Installation
+
+:::info
+
+To install Friendly Captcha for Salesforce, you will need administrator privileges for your Salesforce organization. You will also need to use the command line.
+
+If possible, we recommend testing the installation in a development Salesforce organization.
+
+:::
+
+The best way to install Friendly Captcha for Salesforce is by deploying the source code to your Salesforce organization. First, download the project from [GitHub][github] onto your local computer. In your terminal, `cd` into the `friendly-captcha-salesforce` directory.
+
+If you don't already have the Salesforce CLI installed, you can either [install it from the website][sf-cli-website], or you can [run it in a Docker container][sf-cli-docker]:
+
+```
+docker run --rm -it -v $PWD:/app -w /app salesforce/cli:latest-full
+```
+
+Next, authenticate the Salesforce CLI with your Salesforce organization:
+
+<details>
+<summary>Authenticating if you installed the CLI from the website</summary>
+
+If you installed the Salesforce CLI directly (i.e., without Docker), you can authenticate using a web browser by running
+
+```
+sf org login web --alias=MySFOrg
+```
+
+This will open a web browser where you log in with your Salesforce admin credentials. After you successfully log in, your command line session should be authenticated.
+
+</details>
+
+<details>
+<summary>Authenticating if you are using Docker</summary>
+
+If you're using Docker, you may not be able to use the web browser authentication flow. Instead, you can use the device authentication flow:
+
+```
+sf org login device --alias=MySFOrg
+```
+
+Follow the instructions in the output of the command to authenticate your session.
+
+</details>
+
+If everything is successful, you should see your organization in the output when you run
+
+```
+sf org list
+```
+
+To deploy Friendly Captcha for Salesforce to your organization, run
+
+```
+sf project deploy start --target-org MySFOrg
+```
+
+You should see a list of resources deploying into your organization. When the command finishes, you can proceed to [configuration](#configuration).
+
 ## Configuration
 
 To use Friendly Captcha for Salesforce, there are a few configuration parameters that you have to supply. At minimum, you have to supply a [sitekey][sitekey-instructions] for the front-end integration and an [API key][apikey-instructions] for the back-end integration.
@@ -231,3 +291,6 @@ Each event handler receives an `event` argument with a `detail` property matchin
 [sitekey-instructions]: /docs/v2/getting-started/setup
 [apikey-instructions]: /docs/v2/api/authentication#creating-api-keys
 [widget-events]: /docs/v2/sdk/events
+[github]: https://github.com/FriendlyCaptcha/friendly-captcha-salesforce
+[sf-cli-website]: https://developer.salesforce.com/tools/salesforcecli
+[sf-cli-docker]: https://hub.docker.com/r/salesforce/cli
