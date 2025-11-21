@@ -17,12 +17,14 @@ npm install @friendlycaptcha/sdk
 To make it easier to integrate Friendly Captcha you can use this component. It's a wrapper around the Friendly Captcha SDK that handles the creation and destruction of the widget and exposes the configuration options.
 
 ```tsx
+import { useRef, forwardRef, useEffect, useImperativeHandle } from "react";
 import {
-  FRCWidgetCompleteEvent,
   FriendlyCaptchaSDK,
-  CreateWidgetOptions,
-  WidgetErrorData,
-  FRCWidgetErrorEventData,
+  type WidgetHandle,
+  type FRCWidgetCompleteEvent,
+  type CreateWidgetOptions,
+  type WidgetErrorData,
+  type FRCWidgetErrorEventData,
 } from "@friendlycaptcha/sdk";
 
 const sdk = new FriendlyCaptchaSDK({
@@ -42,10 +44,11 @@ type Ref = {
 
 const FriendlyCaptcha = forwardRef<Ref, Props>((props, ref) => {
   const captchaRef = useRef<HTMLDivElement>(null);
+  const widgetRef = useRef<WidgetHandle>(null);
 
   useEffect(() => {
     if (captchaRef.current) {
-      const captcha = sdk.createWidget({
+      widgetRef.current = sdk.createWidget({
         element: captchaRef.current,
         ...props,
       });
@@ -70,7 +73,7 @@ const FriendlyCaptcha = forwardRef<Ref, Props>((props, ref) => {
         });
       }
 
-      return () => captcha?.destroy();
+      return () => widgetRef.current?.destroy();
     }
   }, Object.values(props));
 
@@ -81,7 +84,7 @@ const FriendlyCaptcha = forwardRef<Ref, Props>((props, ref) => {
     },
   }));
 
-  return <div ref={elementRef} />;
+  return <div ref={captchaRef} />;
 });
 
 export default FriendlyCaptcha;

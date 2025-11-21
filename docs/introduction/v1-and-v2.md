@@ -26,15 +26,11 @@ v1 will keep working! We will maintain it moving forward for multiple years.
 
 At some point down the road we will not allow newly created apps to use v1, but existing apps will still continue to work.
 
-## When can I upgrade?
-
-You may already be eligible&mdash;accounts created after May 1, 2024 automatically have access to v2. You can find out if you do by navigating to the [Create New App](https://app.friendlycaptcha.eu/dashboard/accounts/-/apps/create) page. In the **Friendly Captcha Version** step, if you can select v2, you're all set.
-
-Over the next 6 months, we will be rolling out v2 access to the rest of our customers. If you're ready to upgrade now, feel free to reach out using [**this form**](https://tally.so/r/n0MGDA) and a member of our team will help you get access.
-
 ## How do I upgrade?
 
-After v2 is enabled for your account, you can [follow the upgrade guide](./guides/upgrading-from-v1).
+v2 is available to all customers and we highly recommend it. Please [follow the upgrade guide](/docs/v2/guides/upgrading-from-v1).
+
+If you're an **Enterprise** customer, please [contact support](https://friendlycaptcha.com/support/) so that we can help you upgrade to v2!
 
 ## How can I tell if I'm using v1 or v2?
 

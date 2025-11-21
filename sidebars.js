@@ -107,13 +107,13 @@ const sidebars = {
           ]
         },
         "guides/migrating-from-recaptcha",
-        "guides/migrating-from-hcaptcha"
+        "guides/migrating-from-hcaptcha",
+        {
+          "type": "doc",
+          "id": "guides/self-hosted-endpoint",
+          "className": "sidebar-hidden"
+        }
       ]
-    },
-    {
-      "type": "link",
-      "href": "https://github.com/FriendlyCaptcha/friendly-captcha-sdk/blob/main/CHANGELOG.md",
-      "label": "Changelog"
     },
     {
       "type": "category",

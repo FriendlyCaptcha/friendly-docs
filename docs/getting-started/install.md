@@ -16,15 +16,17 @@ To create widgets from Javascript code, [see **Option B** below](#option-b-progr
 
 Add the following to your website's HTML:
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.23/site.min.js" async defer></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.23/site.compat.min.js" async defer></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>
 ```
 
 ::::tip
-#### Using the scripts without a CDN
+#### Using the scripts without a CDN (i.e. self-hosting)
 
-You can [download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.23/) and serve them from your own server.
+Using `cdn.jsdelivr.net` is optional. If preferred, you can self-host the scripts. [Download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/) and serve them from your own server.
 Remember to update these scripts regularly.
+
+`cdn.jsdelivr.net` is blocked in some jurisdictions, like some parts of China. If your website needs to be reachable from these jurisdictions, we recommend that you self-host the scripts.
 ::::
 
 
@@ -54,7 +56,7 @@ You can install our NPM package to create widgets programmatically.
 npm install @friendlycaptcha/sdk
 
 # using yarn
-yan add @friendlycaptcha/sdk
+yarn add @friendlycaptcha/sdk
 ```
 
 
