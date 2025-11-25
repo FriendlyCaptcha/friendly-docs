@@ -10,7 +10,7 @@ sidebar_class_name: sidebar-hidden
 
 ## WidgetState type
 
-The state the widget is in. See the \[widget lifecycle\](../lifecycle) docs for more information.
+The state the widget is in. See the [widget lifecycle](../lifecycle) docs for more information.
 
 **Signature:**
 

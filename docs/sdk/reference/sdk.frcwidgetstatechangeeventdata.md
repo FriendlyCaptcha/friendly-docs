@@ -24,6 +24,7 @@ export interface FRCWidgetStateChangeEventData
 |  --- | --- | --- | --- |
 |  [error?](./sdk.frcwidgetstatechangeeventdata.error.md) |  | [WidgetErrorData](./sdk.widgeterrordata.md) | _(Optional)_ The error that caused the state change, if any. Undefined if <code>state</code> is not equal to <code>&quot;error&quot;</code>. |
 |  [id](./sdk.frcwidgetstatechangeeventdata.id.md) |  | string | The widget ID that the event originated from. |
+|  [mode?](./sdk.frcwidgetstatechangeeventdata.mode.md) |  | [WidgetMode](./sdk.widgetmode.md) | _(Optional)_ The WidgetMode returned from the API. Smart Mode intelligently chooses between One-click Mode ("interactive") and Zero-click Mode ("noninteractive"). The mode is configured in the Friendly Captcha dashboard. |
 |  [name](./sdk.frcwidgetstatechangeeventdata.name.md) |  | typeof [FRCWidgetStateChangeEventName](./sdk.frcwidgetstatechangeeventname.md) | <code>&quot;frc:widget.statechange&quot;</code> |
 |  [response](./sdk.frcwidgetstatechangeeventdata.response.md) |  | string | The current <code>frc-captcha-response</code> value. |
 |  [state](./sdk.frcwidgetstatechangeeventdata.state.md) |  | [WidgetState](./sdk.widgetstate.md) | The new state of the widget. |
