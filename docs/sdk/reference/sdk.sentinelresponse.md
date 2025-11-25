@@ -15,5 +15,5 @@ Response values used in the hidden input field when no valid solution is present
 **Signature:**
 
 ```typescript
-export type SentinelResponse = ".UNINITIALIZED" | ".UNCONNECTED" | ".UNSTARTED" | ".REQUESTING" | ".SOLVING" | ".VERIFYING" | ".EXPIRED" | ".DESTROYED" | ".ERROR" | ".RESET";
+export type SentinelResponse = ".UNINITIALIZED" | ".UNCONNECTED" | ".UNSTARTED" | ".REQUESTING" | ".SOLVING" | ".VERIFYING" | ".EXPIRED" | ".DESTROYED" | ".ERROR" | ".ERROR.UNREACHABLE" | ".RESET";
 ```
