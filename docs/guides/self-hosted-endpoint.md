@@ -144,3 +144,13 @@ location ~ ^/api/v2/captcha/(agent|widget|ping|activate|quote|redeem)(/.*)?$ {
     proxy_pass https://global.proxy.frcapi.com;
 }
 ```
+
+## Troubleshooting
+
+### Restrictive `X-Frame-Options`
+
+The Friendly Captcha widget loads in an `iframe`, which means it will not load if your proxied response includes an `X-Frame-Options: DENY` header. If the widget will not load via your Self-Hosted Endpoint, check that any `X-Frame-Options` headers on the proxied responses are permissive enough to allow the `iframe` to load. You can choose one of the following three options.
+
+1. Don't set the `X-Frame-Options` header at all (this is what the Friendly Captcha API does).
+2. Set `X-Frame-Options: SAMEORIGIN` if the page and proxied requests have the same origin.
+3. Use the `frame-ancestors` directive of the `Content-Security-Policy` header to specifically allow `iframe`s loaded from your Self-Hosted Endpoint origin.
