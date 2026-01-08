@@ -31,4 +31,4 @@ This happens in the background, so that by the time a user is ready to submit a 
 
 - Follow the [**Getting Started**](./v2/getting-started/) tutorial to add Friendly Captcha to your website in 3 steps.
 - Visit the [**Friendly Captcha website**](https://friendlycaptcha.com).
-- Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](./v2/guides).
+- Migrating from **Google reCAPTCHA** or **hCAPTCHA**? Follow our [**migration guides**](../guides/index.md).
