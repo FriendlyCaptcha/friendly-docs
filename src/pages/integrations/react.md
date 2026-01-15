@@ -44,44 +44,64 @@ type Ref = {
 
 const FriendlyCaptcha = forwardRef<Ref, Props>((props, ref) => {
   const captchaRef = useRef<HTMLDivElement>(null);
-  const widgetRef = useRef<WidgetHandle>(null);
+  const widgetRef = useRef<WidgetHandle | null>(null);
+
+  // Separate callback props from widget options
+  const { onComplete, onError, onExpire, ...widgetOptions } = props;
 
   useEffect(() => {
-    if (captchaRef.current) {
+    if (captchaRef.current && sdk) {
       widgetRef.current = sdk.createWidget({
         element: captchaRef.current,
-        ...props,
+        ...widgetOptions,
       });
-
-      if (props.onComplete) {
-        captchaRef.current.addEventListener("frc:widget.complete", (e) => {
-          props.onComplete!((e as FRCWidgetCompleteEvent).detail.response);
-        });
-      }
-
-      if (props.onError) {
-        captchaRef.current.addEventListener("frc:widget.error", (e) => {
-          props.onError!(
-            (e as CustomEvent<FRCWidgetErrorEventData>).detail.error
-          );
-        });
-      }
-
-      if (props.onExpire) {
-        captchaRef.current.addEventListener("frc:widget.expire", () => {
-          props.onExpire!();
-        });
-      }
 
       return () => widgetRef.current?.destroy();
     }
-  }, Object.values(props));
+  }, Object.values(widgetOptions));
 
-  // Expose the reset method to the parent component
+  // Update event listeners when callbacks change
+  useEffect(() => {
+    const element = captchaRef.current;
+    if (!element) return;
+
+    const handleComplete = (e: Event) => {
+      if (onComplete) {
+        onComplete((e as FRCWidgetCompleteEvent).detail.response);
+      }
+    };
+
+    const handleError = (e: Event) => {
+      if (onError) {
+        onError((e as CustomEvent<FRCWidgetErrorEventData>).detail.error);
+      }
+    };
+
+    if (onComplete) {
+      element.addEventListener("frc:widget.complete", handleComplete);
+    }
+    if (onError) {
+      element.addEventListener("frc:widget.error", handleError);
+    }
+    if (onExpire) {
+      element.addEventListener("frc:widget.expire", onExpire);
+    }
+
+    return () => {
+      if (onComplete) {
+        element.removeEventListener("frc:widget.complete", handleComplete);
+      }
+      if (onError) {
+        element.removeEventListener("frc:widget.error", handleError);
+      }
+      if (onExpire) {
+        element.removeEventListener("frc:widget.expire", onExpire);
+      }
+    };
+  }, [onComplete, onError, onExpire]);
+
   useImperativeHandle(ref, () => ({
-    reset: () => {
-      widgetRef.current?.reset();
-    },
+    reset: () => widgetRef.current?.reset(),
   }));
 
   return <div ref={captchaRef} />;
@@ -94,15 +114,22 @@ You can use the `FriendlyCaptcha` component in your application like this:
 
 ```tsx
 function App() {
-  const handleComplete = (response: string) => {
+  // Memoize the callback function to avoid unnecessary event listeners updates.
+  const handleComplete = useCallback((response: string) => {
     console.log("Captcha complete", response);
-  };
+  }, []);
 
   return (
     <FriendlyCaptcha sitekey="YOUR_SITE_KEY" onComplete={handleComplete} />
   );
 }
 ```
+
+:::note
+
+Keep in mind that whenever any of the React `props` change, the widget will be destroyed and re-created—this is fundamental to React. The exceptions are the `onComplete`, `onError`, and `onExpire` callbacks, which can be updated without recreating the widget. To avoid unnecessary updates to the event listeners, it may make sense to memoize the callback functions using [`useCallback`](https://react.dev/reference/react/useCallback).
+
+:::
 
 ## Issues with Next.js
 
