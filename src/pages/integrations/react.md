@@ -125,7 +125,11 @@ function App() {
 }
 ```
 
-Keep in mind that whenever any of the configuration props change, the widget has to be destroyed and recreated. The only exception are the `onComplete`, `onError`, and `onExpire` callbacks, which can be updated without recreating the widget. To avoid unnecessary updates to the event listeners, it can make sense to memoize the callback functions using `useCallback`.
+:::note
+
+Keep in mind that whenever any of the React `props` change, the widget will be destroyed and re-created—this is fundamental to React. The exceptions are the `onComplete`, `onError`, and `onExpire` callbacks, which can be updated without recreating the widget. To avoid unnecessary updates to the event listeners, it may make sense to memoize the callback functions using [`useCallback`](https://react.dev/reference/react/useCallback).
+
+:::
 
 ## Issues with Next.js
 
