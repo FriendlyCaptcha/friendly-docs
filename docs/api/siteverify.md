@@ -11,6 +11,10 @@ Make a **POST** request to `https://global.frcapi.com/api/v2/captcha/siteverify`
 | `response`       | `string`| The response value that the user submitted in the `frc-captcha-response` field.         |
 | `sitekey`        | `string` | **Optional:** the sitekey that you want to make sure the puzzle was generated from. |
 
+:::note
+The maximum size of the `response` value is 16KB. 
+:::
+
 :::tip
 Remember to authenticate the request [using the `X-API-Key` header](./authentication).
 :::
