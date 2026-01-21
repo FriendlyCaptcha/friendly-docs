@@ -135,11 +135,11 @@ const config = {
             label: "Integrations",
             position: "left",
           },
-          {
-            to: "/docs/v2/use-cases",
-            label: "Use Cases",
-            position: "left",
-          },
+          // {
+          //   to: "/docs/v2/use-cases",
+          //   label: "Use Cases",
+          //   position: "left",
+          // },
           { to: "/blog", label: "Tech Blog", position: "left" },
           {
             type: "docsVersionDropdown",
