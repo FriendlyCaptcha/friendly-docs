@@ -28,10 +28,12 @@ The response will tell you whether the captcha response is valid, meaning the ca
 The response body is a JSON object which has a `success` field that tells you whether the response was valid or not.
 
 **Example `success=true` verification**
+
 ```json
 {
   "success": true,
-  "data": { 
+  "data": {
+    "event_id": "ev_CkK-YXwlFf-15_f", // Unique identifier for the siteverify request.
     "challenge": {
         "timestamp": "2025-03-18T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
         "origin": "https://example.com" // Origin where the challenge happened. This can be empty if unknown.
@@ -41,6 +43,7 @@ The response body is a JSON object which has a `success` field that tells you wh
 ```
 
 **Example `success=false` response**
+
 ```json
 {
   "success": false,
@@ -49,8 +52,13 @@ The response body is a JSON object which has a `success` field that tells you wh
     "detail": "..." // A human readable description of what went wrong.
   },
 }
-
 ```
+
+:::info
+
+We aim to ***never*** fundamentally change or remove *existing* fields from these responses. However, you should expect us to add *new* fields in the future.
+
+:::
 
 ### Error codes
 
