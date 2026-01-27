@@ -56,7 +56,7 @@ The response body is a JSON object which has a `success` field that tells you wh
 
 :::info
 
-We aim to ***never*** change or remove *existing* fields from these responses. However, we may from time-to-time add *new* fields. We therefore strongly recommend implementing your response validation logic to allow for such field additions.
+We aim to ***never*** fundamentally change or remove *existing* fields from these responses. However, you should expect us to add *new* fields in the future.
 
 :::
 
