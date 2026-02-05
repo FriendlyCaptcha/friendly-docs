@@ -1,4 +1,4 @@
-export type Tag = "CMS" | "E-commerce" | "Library" | "Mobile";
+export type Tag = "CMS" | "E-commerce" | "IAM" | "Library" | "Mobile";
 
 export interface Integration {
   name: string;
@@ -105,6 +105,26 @@ export const INTEGRATIONS: Integration[] = [
     image: "salesforce.svg",
     link: "/integrations/salesforce/",
     github: "FriendlyCaptcha/friendly-captcha-salesforce",
+  },
+
+  // IAM and Authentication
+  {
+    name: "Keycloak",
+    slug: "keycloak",
+    tags: ["IAM"],
+    fcVersion: "v2",
+    image: "keycloak.svg",
+    link: "https://github.com/dsb-norge/keycloak-friendly-captcha",
+    github: "dsb-norge/keycloak-friendly-captcha",
+  },
+  {
+    name: "Keycloak",
+    slug: "keycloak",
+    tags: ["IAM"],
+    fcVersion: "v1",
+    image: "keycloak.svg",
+    link: "https://github.com/dsb-norge/keycloak-friendly-captcha",
+    github: "dsb-norge/keycloak-friendly-captcha",
   },
 
   // Libraries and SDKs
