@@ -156,3 +156,6 @@ The Risk Intelligence data is returned as a JSON object in the `risk_intelligenc
   }
 }
 ```
+
+## Next steps
+You can enable Risk Intelligence on your account by contacting our support team. If you want to learn more about how to use the Risk Intelligence data, check out the [**Use Cases**](./use-cases.md) document where we provide example implementations and ideas for how to use this data to enhance your security.
