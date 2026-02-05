@@ -57,7 +57,11 @@ Risk Intelligence can also help you detect and prevent account sharing. If you s
 </details>
 
 ## Known Bot Identification
-More and more bots are active on the internet with the rise in LLMs and generative AI. Some may be user-initiated (*ChatGPT go to this website, fill in the job application form with my details and submit it"*). Risk Intelligence can help you identify these known bots and automated traffic, allowing you to decide what to do with this traffic.
+More and more bots are active on the internet with the rise in LLMs and generative AI.
+
+> *"ChatGPT go to this website, fill in the job application form with my details and submit it"*.
+
+Risk Intelligence helps you identify these known bots,automated traffic, and user-initiated AI automation, allowing you to decide what to do with this traffic.
 
 <details>
 <summary>Example: Bot Detection Dashboard</summary>
