@@ -2,7 +2,7 @@
 
 This is the source code of [Friendly Captcha](https://friendlycaptcha.com)'s [Developer Hub](https://developer.friendlycaptcha.com).
 
-This website uses [Docusaurus 2](https://docusaurus.io/).
+This website uses [Docusaurus 3](https://docusaurus.io/).
 
 ## Am I using V1 or V2
 

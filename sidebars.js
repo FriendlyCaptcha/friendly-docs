@@ -82,6 +82,17 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Risk Intelligence",
+      link: {
+        type: "doc",
+        id: "risk-intelligence/index",
+      },
+      items: [
+        "risk-intelligence/use-cases",
+      ],
+    },
+    {
+      type: "category",
       label: "Guides",
       link: {
         type: "doc",

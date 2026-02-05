@@ -35,9 +35,10 @@ The response body is a JSON object which has a `success` field that tells you wh
   "data": {
     "event_id": "ev_CkK-YXwlFf-15_f", // Unique identifier for the siteverify request.
     "challenge": {
-        "timestamp": "2025-03-18T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
+        "timestamp": "2026-02-05T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
         "origin": "https://example.com" // Origin where the challenge happened. This can be empty if unknown.
-    }
+    },
+    "risk_intelligence": null // `null` unless you have enabled Risk Intelligence on your account. See below.
   }
 }
 ```
@@ -93,6 +94,11 @@ It is better to temporarily accept bots or spam than to reject all requests. *Do
 
 :::
 
+
+## Risk Intelligence
+The `risk_intelligence` field in the successful response is `null` unless you have enabled [*Risk Intelligence*](../risk-intelligence) on your account.
+
+Risk Intelligence allows you to receive risk scores and details about the solver of the request. This can help you make more informed decisions about how to handle the request, and allows you to feed the risk data into your fraud detection systems. This is a paid add-on feature that is available on **Friendly Captcha Advanced** and **Enterprise** plans.
 
 ## Troubleshooting & Tips
 

@@ -39,6 +39,7 @@ const config = {
   plugins: [
     "docusaurus-plugin-sass",
     "./src/plugins/tailwind-config.js",
+    "docusaurus-plugin-zooming",
     [
       "@docusaurus/plugin-client-redirects",
       {

@@ -47,7 +47,7 @@ Below are all the custom events a widget can emit and their payload.
 
 Called when the widget completes, in the payload you can find the `response` which is the value that should be part of the request to your server.
 
-#### Event payload (**`event.details`**)
+#### Event payload (**`event.detail`**)
 ```typescript
 {
   name: "frc:widget.complete",

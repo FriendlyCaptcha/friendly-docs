@@ -179,6 +179,12 @@ export default function DocVersionBanner({
   className,
 }: Props): JSX.Element | null {
   const versionMetadata = useDocsVersion();
+  
+  // Disable banner on v2 pages
+  if (versionMetadata.label === 'v2') {
+    return null;
+  }
+  
   if (versionMetadata.banner) {
     return (
       <DocVersionBannerEnabled

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Detection Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            padding: 24px;
+        }
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header-time {
+            font-size: 14px;
+            color: #a0a0a0;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 24px;
+        }
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .stat-trend {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .stat-trend.down {
+            color: #10b981;
+        }
+        .stat-trend.up {
+            color: #752f2f;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .card-header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .card-body {
+            padding: 24px;
+        }
+        .chart-container {
+            height: 288px;
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            border-bottom: 2px solid #e5e7eb;
+            padding: 20px 0;
+        }
+        .chart-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .chart-bar {
+            background: #1a1a1a;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: opacity 0.2s;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+        }
+        .chart-bar.bot {
+            background: #1b1b1b;
+        }
+        .chart-bar.human {
+            background: #10b981;
+        }
+        .chart-labels {
+            display: flex;
+            gap: 4px;
+            margin-top: 12px;
+            font-size: 11px;
+            color: #6b7280;
+        }
+        .chart-label {
+            flex: 1;
+            text-align: center;
+        }
+        .legend {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 13px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+        .bot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .bot-item {
+            padding: 16px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bot-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bot-icon {
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .bot-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        .bot-type {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .bot-count {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th {
+            background: #f9fafb;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #1a1a1a;
+        }
+        tr:hover {
+            background: #f9fafb;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge.blocked {
+            background: #fef2f2;
+            color: #ef4444;
+        }
+        .badge.allowed {
+            background: #f0fdf4;
+            color: #10b981;
+        }
+        .badge.monitored {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .action-select {
+            padding: 6px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 12px;
+            background: #ffffff;
+            cursor: pointer;
+        }
+        .risk-bar {
+            width: 80px;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .risk-fill {
+            height: 100%;
+            background: #ef4444;
+        }
+        .risk-fill.low {
+            background: #10b981;
+        }
+        .risk-fill.medium {
+            background: #f59e0b;
+        }
+        .risk-fill.high {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Bot Detection & Traffic Analysis</h1>
+            <div class="header-time">Last 24 hours • Updated 2 minutes ago</div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-icon">🤖</div>
+                <div class="stat-value">34.2%</div>
+                <div class="stat-label">Bot Traffic</div>
+                <div class="stat-trend up">↑ 5.3% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value">65.8%</div>
+                <div class="stat-label">Human Traffic</div>
+                <div class="stat-trend down">↓ 5.3% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🚫</div>
+                <div class="stat-value">2,847</div>
+                <div class="stat-label">Requests Blocked</div>
+                <div class="stat-trend up">↑ 12% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-value">1,203</div>
+                <div class="stat-label">Scrapers Detected</div>
+                <div class="stat-trend up">↑ 23% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔍</div>
+                <div class="stat-value">892</div>
+                <div class="stat-label">AI/LLM Bots</div>
+                <div class="stat-trend up">↑ 34% from yesterday</div>
+            </div>
+        </div>
+
+        <div class="grid-2col">
+            <div class="card">
+                <div class="card-header">Traffic Distribution (Last 7 Days)</div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 180px;"></div>
+                            <div class="chart-bar bot" style="height: 80px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 190px;"></div>
+                            <div class="chart-bar bot" style="height: 70px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 175px;"></div>
+                            <div class="chart-bar bot" style="height: 85px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 165px;"></div>
+                            <div class="chart-bar bot" style="height: 95px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 160px;"></div>
+                            <div class="chart-bar bot" style="height: 100px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 150px;"></div>
+                            <div class="chart-bar bot" style="height: 110px;"></div>
+                        </div>
+                        <div class="chart-group">
+                            <div class="chart-bar human" style="height: 140px;"></div>
+                            <div class="chart-bar bot" style="height: 120px;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-labels">
+                        <div class="chart-label">Jan 30</div>
+                        <div class="chart-label">Jan 31</div>
+                        <div class="chart-label">Feb 1</div>
+                        <div class="chart-label">Feb 2</div>
+                        <div class="chart-label">Feb 3</div>
+                        <div class="chart-label">Feb 4</div>
+                        <div class="chart-label">Feb 5</div>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #10b981;"></div>
+                            <span>Human Traffic</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #1b1b1b;"></div>
+                            <span>Bot Traffic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Top Detected Bots (24h)</div>
+                <div class="card-body">
+                    <div class="bot-list">
+                        <div class="bot-item">
+                            <div class="bot-info">
+                                <div class="bot-icon">🔍</div>
+                                <div>
+                                    <div class="bot-name">GPTBot</div>
+                                    <div class="bot-type">OpenAI Crawler</div>
+                                </div>
+                            </div>
+                            <div class="bot-count">487</div>
+                        </div>
+                        <div class="bot-item">
+                            <div class="bot-info">
+                                <div class="bot-icon">🕷️</div>
+                                <div>
+                                    <div class="bot-name">Scrapy</div>
+                                    <div class="bot-type">Web Scraper</div>
+                                </div>
+                            </div>
+                            <div class="bot-count">342</div>
+                        </div>
+                        <div class="bot-item">
+                            <div class="bot-info">
+                                <div class="bot-icon">🤖</div>
+                                <div>
+                                    <div class="bot-name">ClaudeBot</div>
+                                    <div class="bot-type">Anthropic Crawler</div>
+                                </div>
+                            </div>
+                            <div class="bot-count">278</div>
+                        </div>
+                        <div class="bot-item">
+                            <div class="bot-info">
+                                <div class="bot-icon">🌐</div>
+                                <div>
+                                    <div class="bot-name">Selenium</div>
+                                    <div class="bot-type">Browser Automation</div>
+                                </div>
+                            </div>
+                            <div class="bot-count">195</div>
+                        </div>
+                        <div class="bot-item">
+                            <div class="bot-info">
+                                <div class="bot-icon">🦆</div>
+                                <div>
+                                    <div class="bot-name">DuckDuckBot</div>
+                                    <div class="bot-type">Search Engine</div>
+                                </div>
+                            </div>
+                            <div class="bot-count">143</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Recent Bot Activity</div>
+            <div class="card-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Bot Type</th>
+                                <th>User Agent</th>
+                                <th>Risk Score</th>
+                                <th>IP Address</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>14:47:23</td>
+                                <td>🤖 GPTBot</td>
+                                <td>Mozilla/5.0 AppleWebKit/537.36 GPTBot/1.0</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill medium" style="width: 45%;"></div>
+                                    </div>
+                                </td>
+                                <td>23.98.142.176</td>
+                                <td><span class="badge monitored">Monitored</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Monitor</option>
+                                        <option>Block</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:46:18</td>
+                                <td>🕷️ Scrapy Bot</td>
+                                <td>Scrapy/2.11.0 (+https://scrapy.org)</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill high" style="width: 92%;"></div>
+                                    </div>
+                                </td>
+                                <td>185.142.236.41</td>
+                                <td><span class="badge blocked">Blocked</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Block</option>
+                                        <option>Monitor</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:45:52</td>
+                                <td>🤖 ClaudeBot</td>
+                                <td>Claude-Web/1.0</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill medium" style="width: 38%;"></div>
+                                    </div>
+                                </td>
+                                <td>52.88.193.216</td>
+                                <td><span class="badge monitored">Monitored</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Monitor</option>
+                                        <option>Block</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:44:37</td>
+                                <td>🌐 Selenium</td>
+                                <td>Mozilla/5.0 Chrome/121.0.0.0 Safari/537.36</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill high" style="width: 87%;"></div>
+                                    </div>
+                                </td>
+                                <td>142.93.157.89</td>
+                                <td><span class="badge blocked">Blocked</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Block</option>
+                                        <option>Monitor</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:43:15</td>
+                                <td>🦆 DuckDuckBot</td>
+                                <td>DuckDuckBot/1.0; (+http://duckduckgo.com)</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill low" style="width: 15%;"></div>
+                                    </div>
+                                </td>
+                                <td>40.88.21.235</td>
+                                <td><span class="badge allowed">Allowed</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Allow</option>
+                                        <option>Monitor</option>
+                                        <option>Block</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:42:08</td>
+                                <td>🤖 Headless Chrome</td>
+                                <td>HeadlessChrome/121.0.6167.85</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill high" style="width: 94%;"></div>
+                                    </div>
+                                </td>
+                                <td>178.128.95.177</td>
+                                <td><span class="badge blocked">Blocked</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Block</option>
+                                        <option>Monitor</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14:40:29</td>
+                                <td>🤖 Perplexity Bot</td>
+                                <td>PerplexityBot/1.0</td>
+                                <td>
+                                    <div class="risk-bar">
+                                        <div class="risk-fill medium" style="width: 42%;"></div>
+                                    </div>
+                                </td>
+                                <td>54.186.178.93</td>
+                                <td><span class="badge monitored">Monitored</span></td>
+                                <td>
+                                    <select class="action-select">
+                                        <option>Monitor</option>
+                                        <option>Block</option>
+                                        <option>Allow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
