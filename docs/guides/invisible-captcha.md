@@ -1,6 +1,6 @@
-# Hiding the Friendly Captcha widget
+# Invisible CAPTCHA
 
-It is possible to hide the Friendly Captcha widget on your site. Before doing so, there are some considerations to make. This guide will explain the considerations and then show how to safely hide the widget.
+To create a fully invisible user experience, it is possible to hide the Friendly Captcha widget on your site. Before doing so, there are some considerations to make. This guide will explain the considerations and then show how to safely hide the widget.
 
 :::note Attribution
 
