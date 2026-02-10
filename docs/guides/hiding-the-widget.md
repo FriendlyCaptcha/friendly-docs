@@ -7,7 +7,7 @@ It is possible to hide the Friendly Captcha widget on your site. Before doing so
 If you choose to hide the widget, you must include the Friendly Captcha attribution visibly in the user flow. This helps to ensure end-user transparency and legal compliance. Please include the following text.
 
 ```html
-This site is protected by <a href="https://friendlycaptcha.com">Friendly Captcha</a> and its <a href="https://friendlycaptcha.com/legal/privacy-end-users/">Privacy Policy</a> and <a href="https://friendlycaptcha.com/legal/terms/">Terms of Use</a> apply.
+This site is protected by <a href="https://friendlycaptcha.com" target="_blank" rel="noopener">Friendly Captcha</a> and its <a href="https://friendlycaptcha.com/privacy/user-protection/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://friendlycaptcha.com/legal/terms/" target="_blank" rel="noopener">Terms of Use</a> apply.
 ```
 
 :::

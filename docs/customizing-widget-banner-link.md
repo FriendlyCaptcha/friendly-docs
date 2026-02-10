@@ -28,5 +28,5 @@ To ensure end-user transparency and legal compliance, we recommend keeping the d
 You are allowed to hide the widget banner link as long as you include the Friendly Captcha attribution visibly in the user flow. Please include the following text:
 
 ```html
-This site is protected by <a href="https://friendlycaptcha.com">Friendly Captcha</a> and its <a href="https://friendlycaptcha.com/legal/privacy-end-users/">Privacy Policy</a> and <a href="https://friendlycaptcha.com/legal/terms/">Terms of Use</a> apply.
+This site is protected by <a href="https://friendlycaptcha.com" target="_blank" rel="noopener">Friendly Captcha</a> and its <a href="https://friendlycaptcha.com/privacy/user-protection/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://friendlycaptcha.com/legal/terms/" target="_blank" rel="noopener">Terms of Use</a> apply.
 ```
