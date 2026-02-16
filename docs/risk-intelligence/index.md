@@ -160,6 +160,8 @@ The Risk Intelligence data is returned as a JSON object in the `risk_intelligenc
 }
 ```
 
+The entire format is documented on the [Risk Intelligence Format](./format.md) page, where you can find detailed descriptions of all fields and example values.
+
 ## Next steps
 If you want to use Risk Intelligence today you can contact our support team. Alternatively, general availbility is planned for late Q1 2026.
 
