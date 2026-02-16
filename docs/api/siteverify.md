@@ -96,9 +96,11 @@ It is better to temporarily accept bots or spam than to reject all requests. *Do
 
 
 ## Risk Intelligence
-The `risk_intelligence` field in the successful response is `null` unless you have enabled [*Risk Intelligence*](../risk-intelligence) on your account.
+The `risk_intelligence` field in the successful response is `null` unless you have enabled [*Risk Intelligence on Captcha Challenge*](../risk-intelligence/on-captcha-challenge.md) on your account.
 
-Risk Intelligence allows you to receive risk scores and details about the solver of the request. This can help you make more informed decisions about how to handle the request, and allows you to feed the risk data into your fraud detection systems. This is a paid add-on feature that is available on **Friendly Captcha Advanced** and **Enterprise** plans.
+Risk Intelligence allows you to receive risk scores and details about the solver of the request. This can help you make more informed decisions about how to handle the request, and allows you to feed the risk data into your fraud detection systems.
+
+This is a paid add-on feature that is available on **Friendly Captcha Advanced** and **Enterprise** plans.
 
 ## Troubleshooting & Tips
 
