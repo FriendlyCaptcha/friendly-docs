@@ -88,7 +88,9 @@ const sidebars = {
         id: "risk-intelligence/index",
       },
       items: [
+        "risk-intelligence/format",
         "risk-intelligence/use-cases",
+        "risk-intelligence/on-captcha-challenge",
       ],
     },
     {

@@ -7,4 +7,4 @@ With Risk Intelligence on Captcha Challenge you  get risk insights about the use
 
 For example, if a user has a high-risk score, you might want to require additional verification steps, despite them solving the captcha challenge. Alternatively, you can store this data for auditing and monitoring purposes, or feed it into your existing fraud detection systems. This allows you to enhance your security and fraud detection capabilities without adding any friction to the user experience.
 
-When enabled, the Risk Intelligence data will be included in the `risk_intelligence` field of the response from the [siteverify API](../api/siteverify.md).
+When enabled, the Risk Intelligence data will be included in the `risk_intelligence` field of the response from the [siteverify API](../api/siteverify.md). The data in the field is described in detail on the [Risk Intelligence Format](./format.md) page.
