@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Sharing Detection</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            padding: 24px;
+        }
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .header-btn {
+            background: #2a2a2a;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .header-btn.primary {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .card-header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .card-badge {
+            background: #fef2f2;
+            color: #ef4444;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-body {
+            padding: 32px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 24px;
+        }
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .user-details h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .user-meta {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 32px;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+        .timeline-dot.current {
+            background: #ef4444;
+            border-color: #ef4444;
+        }
+        .timeline-dot.past {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+        .timeline-content {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .timeline-time {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+        .timeline-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .timeline-status.active {
+            background: #fef2f2;
+            color: #ef4444;
+        }
+        .timeline-status.ended {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        .timeline-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            font-size: 13px;
+        }
+        .detail-item {
+            display: flex;
+            gap: 8px;
+        }
+        .detail-icon {
+            color: #6b7280;
+        }
+        .detail-text {
+            color: #1a1a1a;
+        }
+        .detail-label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .stat-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+        .warning-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .warning-text {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        #map {
+            height: 350px;
+            border-radius: 10px;
+            margin-top: 16px;
+            border: 1px solid #e5e7eb;
+        }
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+        }
+        .leaflet-popup-content {
+            margin: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .popup-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+        .popup-detail {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        .popup-status {
+            display: inline-block;
+            background: #fef2f2;
+            color: #ef4444;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .action-btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .action-btn.primary {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .action-btn.secondary {
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Account Sharing Detection</h1>
+            <div class="header-actions">
+                <button class="header-btn">Export Report</button>
+                <button class="header-btn primary">View All Flagged</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Sarah Chen - Enterprise Account</div>
+                <div class="card-badge">Concurrent Sessions Detected</div>
+            </div>
+            <div class="card-body">
+                <div class="user-info">
+                    <div class="user-avatar">SC</div>
+                    <div class="user-details">
+                        <h2>sarah.chen@techcorp.io</h2>
+                        <div class="user-meta">User ID: u_8f7e6d5c4b • Account Type: Enterprise • Member since Jan 2024</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-title">
+                        <span>⚠️</span>
+                        <span>Multiple Concurrent Sessions Detected</span>
+                    </div>
+                    <div class="warning-text">
+                        This account is currently active from 3 different locations simultaneously, which may violate your terms of service. 
+                        The devices and browsers are significantly different, suggesting possible account sharing among multiple users.
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Active Sessions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Unique Devices (7d)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Countries (7d)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">92</div>
+                        <div class="stat-label">Sharing Risk Score</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 32px;">
+                    <div class="section-title">Geographic Distribution (Last 7 Days)</div>
+                    <div id="map"></div>
+                </div>
+
+                <div style="margin-top: 32px;">
+                    <div class="section-title">Active Sessions Timeline</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot current"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <div class="timeline-time">Today at 2:47 PM EST</div>
+                                    <div class="timeline-status active">ACTIVE NOW</div>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📍</span>
+                                        <span class="detail-text">New York, USA</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💻</span>
+                                        <span class="detail-text">Chrome 121, Windows 11</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🌐</span>
+                                        <span class="detail-text">IP: 142.93.128.45</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">⏱️</span>
+                                        <span class="detail-text">Session: 2h 15m</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot current"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <div class="timeline-time">Today at 7:23 PM GMT (concurrent)</div>
+                                    <div class="timeline-status active">ACTIVE NOW</div>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📍</span>
+                                        <span class="detail-text">London, United Kingdom</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📱</span>
+                                        <span class="detail-text">Safari 17, macOS 14</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🌐</span>
+                                        <span class="detail-text">IP: 81.101.173.92</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">⏱️</span>
+                                        <span class="detail-text">Session: 45m</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot current"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <div class="timeline-time">Today at 5:12 AM AEDT (concurrent)</div>
+                                    <div class="timeline-status active">ACTIVE NOW</div>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📍</span>
+                                        <span class="detail-text">Sydney, Australia</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📱</span>
+                                        <span class="detail-text">Chrome 121, Android 14</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🌐</span>
+                                        <span class="detail-text">IP: 203.221.45.178</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">⏱️</span>
+                                        <span class="detail-text">Session: 1h 8m</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot past"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <div class="timeline-time">Today at 9:34 AM EST</div>
+                                    <div class="timeline-status ended">ENDED</div>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📍</span>
+                                        <span class="detail-text">Toronto, Canada</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💻</span>
+                                        <span class="detail-text">Firefox 122, Ubuntu 22.04</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🌐</span>
+                                        <span class="detail-text">IP: 142.93.157.203</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">⏱️</span>
+                                        <span class="detail-text">Duration: 3h 22m</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot past"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <div class="timeline-time">Yesterday at 4:18 PM CET</div>
+                                    <div class="timeline-status ended">ENDED</div>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">📍</span>
+                                        <span class="detail-text">Berlin, Germany</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💻</span>
+                                        <span class="detail-text">Edge 121, Windows 10</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🌐</span>
+                                        <span class="detail-text">IP: 85.214.132.117</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">⏱️</span>
+                                        <span class="detail-text">Duration: 1h 45m</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn secondary">Flag for Review</button>
+                    <button class="action-btn secondary">Send Warning Email</button>
+                    <button class="action-btn primary">Terminate All Sessions</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize the map centered on the world
+        const map = L.map('map').setView([20, 0], 2);
+        
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Custom red marker icon
+        const redIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="width: 20px; height: 20px; background: #ef4444; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+        
+        // Add markers for each location
+        const locations = [
+            {
+                coords: [40.7128, -74.0060],
+                title: 'New York, USA',
+                details: 'Chrome 121, Windows 11<br>Session: 2h 15m<br>IP: 142.93.128.45',
+                status: 'ACTIVE NOW'
+            },
+            {
+                coords: [51.5074, -0.1278],
+                title: 'London, United Kingdom',
+                details: 'Safari 17, macOS 14<br>Session: 45m<br>IP: 81.101.173.92',
+                status: 'ACTIVE NOW'
+            },
+            {
+                coords: [-33.8688, 151.2093],
+                title: 'Sydney, Australia',
+                details: 'Chrome 121, Android 14<br>Session: 1h 8m<br>IP: 203.221.45.178',
+                status: 'ACTIVE NOW'
+            }
+        ];
+        
+        locations.forEach(location => {
+            const marker = L.marker(location.coords, { icon: redIcon }).addTo(map);
+            marker.bindPopup(`
+                <div class="popup-title">📍 ${location.title}</div>
+                <div class="popup-detail">${location.details}</div>
+                <div class="popup-status">${location.status}</div>
+            `);
+        });
+        
+        // Draw lines between locations to show connections
+        const latlngs = locations.map(loc => loc.coords);
+        L.polyline(latlngs, {
+            color: '#f59e0b',
+            weight: 2,
+            opacity: 0.6,
+            dashArray: '5, 10'
+        }).addTo(map);
+    </script>
+</body>
+</html>

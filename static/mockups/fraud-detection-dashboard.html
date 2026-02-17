@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            padding: 24px;
+        }
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header-meta {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            color: #a0a0a0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 24px;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .stat-change {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        .stat-change.up {
+            color: #ef4444;
+        }
+        .stat-change.down {
+            color: #10b981;
+        }
+        .main-content {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .content-header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .filter-group {
+            display: flex;
+            gap: 12px;
+        }
+        .filter-btn {
+            background: #2a2a2a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .filter-btn.active {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+        .review-queue {
+            padding: 0;
+        }
+        .review-item {
+            padding: 24px 32px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        .risk-badge {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border: 3px solid;
+        }
+        .risk-badge.critical {
+            background: #fef2f2;
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+        .risk-badge.high {
+            background: #fff7ed;
+            border-color: #f97316;
+            color: #f97316;
+        }
+        .risk-score {
+            font-size: 28px;
+        }
+        .risk-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        .review-details {
+            flex: 1;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .review-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .review-timestamp {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        .review-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .action-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .action-btn.approve {
+            background: #10b981;
+            color: #ffffff;
+        }
+        .action-btn.reject {
+            background: #ef4444;
+            color: #ffffff;
+        }
+        .action-btn.review {
+            background: #f3f4f6;
+            color: #1a1a1a;
+        }
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .signal-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+        .signal-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .signal-icon.warning {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .signal-icon.danger {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .signal-icon.info {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .signal-label {
+            color: #6b7280;
+        }
+        .signal-value {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Fraud Detection Dashboard</h1>
+            <div class="header-meta">
+                <span>Last updated: 2 minutes ago</span>
+                <span>•</span>
+                <span>February 5, 2026</span>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Flagged Today</div>
+                <div class="stat-value">147</div>
+                <div class="stat-change up">↑ 23% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Awaiting Review</div>
+                <div class="stat-value">42</div>
+                <div class="stat-change">12 high priority</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Blocked</div>
+                <div class="stat-value">89</div>
+                <div class="stat-change down">↓ 8% from yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">False Positives</div>
+                <div class="stat-value">16</div>
+                <div class="stat-change down">↓ 12% from yesterday</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-header">
+                <h2>High-Risk Signups Awaiting Review</h2>
+                <div class="filter-group">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Critical</button>
+                    <button class="filter-btn">High</button>
+                    <button class="filter-btn">Medium</button>
+                </div>
+            </div>
+
+            <div class="review-queue">
+                <div class="review-item">
+                    <div class="risk-badge critical">
+                        <div class="risk-score">94</div>
+                        <div class="risk-label">Critical</div>
+                    </div>
+                    <div class="review-details">
+                        <div class="review-header">
+                            <div>
+                                <div class="review-title">Account Creation: john.martinez@emailtemp.com</div>
+                                <div class="review-timestamp">2 minutes ago • Lagos, Nigeria</div>
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn approve">Approve</button>
+                                <button class="action-btn reject">Block</button>
+                                <button class="action-btn review">Details</button>
+                            </div>
+                        </div>
+                        <div class="signals-grid">
+                            <div class="signal-item">
+                                <div class="signal-icon danger">⚠</div>
+                                <div>
+                                    <span class="signal-label">VPN Score:</span>
+                                    <span class="signal-value">5/5</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">🌐</div>
+                                <div>
+                                    <span class="signal-label">AS Type:</span>
+                                    <span class="signal-value">Datacenter</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon warning">🌍</div>
+                                <div>
+                                    <span class="signal-label">Country:</span>
+                                    <span class="signal-value">Nigeria</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">📊</div>
+                                <div>
+                                    <span class="signal-label">Network Risk:</span>
+                                    <span class="signal-value">5/5</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">🤖</div>
+                                <div>
+                                    <span class="signal-label">Browser Risk:</span>
+                                    <span class="signal-value">4/5</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon info">📱</div>
+                                <div>
+                                    <span class="signal-label">Device:</span>
+                                    <span class="signal-value">Chrome 121, Windows</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="risk-badge critical">
+                        <div class="risk-score">91</div>
+                        <div class="risk-label">Critical</div>
+                    </div>
+                    <div class="review-details">
+                        <div class="review-header">
+                            <div>
+                                <div class="review-title">Account Creation: sarah.chen.2024@proton.me</div>
+                                <div class="review-timestamp">8 minutes ago • Moscow, Russia</div>
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn approve">Approve</button>
+                                <button class="action-btn reject">Block</button>
+                                <button class="action-btn review">Details</button>
+                            </div>
+                        </div>
+                        <div class="signals-grid">
+                            <div class="signal-item">
+                                <div class="signal-icon danger">⚠</div>
+                                <div>
+                                    <span class="signal-label">Proxy Score:</span>
+                                    <span class="signal-value">4/5</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">🌐</div>
+                                <div>
+                                    <span class="signal-label">AS Type:</span>
+                                    <span class="signal-value">Datacenter</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">🔒</div>
+                                <div>
+                                    <span class="signal-label">Tor:</span>
+                                    <span class="signal-value">Detected</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon warning">🕒</div>
+                                <div>
+                                    <span class="signal-label">Timezone:</span>
+                                    <span class="signal-value">Europe/Moscow</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon info">📱</div>
+                                <div>
+                                    <span class="signal-label">Device:</span>
+                                    <span class="signal-value">Firefox 122, Linux</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon danger">📊</div>
+                                <div>
+                                    <span class="signal-label">Network Risk:</span>
+                                    <span class="signal-value">5/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="risk-badge high">
+                        <div class="risk-score">78</div>
+                        <div class="risk-label">High</div>
+                    </div>
+                    <div class="review-details">
+                        <div class="review-header">
+                            <div>
+                                <div class="review-title">Account Creation: business.inquiries@company-temp.net</div>
+                                <div class="review-timestamp">15 minutes ago • Jakarta, Indonesia</div>
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn approve">Approve</button>
+                                <button class="action-btn reject">Block</button>
+                                <button class="action-btn review">Details</button>
+                            </div>
+                        </div>
+                        <div class="signals-grid">
+                            <div class="signal-item">
+                                <div class="signal-icon warning">⚠</div>
+                                <div>
+                                    <span class="signal-label">VPN Score:</span>
+                                    <span class="signal-value">3/5</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon warning">🌍</div>
+                                <div>
+                                    <span class="signal-label">Country:</span>
+                                    <span class="signal-value">Indonesia</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon info">🌐</div>
+                                <div>
+                                    <span class="signal-label">AS Type:</span>
+                                    <span class="signal-value">Mobile</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon warning">🤖</div>
+                                <div>
+                                    <span class="signal-label">Automation:</span>
+                                    <span class="signal-value">Suspected</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon info">📱</div>
+                                <div>
+                                    <span class="signal-label">Device:</span>
+                                    <span class="signal-value">Safari 17, iOS</span>
+                                </div>
+                            </div>
+                            <div class="signal-item">
+                                <div class="signal-icon warning">📊</div>
+                                <div>
+                                    <span class="signal-label">Overall Risk:</span>
+                                    <span class="signal-value">4/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

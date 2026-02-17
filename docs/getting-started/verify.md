@@ -48,9 +48,10 @@ The response body is a JSON object which has a `success` field that tells you wh
   "data": {
     "event_id": "ev_CkK-YXwlFf-15_f", // Unique identifier for the siteverify request.
     "challenge": {
-        "timestamp": "2025-03-18T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
+        "timestamp": "2026-02-05T13:01:25Z", // ISO 8601 timestamp when the captcha challenge was completed.
         "origin": "example.com" // Origin where the challenge happened. This can be empty if unknown.
-    }
+    },
+    "risk_intelligence": null // `null` unless you have enabled Risk Intelligence on your account.
   }
 }
 ```
