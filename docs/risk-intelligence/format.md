@@ -985,18 +985,6 @@ Contains information about the client device, browser, and operating system.
 **Description:** Information about detected automation and bots.
 
 <details>
-<summary><code>headless</code> - Headless browser detection</summary>
-
-**Type:** Boolean  
-**Description:** Whether the browser was detected as running in headless mode.
-
-**Example:**
-```json
-"headless": false
-```
-</details>
-
-<details>
 <summary><code>automation_tool</code> - Automation tool detection</summary>
 
 **Type:** Object  
