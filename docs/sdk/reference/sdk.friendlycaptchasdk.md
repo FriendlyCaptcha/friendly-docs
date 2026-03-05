@@ -30,7 +30,7 @@ export declare class FriendlyCaptchaSDK
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [attached](./sdk.friendlycaptchasdk.attached.md) |  | Promise&lt;[WidgetHandle](./sdk.widgethandle.md)<!-- -->\[\]&gt; | A promise that resolves to all the widgets that are currently attached. |
+|  [attached](./sdk.friendlycaptchasdk.attached.md) |  | Promise&lt;[WidgetHandle](./sdk.widgethandle.md)\[\]&gt; | A promise that resolves to all the widgets that are currently attached. |
 
 ## Methods
 
@@ -38,6 +38,9 @@ export declare class FriendlyCaptchaSDK
 |  --- | --- | --- |
 |  [attach(elements)](./sdk.friendlycaptchasdk.attach.md) |  | <p>Attaches a widget to given element or elements if they are not attached to yet.</p><p>You can pass one or more HTML elements to attach to, or undefined. If <code>undefined</code> is passed, the HTML page is scanned for unattached widget elements (= elements with the <code>frc-captcha</code> class).</p><p>Returns handles to the newly-attached elements.</p> |
 |  [clear()](./sdk.friendlycaptchasdk.clear.md) |  | Completely remove all widgets and background agents related to the SDK on this page. |
+|  [clearRiskIntelligence(opts)](./sdk.friendlycaptchasdk.clearriskintelligence.md) |  | Clears cached Risk Intelligence tokens. Cached tokens for a given sitekey can be cleared by specifying it; if a sitekey is not specified, all tokens will be cleared from the cache. |
 |  [createWidget(opts)](./sdk.friendlycaptchasdk.createwidget.md) |  | Creates a Friendly Captcha widget with given options under given HTML element. |
+|  [getAllRiskIntelligenceHandles()](./sdk.friendlycaptchasdk.getallriskintelligencehandles.md) |  | Returns all current Risk Intelligence handles known about (in an unspecified order). |
 |  [getAllWidgets()](./sdk.friendlycaptchasdk.getallwidgets.md) |  | Returns all current widgets known about (in an unspecified order). |
 |  [getWidgetById(id)](./sdk.friendlycaptchasdk.getwidgetbyid.md) |  | Retrieves a widget by its widget ID. |
+|  [riskIntelligence(opts)](./sdk.friendlycaptchasdk.riskintelligence.md) |  | Creates a Risk Intelligence token generation request, returning a Promise that resolves to the generated token. |

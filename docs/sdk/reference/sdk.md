@@ -16,6 +16,7 @@ A library for integrating Friendly Captcha into your website. This SDK allows yo
 |  Class | Description |
 |  --- | --- |
 |  [FriendlyCaptchaSDK](./sdk.friendlycaptchasdk.md) | <p>Main entry point for V2 of the Friendly Captcha SDK. This class keeps track of widgets and allows you to create widgets programmatically.</p><p>Generally there should only be one instance of this SDK in your website.</p> |
+|  [RiskIntelligenceHandle](./sdk.riskintelligencehandle.md) | <p>This provides a handle for configuring and managing a Risk Intelligence request via an HTML element.</p><p>This class is only instantiated by the SDK - do not create a handle yourself.</p> |
 |  [WidgetHandle](./sdk.widgethandle.md) | <p>This provides an API stub that provides the end-user JS API for a widget.</p><p>This class is only instantiated by the SDK - do not create a handle yourself.</p> |
 
 ## Interfaces
@@ -24,12 +25,19 @@ A library for integrating Friendly Captcha into your website. This SDK allows yo
 |  --- | --- |
 |  [CreateWidgetOptions](./sdk.createwidgetoptions.md) | Options when creating a widget programmatically. |
 |  [FRCEventMap](./sdk.frceventmap.md) | A DOM event map for all events that can be dispatched by a widget. |
+|  [FRCRiskIntelligenceCompleteEventData](./sdk.frcriskintelligencecompleteeventdata.md) | Payload of the <code>&quot;frc:riskintelligence.complete&quot;</code> event. |
+|  [FRCRiskIntelligenceErrorEventData](./sdk.frcriskintelligenceerroreventdata.md) | Payload of the <code>&quot;frc:riskintelligence.error&quot;</code> event. |
+|  [FRCRiskIntelligenceExpireEventData](./sdk.frcriskintelligenceexpireeventdata.md) | Payload of the <code>&quot;frc:riskintelligence.expire&quot;</code> event. |
 |  [FRCWidgetCompleteEventData](./sdk.frcwidgetcompleteeventdata.md) | Payload of the <code>&quot;frc:widget.complete&quot;</code> event. |
 |  [FRCWidgetErrorEventData](./sdk.frcwidgeterroreventdata.md) | Payload of the <code>&quot;frc:widget.error&quot;</code> event. |
 |  [FRCWidgetExpireEventData](./sdk.frcwidgetexpireeventdata.md) | Payload of the <code>&quot;frc:widget.expire&quot;</code> event. |
 |  [FRCWidgetResetEventData](./sdk.frcwidgetreseteventdata.md) | Payload of the <code>&quot;frc:widget.reset&quot;</code> event. |
 |  [FRCWidgetStateChangeEventData](./sdk.frcwidgetstatechangeeventdata.md) | Payload of the <code>&quot;frc:widget.statechange&quot;</code> event. |
 |  [FriendlyCaptchaSDKOptions](./sdk.friendlycaptchasdkoptions.md) | Options when creating a new SDK instance. |
+|  [RiskIntelligenceClearOptions](./sdk.riskintelligenceclearoptions.md) | Options for clearing cached Risk Intelligence tokens. |
+|  [RiskIntelligenceErrorData](./sdk.riskintelligenceerrordata.md) | Error data returned by a failed Risk Intelligence request. |
+|  [RiskIntelligenceGenerateData](./sdk.riskintelligencegeneratedata.md) | Data returned by the Risk Intelligence API request. |
+|  [RiskIntelligenceOptions](./sdk.riskintelligenceoptions.md) | Options for configuring a Risk Intelligence request. |
 |  [WidgetErrorData](./sdk.widgeterrordata.md) |  |
 |  [WidgetResetOptions](./sdk.widgetresetoptions.md) | The options object you can pass to the <code>widget.reset()</code> method. |
 
@@ -37,6 +45,9 @@ A library for integrating Friendly Captcha into your website. This SDK allows yo
 
 |  Variable | Description |
 |  --- | --- |
+|  [FRCRiskIntelligenceCompleteEventName](./sdk.frcriskintelligencecompleteeventname.md) | <code>&quot;frc:riskintelligence.complete&quot;</code> |
+|  [FRCRiskIntelligenceErrorEventName](./sdk.frcriskintelligenceerroreventname.md) | <code>&quot;frc:riskintelligence.error&quot;</code> |
+|  [FRCRiskIntelligenceExpireEventName](./sdk.frcriskintelligenceexpireeventname.md) | <code>&quot;frc:riskintelligence.expire&quot;</code> |
 |  [FRCWidgetCompleteEventName](./sdk.frcwidgetcompleteeventname.md) | <code>&quot;frc:widget.complete&quot;</code> |
 |  [FRCWidgetErrorEventName](./sdk.frcwidgeterroreventname.md) | <code>&quot;frc:widget.error&quot;</code> |
 |  [FRCWidgetExpireEventName](./sdk.frcwidgetexpireeventname.md) | <code>&quot;frc:widget.expire&quot;</code> |
@@ -50,11 +61,15 @@ A library for integrating Friendly Captcha into your website. This SDK allows yo
 |  [APIEndpoint](./sdk.apiendpoint.md) | Which API endpoint to use for the SDK. Typically "eu" or "global", but a URL can be used to specify a custom endpoint. Defaults to "global". |
 |  [FRCEventData](./sdk.frceventdata.md) | Payloads of any of the events that can be dispatched by a widget. |
 |  [FRCEventName](./sdk.frceventname.md) | Names of any of the events that can be dispatched by a widget. |
+|  [FRCRiskIntelligenceCompleteEvent](./sdk.frcriskintelligencecompleteevent.md) | Event that gets dispatched when a Risk Intelligence token has been successfully generated. |
+|  [FRCRiskIntelligenceErrorEvent](./sdk.frcriskintelligenceerrorevent.md) | Event that gets dispatched when the Risk Intelligence request fails. |
+|  [FRCRiskIntelligenceExpireEvent](./sdk.frcriskintelligenceexpireevent.md) | Event that gets dispatched when a Risk Intelligence token expires. |
 |  [FRCWidgetCompleteEvent](./sdk.frcwidgetcompleteevent.md) | Event that gets dispatched when the widget is completed. This happens when the user's browser has succesfully passed the captcha challenge. |
 |  [FRCWidgetStateChangeEvent](./sdk.frcwidgetstatechangeevent.md) | Event that gets dispatched when the widget enters a new state. |
 |  [FRCWidgetWidgetErrorEvent](./sdk.frcwidgetwidgeterrorevent.md) | Event that gets dispatched when something goes wrong in the widget. |
 |  [FRCWidgetWidgetExpireEvent](./sdk.frcwidgetwidgetexpireevent.md) | Event that gets dispatched when the widget expires. This happens when the user takes too long to submit the captcha after it is solved. |
 |  [FRCWidgetWidgetResetEvent](./sdk.frcwidgetwidgetresetevent.md) | Event that gets dispatched when something goes wrong in the widget. |
+|  [RiskIntelligenceErrorCode](./sdk.riskintelligenceerrorcode.md) | <p>Error codes that can be returned by the Risk Intelligence request.</p><p>See [WidgetErrorCode](./sdk.widgeterrorcode.md) for the list of possible error codes.</p> |
 |  [SentinelResponse](./sdk.sentinelresponse.md) | Response values used in the hidden input field when no valid solution is present, these tell you something about the state of the widget. |
 |  [StartMode](./sdk.startmode.md) | <p>The start mode of the widget.</p><p>\* <code>&quot;auto&quot;</code>: the widget gets activated as soon as it is created. \* <code>&quot;focus&quot;</code>: the widget gets activated as soon as the form above it is focused. \* <code>&quot;none&quot;</code>: The widget does not get activated automatically at all, the user needs to press the widget (or <code>.start()</code> gets called using the Javascript API).</p> |
 |  [WidgetErrorCode](./sdk.widgeterrorcode.md) | <p>Error codes that can be returned by the widget.</p><p>\* <code>&quot;network_error&quot;</code>: The user's browser could not connect to the Friendly Captcha API. \* <code>&quot;sitekey_invalid&quot;</code>: The sitekey is invalid. \* <code>&quot;sitekey_missing&quot;</code>: The sitekey is missing. \* <code>&quot;other&quot;</code>: Some other error occurred.</p><p>In all cases it's the best practice to enable the "submit" button when the widget errors, so that the user can still perform the action despite not having solved the captcha.</p> |
