@@ -7,7 +7,7 @@ Friendly Captcha provides Risk Intelligence data for your website users without 
 You can store and use this data to enhance your (existing) security systems, such as implementing risk-based authentication or fraud detection systems. For example, you may want to flag users with high risk scores for additional verification steps.
 
 ## How do I get Risk Intelligence data?
-The primary way to get Risk Intelligence data is through the Risk Intelligence API. This allows you to collect a risk intelligence token in the frontend and send it to your backend for verification.
+The primary way to get Risk Intelligence data is through the Risk Intelligence API. This allows you to collect a risk intelligence token in the frontend and send it to your backend to retrieve the data.
 
 This functionality is currently in private beta and will be available for all **Advanced** and **Enterprise**  plans later in Q1 2026. If you are interested in getting early access to this feature, please contact our support team.
 

@@ -1,0 +1,174 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# API
+
+To get Risk Intelligence data, you first generate a _token_ from your project's front-end. Then, you pass the token to your project's back-end, which forwards it to the Friendly Captcha API to retrieve the _data_.
+
+---
+
+## Generating a Risk Intelligence token
+
+You can generate a token directly using JavaScript, or you can use an HTML element to automatically generate a token and embed it in a `<form>` element.
+
+<Tabs queryString="mode">
+  <TabItem
+    attributes={{ style: { width: "50%", justifyContent: "center" } }}
+    value="javascript"
+    label="JavaScript"
+    default
+  >
+
+    ### Install the library
+
+    ```console
+    npm install @friendlycaptcha/sdk
+    ```
+
+    ### Generate the token
+
+    ```javascript
+    import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
+
+    // You only need to instantiate one SDK object.
+    const sdk = new FriendlyCaptchaSDK();
+
+    const data = await sdk.riskIntelligence({
+      sitekey: "<your sitekey>",
+    });
+
+    // `data` is an object with `token` and `expiresAt` properties.
+    ```
+
+    ### Use the token
+
+    Once you have a token, you can send it in a `fetch` request to your server or embed it into a hidden `<input>` element in a `<form>` on your page.
+
+  </TabItem>
+  <TabItem
+    attributes={{ style: { width: "50%", justifyContent: "center" } }}
+    value="html"
+    label="HTML"
+  >
+    You can use the same *`site`* script that you use for installing Friendly Captcha widgets to automatically generate Risk Intelligence tokens.
+
+    The script searches for HTML elements with the `frc-risk-intelligence` class and generates tokens for each element, embedding them in a hidden `<input>` element if they are located within a `<form>` element.
+
+    ### Add the scripts
+
+    Include these two scripts in your HTML.
+
+    ```html
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.min.js" async defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.compat.min.js" async defer></script>
+    ```
+
+    :::tip Using the scripts without a CDN (i.e. self-hosting)
+
+    Using `cdn.jsdelivr.net` is optional. If preferred, you can self-host the scripts. [Download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0) and serve them from your own server.
+    Remember to update these scripts regularly.
+
+    `cdn.jsdelivr.net` is blocked in some jurisdictions, like some parts of China. If your website needs to be reachable from these jurisdictions, we recommend that you self-host the scripts.
+
+    :::
+
+    ### Include the elements
+
+    Insert HTML elements with a class of `frc-risk-intelligence` inside a `<form>`, and tokens will automatically be generated and embedded within hidden `<input>` elements in the form.
+
+    ```html
+    <form>
+      <!-- other form elements -->
+      <div class="frc-risk-intelligence" data-sitekey="<your sitekey>"></div>
+      <!-- other form elements -->
+    </form>
+    ```
+
+    When the form is submitted, the request will include a Risk Intelligence token called `frc-risk-intelligence-token` (though this name can be configured).
+
+  </TabItem>
+</Tabs>
+
+The next step after generating a token and sending it to your server is to use it to retrieve Risk Intelligence data from the Friendly Captcha API.
+
+---
+
+## Retrieving Risk Intelligence data
+
+To retrieve Risk Intelligence data using a token, you need to send a request containing the token authenticated by a Friendly Captcha API key.
+
+### Create an API key
+
+You will need an API key to prove it's you, you can create one on the [**API Keys page**](https://app.friendlycaptcha.eu/dashboard/accounts/-/apikeys) in the dashboard.
+
+### Send the retrieve request
+
+To retrieve the data, send a **POST** request to `https://global.frcapi.com/api/v2/riskIntelligence/retrieve` with the following parameters.
+
+| POST Parameter | Type | Description |
+|-|-|-|
+| `token` | `string` | The Risk Intelligence token generated in your application's front-end. |
+| `sitekey` | `string` | **Optional:** The sitekey used in toke generation, for an extra layer of back-end validation. |
+
+These parameters can be passed as JSON data or FormData.
+
+#### Authentication
+
+To authenticate the request, set the following header.
+
+| Header | Description |
+|-|-|
+| `X-API-Key` | The API you created in your Friendly Captcha account. |
+
+### The retrieve response
+
+The response body is a JSON object with a `success` field that indicates whether the response is valid or not.
+
+#### Example `success=true` response
+
+```json
+{
+  "success": true,
+  "data": {
+    "event_id": "ev_C52P4pm-xkZIHB5Y", // Unique identifier for the retrieve request.
+    "token": {
+      "timestamp": "2026-03-05T11:22:51.922Z", // ISO 8601 timestamp when the token was created.
+      "expires_at": "2026-03-05T11:37:51.922Z", // ISO 8601 timestamp for when the token will expire.
+      "num_uses": 1 // Counter representing the number of times the token has been used to retrieve Risk Intelligence data.
+    },
+    "risk_intelligence": {
+        // see http://developer.friendlycaptcha.com/docs/v2/risk-intelligence/#risk-intelligence-data-format
+        // for an example of Risk Intelligence data.
+    }
+  }
+}
+```
+
+#### Example `success=false` response
+
+```json
+{
+  "success": false,
+  "error": {
+    "error_code": "bad_request", // Error code, see the table below for possible values
+    "detail": "..." // Extra details (this is mainly intended for Friendly Captcha staff)
+  },
+}
+```
+
+:::info
+
+We aim to ***never*** fundamentally change or remove *existing* fields from these responses. However, you should expect us to add *new* fields in the future.
+
+:::
+
+Below is a list of possible values for `error_code`. **If you are seeing status code 400 or 401 your server code is probably not configured correctly.**
+
+| Error code | Status | Description |
+|-|-|-|
+| `auth_required` | 401 | You forgot to set the `X-API-Key` header. |
+| `auth_invalid` | 401 | The API key you provided was invalid. |
+| `sitekey_invalid` | 400 | The sitekey in your request is invalid. |
+| `token_missing` | 400 | You forgot to add the token parameter. |
+| `token_expired` | 400 | The response has expired. |
+| `bad_request` | 400 | Something else is wrong with your request; e.g. your token is invalid. |
