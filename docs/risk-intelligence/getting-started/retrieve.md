@@ -70,6 +70,13 @@ Below is a list of possible values for `error_code`. **If you are seeing status 
 | `auth_required` | 401 | You forgot to set the `X-API-Key` header. |
 | `auth_invalid` | 401 | The API key you provided was invalid. |
 | `sitekey_invalid` | 400 | The sitekey in your request is invalid. |
-| `token_missing` | 400 | You forgot to add the token parameter. |
-| `token_expired` | 400 | The response has expired. |
+| `token_missing` | 400 | The token parameter is missing or empty. |
 | `bad_request` | 400 | Something else is wrong with your request; e.g. your token is invalid. |
+| `token_invalid` | 200 | The token is invalid (e.g., associated with a different account). |
+| `token_expired` | 200 | The token is expired. |
+
+:::warning Note
+
+Status code **200** does not necessarily mean that the token was successfully used to retrieve Risk Intelligence data; it just means that the API was able to handle it. Check the `success` field.
+
+:::
