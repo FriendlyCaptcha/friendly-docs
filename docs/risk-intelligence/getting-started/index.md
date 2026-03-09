@@ -1,4 +1,4 @@
-# Getting started with Risk Intelligence
+# Getting Started with Risk Intelligence
 
 There are two parts to getting Risk Intelligence data. First, you generate a Risk Intelligence _**token**_ in your project's front-end. Second, you use that token to retrieve Risk Intelligence _**data**_ from the Friendly Captcha API via your project's back-end.
 
