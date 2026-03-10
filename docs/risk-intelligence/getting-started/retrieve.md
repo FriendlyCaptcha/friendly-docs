@@ -38,7 +38,7 @@ The response body is a JSON object with a `success` field that indicates whether
       "num_uses": 1 // Counter representing the number of times the token has been used to retrieve Risk Intelligence data.
     },
     "risk_intelligence": {
-        // see http://developer.friendlycaptcha.com/docs/v2/risk-intelligence/#risk-intelligence-data-format
+        // see https://developer.friendlycaptcha.com/docs/v2/risk-intelligence/#risk-intelligence-data-format
         // for an example of Risk Intelligence data.
     }
   }
