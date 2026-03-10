@@ -39,13 +39,14 @@ The available risk scores include:
 
 
 ### Network Information
-The `network` section provides detailed information about the user's network and IP address. This includes.
 
 :::info
 The IP address is never stored on our servers in an unhashed format. We encode it into the risk intelligence token so that we can pass it on to you.
 
 You can compare this IP address to the one you see in your server logs to correlate the risk intelligence data with specific requests.
 :::
+
+The `network` section provides detailed information about the user's network and IP address. This includes:
 
 * `ip`: The IP address of the user when the risk intelligence data was gathered on the frontend.
 * `as`: Information about the Autonomous System (AS) associated with the user's IP address, including ASN, AS name, company, description, domain, country, RIR, route and type.
