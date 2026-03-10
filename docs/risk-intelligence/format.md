@@ -3,7 +3,7 @@
 Risk Intelligence data is returned in a structured JSON format that includes various risk signals and scores. The exact structure of the data may vary depending on which modules you have enabled on your account (as of writing, all modules are included by default).
 
 :::info
-The structure of the Risk Intelligence data is subject to change. We always aim for backwards compatibility, your validation and parsing logic should be flexible enough to handle new fields being added in the future.
+The structure of the Risk Intelligence data is subject to change. We always aim for backwards compatibility, but your validation and parsing logic should be flexible enough to handle new fields being added in the future.
 :::
 
 ## Structure Overview
