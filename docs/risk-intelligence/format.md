@@ -11,9 +11,9 @@ The Risk Intelligence data is organized into three high level sections:
 
 ```json
 {
-    risk_scores: { ... },          // Overall risk scores summarizing the assessment into scores per category (1-5).
-    network: { ... },              // Information about the user's network and IP address.
-    client: { ... },              // Detected browser or bot information.
+    risk_scores: { ... },  // Overall risk scores per category (1-5).
+    network: { ... },      // Information about the user's network and IP address.
+    client: { ... },       // Detected browser or bot information.
 }
 ```
 
