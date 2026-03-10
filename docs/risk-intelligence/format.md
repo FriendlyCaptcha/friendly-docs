@@ -3,7 +3,7 @@
 Risk Intelligence data is returned in a structured JSON format that includes various risk signals and scores. The exact structure of the data may vary depending on which modules you have enabled on your account (as of writing, all modules are included by default).
 
 :::info
-The structure of the Risk Intelligence data is subject to change. We always aim for backwards compatibility, your validation and parsing logic should be flexible enough to handle new fields being added in the future.
+The structure of the Risk Intelligence data is subject to change. We always aim for backwards compatibility, but your validation and parsing logic should be flexible enough to handle new fields being added in the future.
 :::
 
 ## Structure Overview
@@ -11,9 +11,9 @@ The Risk Intelligence data is organized into three high level sections:
 
 ```json
 {
-    risk_scores: { ... },          // Overall risk scores summarizing the assessment into scores per category (1-5).
-    network: { ... },              // Information about the user's network and IP address.
-    client: { ... },              // Detected browser or bot information.
+    risk_scores: { ... },  // Overall risk scores per category (1-5).
+    network: { ... },      // Information about the user's network and IP address.
+    client: { ... },       // Detected browser or bot information.
 }
 ```
 
@@ -39,13 +39,14 @@ The available risk scores include:
 
 
 ### Network Information
-The `network` section provides detailed information about the user's network and IP address. This includes.
 
 :::info
 The IP address is never stored on our servers in an unhashed format. We encode it into the risk intelligence token so that we can pass it on to you.
 
 You can compare this IP address to the one you see in your server logs to correlate the risk intelligence data with specific requests.
 :::
+
+The `network` section provides detailed information about the user's network and IP address. This includes:
 
 * `ip`: The IP address of the user when the risk intelligence data was gathered on the frontend.
 * `as`: Information about the Autonomous System (AS) associated with the user's IP address, including ASN, AS name, company, description, domain, country, RIR, route and type.
