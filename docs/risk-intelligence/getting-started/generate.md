@@ -190,7 +190,7 @@ For more information, see the SDK reference for [`frc:riskintelligence.expire`](
 
 ## Caching
 
-The SDK caches generated tokens to improve performance and efficiency. For example, if two `sdk.riskIntelligence()` calls get made (with the same sitekey and to the same API endpoint), they will receive the same token. You can disable this behavior by setting the `bypassCache` configuration parameter.
+The SDK caches generated tokens to improve performance and efficiency. For example, if two `sdk.riskIntelligence()` calls get made (with the same sitekey and to the same API endpoint), they will receive the same token. Tokens are cached for approximately **15 minutes**. You can disable this behavior by setting the `bypassCache` configuration parameter.
 
 ```js
 const data = await sdk.riskIntelligence({
