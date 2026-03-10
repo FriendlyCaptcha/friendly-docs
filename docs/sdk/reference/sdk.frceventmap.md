@@ -22,6 +22,9 @@ export interface FRCEventMap
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
+|  ["frc:riskintelligence.complete"](./sdk.frceventmap._frc_riskintelligence.complete_.md) |  | [FRCRiskIntelligenceCompleteEvent](./sdk.frcriskintelligencecompleteevent.md) |  |
+|  ["frc:riskintelligence.error"](./sdk.frceventmap._frc_riskintelligence.error_.md) |  | [FRCRiskIntelligenceErrorEvent](./sdk.frcriskintelligenceerrorevent.md) |  |
+|  ["frc:riskintelligence.expire"](./sdk.frceventmap._frc_riskintelligence.expire_.md) |  | [FRCRiskIntelligenceExpireEvent](./sdk.frcriskintelligenceexpireevent.md) |  |
 |  ["frc:widget.complete"](./sdk.frceventmap._frc_widget.complete_.md) |  | [FRCWidgetCompleteEvent](./sdk.frcwidgetcompleteevent.md) |  |
 |  ["frc:widget.error"](./sdk.frceventmap._frc_widget.error_.md) |  | [FRCWidgetWidgetErrorEvent](./sdk.frcwidgetwidgeterrorevent.md) |  |
 |  ["frc:widget.expire"](./sdk.frceventmap._frc_widget.expire_.md) |  | [FRCWidgetWidgetExpireEvent](./sdk.frcwidgetwidgetexpireevent.md) |  |

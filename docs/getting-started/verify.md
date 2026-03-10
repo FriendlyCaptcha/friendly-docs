@@ -15,7 +15,7 @@ If you are using the Javascript SDK, you can also embed the response in any othe
 
 ### Create an API key
 
-You will need an API key to prove it's you, you can create one on the [**API Keys page**](https://app.friendlycaptcha.eu/dashboard/accounts/-/apikeys) in the dashboard.
+You will need an API key to prove it's you, you can create one on the [**API Keys page**](https://app.friendlycaptcha.eu/dashboard/accounts/-/keys) in the dashboard.
 
 ### Make the siteverify request
 

@@ -88,6 +88,19 @@ const sidebars = {
         id: "risk-intelligence/index",
       },
       items: [
+        {
+          type: "category",
+          label: "Getting Started",
+          link: {
+            type: "doc",
+            id: "risk-intelligence/getting-started/index",
+          },
+          items: [
+            "risk-intelligence/getting-started/setup",
+            "risk-intelligence/getting-started/generate",
+            "risk-intelligence/getting-started/retrieve",
+          ],
+        },
         "risk-intelligence/format",
         "risk-intelligence/use-cases",
         "risk-intelligence/on-captcha-challenge",
@@ -129,7 +142,8 @@ const sidebars = {
       link: {
         type: "generated-index",
         slug: "use-cases",
-        description: "A collection of articles on various uses for Friendly Captcha.",
+        description:
+          "A collection of articles on various uses for Friendly Captcha.",
       },
       items: ["use-cases/brute-force-attacks"],
     },

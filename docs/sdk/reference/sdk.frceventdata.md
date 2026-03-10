@@ -15,6 +15,6 @@ Payloads of any of the events that can be dispatched by a widget.
 **Signature:**
 
 ```typescript
-export type FRCEventData = FRCWidgetStateChangeEventData | FRCWidgetCompleteEventData | FRCWidgetExpireEventData | FRCWidgetErrorEventData | FRCWidgetResetEventData;
+export type FRCEventData = FRCWidgetStateChangeEventData | FRCWidgetCompleteEventData | FRCWidgetExpireEventData | FRCWidgetErrorEventData | FRCWidgetResetEventData | FRCRiskIntelligenceCompleteEventData | FRCRiskIntelligenceErrorEventData | FRCRiskIntelligenceExpireEventData;
 ```
-**References:** [FRCWidgetStateChangeEventData](./sdk.frcwidgetstatechangeeventdata.md)<!-- -->, [FRCWidgetCompleteEventData](./sdk.frcwidgetcompleteeventdata.md)<!-- -->, [FRCWidgetExpireEventData](./sdk.frcwidgetexpireeventdata.md)<!-- -->, [FRCWidgetErrorEventData](./sdk.frcwidgeterroreventdata.md)<!-- -->, [FRCWidgetResetEventData](./sdk.frcwidgetreseteventdata.md)
+**References:** [FRCWidgetStateChangeEventData](./sdk.frcwidgetstatechangeeventdata.md)<!-- -->, [FRCWidgetCompleteEventData](./sdk.frcwidgetcompleteeventdata.md)<!-- -->, [FRCWidgetExpireEventData](./sdk.frcwidgetexpireeventdata.md)<!-- -->, [FRCWidgetErrorEventData](./sdk.frcwidgeterroreventdata.md)<!-- -->, [FRCWidgetResetEventData](./sdk.frcwidgetreseteventdata.md)<!-- -->, [FRCRiskIntelligenceCompleteEventData](./sdk.frcriskintelligencecompleteeventdata.md)<!-- -->, [FRCRiskIntelligenceErrorEventData](./sdk.frcriskintelligenceerroreventdata.md)<!-- -->, [FRCRiskIntelligenceExpireEventData](./sdk.frcriskintelligenceexpireeventdata.md)
