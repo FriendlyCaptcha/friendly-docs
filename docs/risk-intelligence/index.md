@@ -21,7 +21,7 @@ In short, Risk Intelligence allows for more control and flexibility in how you h
 Risk Intelligence consists of five modules, each providing different types of risk insights.
 
 * **Risk Scores**: Combined risk scores that summarize the risk in different categories such as browser risk and network risk.
-* **IP Intelligence**: Information about the IP address of the user, such as geolocation and the ASN its type such as residential vs datacenter.
+* **IP Intelligence**: Information about the IP address of the user, such as geolocation, ASN, and ASN type such as residential vs datacenter. IP Intelligence is sourced from <a href="https://iptrust.co">IP Trust</a>, a Friendly Captcha product.
 * **Anonymization Detection**: Signals that indicate whether the user is using anonymization or masking services like VPNs or proxies. *This module will be launched in Q2 2026.*
 * **Browser Identification**: Signals that help identify the browser and device being used by the user.
 * **Bot Detection**: Information about what kind of automation or bot was detected.
