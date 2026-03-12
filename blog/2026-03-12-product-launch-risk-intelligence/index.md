@@ -7,7 +7,7 @@ tags: [product launch, risk intelligence]
 
 ![Risk Intelligence by Friendly Captcha](./risk-intelligence-launch.jpg)
 
-Today we're announcing the general availability of [**Risk Intelligence**](https://developer.friendlycaptcha.com/docs/v2/risk-intelligence/), a new product that provides information about visitors to your websites to help you make data-driven decisions about how to secure them.
+Today we're announcing the general availability of [**Risk Intelligence**](https://developer.friendlycaptcha.com/docs/v2/risk-intelligence/), a new product that provides information about visitors to your websites to help you make data-driven security decisions.
 
 At Friendly Captcha we assess the risk of traffic to your websites and apps by gathering signals about the
 
