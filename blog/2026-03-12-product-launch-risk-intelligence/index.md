@@ -5,9 +5,7 @@ authors: [gzuidhof, agreenberg]
 tags: [product launch, risk intelligence]
 ---
 
-<p style={{ textAlign: "center" }}>
-  ![Risk Intelligence by Friendly Captcha](./risk-intelligence-launch.jpg)
-</p>
+![Risk Intelligence by Friendly Captcha](./risk-intelligence-launch.jpg)
 
 Today we're announcing the general availability of [**Risk Intelligence**](https://developer.friendlycaptcha.com/docs/v2/risk-intelligence/), a new product that provides information about visitors to your websites to help you make data-driven decisions about how to secure them.
 
