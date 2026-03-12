@@ -12,7 +12,7 @@ Today we're announcing the general availability of [**Risk Intelligence**](https
 At Friendly Captcha we assess the risk of traffic to your websites and apps by gathering signals about the
 
 - **Network:** Where are they connecting from?
-- **Client:** What are they using to connect?
+- **Client:** What are they using to connect? Is this an automated or modified browser?
 - **Behavior:** What are their usage patterns?
 
 We use this information for our Captcha product to determine how the difficulty of the Captcha challenge.
