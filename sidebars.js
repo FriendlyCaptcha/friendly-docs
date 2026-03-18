@@ -31,11 +31,7 @@ const sidebars = {
         type: "doc",
         id: "getting-started/index",
       },
-      items: [
-        "getting-started/setup",
-        "getting-started/install",
-        "getting-started/verify",
-      ],
+      items: ["getting-started/setup", "getting-started/install", "getting-started/verify"],
     },
     {
       type: "category",
@@ -131,7 +127,15 @@ const sidebars = {
         slug: "use-cases",
         description: "A collection of articles on various uses for Friendly Captcha.",
       },
-      items: ["use-cases/brute-force-attacks"],
+      items: [
+        "use-cases/brute-force-attacks",
+        "use-cases/credential-stuffing",
+        "use-cases/account-takeover",
+        "use-cases/payment-fraud",
+        "use-cases/spam-protection",
+        "use-cases/api-protection",
+        "use-cases/fake-accounts",
+      ],
     },
     {
       type: "category",
