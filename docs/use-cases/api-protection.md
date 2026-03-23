@@ -14,7 +14,9 @@ Friendly Captcha's challenge (the widget) is great for protecting forms and othe
 For example, you might choose to block requests that have a high risk score, you may rate limit them more aggressively, or you might require additional verification for those requests. This way, you can protect your APIs from abuse while still allowing legitimate users to access your services.
 
 ## What about machine-to-machine communication?
-Friendly Captcha's Risk Intelligence is designed to protect APIs that are accessed by users, not machine-to-machine (M2M) communication. Outside of requiring authentication, assessing risk based on the IP address of the request is a common way to protect M2M communication.
+Friendly Captcha's Risk Intelligence is designed to protect APIs that are accessed by users.
+
+You can assess the risk of machine-to-machine (M2M) communication based on the IP address of the request.
 
 We launched the [**IP Trust**](https://iptrust.co/) product to help with this usecase. That service allows you to look up information about an IP address, such as whether it's a known proxy or VPN, its geolocation, and more. This can help you make informed decisions about how to handle requests from that IP address.
 

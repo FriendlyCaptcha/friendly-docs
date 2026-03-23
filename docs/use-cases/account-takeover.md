@@ -14,7 +14,7 @@ With Risk-Based Authentication you require additional verification only for requ
 
 [Risk Intelligence](https://developer.friendlycaptcha.com/docs/v2/risk-intelligence/) is a product that allows you to implement risk-based authentication in a matter of hours instead of weeks.
 
-Friendly Captcha assess the visitor, sharing risk scores and information about the browsing session with your backend, so you can make informed decisions about how to handle requests.
+Friendly Captcha assesses the visitor, sharing risk scores and information about the browsing session with your backend, so you can make informed decisions about how to handle requests.
 
 You could for example have a policy where you require MFA for requests that have a high risk score, but allow requests with a low risk score to proceed without additional verification.
 
