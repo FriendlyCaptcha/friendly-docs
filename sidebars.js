@@ -115,7 +115,7 @@ const sidebars = {
         "guides/eu-endpoint",
         "guides/localization",
         "guides/csp",
-        "guides/risk-intelligence-based-authentication/index",
+        "guides/risk-based-authentication-using-risk-intelligence/index",
         {
           type: "category",
           label: "Upgrading from v1",

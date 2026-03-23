@@ -1,4 +1,4 @@
-# Implementing RBA with Risk Intelligence
+# Risk-Based Authentication using Risk Intelligence
 
 This guide shows how to build a simple **risk-based authentication** flow using [**Risk Intelligence**](../../risk-intelligence/). Risk-based authentication means using signals from the browsing session to make logging in more difficult (or easier) depending on the perceived risk level. In this particular example, we will use Risk Intelligence data to require an additional confirmation when the user is logging in from an unrecognized browser.
 
