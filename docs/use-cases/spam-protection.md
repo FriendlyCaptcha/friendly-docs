@@ -1,8 +1,10 @@
-# Spam Protection
+g# Spam Protection
 
 Spam is a common problem for websites and apps that allow user-generated content or have a public-facing form. Spammers can use automated bots to flood your site with unwanted content, which can degrade the user experience, damage your reputation, and even lead to security issues. 
 
 Friendly Captcha helps protect your site from spam by adding a layer of security that can distinguish between legitimate users and malicious (automated) actors. This makes it more difficult and costly for spammers to abuse your site, while allowing legitimate users to access your services without friction.
+
+This challenge is a Proof of Work (PoW) cryptographic puzzle that happens entirely in the background. For an attacker, this challenge will be much more expensive to solve than it is for a legitimate user.
 
 ## How does it work?
 You [install the Friendly Captcha widget on the forms you want to protect](https://developer.friendlycaptcha.com/docs/v2/getting-started). When a user or bot interacts with the form, Friendly Captcha makes an assessment of the visitor, and depending on the signals it gathers, it may require the user's device to solve a computationally expensive challenge. 
