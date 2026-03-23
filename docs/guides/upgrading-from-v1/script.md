@@ -13,9 +13,9 @@ Replace the `friendly-challenge` scripts
   ```
   with the new `@friendlycaptcha/sdk` scripts
   ```html
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.36/site.min.js"
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.min.js"
           async defer></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.36/site.compat.min.js"
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.compat.min.js"
         async defer></script>
   ```
 ## 2. 🇪🇺 Update custom API endpoints
