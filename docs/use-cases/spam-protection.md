@@ -1,4 +1,4 @@
-g# Spam Protection
+# Spam Protection
 
 Spam is a common problem for websites and apps that allow user-generated content or have a public-facing form. Spammers can use automated bots to flood your site with unwanted content, which can degrade the user experience, damage your reputation, and even lead to security issues. 
 
