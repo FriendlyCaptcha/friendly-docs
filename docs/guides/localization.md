@@ -42,10 +42,12 @@ If you are creating widgets programmatically you can use the `language` field in
 | Language | Code  | % Complete              |
 |----------|-------|-------------------------|
 | 🇪🇬 **Arabic** \| *العربية* | `"ar"`, `"ar-EG"`| 94% |
+| 🇧🇦 **Bosnian** \| *Bosanski* | `"bs"`, `"bs-BA"`| 100% |
 | 🇧🇬 **Bulgarian** \| *български* | `"bg"`, `"bg-BG"`| 96% |
-| 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 94% |
+| 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 100% |
 | 🇨🇳 **Chinese (simplified)** \| *汉语* | `"zh"`, `"zh-CN"`, `"zh-Hans"`| 94% |
 | 🇹🇼 **Chinese (traditional)** \| *漢語* |`"zh-TW"`, `"zh-Hant"`| 94% |
+| 🇭🇷 **Croatian** \| *Hrvatski* | `"hr"`, `"hr-HR"`| 100% |
 | 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 92% |
 | 🇩🇰 **Danish** \| *Dansk* | `"da"`, `"da-DK"`| 92% |
 | 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 96% |
@@ -55,24 +57,27 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇫🇷 **French** \| *Français* | `"fr"`, `"fr-FR"`| 92% |
 | 🇩🇪 **German** \| *Deutsch* | `"de"`, `"de-DE"`| 96% |
 | 🇮🇳 **Hindi** \| *हिंदी* | `"hi"`, `"hi-IN"`| 94% |
-| 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 58% |
+| 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 60% |
 | 🇮🇩 **Indonesian** \| *Indonesia* | `"id"`, `"id-ID"`| 94% |
 | 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 92% |
 | 🇯🇵 **Japanese** \| *日本語* | `"ja"`, `"ja-JP"`| 96% |
+| 🇰🇷 **Korean** \| *오류* | `"ko"`, `"ko-KR"`| 100% |
 | 🇳🇴 **Norwegian Bokmål** \| *Norsk Bokmål* | `"nb"`, `"nb-NO"`| 96% |
 | 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 92% |
 | 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 92% |
 | 🇷🇴 **Romanian** \| *Romana* | `"ro"`, `"ro-RO"`| 100% |
 | 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 94% |
+| 🇷🇸 **Serbian** \| *Srpski* | `"sr"`, `"sr-RS"`| 100% |
 | 🇸🇰 **Slovak** \| *Slovenčina* | `"sk"`, `"sk-SK"`| 94% |
 | 🇸🇮 **Slovenian** \| *Slovenščina* | `"sl"`, `"sl-SI"`| 100% |
 | 🇪🇸 **Spanish** \| *Español* | `"es"`, `"es-ES"`| 92% |
 | 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 94% |
 | 🇹🇭 **Thai** \| *ไทย* | `"th"`, `"th-TH"`| 94% |
 | 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 92% |
+| 🇺🇦 **Ukrainian** \| *Українська* | `"uk"`, `"uk-UA"`| 100% |
 | 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 94% |
 
-> This table was last updated 2025-11-20.
+> This table was last updated 2026-03-31.
 
 
 
