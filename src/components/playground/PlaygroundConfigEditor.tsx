@@ -231,26 +231,26 @@ export default function PlaygroundConfigEditor({
         </div>
       </div>
 
-      {/* Simulate False Positive Toggle */}
+      {/* Simulate Suspicious User Toggle */}
       <div className="mb-6">
         <label className="flex items-center">
           <input
             type="checkbox"
-            checked={settings.simulateFalsePositive}
+            checked={settings.simulateHighRisk}
             onChange={(e) =>
               setSettings({
                 ...settings,
-                simulateFalsePositive: e.target.checked,
+                simulateHighRisk: e.target.checked,
               })
             }
             className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
           <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-            Simulate high solving time
+            Simulate suspicious user
           </span>
         </label>
         <div className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
-          {settings.simulateFalsePositive
+          {settings.simulateHighRisk
             ? "The widget will simulate that the user is suspicious which results in a high solving time"
             : "The widget will behave normally"}
         </div>

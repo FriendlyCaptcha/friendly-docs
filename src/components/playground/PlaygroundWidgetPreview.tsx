@@ -1,5 +1,6 @@
 import {
   PlaygroundSettings,
+  RiskIntelligenceData,
   verifyCaptchaResponse,
   WidgetEvent,
 } from "@site/src/lib/playground";
@@ -8,6 +9,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import PlaygroundForm from "./PlaygroundForm";
 import { FriendlyCaptchaSDK, WidgetHandle } from "@friendlycaptcha/sdk";
 import PlaygroundFormHeader from "./PlaygroundFormHeader";
+import PlaygroundSubmitDialog from "./PlaygroundSubmitDialog";
 import { useColorMode } from "@docusaurus/theme-common";
 
 const friendlyCaptchaSDK = new FriendlyCaptchaSDK({
@@ -44,6 +46,11 @@ export default function PlaygroundWidgetPreview({
 
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [widgetState, setWidgetState] = useState<string>("none");
+  const [dialog, setDialog] = useState<{
+    type: "success" | "error";
+    message: string;
+    riskIntelligence?: RiskIntelligenceData;
+  } | null>(null);
 
   const resolvedTheme = useMemo(
     () => (settings.theme === "auto" ? colorMode : settings.theme),
@@ -53,13 +60,11 @@ export default function PlaygroundWidgetPreview({
   const getSitekey = () => {
     if (settings.version === "v1") {
       // v1 doesn't have widget modes, use any sitekey
-      return settings.simulateFalsePositive
-        ? v1FalsePositiveSitekey
-        : v1Sitekey;
+      return settings.simulateHighRisk ? v1FalsePositiveSitekey : v1Sitekey;
     }
 
     // v2 has widget modes
-    return settings.simulateFalsePositive
+    return settings.simulateHighRisk
       ? v2FalsePositiveSitekeys[settings.widgetMode]
       : v2Sitekeys[settings.widgetMode];
   };
@@ -253,14 +258,21 @@ export default function PlaygroundWidgetPreview({
           "Checkout completed successfully! Thank you for your purchase.",
         download: "Download started! Check your downloads folder.",
       };
-      alert(successMessages[settings.useCase]);
+      setDialog({
+        type: "success",
+        message: successMessages[settings.useCase],
+        riskIntelligence: verifyResult.riskIntelligence,
+      });
     } else {
       addEvent("form:submit", {
         state: "form_submit_failed",
         error: "Captcha not completed",
         data: verifyResult,
       });
-      alert("Please complete the captcha before submitting the form.");
+      setDialog({
+        type: "error",
+        message: "Please complete the captcha before submitting the form.",
+      });
     }
   };
 
@@ -281,7 +293,7 @@ export default function PlaygroundWidgetPreview({
     settings.endpoint,
     settings.customEndpoint,
     settings.language,
-    settings.simulateFalsePositive,
+    settings.simulateHighRisk,
     resolvedTheme,
   ]);
 
@@ -305,7 +317,8 @@ export default function PlaygroundWidgetPreview({
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              disabled={widgetState !== "completed"}
+              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
             >
               {settings.useCase === "contact" && "Send Message"}
               {settings.useCase === "signup" && "Create Account"}
@@ -327,6 +340,15 @@ export default function PlaygroundWidgetPreview({
           Reset Widget
         </button>
       </div>
+
+      {dialog && (
+        <PlaygroundSubmitDialog
+          type={dialog.type}
+          message={dialog.message}
+          riskIntelligence={dialog.riskIntelligence}
+          onClose={() => setDialog(null)}
+        />
+      )}
     </div>
   );
 }
