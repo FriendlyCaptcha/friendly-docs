@@ -82,7 +82,7 @@ function RiskIntelligenceSection({ data }: { data: any }) {
         The data shown here is simulated for the playground and does not reflect
         reality.
       </p>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
         Risk Intelligence data is available to all{" "}
         <span className="font-medium">Advanced</span> and{" "}
         <span className="font-medium">Enterprise</span> customers.
@@ -95,7 +95,7 @@ function RiskIntelligenceSection({ data }: { data: any }) {
       ) : (
         <>
           {/* Risk Scores */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
+          <div className="grid grid-cols-3 gap-2 mb-5">
             {[
               { label: "Overall", score: risk_scores.overall },
               { label: "Network", score: risk_scores.network },
@@ -105,7 +105,7 @@ function RiskIntelligenceSection({ data }: { data: any }) {
                 key={label}
                 className="text-center p-2 bg-gray-50 dark:bg-gray-750 rounded"
               >
-                <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                <div className="text-xs text-gray-600 dark:text-gray-300 mb-1">
                   {label}
                 </div>
                 <RiskScoreBadge score={score} />
@@ -114,97 +114,101 @@ function RiskIntelligenceSection({ data }: { data: any }) {
           </div>
 
           {/* Network Info */}
-          <div className="space-y-2 text-xs">
-            <div className="flex items-baseline justify-between">
-              <div className="font-bold text-base text-gray-800 dark:text-gray-300">
+          <div className="space-y-5 text-xs">
+            <div>
+              <div className="font-bold text-base text-gray-800 dark:text-gray-300 mb-2">
                 Network
               </div>
-              <span className="text-gray-400 dark:text-gray-500">
-                subset — switch to Raw for full data
-              </span>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-750 rounded p-2 space-y-2">
-              <Row label="IP" value={network.ip} />
-              <Row
-                label="ASN"
-                value={`${network.as.name} (${network.as.type})`}
-              />
-              <Row
-                label="Location"
-                value={`${network.geolocation.city}, ${network.geolocation.country.name}`}
-              />
-              {(network.anonymization.vpn_score > 0 ||
-                network.anonymization.proxy_score > 0 ||
-                network.anonymization.tor) && (
-                <div className="pt-2 border-t border-gray-200 dark:border-gray-600 mt-1 space-y-2">
-                  {network.anonymization.vpn_score > 0 && (
-                    <Row
-                      label="VPN"
-                      value={
-                        <RiskScoreBadge
-                          score={network.anonymization.vpn_score}
-                        />
-                      }
-                    />
-                  )}
-                  {network.anonymization.proxy_score > 0 && (
-                    <Row
-                      label="Proxy"
-                      value={
-                        <RiskScoreBadge
-                          score={network.anonymization.proxy_score}
-                        />
-                      }
-                    />
-                  )}
-                  {network.anonymization.tor && <Row label="Tor" value="Yes" />}
-                </div>
-              )}
+              <p className="text-gray-500 dark:text-gray-400">
+                This only shows a subset of available information, switch to Raw
+                for full data.
+              </p>
+              <div className="bg-gray-50 dark:bg-gray-750 rounded p-2 space-y-2">
+                <Row label="IP" value={network.ip} />
+                <Row
+                  label="ASN"
+                  value={`${network.as.name} (${network.as.type})`}
+                />
+                <Row
+                  label="Location"
+                  value={`${network.geolocation.city}, ${network.geolocation.country.name}`}
+                />
+                {(network.anonymization.vpn_score > 0 ||
+                  network.anonymization.proxy_score > 0 ||
+                  network.anonymization.tor) && (
+                  <div className="pt-2 border-t border-gray-200 dark:border-gray-600 mt-1 space-y-2">
+                    {network.anonymization.vpn_score > 0 && (
+                      <Row
+                        label="VPN"
+                        value={
+                          <RiskScoreBadge
+                            score={network.anonymization.vpn_score}
+                          />
+                        }
+                      />
+                    )}
+                    {network.anonymization.proxy_score > 0 && (
+                      <Row
+                        label="Proxy"
+                        value={
+                          <RiskScoreBadge
+                            score={network.anonymization.proxy_score}
+                          />
+                        }
+                      />
+                    )}
+                    {network.anonymization.tor && (
+                      <Row label="Tor" value="Yes" />
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Client Info */}
-            <div className="flex items-baseline justify-between pt-1">
-              <div className="font-bold text-base text-gray-800 dark:text-gray-300">
+            <div>
+              <div className="font-bold text-base text-gray-800 dark:text-gray-300 mb-2">
                 Client
               </div>
-              <span className="text-gray-400 dark:text-gray-500">
-                subset — switch to Raw for full data
-              </span>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-750 rounded p-2 space-y-2">
-              <Row
-                label="Browser"
-                value={`${client.browser.name} ${client.browser.version}`}
-              />
-              <Row
-                label="OS"
-                value={`${client.os.name} ${client.os.version}`}
-              />
-              <Row label="Device" value={client.device.type} />
-              <Row label="Timezone" value={client.time_zone.name} />
-              {client.automation.automation_tool.detected && (
-                <div className="pt-2 border-t border-gray-200 dark:border-gray-600 mt-1">
+              <p className="text-gray-500 dark:text-gray-400">
+                This only shows a subset of available information, switch to Raw
+                for full data.
+              </p>
+              <div className="bg-gray-50 dark:bg-gray-750 rounded p-2 space-y-2">
+                <Row
+                  label="Browser"
+                  value={`${client.browser.name} ${client.browser.version}`}
+                />
+                <Row
+                  label="OS"
+                  value={`${client.os.name} ${client.os.version}`}
+                />
+                <Row label="Device" value={client.device.type} />
+                <Row label="Timezone" value={client.time_zone.name} />
+                {client.automation.automation_tool.detected && (
+                  <div className="pt-2 border-t border-gray-200 dark:border-gray-600 mt-1">
+                    <Row
+                      label="Automation"
+                      value={
+                        <span className="text-red-600 dark:text-red-400 font-medium">
+                          {client.automation.automation_tool.name} detected
+                        </span>
+                      }
+                    />
+                  </div>
+                )}
+                {client.automation.known_bot.detected && (
                   <Row
-                    label="Automation"
+                    label="Bot"
                     value={
                       <span className="text-red-600 dark:text-red-400 font-medium">
-                        {client.automation.automation_tool.name} detected
+                        {client.automation.known_bot.name} (
+                        {client.automation.known_bot.type})
                       </span>
                     }
                   />
-                </div>
-              )}
-              {client.automation.known_bot.detected && (
-                <Row
-                  label="Bot"
-                  value={
-                    <span className="text-red-600 dark:text-red-400 font-medium">
-                      {client.automation.known_bot.name} (
-                      {client.automation.known_bot.type})
-                    </span>
-                  }
-                />
-              )}
+                )}
+              </div>
             </div>
           </div>
         </>
@@ -216,7 +220,7 @@ function RiskIntelligenceSection({ data }: { data: any }) {
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between gap-2">
-      <span className="text-gray-500 dark:text-gray-400 shrink-0">{label}</span>
+      <span className="text-gray-600 dark:text-gray-300 shrink-0">{label}</span>
       <span className="text-gray-900 dark:text-gray-100 text-right">
         {value}
       </span>
@@ -258,9 +262,9 @@ export default function PlaygroundSubmitDialog({
         <div className="flex justify-end mt-4">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
           >
-            OK
+            Dismiss
           </button>
         </div>
       </div>
