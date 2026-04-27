@@ -51,6 +51,24 @@ const config = {
         ],
       },
     ],
+    [
+      "@signalwire/docusaurus-plugin-llms-txt",
+      {
+        siteTitle: "Friendly Captcha Developer Hub",
+        siteDescription:
+          "Documentation and tutorials for integrating Friendly Captcha — widget SDK, server-side validation, risk intelligence, and enterprise features.",
+        depth: 2,
+        content: {
+          includeDocs: true,
+          includeBlog: false,
+          includePages: false,
+          includeVersionedDocs: false,
+          enableLlmsFullTxt: true,
+          excludeRoutes: ["/search"],
+        },
+        logLevel: 1,
+      },
+    ],
   ],
 
   themes: [
