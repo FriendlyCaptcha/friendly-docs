@@ -53,15 +53,19 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 96% |
 | 🇺🇸 **English** | `"en"`, `"en-US"`| 100% |
 | 🇬🇧 **English (UK)** |`"en-GB"`| 100% |
+| 🇪🇪 **Estonian** \| *Eesti keel* | `"et"`, `"et-EE"`| 100% |
 | 🇫🇮 **Finnish** \| *Suomi* | `"fi"`, `"fi-FI"`| 92% |
 | 🇫🇷 **French** \| *Français* | `"fr"`, `"fr-FR"`| 92% |
 | 🇩🇪 **German** \| *Deutsch* | `"de"`, `"de-DE"`| 96% |
+| 🇬🇷 **Greek** \| *Ελληνικά* | `"el"`, `"el-GR"`| 100% |
 | 🇮🇳 **Hindi** \| *हिंदी* | `"hi"`, `"hi-IN"`| 94% |
 | 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 60% |
 | 🇮🇩 **Indonesian** \| *Indonesia* | `"id"`, `"id-ID"`| 94% |
 | 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 92% |
 | 🇯🇵 **Japanese** \| *日本語* | `"ja"`, `"ja-JP"`| 96% |
 | 🇰🇷 **Korean** \| *오류* | `"ko"`, `"ko-KR"`| 100% |
+| 🇱🇻 **Latvian** \| *Latviešu valoda* | `"lv"`, `"lv-LV"`| 100% |
+| 🇱🇹 **Lithuanian** \| *Lietuvių kalba* | `"lt"`, `"lt-LT"`| 100% |
 | 🇳🇴 **Norwegian Bokmål** \| *Norsk Bokmål* | `"nb"`, `"nb-NO"`| 96% |
 | 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 92% |
 | 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 92% |
@@ -77,7 +81,7 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇺🇦 **Ukrainian** \| *Українська* | `"uk"`, `"uk-UA"`| 100% |
 | 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 94% |
 
-> This table was last updated 2026-03-31.
+> This table was last updated 2026-05-05.
 
 
 
