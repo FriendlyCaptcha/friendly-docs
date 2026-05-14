@@ -42,6 +42,7 @@ If you are creating widgets programmatically you can use the `language` field in
 | Language | Code  | % Complete              |
 |----------|-------|-------------------------|
 | 🇪🇬 **Arabic** \| *العربية* | `"ar"`, `"ar-EG"`| 94% |
+| 🇪🇸 **Basque** \| *Euskera* | `"eu"`, `"eu-ES"`| 100% |
 | 🇧🇦 **Bosnian** \| *Bosanski* | `"bs"`, `"bs-BA"`| 100% |
 | 🇧🇬 **Bulgarian** \| *български* | `"bg"`, `"bg-BG"`| 96% |
 | 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 100% |
@@ -81,7 +82,7 @@ If you are creating widgets programmatically you can use the `language` field in
 | 🇺🇦 **Ukrainian** \| *Українська* | `"uk"`, `"uk-UA"`| 100% |
 | 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 94% |
 
-> This table was last updated 2026-05-05.
+> This table was last updated 2026-05-14.
 
 
 
