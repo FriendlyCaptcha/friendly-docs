@@ -11,7 +11,7 @@ If you're a visitor trying to use a website that shows a Friendly Captcha widget
 
 If you are the website administrator, you should **fix the warning as soon as possible or reach out to us to avoid service disruption**.
 
-## Usage limit reached {#overusage}
+## Usage limit reached {#usage_limit_reached}
 
 Your Friendly Captcha account has reached its monthly usage limit. The widget will continue to work and users will be able to complete the captcha, but you will see a warning until the issue is resolved. If the issue is not resolved, the widget may stop working entirely until you upgrade your plan.
 
