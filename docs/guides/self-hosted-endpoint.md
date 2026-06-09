@@ -1,3 +1,7 @@
+---
+unlisted: true
+---
+
 # Self-Hosted Endpoint
 
 :::info
