@@ -13,6 +13,10 @@ If you are the website administrator, you should **fix the warning as soon as po
 
 ## Usage limit reached {#usage_limit_reached}
 
+import WidgetWarningOverusage from '/img/widget-warning-overusage.png';
+
+<img src={WidgetWarningOverusage} alt="Screenshot of the Friendly Captcha widget warning" style={{ width: '100%', maxWidth: '400px', borderRadius: '3px', border: '1px solid #e0e0e0' }} />
+
 Your Friendly Captcha account has reached its monthly usage limit. The widget will continue to work and users will be able to complete the captcha, but you will see a warning until the issue is resolved. If the issue is not resolved, the widget may stop working entirely until you upgrade your plan.
 
 **To fix this:**
@@ -21,7 +25,3 @@ Your Friendly Captcha account has reached its monthly usage limit. The widget wi
 - Upgrade to a plan that offers more usage.
 
 If you are having trouble upgrading your plan or need help, please [contact support](https://friendlycaptcha.com/support/).
-
-import WidgetWarningOverusage from '/img/widget-warning-overusage.png';
-
-<img src={WidgetWarningOverusage} alt="Screenshot of the Friendly Captcha widget warning" style={{ width: '100%', maxWidth: '400px', borderRadius: '3px', border: '1px solid #e0e0e0' }} />
