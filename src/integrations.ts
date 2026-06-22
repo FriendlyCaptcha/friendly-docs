@@ -24,6 +24,14 @@ export const INTEGRATIONS: Integration[] = [
     github: "iMi-digital/magento2-friendly-captcha",
   },
   {
+    name: "Magento 2",
+    slug: "magento-2",
+    tags: ["E-commerce"],
+    fcVersion: "v2",
+    image: "magento-2.svg",
+    link: "https://commercemarketplace.adobe.com/friendly-captcha-magento2-friendly-captcha.html",
+  },
+  {
     name: "Adobe Commerce",
     slug: "adobe-commerce",
     tags: ["E-commerce"],
@@ -31,6 +39,14 @@ export const INTEGRATIONS: Integration[] = [
     image: "adobe-commerce.svg",
     link: "https://github.com/iMi-digital/magento2-friendly-captcha",
     github: "iMi-digital/magento2-friendly-captcha",
+  },
+  {
+    name: "Adobe Commerce",
+    slug: "adobe-commerce",
+    tags: ["E-commerce"],
+    fcVersion: "v2",
+    image: "adobe-commerce.svg",
+    link: "https://commercemarketplace.adobe.com/friendly-captcha-magento2-friendly-captcha.html",
   },
   {
     name: "Shopware",
@@ -430,6 +446,14 @@ export const INTEGRATIONS: Integration[] = [
     ...plugin,
     slug: `v1/${plugin.slug}`,
   });
+});
+
+INTEGRATIONS.sort((a, b) => {
+  const sourceA = "github" in a || "source" in a;
+  const sourceB = "github" in b || "source" in b;
+  if (sourceA && !sourceB) return -1;
+  if (!sourceA && sourceB) return 1;
+  return 0;
 });
 
 export const TAGS = new Set(
