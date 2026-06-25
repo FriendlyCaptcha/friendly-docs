@@ -15,7 +15,7 @@ If you are the website administrator, you should **fix the warning as soon as po
 
 import WidgetWarningOverusage from '/img/widget-warning-overusage.png';
 
-<img src={WidgetWarningOverusage} alt="Screenshot of the Friendly Captcha widget warning" style={{ width: '100%', maxWidth: '400px', borderRadius: '3px', border: '1px solid #e0e0e0' }} />
+<img src={WidgetWarningOverusage} alt="Screenshot of the Friendly Captcha widget warning for usage limit reached" style={{ width: '100%', maxWidth: '400px', borderRadius: '3px', border: '1px solid #e0e0e0' }} />
 
 Your Friendly Captcha account has reached its monthly usage limit. The widget will continue to work and users will be able to complete the captcha, but you will see a warning until the issue is resolved. If the issue is not resolved, the widget may stop working entirely until you upgrade your plan.
 
@@ -25,3 +25,21 @@ Your Friendly Captcha account has reached its monthly usage limit. The widget wi
 - Upgrade to a plan that offers more usage.
 
 If you are having trouble upgrading your plan or need help, please [contact support](https://friendlycaptcha.com/support/).
+
+
+## Commercial use detected {#invalid_non_commercial_use}
+
+import WidgetWarningCommercialUse from '/img/widget-warning-commercial-use.png';
+
+<img src={WidgetWarningCommercialUse} alt="Screenshot of the Friendly Captcha widget warning for commercial use" style={{ width: '100%', maxWidth: '400px', borderRadius: '3px', border: '1px solid #e0e0e0' }} />
+
+Your account is on the free plan, which is for non-commercial use only. Since you were previously on a paid plan, you likely need a commercial license.
+
+The widget will continue to work and users will be able to complete the captcha, but you will see a warning until the issue is resolved. If the issue is not resolved, the widget may stop working entirely until you upgrade your plan.
+
+**To fix this:**
+
+- Open the [Friendly Captcha dashboard](https://app.friendlycaptcha.eu/dashboard/).
+- Upgrade to a paid plan to get a commercial license and remove the warning.
+
+If you believe your use qualifies as non-commercial, or you need help choosing a plan, please [contact support](https://friendlycaptcha.com/support/).
