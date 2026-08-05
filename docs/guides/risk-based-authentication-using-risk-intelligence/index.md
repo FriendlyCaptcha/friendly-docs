@@ -32,8 +32,8 @@ With our sitekey in hand, we are ready to [generate a Risk Intelligence token](.
      input(type="password" id="password" name="password" required)
 +    div.frc-risk-intelligence(data-sitekey=process.env.FRC_SITEKEY)
      button(type="submit") Log In
-+  script(type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.min.js" async defer)
-+  script(nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.compat.min.js" async defer)
++  script(type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js" async defer)
++  script(nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.compat.min.js" async defer)
 ```
 
 <details>
@@ -42,7 +42,7 @@ With our sitekey in hand, we are ready to [generate a Risk Intelligence token](.
 **Self-hosting the front-end SDK scripts**
 </summary>
 
-Using `cdn.jsdelivr.net` is optional. If preferred, you can self-host the scripts. [Download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0) and serve them from your own server. Remember to update these scripts regularly.
+Using `cdn.jsdelivr.net` is optional. If preferred, you can self-host the scripts. [Download the latest release files](https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2) and serve them from your own server. Remember to update these scripts regularly.
 
 `cdn.jsdelivr.net` is blocked in some jurisdictions, like some parts of China. If your website needs to be reachable from these jurisdictions, we recommend that you self-host the scripts.
 
@@ -76,8 +76,8 @@ All we need to do is add a `disabled` attribute to the button, a `data-start="au
 +    div.frc-risk-intelligence(data-sitekey=process.env.FRC_SITEKEY data-start="auto")
 -    button(type="submit") Log In
 +    button(type="submit" disabled) Log In
-   script(type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.min.js" async defer)
-   script(nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.2.0/site.compat.min.js" async defer)
+   script(type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js" async defer)
+   script(nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.compat.min.js" async defer)
 +  script.
 +    document.addEventListener("DOMContentLoaded", () => {
 +      const el = document.querySelector(".frc-risk-intelligence");
