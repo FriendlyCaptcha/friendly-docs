@@ -50,6 +50,8 @@ curl -sSLf https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js \
   | openssl dgst -sha384 -binary | openssl base64 -A
 ```
 
+Alternatively, there are some websites that will do this for you, like https://srihash.org/.
+
 ## Self-hosting
 
 Using `cdn.jsdelivr.net` is optional. You can [download the release files](../getting-started/install.md#using-the-scripts-without-a-cdn-ie-self-hosting) and serve them from your own infrastructure, removing the third-party CDN from your supply chain entirely.
