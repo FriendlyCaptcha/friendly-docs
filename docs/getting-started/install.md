@@ -29,6 +29,10 @@ Remember to update these scripts regularly.
 `cdn.jsdelivr.net` is blocked in some jurisdictions, like some parts of China. If your website needs to be reachable from these jurisdictions, we recommend that you self-host the scripts.
 ::::
 
+::::info
+Always reference an exact version, as shown above. Also see [**Versioning and Immutability**](../guides/sdk-versioning.md).
+::::
+
 
 ### Adding the widget
 

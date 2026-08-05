@@ -2,6 +2,7 @@
 
 ## Advanced
 
+* [Versioning and Immutability](./sdk-versioning.md)
 * [Widget Language](./localization.md)
 * [Browser Support](./browser-support)
 * [Automated testing](./automated-testing)

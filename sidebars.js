@@ -110,6 +110,7 @@ const sidebars = {
         id: "guides/index",
       },
       items: [
+        "guides/sdk-versioning",
         "guides/automated-testing",
         "guides/browser-support",
         "guides/eu-endpoint",
