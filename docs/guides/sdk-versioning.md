@@ -34,7 +34,7 @@ Pinning means you decide when to upgrade, but also that you don't automatically 
 [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (SRI) pins the file's *contents* with an integrity hash, rather than just its URL. Because the CDN is operated by a third party, this is how you verify on every page load that the code reaching your users is the code you reviewed.
 
 ::::info
-Our site scripts don't load any further JavaScript at runtime, so the two integrity hashes (that for example look like `sha384-PlTUwS206S5stm69A6ULL0xNfgrDI6zspceDmfFtJGdNblYUuExQauIm9leAc/Ck`) cover all of the JavaScript that the SDK executes on your page.
+Our site scripts don't load any further JavaScript at runtime, so the two integrity hashes cover all of the JavaScript that the SDK executes on your page.
 ::::
 
 ```html
