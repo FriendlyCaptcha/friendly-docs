@@ -103,6 +103,10 @@ const sidebars = {
       ],
     },
     {
+      type: "doc",
+      id: "friendly-guard/index",
+    },
+    {
       type: "category",
       label: "Guides",
       link: {
