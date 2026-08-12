@@ -131,7 +131,7 @@ export const INTEGRATIONS: Integration[] = [
     fcVersion: "v2",
     image: "keycloak.svg",
     link: "/integrations/keycloak",
-    github: "https://github.com/touqeershafi/keycloak-friendly-captcha",
+    github: "touqeershafi/keycloak-friendly-captcha",
   },
   {
     name: "Keycloak",
