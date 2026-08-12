@@ -359,6 +359,17 @@ export const INTEGRATIONS: Integration[] = [
     github: "FriendlyCaptcha/friendly-captcha-ios",
     official: true,
   },
+
+  // Other
+  {
+    name: "phpBB",
+    slug: "phpbb",
+    tags: [],
+    fcVersion: "v2",
+    image: "phpbb.svg",
+    link: "https://github.com/MoeMorox/phpbb-ext-friendlycaptcha",
+    github: "MoeMorox/phpbb-ext-friendlycaptcha",
+  },
 ];
 
 // WordPress and friends. These all support both v1 and v2,
@@ -465,5 +476,5 @@ INTEGRATIONS.sort((a, b) => {
 });
 
 export const TAGS = new Set(
-  INTEGRATIONS.filter((i) => i.fcVersion === "v2").flatMap((i) => i.tags)
+  INTEGRATIONS.filter((i) => i.fcVersion === "v2").flatMap((i) => i.tags),
 );
