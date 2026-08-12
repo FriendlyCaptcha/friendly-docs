@@ -31,6 +31,6 @@ You can use the **Friendly Guard Dashboard** to configure protection rules and v
 
 :::info Coming Soon
 
-Friendly Guard is currently in development. Beta access opens in **September 2026**, with general availability later in the year. If interested, [let us know](https://friendlycaptcha.com/support/)!
+Friendly Guard is currently in development. Beta access opens in **September 2026**, with general availability later in the year. If interested, [let us know](https://friendlycaptcha.com/contact/)!
 
 :::
