@@ -50,6 +50,15 @@ html[data-theme='dark'] footer.footer {
   display: none;
 }
 
+/* api-documenter emits table cells as blank-line-separated raw HTML, which
+ * Markdown reparses as a <p> per cell. That adds an unwanted paragraph
+ * margin inside every table cell across the site, most noticeably in the
+ * SDK reference tables. Zero it out rather than fighting the generator. */
+.markdown table td > p:last-child,
+.markdown table th > p:last-child {
+  margin: 0;
+}
+
 /* Tailwind CSS */
 
 @import "tailwindcss/theme.css" layer(theme);
