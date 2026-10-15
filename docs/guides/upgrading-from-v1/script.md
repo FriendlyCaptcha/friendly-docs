@@ -96,12 +96,11 @@ You would replace it with the following
     if (detail.state === "completed") { 
       myButton.disabled = false;
       console.log("The response is ", detail.response);
-    else if (detail.state === "error") {
+    } else if (detail.state === "error") {
       console.error(detail.error);
 
       // It is best practice to enable your submit button when an error occurs.
       myButton.disabled = false;
-    }
     } else {
       myButton.disabled = true;
     }
