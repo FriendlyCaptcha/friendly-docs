@@ -21,8 +21,8 @@ We have never unpublished a version, and we have no plans to. Old pins should ke
 Always reference an exact version in your script tags:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js" async defer></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.compat.min.js" async defer></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.3/site.min.js" async defer></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.3/site.compat.min.js" async defer></script>
 ```
 
 ::::tip
@@ -39,14 +39,14 @@ Our site scripts don't load any further JavaScript at runtime, so the two integr
 
 ```html
 <!-- Replace both placeholder hashes using the command below. -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js" integrity="sha384-<hash of site.min.js>" crossorigin="anonymous" async defer></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.compat.min.js" integrity="sha384-<hash of site.compat.min.js>" crossorigin="anonymous" async defer></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.3/site.min.js" integrity="sha384-<hash of site.min.js>" crossorigin="anonymous" async defer></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.3/site.compat.min.js" integrity="sha384-<hash of site.compat.min.js>" crossorigin="anonymous" async defer></script>
 ```
 
 You can run this from the command-line to calculate the integrity hash for a specific file and version.
 
 ```shell
-curl -sSLf https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.0.2/site.min.js \
+curl -sSLf https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.3/site.min.js \
   | openssl dgst -sha384 -binary | openssl base64 -A
 ```
 
