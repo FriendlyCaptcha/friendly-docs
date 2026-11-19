@@ -10,7 +10,7 @@ You'll protect a form on the frontend and the backend. The widget alone doesn't 
 
 ## Before you start
 
-You need the sitekey and the API key. The sitekey starts with `FC` and is public, so it can go in the code. The API key is secret. Don't ask for it in the chat and don't write it into the code. Read it from the `FRC_API_KEY` environment variable, and add `FRC_API_KEY` to `.env.example` or wherever the project documents its config.
+You need the sitekey and the API key. The sitekey starts with `FC` and is public, so it can go in the code. The API key is secret. Don't ask for it in the chat and don't write it into the code. Load it the way the project already loads its other secrets, like an environment variable, a secrets manager, or a config file that stays out of git. If the project has no convention yet, use an `FRC_API_KEY` environment variable and add it to `.env.example` or wherever the project documents its config.
 
 Ask whether the app uses the EU endpoint. If it does, set the endpoint to `eu` in the widget and in the server SDK.
 
@@ -60,11 +60,11 @@ In the handler that receives the form, read `frc-captcha-response` and check it 
 | Python | [`friendly-captcha-client`](https://github.com/FriendlyCaptcha/friendly-captcha-python) | `pip install friendly-captcha-client` |
 | Go | [`friendly-captcha-go`](https://github.com/FriendlyCaptcha/friendly-captcha-go) | `go get github.com/friendlycaptcha/friendly-captcha-go` |
 
-Give the client the API key from `FRC_API_KEY`, the sitekey, and the EU endpoint if the app uses it. Each SDK's README lists the options.
+Give the client the API key, the sitekey, and the EU endpoint if the app uses it. Each SDK's README lists the options.
 
 Reject the submission when the SDK says to, which includes a missing `frc-captcha-response` field. When the SDK couldn't verify at all, log an error. That points to a wrong API key, a config mistake, or an outage. The SDK accepts the submission in that case, so real users can still send the form while it's fixed.
 
-Here's the JavaScript SDK as an example.
+Here's the JavaScript SDK as an example, with the key in an `FRC_API_KEY` environment variable.
 
 ```javascript
 import { FriendlyCaptchaClient } from "@friendlycaptcha/server-sdk";
@@ -98,4 +98,4 @@ For automated tests, see [Automated testing](./automated-testing.md).
 
 ## When you're done
 
-Tell the user which files you changed, that they need to set `FRC_API_KEY`, and how to test it.
+Tell the user which files you changed, where to put the API key, and how to test it.
