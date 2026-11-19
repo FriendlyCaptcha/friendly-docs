@@ -114,6 +114,7 @@ const sidebars = {
         id: "guides/index",
       },
       items: [
+        "guides/ai-agents",
         "guides/sdk-versioning",
         "guides/automated-testing",
         "guides/browser-support",
