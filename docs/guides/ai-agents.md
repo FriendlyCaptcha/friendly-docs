@@ -1,27 +1,24 @@
 ---
-description: Instructions for AI coding agents that add Friendly Captcha v2 to a project, covering the widget, server-side verification, and the API key.
+description: Steps for AI coding agents that add Friendly Captcha v2 to a project, from the widget to verifying the response on the backend.
 ---
 
-# Integrate with an AI agent
+# Add Friendly Captcha with an AI agent
 
-This page is written for AI coding agents that add Friendly Captcha to a project. If you're a person, point your agent to this page and give it your sitekey.
+This page is for AI coding agents that add Friendly Captcha to a project. If you're a person, point your agent here and give it your sitekey.
 
-The steps below protect a form on both the frontend and the backend. The widget on its own doesn't stop bots. Bots are only stopped once the backend verifies the response.
+You'll protect a form on the frontend and the backend. The widget alone doesn't stop bots. They're only stopped once the backend verifies the response.
 
 ## Before you start
 
-You need two values from the user.
+You need the sitekey and the API key. The sitekey starts with `FC` and is public, so it can go in the code. The API key is secret. Don't ask for it in the chat and don't write it into the code. Read it from the `FRC_API_KEY` environment variable, and add `FRC_API_KEY` to `.env.example` or wherever the project documents its config.
 
-- The **sitekey**, which starts with `FC`. It's public, so it can go in the code.
-- The **API key**. It's secret. Don't ask the user to paste it into the chat, and never write it into the code. Read it from the `FRC_API_KEY` environment variable and add `FRC_API_KEY` to `.env.example`, or to wherever the project documents its configuration.
+Ask whether the app uses the EU endpoint. If it does, set the endpoint to `eu` in the widget and in the server SDK.
 
-Also ask whether the app uses the EU endpoint. If it does, set the endpoint to `eu` in both the widget and the server SDK. Otherwise leave it out.
-
-Find out which framework and language the project uses, and follow its conventions.
+Look at the project's framework and language first, and follow its conventions.
 
 ## Use v2, not v1
 
-These instructions are for Friendly Captcha v2. Don't use the v1 packages, which you may know from older code.
+This page covers Friendly Captcha v2. You may know the v1 packages from older code. Don't use them.
 
 | | v2 (use this) | v1 (don't use) |
 |---|---|---|
@@ -31,15 +28,15 @@ These instructions are for Friendly Captcha v2. Don't use the v1 packages, which
 
 If the project already uses v1, follow [Upgrading from v1](./upgrading-from-v1/index.md) instead.
 
-## Frontend
+## Add the widget
 
-If the project has a bundler or uses a JavaScript framework like React, Vue, or Svelte, install the npm package and create the widget from code. [Install the widget](../getting-started/install.md#option-b-programmatically-javascript-sdk) shows how.
+With a bundler or a framework like React, Vue, or Svelte, install the npm package and create the widget in code, as shown in [Install the widget](../getting-started/install.md#option-b-programmatically-javascript-sdk).
 
 ```shell
 npm install @friendlycaptcha/sdk
 ```
 
-Otherwise, add the scripts to the page and put the widget element inside the form.
+Without one, add the scripts and put the widget element inside the form.
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@1.1.5/site.min.js" async defer></script>
@@ -48,13 +45,13 @@ Otherwise, add the scripts to the page and put the widget element inside the for
 <div class="frc-captcha" data-sitekey="<sitekey>"></div>
 ```
 
-For the EU endpoint, add `data-api-endpoint="eu"` to the element, or pass `apiEndpoint: "eu"` when creating the SDK.
+For the EU endpoint, add `data-api-endpoint="eu"` to the element, or pass `apiEndpoint: "eu"` to the SDK.
 
-When the widget finishes, it adds a hidden field named `frc-captcha-response` to the form.
+Once the widget is done, it adds a hidden `frc-captcha-response` field to the form.
 
-## Backend
+## Verify the response on the backend
 
-In the handler that receives the form, read `frc-captcha-response` from the submission and verify it with the official server SDK for the backend language.
+In the handler that receives the form, read `frc-captcha-response` and check it with the official server SDK for the backend's language.
 
 | Language | Package | Install |
 |---|---|---|
@@ -63,14 +60,11 @@ In the handler that receives the form, read `frc-captcha-response` from the subm
 | Python | [`friendly-captcha-client`](https://github.com/FriendlyCaptcha/friendly-captcha-python) | `pip install friendly-captcha-client` |
 | Go | [`friendly-captcha-go`](https://github.com/FriendlyCaptcha/friendly-captcha-go) | `go get github.com/friendlycaptcha/friendly-captcha-go` |
 
-Configure the client with the API key from `FRC_API_KEY`, the sitekey, and the EU endpoint if the app uses it. Each SDK's README shows the options.
+Give the client the API key from `FRC_API_KEY`, the sitekey, and the EU endpoint if the app uses it. Each SDK's README lists the options.
 
-Then handle the result like this.
+Reject the submission when the SDK says to, which includes a missing `frc-captcha-response` field. When the SDK couldn't verify at all, log an error. That points to a wrong API key, a config mistake, or an outage. The SDK accepts the submission in that case, so real users can still send the form while it's fixed.
 
-- Reject the submission when the SDK says to reject it. This includes a missing `frc-captcha-response` field.
-- When the SDK says it wasn't able to verify, log an error. That means a wrong API key, a wrong configuration, or an outage. The SDK accepts the submission in that case, so real users can still send the form while it's fixed.
-
-Here's what that looks like with the JavaScript SDK.
+Here's the JavaScript SDK as an example.
 
 ```javascript
 import { FriendlyCaptchaClient } from "@friendlycaptcha/server-sdk";
@@ -90,17 +84,15 @@ if (result.shouldReject()) {
 }
 ```
 
-If there's no SDK for the language, send the request yourself as described in [Verify the response](../getting-started/verify.md). Use `https://global.frcapi.com/api/v2/captcha/siteverify`, or `https://eu.frcapi.com/api/v2/captcha/siteverify` for the EU endpoint.
+If the language has no SDK, send the request yourself as described in [Verify the response](../getting-started/verify.md). Use `https://global.frcapi.com/api/v2/captcha/siteverify`, or `https://eu.frcapi.com/api/v2/captcha/siteverify` for the EU endpoint.
 
 ## Sites on a CMS
 
-If the site runs on WordPress, TYPO3, Magento, or another CMS or shop system, use its Friendly Captcha plugin instead of writing code. The [integrations page](/integrations) lists them.
+For WordPress, TYPO3, Magento, or another CMS or shop system, use its Friendly Captcha plugin instead of writing code. The [integrations page](/integrations) lists them.
 
 ## Check that it works
 
-1. Load the page with the form. The widget should appear and finish on its own.
-2. Submit the form. The backend should accept it.
-3. Submit the form without the widget, for example by removing the field. The backend should reject it.
+Load the page with the form. The widget should appear and finish on its own. Submit the form and check that the backend accepts it. Then submit it without the `frc-captcha-response` field and check that the backend rejects it.
 
 For automated tests, see [Automated testing](./automated-testing.md).
 
