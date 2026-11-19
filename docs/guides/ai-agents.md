@@ -30,7 +30,7 @@ If the project already uses v1, follow [Upgrading from v1](./upgrading-from-v1/i
 
 ## Add the widget
 
-With a bundler or a framework like React, Vue, or Svelte, install the npm package and create the widget in code, as shown in [Install the widget](../getting-started/install.md#option-b-programmatically-javascript-sdk).
+With a bundler or a framework like React, Vue, or Svelte, install the npm package and create the widget in code, as shown in [Install the widget](../getting-started/install.md#option-b-programmatically-javascript-sdk). For React and Vue, the [React](/integrations/react) and [Vue](/integrations/vue) pages have a ready-made component.
 
 ```shell
 npm install @friendlycaptcha/sdk
@@ -45,9 +45,9 @@ Without one, add the scripts and put the widget element inside the form.
 <div class="frc-captcha" data-sitekey="<sitekey>"></div>
 ```
 
-For the EU endpoint, add `data-api-endpoint="eu"` to the element, or pass `apiEndpoint: "eu"` to the SDK.
+For the EU endpoint, add `data-api-endpoint="eu"` to the element, or pass `apiEndpoint: "eu"` to `new FriendlyCaptchaSDK()` or `createWidget()`.
 
-Once the widget is done, it adds a hidden `frc-captcha-response` field to the form.
+The widget adds a hidden `frc-captcha-response` field to the form. Once it's done, the field holds the response your backend verifies.
 
 ## Verify the response on the backend
 
@@ -62,7 +62,7 @@ In the handler that receives the form, read `frc-captcha-response` and check it 
 
 Give the client the API key, the sitekey, and the EU endpoint if the app uses it. Each SDK's README lists the options.
 
-Reject the submission when the SDK says to, which includes a missing `frc-captcha-response` field. When the SDK couldn't verify at all, log an error. That points to a wrong API key, a config mistake, or an outage. The SDK accepts the submission in that case, so real users can still send the form while it's fixed.
+Reject the submission when the SDK says to. If the `frc-captcha-response` field is missing, pass an empty string instead. The SDKs reject an empty response, but the JavaScript SDK accepts a missing one the same way it accepts submissions during an outage. When the SDK couldn't verify at all, log an error. That points to a wrong API key, a config mistake, or an outage. The SDK accepts the submission in that case, so real users can still send the form while it's fixed.
 
 Here's the JavaScript SDK as an example, with the key in an `FRC_API_KEY` environment variable.
 
@@ -75,7 +75,7 @@ const frc = new FriendlyCaptchaClient({
 });
 
 // In the handler that receives the form:
-const result = await frc.verifyCaptchaResponse(req.body["frc-captcha-response"]);
+const result = await frc.verifyCaptchaResponse(req.body["frc-captcha-response"] ?? "");
 if (!result.wasAbleToVerify()) {
   console.error("Friendly Captcha verification failed", result.getErrorCode());
 }
@@ -92,7 +92,7 @@ For WordPress, TYPO3, Magento, or another CMS or shop system, use its Friendly C
 
 ## Check that it works
 
-Load the page with the form. The widget should appear and finish on its own. Submit the form and check that the backend accepts it. Then submit it without the `frc-captcha-response` field and check that the backend rejects it.
+Load the page with the form and click into it. The widget should start solving. Depending on the app's widget mode, it finishes on its own or asks for a click. Submit the form and check that the backend accepts it. Then submit it without the `frc-captcha-response` field and check that the backend rejects it.
 
 For automated tests, see [Automated testing](./automated-testing.md).
 
