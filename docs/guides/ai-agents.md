@@ -49,6 +49,33 @@ For the EU endpoint, add `data-api-endpoint="eu"` to the element, or pass `apiEn
 
 The widget adds a hidden `frc-captcha-response` field to the form. Once it's done, the field holds the response your backend verifies.
 
+## Forms sent with JavaScript
+
+The hidden field only reaches the backend when the browser submits the form itself. Most React, Vue, and Svelte apps send forms with `fetch` instead, so add the response to the request yourself.
+
+Read it with `widget.getResponse()`, or listen for the `frc:widget.complete` event and use `event.detail.response`. `createWidget()` returns the widget. For widgets created from the HTML element, `window.frcaptcha.getAllWidgets()` returns them. Send the response as `frc-captcha-response`, next to the other fields the backend reads.
+
+Until the widget is done, `getResponse()` returns a placeholder that the backend rejects. Call `widget.reset()` after each submission. A response can only be verified once, so sending it again fails.
+
+```javascript
+import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
+
+const sdk = new FriendlyCaptchaSDK();
+const widget = sdk.createWidget({ element: document.querySelector("#captcha"), sitekey: "<sitekey>" });
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  await fetch("/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: form.message.value, "frc-captcha-response": widget.getResponse() }),
+  });
+  widget.reset();
+});
+```
+
+[Events](../sdk/events.md) lists all widget events, and [Lifecycle](../sdk/lifecycle.md) explains the widget's states.
+
 ## Verify the response on the backend
 
 In the handler that receives the form, read `frc-captcha-response` and check it with the official server SDK for the backend's language.
