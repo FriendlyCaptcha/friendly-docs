@@ -60,19 +60,25 @@ Until the widget is done, `getResponse()` returns a placeholder that the backend
 ```javascript
 import { FriendlyCaptchaSDK } from "@friendlycaptcha/sdk";
 
+const form = document.querySelector("#contact-form");
 const sdk = new FriendlyCaptchaSDK();
-const widget = sdk.createWidget({ element: document.querySelector("#captcha"), sitekey: "<sitekey>" });
+const widget = sdk.createWidget({ element: form.querySelector(".frc-captcha"), sitekey: "<sitekey>" });
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  await fetch("/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: form.message.value, "frc-captcha-response": widget.getResponse() }),
-  });
-  widget.reset();
+  try {
+    await fetch("/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: form.elements.message.value, "frc-captcha-response": widget.getResponse() }),
+    });
+  } finally {
+    widget.reset();
+  }
 });
 ```
+
+Put the widget element inside the form, even if the form is never submitted natively. By default the widget starts when something in its form gets focus. Without a form around it, it waits until the user clicks it.
 
 [Events](../sdk/events.md) lists all widget events, and [Lifecycle](../sdk/lifecycle.md) explains the widget's states.
 
