@@ -41,48 +41,48 @@ If you are creating widgets programmatically you can use the `language` field in
 
 | Language | Code  | % Complete              |
 |----------|-------|-------------------------|
-| 🇪🇬 **Arabic** \| *العربية* | `"ar"`, `"ar-EG"`| 89% |
-| 🇪🇸 **Basque** \| *Euskera* | `"eu"`, `"eu-ES"`| 98% |
-| 🇧🇦 **Bosnian** \| *Bosanski* | `"bs"`, `"bs-BA"`| 95% |
-| 🇧🇬 **Bulgarian** \| *български* | `"bg"`, `"bg-BG"`| 91% |
-| 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 95% |
-| 🇨🇳 **Chinese (simplified)** \| *汉语* | `"zh"`, `"zh-CN"`, `"zh-Hans"`| 89% |
-| 🇹🇼 **Chinese (traditional)** \| *漢語* |`"zh-TW"`, `"zh-Hant"`| 89% |
-| 🇭🇷 **Croatian** \| *Hrvatski* | `"hr"`, `"hr-HR"`| 95% |
-| 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 88% |
+| 🇪🇬 **Arabic** \| *العربية* | `"ar"`, `"ar-EG"`| 88% |
+| 🇪🇸 **Basque** \| *Euskera* | `"eu"`, `"eu-ES"`| 96% |
+| 🇧🇦 **Bosnian** \| *Bosanski* | `"bs"`, `"bs-BA"`| 93% |
+| 🇧🇬 **Bulgarian** \| *български* | `"bg"`, `"bg-BG"`| 89% |
+| 🇪🇸 **Catalan** \| *Català* | `"ca"`, `"ca-ES"`| 93% |
+| 🇨🇳 **Chinese (simplified)** \| *汉语* | `"zh"`, `"zh-CN"`, `"zh-Hans"`| 88% |
+| 🇹🇼 **Chinese (traditional)** \| *漢語* |`"zh-TW"`, `"zh-Hant"`| 88% |
+| 🇭🇷 **Croatian** \| *Hrvatski* | `"hr"`, `"hr-HR"`| 93% |
+| 🇨🇿 **Czech** \| *Čeština* | `"cs"`, `"cs-CZ"`| 86% |
 | 🇩🇰 **Danish** \| *Dansk* | `"da"`, `"da-DK"`| 91% |
 | 🇳🇱 **Dutch** \| *Nederlands* | `"nl"`, `"nl-NL"`| 100% |
 | 🇺🇸 **English** | `"en"`, `"en-US"`| 100% |
 | 🇬🇧 **English (UK)** |`"en-GB"`| 100% |
-| 🇪🇪 **Estonian** \| *Eesti keel* | `"et"`, `"et-EE"`| 96% |
-| 🇫🇮 **Finnish** \| *Suomi* | `"fi"`, `"fi-FI"`| 89% |
+| 🇪🇪 **Estonian** \| *Eesti keel* | `"et"`, `"et-EE"`| 95% |
+| 🇫🇮 **Finnish** \| *Suomi* | `"fi"`, `"fi-FI"`| 88% |
 | 🇫🇷 **French** \| *Français* | `"fr"`, `"fr-FR"`| 91% |
 | 🇩🇪 **German** \| *Deutsch* | `"de"`, `"de-DE"`| 96% |
-| 🇬🇷 **Greek** \| *Ελληνικά* | `"el"`, `"el-GR"`| 95% |
-| 🇮🇳 **Hindi** \| *हिंदी* | `"hi"`, `"hi-IN"`| 89% |
-| 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 59% |
-| 🇮🇩 **Indonesian** \| *Indonesia* | `"id"`, `"id-ID"`| 89% |
+| 🇬🇷 **Greek** \| *Ελληνικά* | `"el"`, `"el-GR"`| 93% |
+| 🇮🇳 **Hindi** \| *हिंदी* | `"hi"`, `"hi-IN"`| 88% |
+| 🇭🇺 **Hungarian** \| *Magyar* | `"hu"`, `"hu-HU"`| 100% |
+| 🇮🇩 **Indonesian** \| *Indonesia* | `"id"`, `"id-ID"`| 88% |
 | 🇮🇹 **Italian** \| *Italiano* | `"it"`, `"it-IT"`| 91% |
-| 🇯🇵 **Japanese** \| *日本語* | `"ja"`, `"ja-JP"`| 91% |
-| 🇰🇷 **Korean** \| *오류* | `"ko"`, `"ko-KR"`| 95% |
-| 🇱🇻 **Latvian** \| *Latviešu valoda* | `"lv"`, `"lv-LV"`| 95% |
-| 🇱🇹 **Lithuanian** \| *Lietuvių kalba* | `"lt"`, `"lt-LT"`| 95% |
-| 🇳🇴 **Norwegian Bokmål** \| *Norsk Bokmål* | `"nb"`, `"nb-NO"`| 91% |
-| 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 91% |
+| 🇯🇵 **Japanese** \| *日本語* | `"ja"`, `"ja-JP"`| 89% |
+| 🇰🇷 **Korean** \| *한국어* | `"ko"`, `"ko-KR"`| 100% |
+| 🇱🇻 **Latvian** \| *Latviešu valoda* | `"lv"`, `"lv-LV"`| 100% |
+| 🇱🇹 **Lithuanian** \| *Lietuvių kalba* | `"lt"`, `"lt-LT"`| 100% |
+| 🇳🇴 **Norwegian Bokmål** \| *Norsk Bokmål* | `"nb"`, `"nb-NO"`| 89% |
+| 🇵🇱 **Polish** \| *Polski* | `"pl"`, `"pl-PL"`| 89% |
 | 🇵🇹 **Portuguese** \| *Português* | `"pt"`, `"pt-PT"`, `"pt-BR"`| 91% |
-| 🇷🇴 **Romanian** \| *Romana* | `"ro"`, `"ro-RO"`| 95% |
-| 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 89% |
-| 🇷🇸 **Serbian** \| *Srpski* | `"sr"`, `"sr-RS"`| 95% |
-| 🇸🇰 **Slovak** \| *Slovenčina* | `"sk"`, `"sk-SK"`| 89% |
-| 🇸🇮 **Slovenian** \| *Slovenščina* | `"sl"`, `"sl-SI"`| 95% |
+| 🇷🇴 **Romanian** \| *Romana* | `"ro"`, `"ro-RO"`| 93% |
+| 🇷🇺 **Russian** \| *Русский* | `"ru"`, `"ru-RU"`| 88% |
+| 🇷🇸 **Serbian** \| *Srpski* | `"sr"`, `"sr-RS"`| 93% |
+| 🇸🇰 **Slovak** \| *Slovenčina* | `"sk"`, `"sk-SK"`| 88% |
+| 🇸🇮 **Slovenian** \| *Slovenščina* | `"sl"`, `"sl-SI"`| 93% |
 | 🇪🇸 **Spanish** \| *Español* | `"es"`, `"es-ES"`| 91% |
-| 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 89% |
-| 🇹🇭 **Thai** \| *ไทย* | `"th"`, `"th-TH"`| 89% |
-| 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 88% |
-| 🇺🇦 **Ukrainian** \| *Українська* | `"uk"`, `"uk-UA"`| 95% |
-| 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 89% |
+| 🇸🇪 **Swedish** \| *Svenska* | `"sv"`, `"sv-SE"`| 88% |
+| 🇹🇭 **Thai** \| *ไทย* | `"th"`, `"th-TH"`| 88% |
+| 🇹🇷 **Turkish** \| *Türkçe* | `"tr"`, `"tr-TR"`| 86% |
+| 🇺🇦 **Ukrainian** \| *Українська* | `"uk"`, `"uk-UA"`| 93% |
+| 🇻🇳 **Vietnamese** \| *Tiếng Việt* | `"vi"`, `"vi-VN"`| 88% |
 
-> This table was last updated 2026-06-23.
+> This table was last updated 2026-11-23.
 
 
 
