@@ -56,7 +56,7 @@ const config = {
       {
         siteTitle: "Friendly Captcha Developer Hub",
         siteDescription:
-          "Documentation and tutorials for integrating Friendly Captcha — widget SDK, server-side validation, risk intelligence, and enterprise features.",
+          "Documentation and tutorials for integrating Friendly Captcha — widget SDK, server-side validation, risk intelligence, and enterprise features. AI agents adding Friendly Captcha to a project should start with /docs/v2/guides/ai-agents.md.",
         depth: 2,
         content: {
           includeDocs: true,
